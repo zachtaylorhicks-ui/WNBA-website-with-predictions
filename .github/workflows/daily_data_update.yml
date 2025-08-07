@@ -29,3 +29,4 @@ jobs:
           file_pattern: 'database/*.csv database/*.json'
           branch: dev-automation
           token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}

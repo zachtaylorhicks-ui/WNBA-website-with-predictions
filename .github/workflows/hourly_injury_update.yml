@@ -29,3 +29,4 @@ jobs:
           file_pattern: 'database/live_injuries.json'
           branch: dev-automation
           token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
