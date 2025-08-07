@@ -1,8 +1,6 @@
 [
   {
     "personId": 100002.0,
-    "playerName": "Rebecca Lobo",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 348.0,
     "REB": 203.0,
@@ -16,12 +14,12 @@
     "FTM": 64.0,
     "FTA": 105.0,
     "MIN": 939.4,
-    "position": null
+    "playerName": "Rebecca Lobo",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100003.0,
-    "playerName": "Lisa Leslie",
-    "team": "Los Angeles Sparks",
     "GP": 28,
     "PTS": 435.0,
     "REB": 265.0,
@@ -35,12 +33,12 @@
     "FTM": 108.0,
     "FTA": 183.0,
     "MIN": 883.1,
-    "position": null
+    "playerName": "Lisa Leslie",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100004.0,
-    "playerName": "Penny Toler",
-    "team": "Los Angeles Sparks",
     "GP": 28,
     "PTS": 366.0,
     "REB": 94.0,
@@ -54,12 +52,12 @@
     "FTM": 72.0,
     "FTA": 86.0,
     "MIN": 880.4,
-    "position": null
+    "playerName": "Penny Toler",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100005.0,
-    "playerName": "Daedra Charles",
-    "team": "Los Angeles Sparks",
     "GP": 28,
     "PTS": 66.0,
     "REB": 47.0,
@@ -73,12 +71,12 @@
     "FTM": 12.0,
     "FTA": 17.0,
     "MIN": 294.8,
-    "position": null
+    "playerName": "Daedra Charles",
+    "position": "PF",
+    "team": "FA"
   },
   {
     "personId": 100006.0,
-    "playerName": "Haixia Zheng",
-    "team": "Los Angeles Sparks",
     "GP": 28,
     "PTS": 262.0,
     "REB": 117.0,
@@ -92,12 +90,12 @@
     "FTM": 32.0,
     "FTA": 52.0,
     "MIN": 566.0,
-    "position": null
+    "playerName": "Haixia Zheng",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100007.0,
-    "playerName": "Jamila Wideman",
-    "team": "Los Angeles Sparks",
     "GP": 28,
     "PTS": 79.0,
     "REB": 51.0,
@@ -111,12 +109,12 @@
     "FTM": 27.0,
     "FTA": 34.0,
     "MIN": 594.3,
-    "position": null
+    "playerName": "Jamila Wideman",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100008.0,
-    "playerName": "Tamecka Dixon",
-    "team": "Los Angeles Sparks",
     "GP": 27,
     "PTS": 331.0,
     "REB": 85.0,
@@ -130,12 +128,12 @@
     "FTM": 67.0,
     "FTA": 88.0,
     "MIN": 712.7,
-    "position": null
+    "playerName": "Tamecka Dixon",
+    "position": "SG",
+    "team": "FA"
   },
   {
     "personId": 100009.0,
-    "playerName": "Katrina Colleton",
-    "team": "Los Angeles Sparks",
     "GP": 27,
     "PTS": 136.0,
     "REB": 59.0,
@@ -149,12 +147,12 @@
     "FTM": 17.0,
     "FTA": 30.0,
     "MIN": 605.1,
-    "position": null
+    "playerName": "Katrina Colleton",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100010.0,
-    "playerName": "Travesa Gant",
-    "team": "Los Angeles Sparks",
     "GP": 3,
     "PTS": 0.0,
     "REB": 4.0,
@@ -168,12 +166,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 40.6,
-    "position": null
+    "playerName": "Travesa Gant",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100011.0,
-    "playerName": "Linda Burgess",
-    "team": "Los Angeles Sparks",
     "GP": 28,
     "PTS": 187.0,
     "REB": 118.0,
@@ -187,12 +185,12 @@
     "FTM": 32.0,
     "FTA": 45.0,
     "MIN": 496.4,
-    "position": null
+    "playerName": "Linda Burgess",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100012.0,
-    "playerName": "Mwadi Mabika",
-    "team": "Los Angeles Sparks",
     "GP": 21,
     "PTS": 130.0,
     "REB": 54.0,
@@ -206,12 +204,12 @@
     "FTM": 13.0,
     "FTA": 24.0,
     "MIN": 328.6,
-    "position": null
+    "playerName": "Mwadi Mabika",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100014.0,
-    "playerName": "Kim Gessig",
-    "team": "Los Angeles Sparks",
     "GP": 1,
     "PTS": 0.0,
     "REB": 1.0,
@@ -225,12 +223,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 3.7,
-    "position": null
+    "playerName": "Kim Gessig",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100016.0,
-    "playerName": "Ruthie Bolton",
-    "team": "Sacramento Monarchs",
     "GP": 24,
     "PTS": 439.0,
     "REB": 138.0,
@@ -244,12 +242,12 @@
     "FTM": 53.0,
     "FTA": 71.0,
     "MIN": 821.2,
-    "position": null
+    "playerName": "Ruthie Bolton",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100017.0,
-    "playerName": "Bridgette Gordon",
-    "team": "Sacramento Monarchs",
     "GP": 28,
     "PTS": 353.0,
     "REB": 133.0,
@@ -263,12 +261,12 @@
     "FTM": 83.0,
     "FTA": 106.0,
     "MIN": 953.5,
-    "position": null
+    "playerName": "Bridgette Gordon",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100018.0,
-    "playerName": "Judy Mosley-McAfee",
-    "team": "Sacramento Monarchs",
     "GP": 13,
     "PTS": 80.0,
     "REB": 47.0,
@@ -282,12 +280,12 @@
     "FTM": 13.0,
     "FTA": 15.0,
     "MIN": 289.8,
-    "position": null
+    "playerName": "Judy Mosley-McAfee",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100019.0,
-    "playerName": "Mikiko Hagiwara",
-    "team": "Phoenix Mercury",
     "GP": 26,
     "PTS": 86.0,
     "REB": 23.0,
@@ -301,12 +299,12 @@
     "FTM": 9.0,
     "FTA": 16.0,
     "MIN": 370.5,
-    "position": null
+    "playerName": "Mikiko Hagiwara",
+    "position": "SG",
+    "team": "FA"
   },
   {
     "personId": 100020.0,
-    "playerName": "Pam McGee",
-    "team": "Sacramento Monarchs",
     "GP": 27,
     "PTS": 271.0,
     "REB": 119.0,
@@ -320,12 +318,12 @@
     "FTM": 71.0,
     "FTA": 102.0,
     "MIN": 685.9,
-    "position": null
+    "playerName": "Pam McGee",
+    "position": null,
+    "team": null
   },
   {
     "personId": 100021.0,
-    "playerName": "Denique Graves",
-    "team": "Sacramento Monarchs",
     "GP": 21,
     "PTS": 16.0,
     "REB": 15.0,
@@ -339,12 +337,12 @@
     "FTM": 4.0,
     "FTA": 8.0,
     "MIN": 78.0,
-    "position": null
+    "playerName": "Denique Graves",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100022.0,
-    "playerName": "Chantel Tremitiere",
-    "team": "Sacramento Monarchs",
     "GP": 28,
     "PTS": 219.0,
     "REB": 129.0,
@@ -358,12 +356,12 @@
     "FTM": 67.0,
     "FTA": 91.0,
     "MIN": 1054.0,
-    "position": null
+    "playerName": "Chantel Tremitiere",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100023.0,
-    "playerName": "Tajama Abraham",
-    "team": "Sacramento Monarchs",
     "GP": 28,
     "PTS": 136.0,
     "REB": 64.0,
@@ -377,12 +375,12 @@
     "FTM": 25.0,
     "FTA": 36.0,
     "MIN": 410.8,
-    "position": null
+    "playerName": "Tajama Abraham",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100024.0,
-    "playerName": "Corissa Yasen",
-    "team": "Sacramento Monarchs",
     "GP": 19,
     "PTS": 48.0,
     "REB": 19.0,
@@ -396,12 +394,12 @@
     "FTM": 6.0,
     "FTA": 12.0,
     "MIN": 205.2,
-    "position": null
+    "playerName": "Corissa Yasen",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100026.0,
-    "playerName": "Yvette Angel",
-    "team": "Sacramento Monarchs",
     "GP": 5,
     "PTS": 17.0,
     "REB": 9.0,
@@ -415,12 +413,12 @@
     "FTM": 0.0,
     "FTA": 3.0,
     "MIN": 90.7,
-    "position": null
+    "playerName": "Yvette Angel",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100027.0,
-    "playerName": "Latasha Byears",
-    "team": "Sacramento Monarchs",
     "GP": 27,
     "PTS": 244.0,
     "REB": 189.0,
@@ -434,12 +432,12 @@
     "FTM": 51.0,
     "FTA": 69.0,
     "MIN": 654.1,
-    "position": null
+    "playerName": "Latasha Byears",
+    "position": "PF",
+    "team": "FA"
   },
   {
     "personId": 100028.0,
-    "playerName": "Danielle Viglione",
-    "team": "Sacramento Monarchs",
     "GP": 6,
     "PTS": 4.0,
     "REB": 2.0,
@@ -453,12 +451,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 26.2,
-    "position": null
+    "playerName": "Danielle Viglione",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100029.0,
-    "playerName": "Michele Timms",
-    "team": "Phoenix Mercury",
     "GP": 27,
     "PTS": 314.0,
     "REB": 99.0,
@@ -472,12 +470,12 @@
     "FTM": 77.0,
     "FTA": 102.0,
     "MIN": 955.4,
-    "position": null
+    "playerName": "Michele Timms",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100030.0,
-    "playerName": "Jennifer Gillom",
-    "team": "Phoenix Mercury",
     "GP": 28,
     "PTS": 440.0,
     "REB": 149.0,
@@ -491,12 +489,12 @@
     "FTM": 94.0,
     "FTA": 121.0,
     "MIN": 859.4,
-    "position": null
+    "playerName": "Jennifer Gillom",
+    "position": "C/F",
+    "team": "FA"
   },
   {
     "personId": 100031.0,
-    "playerName": "Bridget Pettis",
-    "team": "Phoenix Mercury",
     "GP": 28,
     "PTS": 349.0,
     "REB": 106.0,
@@ -510,12 +508,12 @@
     "FTM": 97.0,
     "FTA": 108.0,
     "MIN": 831.6,
-    "position": null
+    "playerName": "Bridget Pettis",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100032.0,
-    "playerName": "Nancy Lieberman",
-    "team": "Phoenix Mercury",
     "GP": 25,
     "PTS": 64.0,
     "REB": 32.0,
@@ -529,12 +527,12 @@
     "FTM": 8.0,
     "FTA": 10.0,
     "MIN": 279.2,
-    "position": null
+    "playerName": "Nancy Lieberman",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100033.0,
-    "playerName": "Toni Foster",
-    "team": "Phoenix Mercury",
     "GP": 28,
     "PTS": 239.0,
     "REB": 167.0,
@@ -548,12 +546,12 @@
     "FTM": 56.0,
     "FTA": 79.0,
     "MIN": 726.0,
-    "position": null
+    "playerName": "Toni Foster",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100034.0,
-    "playerName": "Tia Jackson",
-    "team": "Phoenix Mercury",
     "GP": 26,
     "PTS": 72.0,
     "REB": 52.0,
@@ -567,12 +565,12 @@
     "FTM": 21.0,
     "FTA": 25.0,
     "MIN": 317.7,
-    "position": null
+    "playerName": "Tia Jackson",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100035.0,
-    "playerName": "Umeki Webb",
-    "team": "Phoenix Mercury",
     "GP": 28,
     "PTS": 139.0,
     "REB": 113.0,
@@ -586,12 +584,12 @@
     "FTM": 46.0,
     "FTA": 67.0,
     "MIN": 763.7,
-    "position": null
+    "playerName": "Umeki Webb",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100036.0,
-    "playerName": "Monique Ambers",
-    "team": "Phoenix Mercury",
     "GP": 19,
     "PTS": 14.0,
     "REB": 20.0,
@@ -605,12 +603,12 @@
     "FTM": 6.0,
     "FTA": 15.0,
     "MIN": 86.8,
-    "position": null
+    "playerName": "Monique Ambers",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100037.0,
-    "playerName": "Marlies Askamp",
-    "team": "Phoenix Mercury",
     "GP": 28,
     "PTS": 208.0,
     "REB": 144.0,
@@ -624,12 +622,12 @@
     "FTM": 70.0,
     "FTA": 92.0,
     "MIN": 520.1,
-    "position": null
+    "playerName": "Marlies Askamp",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100038.0,
-    "playerName": "Tara Williams",
-    "team": "Phoenix Mercury",
     "GP": 12,
     "PTS": 37.0,
     "REB": 8.0,
@@ -643,12 +641,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 82.7,
-    "position": null
+    "playerName": "Tara Williams",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100041.0,
-    "playerName": "Ryneldi Becenti",
-    "team": "Phoenix Mercury",
     "GP": 1,
     "PTS": 0.0,
     "REB": 0.0,
@@ -662,12 +660,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 8.3,
-    "position": null
+    "playerName": "Ryneldi Becenti",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100043.0,
-    "playerName": "Elena Baranova",
-    "team": "Utah Starzz",
     "GP": 28,
     "PTS": 341.0,
     "REB": 206.0,
@@ -681,12 +679,12 @@
     "FTM": 43.0,
     "FTA": 62.0,
     "MIN": 912.9,
-    "position": null
+    "playerName": "Elena Baranova",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100044.0,
-    "playerName": "Lady Grooms",
-    "team": "Utah Starzz",
     "GP": 28,
     "PTS": 153.0,
     "REB": 84.0,
@@ -700,12 +698,12 @@
     "FTM": 36.0,
     "FTA": 55.0,
     "MIN": 692.5,
-    "position": null
+    "playerName": "Lady Grooms",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100045.0,
-    "playerName": "Dena Head",
-    "team": "Utah Starzz",
     "GP": 27,
     "PTS": 154.0,
     "REB": 63.0,
@@ -719,12 +717,12 @@
     "FTM": 38.0,
     "FTA": 45.0,
     "MIN": 472.0,
-    "position": null
+    "playerName": "Dena Head",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100046.0,
-    "playerName": "Wendy Palmer",
-    "team": "Utah Starzz",
     "GP": 28,
     "PTS": 443.0,
     "REB": 225.0,
@@ -738,12 +736,12 @@
     "FTM": 117.0,
     "FTA": 173.0,
     "MIN": 933.3000000000001,
-    "position": null
+    "playerName": "Wendy Palmer",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100047.0,
-    "playerName": "Tammi Reiss",
-    "team": "Utah Starzz",
     "GP": 28,
     "PTS": 218.0,
     "REB": 77.0,
@@ -757,12 +755,12 @@
     "FTM": 42.0,
     "FTA": 55.0,
     "MIN": 829.5,
-    "position": null
+    "playerName": "Tammi Reiss",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100048.0,
-    "playerName": "Jessie Hicks",
-    "team": "Utah Starzz",
     "GP": 26,
     "PTS": 83.0,
     "REB": 36.0,
@@ -776,12 +774,12 @@
     "FTM": 9.0,
     "FTA": 16.0,
     "MIN": 262.5,
-    "position": null
+    "playerName": "Jessie Hicks",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100049.0,
-    "playerName": "Raegan Scott",
-    "team": "Utah Starzz",
     "GP": 8,
     "PTS": 12.0,
     "REB": 7.0,
@@ -795,12 +793,12 @@
     "FTM": 2.0,
     "FTA": 2.0,
     "MIN": 41.8,
-    "position": null
+    "playerName": "Raegan Scott",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100050.0,
-    "playerName": "Kim Williams",
-    "team": "Utah Starzz",
     "GP": 28,
     "PTS": 226.0,
     "REB": 81.0,
@@ -814,12 +812,12 @@
     "FTM": 41.0,
     "FTA": 53.0,
     "MIN": 610.9,
-    "position": null
+    "playerName": "Kim Williams",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100051.0,
-    "playerName": "Megan Compain",
-    "team": "Utah Starzz",
     "GP": 5,
     "PTS": 5.0,
     "REB": 5.0,
@@ -833,12 +831,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 39.5,
-    "position": null
+    "playerName": "Megan Compain",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100052.0,
-    "playerName": "Deborah Carter",
-    "team": "Utah Starzz",
     "GP": 18,
     "PTS": 71.0,
     "REB": 49.0,
@@ -852,12 +850,12 @@
     "FTM": 10.0,
     "FTA": 14.0,
     "MIN": 265.9,
-    "position": null
+    "playerName": "Deborah Carter",
+    "position": "F/G",
+    "team": "FA"
   },
   {
     "personId": 100053.0,
-    "playerName": "Karen Booker",
-    "team": "Utah Starzz",
     "GP": 26,
     "PTS": 60.0,
     "REB": 80.0,
@@ -871,12 +869,12 @@
     "FTM": 20.0,
     "FTA": 33.0,
     "MIN": 323.3,
-    "position": null
+    "playerName": "Karen Booker",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100055.0,
-    "playerName": "Greta Koss",
-    "team": "Utah Starzz",
     "GP": 13,
     "PTS": 44.0,
     "REB": 37.0,
@@ -890,12 +888,12 @@
     "FTM": 12.0,
     "FTA": 16.0,
     "MIN": 268.7,
-    "position": null
+    "playerName": "Greta Koss",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100057.0,
-    "playerName": "Molly Tuter",
-    "team": "Phoenix Mercury",
     "GP": 3,
     "PTS": 0.0,
     "REB": 0.0,
@@ -909,12 +907,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 2.7,
-    "position": null
+    "playerName": "Molly Tuter",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100058.0,
-    "playerName": "Vicky Bullett",
-    "team": "Charlotte Sting",
     "GP": 28,
     "PTS": 359.0,
     "REB": 178.0,
@@ -928,12 +926,12 @@
     "FTM": 62.0,
     "FTA": 80.0,
     "MIN": 871.8,
-    "position": null
+    "playerName": "Vicky Bullett",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100059.0,
-    "playerName": "Andrea Stinson",
-    "team": "Charlotte Sting",
     "GP": 28,
     "PTS": 439.0,
     "REB": 155.0,
@@ -947,12 +945,12 @@
     "FTM": 60.0,
     "FTA": 89.0,
     "MIN": 1011.9,
-    "position": null
+    "playerName": "Andrea Stinson",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100060.0,
-    "playerName": "Rhonda Mapp",
-    "team": "Charlotte Sting",
     "GP": 28,
     "PTS": 326.0,
     "REB": 154.0,
@@ -966,12 +964,12 @@
     "FTM": 82.0,
     "FTA": 106.0,
     "MIN": 713.4,
-    "position": null
+    "playerName": "Rhonda Mapp",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100062.0,
-    "playerName": "Tora Suber",
-    "team": "Charlotte Sting",
     "GP": 28,
     "PTS": 131.0,
     "REB": 42.0,
@@ -985,12 +983,12 @@
     "FTM": 28.0,
     "FTA": 41.0,
     "MIN": 475.7,
-    "position": null
+    "playerName": "Tora Suber",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100063.0,
-    "playerName": "Sharon Manning",
-    "team": "Charlotte Sting",
     "GP": 28,
     "PTS": 137.0,
     "REB": 98.0,
@@ -1004,12 +1002,12 @@
     "FTM": 21.0,
     "FTA": 50.0,
     "MIN": 435.7,
-    "position": null
+    "playerName": "Sharon Manning",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100064.0,
-    "playerName": "Debra Williams",
-    "team": "Charlotte Sting",
     "GP": 10,
     "PTS": 27.0,
     "REB": 13.0,
@@ -1023,12 +1021,12 @@
     "FTM": 1.0,
     "FTA": 2.0,
     "MIN": 116.0,
-    "position": null
+    "playerName": "Debra Williams",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100065.0,
-    "playerName": "Andrea Congreaves",
-    "team": "Charlotte Sting",
     "GP": 28,
     "PTS": 187.0,
     "REB": 133.0,
@@ -1042,12 +1040,12 @@
     "FTM": 43.0,
     "FTA": 56.0,
     "MIN": 660.9,
-    "position": null
+    "playerName": "Andrea Congreaves",
+    "position": "C/PF",
+    "team": "FA"
   },
   {
     "personId": 100066.0,
-    "playerName": "Milica Vukadinovic",
-    "team": "Charlotte Sting",
     "GP": 1,
     "PTS": 3.0,
     "REB": 1.0,
@@ -1061,12 +1059,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 14.4,
-    "position": null
+    "playerName": "Milica Vukadinovic",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100067.0,
-    "playerName": "Katasha Artis",
-    "team": "Charlotte Sting",
     "GP": 20,
     "PTS": 16.0,
     "REB": 16.0,
@@ -1080,12 +1078,12 @@
     "FTM": 8.0,
     "FTA": 15.0,
     "MIN": 111.5,
-    "position": null
+    "playerName": "Katasha Artis",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100071.0,
-    "playerName": "Susie Hopson-Shelton",
-    "team": "Charlotte Sting",
     "GP": 6,
     "PTS": 16.0,
     "REB": 5.0,
@@ -1099,12 +1097,12 @@
     "FTM": 2.0,
     "FTA": 2.0,
     "MIN": 29.1,
-    "position": null
+    "playerName": "Susie Hopson-Shelton",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100072.0,
-    "playerName": "Sheryl Swoopes",
-    "team": "Houston Comets",
     "GP": 9,
     "PTS": 64.0,
     "REB": 15.0,
@@ -1118,12 +1116,12 @@
     "FTM": 10.0,
     "FTA": 14.0,
     "MIN": 129.70000000000002,
-    "position": null
+    "playerName": "Sheryl Swoopes",
+    "position": "SG",
+    "team": "FA"
   },
   {
     "personId": 100073.0,
-    "playerName": "Cynthia Cooper",
-    "team": "Houston Comets",
     "GP": 28,
     "PTS": 621.0,
     "REB": 110.0,
@@ -1137,12 +1135,12 @@
     "FTM": 172.0,
     "FTA": 199.0,
     "MIN": 981.5,
-    "position": null
+    "playerName": "Cynthia Cooper",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100074.0,
-    "playerName": "Wanda Guyton",
-    "team": "Houston Comets",
     "GP": 25,
     "PTS": 171.0,
     "REB": 140.0,
@@ -1156,12 +1154,12 @@
     "FTM": 47.0,
     "FTA": 78.0,
     "MIN": 684.9,
-    "position": null
+    "playerName": "Wanda Guyton",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100075.0,
-    "playerName": "Janeth Arcain",
-    "team": "Houston Comets",
     "GP": 28,
     "PTS": 286.0,
     "REB": 107.0,
@@ -1175,12 +1173,12 @@
     "FTM": 67.0,
     "FTA": 75.0,
     "MIN": 764.7,
-    "position": null
+    "playerName": "Janeth Arcain",
+    "position": "SG",
+    "team": "FA"
   },
   {
     "personId": 100076.0,
-    "playerName": "Tina Thompson",
-    "team": "Houston Comets",
     "GP": 28,
     "PTS": 370.0,
     "REB": 183.0,
@@ -1194,12 +1192,12 @@
     "FTM": 67.0,
     "FTA": 80.0,
     "MIN": 888.6,
-    "position": null
+    "playerName": "Tina Thompson",
+    "position": "SF",
+    "team": "FA"
   },
   {
     "personId": 100077.0,
-    "playerName": "Tammy Jackson",
-    "team": "Houston Comets",
     "GP": 28,
     "PTS": 115.0,
     "REB": 116.0,
@@ -1213,12 +1211,12 @@
     "FTM": 25.0,
     "FTA": 41.0,
     "MIN": 531.8,
-    "position": null
+    "playerName": "Tammy Jackson",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100079.0,
-    "playerName": "Catarina Pollini",
-    "team": "Houston Comets",
     "GP": 13,
     "PTS": 22.0,
     "REB": 12.0,
@@ -1232,12 +1230,12 @@
     "FTM": 6.0,
     "FTA": 12.0,
     "MIN": 93.8,
-    "position": null
+    "playerName": "Catarina Pollini",
+    "position": "PF",
+    "team": "FA"
   },
   {
     "personId": 100081.0,
-    "playerName": "Pietra Gay",
-    "team": "Houston Comets",
     "GP": 5,
     "PTS": 4.0,
     "REB": 3.0,
@@ -1251,12 +1249,12 @@
     "FTM": 2.0,
     "FTA": 5.0,
     "MIN": 12.3,
-    "position": null
+    "playerName": "Pietra Gay",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100083.0,
-    "playerName": "Kim Perrot",
-    "team": "Houston Comets",
     "GP": 28,
     "PTS": 159.0,
     "REB": 75.0,
@@ -1270,12 +1268,12 @@
     "FTM": 15.0,
     "FTA": 37.0,
     "MIN": 694.4,
-    "position": null
+    "playerName": "Kim Perrot",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100084.0,
-    "playerName": "Fran Harris",
-    "team": "Houston Comets",
     "GP": 25,
     "PTS": 104.0,
     "REB": 58.0,
@@ -1289,12 +1287,12 @@
     "FTM": 22.0,
     "FTA": 31.0,
     "MIN": 371.1,
-    "position": null
+    "playerName": "Fran Harris",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100085.0,
-    "playerName": "Yolanda Moore",
-    "team": "Houston Comets",
     "GP": 13,
     "PTS": 16.0,
     "REB": 13.0,
@@ -1308,12 +1306,12 @@
     "FTM": 6.0,
     "FTA": 12.0,
     "MIN": 92.4,
-    "position": null
+    "playerName": "Yolanda Moore",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100086.0,
-    "playerName": "Tiffany Woosley",
-    "team": "Houston Comets",
     "GP": 26,
     "PTS": 76.0,
     "REB": 28.0,
@@ -1327,12 +1325,12 @@
     "FTM": 2.0,
     "FTA": 8.0,
     "MIN": 406.4,
-    "position": null
+    "playerName": "Tiffany Woosley",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100087.0,
-    "playerName": "Janice Braxton",
-    "team": "Cleveland Rockers",
     "GP": 25,
     "PTS": 287.0,
     "REB": 189.0,
@@ -1346,12 +1344,12 @@
     "FTM": 106.0,
     "FTA": 138.0,
     "MIN": 822.4,
-    "position": null
+    "playerName": "Janice Braxton",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100088.0,
-    "playerName": "Michelle Edwards",
-    "team": "Cleveland Rockers",
     "GP": 20,
     "PTS": 203.0,
     "REB": 70.0,
@@ -1365,12 +1363,12 @@
     "FTM": 45.0,
     "FTA": 86.0,
     "MIN": 623.6,
-    "position": null
+    "playerName": "Michelle Edwards",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100089.0,
-    "playerName": "Isabelle Fijalkowski",
-    "team": "Cleveland Rockers",
     "GP": 28,
     "PTS": 332.0,
     "REB": 157.0,
@@ -1384,12 +1382,12 @@
     "FTM": 81.0,
     "FTA": 103.0,
     "MIN": 802.3,
-    "position": null
+    "playerName": "Isabelle Fijalkowski",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100090.0,
-    "playerName": "Lynette Woodard",
-    "team": "Cleveland Rockers",
     "GP": 28,
     "PTS": 217.0,
     "REB": 115.0,
@@ -1403,12 +1401,12 @@
     "FTM": 43.0,
     "FTA": 64.0,
     "MIN": 712.7,
-    "position": null
+    "playerName": "Lynette Woodard",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100091.0,
-    "playerName": "Eva Nemcova",
-    "team": "Cleveland Rockers",
     "GP": 28,
     "PTS": 384.0,
     "REB": 110.0,
@@ -1422,12 +1420,12 @@
     "FTM": 71.0,
     "FTA": 83.0,
     "MIN": 944.3,
-    "position": null
+    "playerName": "Eva Nemcova",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100092.0,
-    "playerName": "Merlakia Jones",
-    "team": "Cleveland Rockers",
     "GP": 28,
     "PTS": 229.0,
     "REB": 80.0,
@@ -1441,12 +1439,12 @@
     "FTM": 40.0,
     "FTA": 56.0,
     "MIN": 587.8,
-    "position": null
+    "playerName": "Merlakia Jones",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100093.0,
-    "playerName": "Tina Nicholson",
-    "team": "Cleveland Rockers",
     "GP": 24,
     "PTS": 48.0,
     "REB": 10.0,
@@ -1460,12 +1458,12 @@
     "FTM": 3.0,
     "FTA": 5.0,
     "MIN": 272.2,
-    "position": null
+    "playerName": "Tina Nicholson",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100094.0,
-    "playerName": "Anita Maxwell",
-    "team": "Cleveland Rockers",
     "GP": 9,
     "PTS": 19.0,
     "REB": 12.0,
@@ -1479,12 +1477,12 @@
     "FTM": 3.0,
     "FTA": 8.0,
     "MIN": 62.0,
-    "position": null
+    "playerName": "Anita Maxwell",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100095.0,
-    "playerName": "Jenny Boucek",
-    "team": "Cleveland Rockers",
     "GP": 10,
     "PTS": 18.0,
     "REB": 10.0,
@@ -1498,12 +1496,12 @@
     "FTM": 4.0,
     "FTA": 7.0,
     "MIN": 111.8,
-    "position": null
+    "playerName": "Jenny Boucek",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100097.0,
-    "playerName": "Rushia Brown",
-    "team": "Cleveland Rockers",
     "GP": 28,
     "PTS": 175.0,
     "REB": 113.0,
@@ -1517,12 +1515,12 @@
     "FTM": 47.0,
     "FTA": 64.0,
     "MIN": 512.2,
-    "position": null
+    "playerName": "Rushia Brown",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100100.0,
-    "playerName": "Adrienne Johnson",
-    "team": "Cleveland Rockers",
     "GP": 25,
     "PTS": 53.0,
     "REB": 22.0,
@@ -1536,12 +1534,12 @@
     "FTM": 7.0,
     "FTA": 9.0,
     "MIN": 194.8,
-    "position": null
+    "playerName": "Adrienne Johnson",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100101.0,
-    "playerName": "Teresa Weatherspoon",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 196.0,
     "REB": 116.0,
@@ -1555,12 +1553,12 @@
     "FTM": 65.0,
     "FTA": 100.0,
     "MIN": 922.2,
-    "position": null
+    "playerName": "Teresa Weatherspoon",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100102.0,
-    "playerName": "Kym Hampton",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 273.0,
     "REB": 163.0,
@@ -1574,12 +1572,12 @@
     "FTM": 73.0,
     "FTA": 114.0,
     "MIN": 663.4,
-    "position": null
+    "playerName": "Kym Hampton",
+    "position": "C",
+    "team": "FA"
   },
   {
     "personId": 100103.0,
-    "playerName": "Vickie Johnson",
-    "team": "New York Liberty",
     "GP": 26,
     "PTS": 249.0,
     "REB": 110.0,
@@ -1593,12 +1591,12 @@
     "FTM": 27.0,
     "FTA": 35.0,
     "MIN": 789.5,
-    "position": null
+    "playerName": "Vickie Johnson",
+    "position": "SG",
+    "team": "FA"
   },
   {
     "personId": 100104.0,
-    "playerName": "Sue Wicks",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 98.0,
     "REB": 94.0,
@@ -1612,12 +1610,12 @@
     "FTM": 20.0,
     "FTA": 31.0,
     "MIN": 330.2,
-    "position": null
+    "playerName": "Sue Wicks",
+    "position": "F",
+    "team": "FA"
   },
   {
     "personId": 100105.0,
-    "playerName": "Sophia Witherspoon",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 407.0,
     "REB": 84.0,
@@ -1631,12 +1629,12 @@
     "FTM": 83.0,
     "FTA": 111.0,
     "MIN": 865.9,
-    "position": null
+    "playerName": "Sophia Witherspoon",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100106.0,
-    "playerName": "Trena Trice-Hill",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 134.0,
     "REB": 68.0,
@@ -1650,12 +1648,12 @@
     "FTM": 30.0,
     "FTA": 45.0,
     "MIN": 342.6,
-    "position": null
+    "playerName": "Trena Trice-Hill",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100107.0,
-    "playerName": "Kisha Ford",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 116.0,
     "REB": 48.0,
@@ -1669,12 +1667,12 @@
     "FTM": 27.0,
     "FTA": 44.0,
     "MIN": 474.5,
-    "position": null
+    "playerName": "Kisha Ford",
+    "position": "F/G",
+    "team": "FA"
   },
   {
     "personId": 100108.0,
-    "playerName": "Rhonda Blades",
-    "team": "New York Liberty",
     "GP": 28,
     "PTS": 80.0,
     "REB": 21.0,
@@ -1688,12 +1686,12 @@
     "FTM": 13.0,
     "FTA": 20.0,
     "MIN": 291.0,
-    "position": null
+    "playerName": "Rhonda Blades",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100109.0,
-    "playerName": "Jasmina Perazic-Gipe",
-    "team": "New York Liberty",
     "GP": 9,
     "PTS": 10.0,
     "REB": 11.0,
@@ -1707,12 +1705,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 47.2,
-    "position": null
+    "playerName": "Jasmina Perazic-Gipe",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100110.0,
-    "playerName": "Cassandra Crumpton-Moorer",
-    "team": "New York Liberty",
     "GP": 2,
     "PTS": 2.0,
     "REB": 2.0,
@@ -1726,12 +1724,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 11.0,
-    "position": null
+    "playerName": "Cassandra Crumpton-Moorer",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100155.0,
-    "playerName": "Nicole Levesque",
-    "team": "Charlotte Sting",
     "GP": 27,
     "PTS": 109.0,
     "REB": 47.0,
@@ -1745,12 +1743,12 @@
     "FTM": 14.0,
     "FTA": 15.0,
     "MIN": 621.1,
-    "position": null
+    "playerName": "Nicole Levesque",
+    "position": "PG",
+    "team": "FA"
   },
   {
     "personId": 100156.0,
-    "playerName": "Heidi Burge",
-    "team": "Los Angeles Sparks",
     "GP": 21,
     "PTS": 80.0,
     "REB": 62.0,
@@ -1764,12 +1762,12 @@
     "FTM": 20.0,
     "FTA": 41.0,
     "MIN": 264.0,
-    "position": null
+    "playerName": "Heidi Burge",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100158.0,
-    "playerName": "Marcie Alberts",
-    "team": "Cleveland Rockers",
     "GP": 5,
     "PTS": 0.0,
     "REB": 1.0,
@@ -1783,12 +1781,12 @@
     "FTM": 0.0,
     "FTA": 0.0,
     "MIN": 30.7,
-    "position": null
+    "playerName": "Marcie Alberts",
+    "position": "G",
+    "team": "FA"
   },
   {
     "personId": 100161.0,
-    "playerName": "Laure Savasta",
-    "team": "Sacramento Monarchs",
     "GP": 14,
     "PTS": 33.0,
     "REB": 7.0,
@@ -1802,12 +1800,12 @@
     "FTM": 7.0,
     "FTA": 9.0,
     "MIN": 155.6,
-    "position": null
+    "playerName": "Laure Savasta",
+    "position": "N/A",
+    "team": "FA"
   },
   {
     "personId": 100162.0,
-    "playerName": "Margo Clark",
-    "team": "Sacramento Monarchs",
     "GP": 4,
     "PTS": 7.0,
     "REB": 6.0,
@@ -1821,12 +1819,12 @@
     "FTM": 1.0,
     "FTA": 2.0,
     "MIN": 42.0,
-    "position": null
+    "playerName": "Margo Clark",
+    "position": null,
+    "team": null
   },
   {
     "personId": 100374.0,
-    "playerName": "Penny Moore",
-    "team": "Charlotte Sting",
     "GP": 28,
     "PTS": 135.0,
     "REB": 72.0,
@@ -1840,6 +1838,8 @@
     "FTM": 16.0,
     "FTA": 31.0,
     "MIN": 539.8,
-    "position": null
+    "playerName": "Penny Moore",
+    "position": "F",
+    "team": "FA"
   }
 ]
