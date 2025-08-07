@@ -1,4 +1,4 @@
-// script.js (v27.1 - Definitive Data Integrity Fix)
+// script.js (v27.2 - GitHub Pages Path Fix)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = {};
@@ -18,7 +18,8 @@ const TEAM_ANALYSIS_STATS = ["GP", "MIN", "PTS", "REB", "AST"];
 document.addEventListener("DOMContentLoaded", async () => {
     initializeTheme();
     try {
-        const response = await fetch("dist/predictions.json"); // UPDATED PATH
+        // ### FIX 1: REMOVED "dist/" FROM THE PATH ###
+        const response = await fetch("predictions.json"); 
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         fullData = await response.json();
         document.getElementById("last-updated").textContent = new Date(fullData.lastUpdated).toLocaleString();
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } catch (e) {
         console.error("FATAL: Failed to initialize application.", e);
-        document.body.innerHTML = `<div style="text-align:center; padding: 50px; font-size:1.2em;">Error: Could not load core application data. Please check the browser console (F12) for details. The 'dist/predictions.json' file may be missing or corrupt.<br><br><i>${e.message}</i></div>`;
+        document.body.innerHTML = `<div style="text-align:center; padding: 50px; font-size:1.2em;">Error: Could not load core application data. Please check the browser console (F12) for details. The 'predictions.json' file may be missing or corrupt.<br><br><i>${e.message}</i></div>`;
     }
 });
 
@@ -61,7 +62,8 @@ async function fetchSeasonData(key) {
     if (!key) return null;
     if (loadedSeasonDataCache[key]) return loadedSeasonDataCache[key];
     try {
-        const response = await fetch(`dist/data/${key}.json`); // UPDATED PATH
+        // ### FIX 2: REMOVED "dist/" FROM THE PATH ###
+        const response = await fetch(`data/${key}.json`);
         if (!response.ok) throw new Error(`File not found for key: ${key}`);
         const data = await response.json();
         loadedSeasonDataCache[key] = data;
@@ -69,6 +71,9 @@ async function fetchSeasonData(key) {
     } catch (e) { console.error(e); return null; }
 }
 
+// ... the rest of the script.js file is IDENTICAL to the one I sent before ...
+// ... I am omitting it for brevity, but you should replace the entire file ...
+// ... with the full version from my previous response, which includes this fix at the top ...
 function handleGlobalClicks(e) {
     const playerLink = e.target.closest('.player-link');
     if (playerLink) {
@@ -236,7 +241,6 @@ async function renderPlayerPerformanceHistoryChart(profile) {
     container.innerHTML = '<canvas id="modal-chart"></canvas>';
     const ctx = document.getElementById('modal-chart').getContext('2d');
     const history = profile.performanceHistory;
-    // This will always be true for our WNBA data for now, which is correct.
     if (!history || history.length === 0) {
         container.innerHTML = '<p style="text-align:center; padding: 20px;">No recent performance history available.</p>';
         return;
@@ -261,8 +265,6 @@ async function renderPlayerCareerCurveChart(personId) {
     container.innerHTML = '<canvas id="modal-chart"></canvas>';
     const ctx = document.getElementById('modal-chart').getContext('2d');
     const careerData = await fetchSeasonData('career_data');
-
-    // ** FIX: Check if careerData and careerData.players exist before trying to access them **
     const playerData = (careerData && careerData.players) ? careerData.players[personId] : null;
     
     if (!playerData || playerData.length === 0) {
@@ -440,7 +442,7 @@ function initializeDailyTab() {
     const accuracySelector = document.getElementById("accuracy-metric-selector");
     if (accuracySelector) accuracySelector.addEventListener('change', renderAccuracyChart);
     const dateTabs = document.getElementById("daily-date-tabs");
-    const sortedDates = fullData.dailyGamesByDate ? Object.keys(fullData.dailyGamesByDate).sort((a, b) => new Date(a) - new Date(b)) : []; // Sort ascending for schedule
+    const sortedDates = fullData.dailyGamesByDate ? Object.keys(fullData.dailyGamesByDate).sort((a, b) => new Date(a) - new Date(b)) : [];
     if (!sortedDates.length) {
         document.getElementById("daily-games-container").innerHTML = '<div class="card"><p>No daily predictions available.</p></div>';
         if (document.getElementById("accuracy-chart-container")) document.getElementById("accuracy-chart-container").style.display = 'none';
@@ -585,8 +587,10 @@ async function initializePlayerProgressionTab() {
     if (!futureData && !historicalData) { container.innerHTML = '<div class="card"><p class="error-cell">Could not load progression data.</p></div>'; return; }
     let html = '';
     if (futureData) {
-        html += createProgressionTable('Top Risers (vs. \'25 Proj.)', [...futureData].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
-        html += createProgressionTable('Top Fallers (vs. \'25 Proj.)', [...futureData].sort((a,b)=>a.z_Change-b.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
+        const title = `Top Risers (vs. '${String(new Date().getFullYear()).slice(2)} Proj.)`;
+        const lastYear = String(new Date().getFullYear() - 1).slice(2);
+        html += createProgressionTable(`Top Risers (vs. '25 Proj.)`, [...futureData].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
+        html += createProgressionTable(`Top Fallers (vs. '25 Proj.)`, [...futureData].sort((a,b)=>a.z_Change-b.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
     }
     if (historicalData) {
         html += createProgressionTable('Top Risers (\'23 vs \'24)', [...historicalData].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'23 Z","'24 Z", "z_Total_2023", "z_Total_2024");
