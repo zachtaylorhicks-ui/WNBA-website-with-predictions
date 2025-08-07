@@ -223,34 +223,22 @@ function renderDailyGamesForDate(date) {
         container.innerHTML = '<div class="card"><p>No games for this date.</p></div>';
         return;
     }
-    
     const getBadgeClass = pts => pts > 20 ? 'elite' : pts > 15 ? 'very-good' : pts > 10 ? 'good' : 'average';
-    
     container.innerHTML = games.map(game => {
         const [team1, team2] = game.projections;
         let scoreHTML = `Predicted: <strong>${team1.totalPoints} - ${team2.totalPoints}</strong>`;
-        
         if (game.grade?.isGraded && game.grade.gameSummary?.actual) {
             const teamNameMap = fullData.teamNameMap || {};
             const team1Abbr = teamNameMap[team1.teamName];
             const team2Abbr = teamNameMap[team2.teamName];
-
             const actual1 = game.grade.gameSummary.actual[team1Abbr] || 0;
             const actual2 = game.grade.gameSummary.actual[team2Abbr] || 0;
             const predicted1 = game.grade.gameSummary.predicted[team1Abbr] || 0;
             const predicted2 = game.grade.gameSummary.predicted[team2Abbr] || 0;
-            
             const correctWinnerClass = game.grade.correctWinner ? 'prediction-correct' : 'prediction-incorrect';
-
             scoreHTML = `Predicted: <strong class="${correctWinnerClass}">${predicted1} - ${predicted2}</strong><span class="actual-score">Actual: <strong>${actual1} - ${actual2}</strong></span>`;
         }
-
-        const createCompactSummary = (teamData) => (teamData.players || [])
-            .sort((a, b) => (b.Predicted_Minutes || 0) - (a.Predicted_Minutes || 0))
-            .slice(0, 5)
-            .map(p => `<div class="compact-player-badge ${getBadgeClass(p.points)}" title="${p.Player_Name} (Proj. ${p.points} pts)">${p.Player_Name.split(' ').pop()}</div>`)
-            .join('');
-
+        const createCompactSummary = (teamData) => (teamData.players || []).sort((a, b) => (b.Predicted_Minutes || 0) - (a.Predicted_Minutes || 0)).slice(0, 5).map(p => `<div class="compact-player-badge ${getBadgeClass(p.points)}" title="${p.Player_Name} (Proj. ${p.points} pts)">${p.Player_Name.split(' ').pop()}</div>`).join('');
         return `<div class="matchup-card"><div class="matchup-header"><span class="matchup-teams">${team1.teamName} vs ${team2.teamName}</span><div class="matchup-scores">${scoreHTML}</div></div><div class="matchup-compact-summary"><div class="compact-team">${createCompactSummary(team1)}</div><div class="compact-team">${createCompactSummary(team2)}</div></div><div class="matchup-body">${createTeamTableHTML(team1, game.grade)}${createTeamTableHTML(team2, game.grade)}</div><div class="matchup-footer"><button class="button-outline expand-details-btn">Show Details</button></div></div>`;
     }).join('');
 }
@@ -268,7 +256,39 @@ function createTeamTableHTML(teamData, gameGrade) {
     return `<div class="team-box-score"><h3 class="team-header">${teamData.teamName}</h3><table class="daily-table"><thead><tr><th style="text-align:left;">Player</th><th></th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th></tr></thead><tbody>${playersHtml}</tbody></table></div>`;
 }
 
-function renderAccuracyChart() { const container = document.getElementById("accuracy-chart-container"); if (!container) return; const chartCanvas = document.getElementById('accuracy-chart'); if (!chartCanvas || !fullData.historicalGrades || fullData.historicalGrades.length < 1) { container.style.display = 'none'; return; } container.style.display = 'block'; const ctx = chartCanvas.getContext('2d'), metric = document.getElementById('accuracy-metric-selector').value; const gradesByDate = fullData.historicalGrades.reduce((acc, g) => { (acc[g.date] = acc[g.date] || []).push(g); return acc; }, {}); const sortedDates = Object.keys(gradesByDate).sort((a, b) => new Date(a) - new Date(b)); let chartConfig; if (metric === 'cumulativeWinLoss') { let wins = 0, total = 0; const cumulativeData = sortedDates.map(date => { wins += gradesByDate[date].reduce((s, g) => s + (g.correctWinner ? 1 : 0), 0); total += gradesByDate[date].length; return { x: new Date(date), y: total > 0 ? (wins / total) * 100 : 0 }; }); chartConfig = { type: 'line', data: { datasets: [{ label: 'Cumulative W/L %', data: cumulativeData, borderColor: 'var(--primary-color)' }] }, options: { scales: { y: { min: 0, max: 100, ticks: { callback: v => v + '%' } }, x: { type: 'time', time: { unit: 'day' } } } } }; } else { const barData = sortedDates.map(date => { const values = gradesByDate[date].map(g => g[metric]).filter(v => v !== undefined && v !== null); return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0; }); chartConfig = { type: 'bar', data: { labels: sortedDates.map(d => new Date(d + "T00:00:00").toLocaleDateString('en-US', { month: 'short', day: 'numeric' })), datasets: [{ label: `Avg Daily ${metric}`, data: barData, backgroundColor: 'var(--primary-color)' }] } }; } if (accuracyChartInstance) accuracyChartInstance.destroy(); accuracyChartInstance = new Chart(ctx, { ...chartConfig, options: { ...chartConfig.options, responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } } }); }
+function renderAccuracyChart() {
+    const container = document.getElementById("accuracy-chart-container"); if (!container) return;
+    const chartCanvas = document.getElementById('accuracy-chart'); if (!chartCanvas || !fullData.historicalGrades || fullData.historicalGrades.length < 1) { container.style.display = 'none'; return; }
+    container.style.display = 'block';
+    const ctx = chartCanvas.getContext('2d');
+    const metric = document.getElementById('accuracy-metric-selector').value;
+    const gradesByDate = fullData.historicalGrades.reduce((acc, g) => { (acc[g.date] = acc[g.date] || []).push(g); return acc; }, {});
+    const sortedDates = Object.keys(gradesByDate).sort((a, b) => new Date(a) - new Date(b));
+    let chartConfig;
+    if (metric === 'cumulativeWinLoss') {
+        let wins = 0, total = 0;
+        const cumulativeData = sortedDates.map(date => {
+            wins += gradesByDate[date].reduce((s, g) => s + (g.correctWinner ? 1 : 0), 0);
+            total += gradesByDate[date].length;
+            return { x: new Date(date), y: total > 0 ? (wins / total) * 100 : 0 };
+        });
+        chartConfig = { type: 'line', data: { datasets: [{ label: 'Cumulative W/L %', data: cumulativeData, borderColor: 'var(--primary-color)' }] }, options: { scales: { y: { min: 0, max: 100, ticks: { callback: v => v + '%' } }, x: { type: 'time', time: { unit: 'day' } } } } };
+    } else { // Handle MAE metrics
+        const barData = sortedDates.map(date => {
+            const values = gradesByDate[date].map(g => g[metric]).filter(v => v !== undefined && v !== null);
+            return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+        });
+        chartConfig = {
+            type: 'bar',
+            data: {
+                labels: sortedDates.map(d => new Date(d + "T00:00:00").toLocaleDateString('en-US', { month: 'short', day: 'numeric' })),
+                datasets: [{ label: `Avg Daily ${metric} MAE`, data: barData, backgroundColor: 'var(--primary-color)' }]
+            }
+        };
+    }
+    if (accuracyChartInstance) accuracyChartInstance.destroy();
+    accuracyChartInstance = new Chart(ctx, { ...chartConfig, options: { ...chartConfig.options, responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } } });
+}
 
 // --- TEAM ANALYSIS TAB ---
 function initializeTeamAnalysisTab() { const selector = document.getElementById("team-analysis-source-selector"); const manifest = fullData.seasonLongDataManifest || {}; const sources = Object.keys(manifest).filter(key => key.endsWith('_per_game')).sort((a,b) => b.localeCompare(a)); selector.innerHTML = sources.map(key => `<option value="${key}">${manifest[key].label}</option>`).join(''); selector.addEventListener('change', renderTeamAnalysis); renderTeamAnalysis(); }
@@ -312,5 +332,4 @@ async function renderCareerChart() {
         if (careerData.by_position) { ['G', 'F', 'C'].forEach(pos => { if(careerData.by_position[pos]) { datasets.push({ label: `Avg. ${pos}`, data: careerData.by_position[pos].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: averageColors[pos], borderWidth: 2, borderDash: [5, 5], pointRadius: 0, order: -5 }); } }); }
         if (draftFilter !== 'All' && careerData.by_draft_category?.[draftFilter]) { datasets.push({ label: `Avg. ${draftFilter}`, data: careerData.by_draft_category[draftFilter].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: averageColors.Draft, borderWidth: 2.5, pointRadius: 0, order: -6 }); }
     }
-    careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: { duration: 500 }, plugins: { legend: { labels: { color: 'var(--text-primary)', filter: item => item.label && !item.label.startsWith('Player ') } }, decimation: { enabled: true, algorithm: 'lttb', samples: 200 } }, scales: { x: { type: 'linear', title: { display: true, text: xAxis === 'age' ? 'Player Age' : 'WNBA Games Played', color: 'var(--text-secondary)'}, ticks: {color: 'var(--text-secondary)'} }, y: { title: { display: true, text: `Monthly Average ${stat}`, color: 'var(--text-secondary)' }, ticks: {color: 'var(--text-secondary)'} } } } });
-}
+    careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: { duration: 500 }, plugins: { legend: { labels: { color: 'var(--text-primary)', filter: item => item.label && !item.label.startsWith('Player ') } }, decimation: { enabled: true, algorithm: 'lttb', samples: 200 } }, scales: { x: { type: 'linear', title: { dis
