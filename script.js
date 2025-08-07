@@ -1,4 +1,4 @@
-// script.js (v28.4 - Final Path Fixes for GitHub Pages)
+// script.js (v29.0 - Step 1: Fix Season-Long Data Loading)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = {};
@@ -17,7 +17,6 @@ const ALL_STAT_KEYS = ["PTS", "REB", "AST", "STL", "BLK", "3PM", "TOV", "FG_impa
 document.addEventListener("DOMContentLoaded", async () => {
     initializeTheme();
     try {
-        // *** FIX: Corrected path for your GitHub structure ***
         const response = await fetch("predictions.json");
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         fullData = await response.json();
@@ -61,7 +60,6 @@ async function fetchSeasonData(key) {
     if (!key) return null;
     if (loadedSeasonDataCache[key]) return loadedSeasonDataCache[key];
     try {
-        // *** FIX: Corrected path for your GitHub structure ***
         const response = await fetch(`data/${key}.json`);
         if (!response.ok) throw new Error(`File not found for key: ${key}`);
         const data = await response.json();
@@ -168,26 +166,100 @@ async function renderPlayerCareerCurveChart(personId) {
 }
 
 // --- SEASON-LONG TAB ---
+// ### START OF FIX FOR STEP 1 ###
 function initializeSeasonTab() {
-    const manifest = fullData.seasonLongDataManifest || {}; const seasonSelector = document.getElementById("season-selector"); const splitSelector = document.getElementById("split-selector"); const sourcesBySeason = {};
-    for (const key in manifest) { const match = key.match(/(projections_(\d{4})|\d{4})/); if (!match) continue; const year = match[2] || match[1]; if (!sourcesBySeason[year]) sourcesBySeason[year] = []; let splitKey = "projections"; if (key.includes('full')) splitKey = 'full'; const sourceObject = { key: key.replace(/_full_per_game|_full_total/g, ''), label: manifest[key].label, split: splitKey }; if (!sourcesBySeason[year].some(s => s.key === sourceObject.key)) { sourcesBySeason[year].push(sourceObject); } }
-    const sortedSeasons = Object.keys(sourcesBySeason).sort((a, b) => a.includes('proj') ? -1 : b.includes('proj') ? 1 : b.localeCompare(a));
-    seasonSelector.innerHTML = sortedSeasons.map(year => `<option value="${year}">${sourcesBySeason[year][0].label.replace(' Full Season', '')}</option>`).join('');
-    function updateSplitSelector() { const selectedYear = seasonSelector.value; const splits = sourcesBySeason[selectedYear]; const splitLabels = { 'projections': 'Projections', 'full': 'Full Season' }; splitSelector.innerHTML = splits.map(s => `<option value="${s.key}">${splitLabels[s.split]}</option>`).join(''); }
-    seasonSelector.addEventListener('change', () => { updateSplitSelector(); renderSeasonTable(); }); splitSelector.addEventListener('change', renderSeasonTable); updateSplitSelector();
+    const manifest = fullData.seasonLongDataManifest || {};
+    const seasonSelector = document.getElementById("season-selector");
+    const splitSelector = document.getElementById("split-selector");
+
+    // This part remains the same
+    const sourcesBySeason = {};
+    for (const key in manifest) {
+        const match = key.match(/(projections_(\d{4})|\d{4})/);
+        if (!match) continue;
+        const year = match[2] || match[1];
+        if (!sourcesBySeason[year]) sourcesBySeason[year] = [];
+
+        // We store the full key now, which is simpler and more robust
+        const sourceObject = {
+            key: key, // Store the full original key like 'projections_2025_full_per_game'
+            label: manifest[key].label,
+            split: manifest[key].split
+        };
+        sourcesBySeason[year] = sourceObject; // Directly assign since there's one source per year now
+    }
+    
+    // Populate the season selector
+    const sortedSeasons = Object.keys(sourcesBySeason).sort((a, b) => b.localeCompare(a));
+    seasonSelector.innerHTML = sortedSeasons.map(year => `<option value="${year}">${sourcesBySeason[year].label}</option>`).join('');
+
+    // The split selector is now simplified as it's tied to the main season selection
+    // We can hide it or disable it if there's only one split type per season (full)
+    const splitContainer = document.getElementById("split-selector").parentElement;
+    splitContainer.style.display = 'none'; // Hide the split selector as it's redundant
+
     document.getElementById("category-weights-grid").innerHTML = ALL_STAT_KEYS.map(key => `<div class="category-item"><label><input type="checkbox" data-key="${key}" checked> ${STAT_CONFIG[key].name}</label></div>`).join('');
-    document.getElementById("season-controls")?.addEventListener("change", renderSeasonTable); document.getElementById("search-player")?.addEventListener("input", renderSeasonTable); document.getElementById("predictions-thead")?.addEventListener("click", handleSortSeason); renderSeasonTable();
+    
+    // Add event listeners
+    document.getElementById("season-controls")?.addEventListener("change", renderSeasonTable);
+    document.getElementById("search-player")?.addEventListener("input", renderSeasonTable);
+    document.getElementById("predictions-thead")?.addEventListener("click", handleSortSeason);
+    
+    // Initial render
+    renderSeasonTable();
 }
+
 async function renderSeasonTable() {
-    const sourceBaseKey = document.getElementById("split-selector").value; const calcMode = document.getElementById("calculation-mode").value; const sourceKey = `${sourceBaseKey}_${calcMode}`;
-    const settings = { showCount: parseInt(document.getElementById("show-count").value, 10), searchTerm: document.getElementById("search-player").value.toLowerCase().trim(), activeCategories: new Set(Array.from(document.querySelectorAll("#category-weights-grid input:checked")).map(cb => cb.dataset.key)) };
-    const tbody = document.getElementById("predictions-tbody"); tbody.innerHTML = `<tr><td colspan="17" style="text-align:center;">Loading player data...</td></tr>`;
-    let data = await fetchSeasonData(sourceKey); if (!data) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">Could not load data.</td></tr>`; return; }
-    let processedData = data.map(player => ({...player, custom_z_score_display: Array.from(settings.activeCategories).reduce((acc, catKey) => acc + (player[STAT_CONFIG[catKey].zKey] || 0), 0) }));
-    if (settings.searchTerm) { processedData = processedData.filter(p => p.playerName?.toLowerCase().includes(settings.searchTerm)); }
-    currentSort.data = processedData; currentSort.column = 'custom_z_score_display'; currentSort.direction = 'desc';
-    sortSeasonData(); renderSeasonTableBody(settings.showCount);
+    const selectedYear = document.getElementById("season-selector").value;
+    const manifest = fullData.seasonLongDataManifest || {};
+    
+    // Find the correct base key from the manifest based on the selected year
+    const sourceKeyPrefix = Object.keys(manifest).find(k => k.includes(selectedYear));
+    
+    if (!sourceKeyPrefix) {
+        console.error(`No manifest entry found for year: ${selectedYear}`);
+        return;
+    }
+
+    const calcMode = document.getElementById("calculation-mode").value; // 'per_game' or 'total'
+
+    // *** THE CORE FIX ***
+    // Construct the final key correctly. We replace the last part of the key with the selected mode.
+    const sourceKey = sourceKeyPrefix.replace(/per_game|total$/, calcMode);
+    
+    const settings = {
+        showCount: parseInt(document.getElementById("show-count").value, 10),
+        searchTerm: document.getElementById("search-player").value.toLowerCase().trim(),
+        activeCategories: new Set(Array.from(document.querySelectorAll("#category-weights-grid input:checked")).map(cb => cb.dataset.key))
+    };
+    
+    const tbody = document.getElementById("predictions-tbody");
+    tbody.innerHTML = `<tr><td colspan="17" style="text-align:center;">Loading player data...</td></tr>`;
+    
+    let data = await fetchSeasonData(sourceKey);
+    if (!data) {
+        tbody.innerHTML = `<tr><td colspan="17" class="error-cell">Could not load data. Check console for details.</td></tr>`;
+        return;
+    }
+
+    let processedData = data.map(player => ({
+        ...player,
+        custom_z_score_display: Array.from(settings.activeCategories).reduce((acc, catKey) => acc + (player[STAT_CONFIG[catKey].zKey] || 0), 0)
+    }));
+
+    if (settings.searchTerm) {
+        processedData = processedData.filter(p => p.playerName?.toLowerCase().includes(settings.searchTerm));
+    }
+
+    currentSort.data = processedData;
+    currentSort.column = 'custom_z_score_display';
+    currentSort.direction = 'desc';
+
+    sortSeasonData();
+    renderSeasonTableBody(settings.showCount);
 }
+// ### END OF FIX FOR STEP 1 ###
+
 function handleSortSeason(e) { const th = e.target.closest("th"); const sortKey = th?.dataset.sortKey; if (!sortKey) return; if (currentSort.column === sortKey) { currentSort.direction = currentSort.direction === "desc" ? "asc" : "desc"; } else { currentSort.column = sortKey; currentSort.direction = ["playerName", "position", "team"].includes(sortKey) ? "asc" : "desc"; } sortSeasonData(); renderSeasonTableBody(parseInt(document.getElementById("show-count").value, 10)); }
 function sortSeasonData() { const { column, direction, data } = currentSort; if (!data) return; const mod = direction === "asc" ? 1 : -1; data.sort((a, b) => { let valA = a[column] ?? (typeof a[column] === 'string' ? '' : -Infinity); let valB = b[column] ?? (typeof b[column] === 'string' ? '' : -Infinity); if (typeof valA === 'string') return valA.localeCompare(valB) * mod; return (valA - valB) * mod; }); }
 function renderSeasonTableBody(showCount) {
@@ -218,27 +290,18 @@ function renderDailyGamesForDate(date) {
         const homeTeamAbbr = (Object.entries(fullData.playerProfiles).find(([pid,p])=>p.playerName === team1?.players?.[0]?.Player_Name)?.[1].team);
         const awayTeamAbbr = (Object.entries(fullData.playerProfiles).find(([pid,p])=>p.playerName === team2?.players?.[0]?.Player_Name)?.[1].team);
         
-        let scoreHTML = `<div class="score-prediction-text">Predicted: <strong>${team1.totalPoints} - ${team2.totalPoints}</strong></div>`;
+        let scoreHTML = `Predicted: <strong>${team1.totalPoints} - ${team2.totalPoints}</strong>`;
         if (game.grade?.isGraded && game.grade.gameSummary?.actual) {
             const actual1 = game.grade.gameSummary.actual[homeTeamAbbr] || 0;
             const actual2 = game.grade.gameSummary.actual[awayTeamAbbr] || 0;
-            const pred1 = game.grade.gameSummary.predicted[homeTeamAbbr] || 0;
-            const pred2 = game.grade.gameSummary.predicted[awayTeamAbbr] || 0;
-            const maxScore = Math.max(actual1, actual2, pred1, pred2, 1);
+            const predicted1 = game.grade.gameSummary.predicted[homeTeamAbbr] || 0;
+            const predicted2 = game.grade.gameSummary.predicted[awayTeamAbbr] || 0;
             
-            scoreHTML = `
-                <div class="score-comparison-chart">
-                    <div class="score-bar-group">
-                        <div class="score-label">${team1.teamName}</div>
-                        <div class="score-bar actual-bar" style="width: ${(actual1 / maxScore) * 100}%" data-score="${actual1}"></div>
-                        <div class="score-bar predicted-bar" style="width: ${(pred1 / maxScore) * 100}%" data-score="${pred1}"></div>
-                    </div>
-                    <div class="score-bar-group">
-                        <div class="score-label">${team2.teamName}</div>
-                        <div class="score-bar actual-bar" style="width: ${(actual2 / maxScore) * 100}%" data-score="${actual2}"></div>
-                        <div class="score-bar predicted-bar" style="width: ${(pred2 / maxScore) * 100}%" data-score="${pred2}"></div>
-                    </div>
-                </div>`;
+            const predWinner = predicted1 > predicted2 ? homeTeamAbbr : awayTeamAbbr;
+            const actualWinner = actual1 > actual2 ? homeTeamAbbr : awayTeamAbbr;
+            const correctWinnerClass = predWinner === actualWinner ? 'prediction-correct' : 'prediction-incorrect';
+
+            scoreHTML = `Predicted: <strong class="${correctWinnerClass}">${predicted1} - ${predicted2}</strong><span class="actual-score">Actual: <strong>${actual1} - ${actual2}</strong></span>`;
         }
         const createCompactSummary = (teamData) => (teamData.players || []).sort((a, b) => (b.Predicted_Minutes || 0) - (a.Predicted_Minutes || 0)).slice(0, 5).map(p => `<div class="compact-player-badge ${getBadgeClass(p.points)}" title="${p.Player_Name} (Proj. ${p.points} pts)">${p.Player_Name.split(' ').pop()}</div>`).join('');
         return `<div class="matchup-card"><div class="matchup-header"><span class="matchup-teams">${team1.teamName} vs ${team2.teamName}</span><div class="matchup-scores">${scoreHTML}</div></div><div class="matchup-compact-summary"><div class="compact-team">${createCompactSummary(team1)}</div><div class="compact-team">${createCompactSummary(team2)}</div></div><div class="matchup-body">${createTeamTableHTML(team1, game.grade)}${createTeamTableHTML(team2, game.grade)}</div><div class="matchup-footer"><button class="button-outline expand-details-btn">Show Details</button></div></div>`;
