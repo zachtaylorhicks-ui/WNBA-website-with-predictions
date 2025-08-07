@@ -28,3 +28,4 @@ jobs:
           commit_message: "Automated Hourly Injury Update"
           file_pattern: 'database/live_injuries.json'
           branch: dev-automation
+          token: ${{ secrets.GITHUB_TOKEN }}

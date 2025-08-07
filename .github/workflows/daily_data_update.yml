@@ -28,3 +28,4 @@ jobs:
           commit_message: "Automated Daily Data Update"
           file_pattern: 'database/*.csv database/*.json'
           branch: dev-automation
+          token: ${{ secrets.GITHUB_TOKEN }}
