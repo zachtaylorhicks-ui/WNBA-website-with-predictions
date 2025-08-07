@@ -151,14 +151,15 @@
                         <label for="career-xaxis-selector">X-AXIS</label>
                         <select id="career-xaxis-selector">
                             <option value="x_games" selected>Games Played</option>
-                            <option value="age">Player Age</option>
+                            <!-- REMOVED 'Player Age' option as data is not available -->
                         </select>
                     </div>
                     <div class="filter-group search-group">
                         <label for="career-search-player">HIGHLIGHT PLAYER</label>
-                        <input type="text" id="career-search-player" placeholder="e.g., Caitlin Clark">
+                        <input type="text" id="career-search-player" placeholder="e.g., Diana Taurasi">
                     </div>
                 </div>
+                <!-- REMOVED non-functional toggle switches for cohorts (Position, Draft Year) -->
             </div>
             <div id="career-chart-wrapper" class="card">
                 <canvas id="career-chart"></canvas>
@@ -175,6 +176,6 @@
         <p>© 2024 Advanced WNBA Fantasy Projections. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
