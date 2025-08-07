@@ -145,6 +145,8 @@
                             <option value="AST">Assists</option>
                             <option value="STL">Steals</option>
                             <option value="BLK">Blocks</option>
+                            <!-- ### FINAL HTML FIX: Added 3PM ### -->
+                            <option value="3PM">3-Pointers</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -159,8 +161,6 @@
                         <input type="text" id="career-search-player" placeholder="e.g., Caitlin Clark">
                     </div>
                 </div>
-                
-                <!-- ### START OF FIX FOR STEP 4 ### -->
                 <div class="bottom-controls" style="margin-top: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
                     <div class="filter-group">
                         <label for="career-draft-filter">FILTER BY DRAFT CLASS</label>
@@ -194,7 +194,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- ### END OF FIX FOR STEP 4 ### -->
             </div>
             <div id="career-chart-wrapper" class="card">
                 <canvas id="career-chart"></canvas>
