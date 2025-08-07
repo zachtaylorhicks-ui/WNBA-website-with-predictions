@@ -1,922 +1,922 @@
 [
   {
-    "personId":201886.0,
-    "playerName":"DeWanna Bonner",
-    "team":"Connecticut Sun",
-    "z_Total_2024":6.118213056,
-    "z_Total_2025_Proj":2.5455072622,
-    "z_Change":-3.5727057938
-  },
-  {
-    "personId":202250.0,
-    "playerName":"Tina Charles",
-    "team":"Atlanta Dream",
-    "z_Total_2024":4.4906788287,
-    "z_Total_2025_Proj":-3.1822958966,
-    "z_Change":-7.6729747254
-  },
-  {
-    "personId":202252.0,
-    "playerName":"Alysha Clark",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":0.6055247875,
-    "z_Total_2025_Proj":-2.1232177634,
-    "z_Change":-2.7287425509
-  },
-  {
-    "personId":202641.0,
-    "playerName":"Sydney Colson",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":-3.3258418437,
-    "z_Total_2025_Proj":-2.546277275,
-    "z_Change":0.7795645688
-  },
-  {
-    "personId":202664.0,
-    "playerName":"Courtney Vandersloot",
-    "team":"New York Liberty",
-    "z_Total_2024":0.1246951894,
-    "z_Total_2025_Proj":1.9403473549,
-    "z_Change":1.8156521655
-  },
-  {
-    "personId":203014.0,
-    "playerName":"Nneka Ogwumike",
-    "team":"Seattle Storm",
-    "z_Total_2024":9.9652741188,
-    "z_Total_2025_Proj":7.7423807314,
-    "z_Change":-2.2228933874
-  },
-  {
-    "personId":203024.0,
-    "playerName":"Damiris Dantas",
-    "team":"Indiana Fever",
-    "z_Total_2024":-2.2420521692,
-    "z_Total_2025_Proj":0.5346181897,
-    "z_Change":2.7766703588
-  },
-  {
-    "personId":203026.0,
-    "playerName":"Tiffany Hayes",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":1.9145242936,
-    "z_Total_2025_Proj":1.6185026757,
-    "z_Change":-0.2960216179
-  },
-  {
-    "personId":203398.0,
-    "playerName":"Brittney Griner",
-    "team":"Phoenix Mercury",
-    "z_Total_2024":8.2284209419,
-    "z_Total_2025_Proj":-0.076521985,
-    "z_Change":-8.304942927
-  },
-  {
-    "personId":203400.0,
-    "playerName":"Skylar Diggins",
-    "team":"Seattle Storm",
-    "z_Total_2024":7.3117841564,
-    "z_Total_2025_Proj":1.3462630681,
-    "z_Change":-5.9655210883
-  },
-  {
-    "personId":203825.0,
-    "playerName":"Kayla McBride",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":5.993518065,
-    "z_Total_2025_Proj":1.3000408297,
-    "z_Change":-4.6934772353
-  },
-  {
-    "personId":203826.0,
-    "playerName":"Alyssa Thomas",
-    "team":"Connecticut Sun",
-    "z_Total_2024":3.7524354177,
-    "z_Total_2025_Proj":2.8340194156,
-    "z_Change":-0.9184160021
-  },
-  {
-    "personId":203827.0,
-    "playerName":"Natasha Howard",
-    "team":"Dallas Wings",
-    "z_Total_2024":3.0418471966,
-    "z_Total_2025_Proj":1.7983187013,
-    "z_Change":-1.2435284953
+    "personId": 201886.0,
+    "playerName": "DeWanna Bonner",
+    "team": "Connecticut Sun",
+    "z_Total_2024": 6.118213055971798,
+    "z_Total_2025_Proj": 2.5455072621622667,
+    "z_Change": -3.572705793809531
+  },
+  {
+    "personId": 202250.0,
+    "playerName": "Tina Charles",
+    "team": "Atlanta Dream",
+    "z_Total_2024": 4.49067882870685,
+    "z_Total_2025_Proj": -3.1822958966496806,
+    "z_Change": -7.67297472535653
+  },
+  {
+    "personId": 202252.0,
+    "playerName": "Alysha Clark",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": 0.6055247875150198,
+    "z_Total_2025_Proj": -2.1232177633500884,
+    "z_Change": -2.728742550865108
+  },
+  {
+    "personId": 202641.0,
+    "playerName": "Sydney Colson",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": -3.325841843711645,
+    "z_Total_2025_Proj": -2.54627727495481,
+    "z_Change": 0.7795645687568351
+  },
+  {
+    "personId": 202664.0,
+    "playerName": "Courtney Vandersloot",
+    "team": "New York Liberty",
+    "z_Total_2024": 0.12469518940635593,
+    "z_Total_2025_Proj": 1.940347354934481,
+    "z_Change": 1.815652165528125
+  },
+  {
+    "personId": 203014.0,
+    "playerName": "Nneka Ogwumike",
+    "team": "Seattle Storm",
+    "z_Total_2024": 9.96527411879744,
+    "z_Total_2025_Proj": 7.742380731391529,
+    "z_Change": -2.222893387405911
+  },
+  {
+    "personId": 203024.0,
+    "playerName": "Damiris Dantas",
+    "team": "Indiana Fever",
+    "z_Total_2024": -2.242052169152463,
+    "z_Total_2025_Proj": 0.5346181896956296,
+    "z_Change": 2.7766703588480923
+  },
+  {
+    "personId": 203026.0,
+    "playerName": "Tiffany Hayes",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": 1.914524293626124,
+    "z_Total_2025_Proj": 1.6185026756795926,
+    "z_Change": -0.29602161794653137
+  },
+  {
+    "personId": 203398.0,
+    "playerName": "Brittney Griner",
+    "team": "Phoenix Mercury",
+    "z_Total_2024": 8.228420941935779,
+    "z_Total_2025_Proj": -0.07652198504149155,
+    "z_Change": -8.30494292697727
+  },
+  {
+    "personId": 203400.0,
+    "playerName": "Skylar Diggins",
+    "team": "Seattle Storm",
+    "z_Total_2024": 7.311784156438826,
+    "z_Total_2025_Proj": 1.3462630681450682,
+    "z_Change": -5.965521088293757
+  },
+  {
+    "personId": 203825.0,
+    "playerName": "Kayla McBride",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": 5.993518065048213,
+    "z_Total_2025_Proj": 1.3000408297484833,
+    "z_Change": -4.69347723529973
+  },
+  {
+    "personId": 203826.0,
+    "playerName": "Alyssa Thomas",
+    "team": "Connecticut Sun",
+    "z_Total_2024": 3.7524354177228534,
+    "z_Total_2025_Proj": 2.8340194156373553,
+    "z_Change": -0.9184160020854981
+  },
+  {
+    "personId": 203827.0,
+    "playerName": "Natasha Howard",
+    "team": "Dallas Wings",
+    "z_Total_2024": 3.0418471966002993,
+    "z_Total_2025_Proj": 1.7983187013426796,
+    "z_Change": -1.2435284952576198
   },
   {
-    "personId":203828.0,
-    "playerName":"Stefanie Dolson",
-    "team":"Washington Mystics",
-    "z_Total_2024":2.9750405485,
-    "z_Total_2025_Proj":-0.8820237973,
-    "z_Change":-3.8570643458
+    "personId": 203828.0,
+    "playerName": "Stefanie Dolson",
+    "team": "Washington Mystics",
+    "z_Total_2024": 2.9750405485386184,
+    "z_Total_2025_Proj": -0.8820237972928929,
+    "z_Change": -3.8570643458315113
   },
   {
-    "personId":203833.0,
-    "playerName":"Chelsea Gray",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":2.6724535916,
-    "z_Total_2025_Proj":2.7124892901,
-    "z_Change":0.0400356985
+    "personId": 203833.0,
+    "playerName": "Chelsea Gray",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": 2.6724535915920717,
+    "z_Total_2025_Proj": 2.712489290121417,
+    "z_Change": 0.040035698529345076
   },
   {
-    "personId":203855.0,
-    "playerName":"Stephanie Talbot",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":-1.7887723779,
-    "z_Total_2025_Proj":0.8018895934,
-    "z_Change":2.5906619713
+    "personId": 203855.0,
+    "playerName": "Stephanie Talbot",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": -1.7887723779235873,
+    "z_Total_2025_Proj": 0.8018895934090485,
+    "z_Change": 2.590661971332636
   },
   {
-    "personId":203866.0,
-    "playerName":"Kayla Thornton",
-    "team":"New York Liberty",
-    "z_Total_2024":-1.2177997132,
-    "z_Total_2025_Proj":0.5796771563,
-    "z_Change":1.7974768695
+    "personId": 203866.0,
+    "playerName": "Kayla Thornton",
+    "team": "New York Liberty",
+    "z_Total_2024": -1.2177997132280876,
+    "z_Total_2025_Proj": 0.5796771563067159,
+    "z_Change": 1.7974768695348033
   },
   {
-    "personId":204296.0,
-    "playerName":"Rebecca Allen",
-    "team":"Phoenix Mercury",
-    "z_Total_2024":1.8758556326,
-    "z_Total_2025_Proj":0.484420324,
-    "z_Change":-1.3914353086
+    "personId": 204296.0,
+    "playerName": "Rebecca Allen",
+    "team": "Phoenix Mercury",
+    "z_Total_2024": 1.8758556326012148,
+    "z_Total_2025_Proj": 0.48442032398379,
+    "z_Change": -1.391435308617425
   },
   {
-    "personId":204319.0,
-    "playerName":"Jewell Loyd",
-    "team":"Seattle Storm",
-    "z_Total_2024":5.1096354815,
-    "z_Total_2025_Proj":-2.10097983,
-    "z_Change":-7.2106153116
+    "personId": 204319.0,
+    "playerName": "Jewell Loyd",
+    "team": "Seattle Storm",
+    "z_Total_2024": 5.109635481546821,
+    "z_Total_2025_Proj": -2.1009798300485416,
+    "z_Change": -7.210615311595363
   },
   {
-    "personId":204322.0,
-    "playerName":"Elizabeth Williams",
-    "team":"Chicago Sky",
-    "z_Total_2024":4.7826189585,
-    "z_Total_2025_Proj":-0.563510643,
-    "z_Change":-5.3461296015
+    "personId": 204322.0,
+    "playerName": "Elizabeth Williams",
+    "team": "Chicago Sky",
+    "z_Total_2024": 4.78261895846946,
+    "z_Total_2025_Proj": -0.5635106429964963,
+    "z_Change": -5.346129601465956
   },
   {
-    "personId":204323.0,
-    "playerName":"Cheyenne Parker-Tyus",
-    "team":"Atlanta Dream",
-    "z_Total_2024":0.9887257512,
-    "z_Total_2025_Proj":1.432322095,
-    "z_Change":0.4435963438
+    "personId": 204323.0,
+    "playerName": "Cheyenne Parker-Tyus",
+    "team": "Atlanta Dream",
+    "z_Total_2024": 0.9887257511912791,
+    "z_Total_2025_Proj": 1.4323220949625362,
+    "z_Change": 0.443596343771257
   },
   {
-    "personId":204324.0,
-    "playerName":"Dearica Hamby",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":3.5902143837,
-    "z_Total_2025_Proj":1.3173820069,
-    "z_Change":-2.2728323768
+    "personId": 204324.0,
+    "playerName": "Dearica Hamby",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": 3.5902143836740397,
+    "z_Total_2025_Proj": 1.317382006882838,
+    "z_Change": -2.272832376791202
   },
   {
-    "personId":204329.0,
-    "playerName":"Kiah Stokes",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":-0.9367849769,
-    "z_Total_2025_Proj":0.8700967194,
-    "z_Change":1.8068816964
+    "personId": 204329.0,
+    "playerName": "Kiah Stokes",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": -0.9367849769371382,
+    "z_Total_2025_Proj": 0.8700967194210995,
+    "z_Change": 1.8068816963582377
   },
   {
-    "personId":204330.0,
-    "playerName":"Isabelle Harrison",
-    "team":"Chicago Sky",
-    "z_Total_2024":-1.8371510685,
-    "z_Total_2025_Proj":-0.7519738876,
-    "z_Change":1.0851771809
+    "personId": 204330.0,
+    "playerName": "Isabelle Harrison",
+    "team": "Chicago Sky",
+    "z_Total_2024": -1.8371510685282963,
+    "z_Total_2025_Proj": -0.7519738875980524,
+    "z_Change": 1.085177180930244
   },
   {
-    "personId":204333.0,
-    "playerName":"Natasha Cloud",
-    "team":"Phoenix Mercury",
-    "z_Total_2024":5.0776227975,
-    "z_Total_2025_Proj":-0.6453730921,
-    "z_Change":-5.7229958895
+    "personId": 204333.0,
+    "playerName": "Natasha Cloud",
+    "team": "Phoenix Mercury",
+    "z_Total_2024": 5.077622797459362,
+    "z_Total_2025_Proj": -0.6453730920814009,
+    "z_Change": -5.722995889540764
   },
   {
-    "personId":204335.0,
-    "playerName":"Betnijah Laney-Hamilton",
-    "team":"New York Liberty",
-    "z_Total_2024":2.5130382435,
-    "z_Total_2025_Proj":-1.1611340963,
-    "z_Change":-3.6741723398
+    "personId": 204335.0,
+    "playerName": "Betnijah Laney-Hamilton",
+    "team": "New York Liberty",
+    "z_Total_2024": 2.5130382434648197,
+    "z_Total_2025_Proj": -1.1611340963207584,
+    "z_Change": -3.674172339785578
   },
   {
-    "personId":204365.0,
-    "playerName":"Erica Wheeler",
-    "team":"Indiana Fever",
-    "z_Total_2024":-2.8817712068,
-    "z_Total_2025_Proj":-2.3624049806,
-    "z_Change":0.5193662261
+    "personId": 204365.0,
+    "playerName": "Erica Wheeler",
+    "team": "Indiana Fever",
+    "z_Total_2024": -2.8817712067552823,
+    "z_Total_2025_Proj": -2.3624049806113696,
+    "z_Change": 0.5193662261439127
   },
   {
-    "personId":1627668.0,
-    "playerName":"Breanna Stewart",
-    "team":"New York Liberty",
-    "z_Total_2024":11.5644637056,
-    "z_Total_2025_Proj":9.9343999939,
-    "z_Change":-1.6300637116
+    "personId": 1627668.0,
+    "playerName": "Breanna Stewart",
+    "team": "New York Liberty",
+    "z_Total_2024": 11.564463705559064,
+    "z_Total_2025_Proj": 9.934399993919484,
+    "z_Change": -1.630063711639579
   },
   {
-    "personId":1627671.0,
-    "playerName":"Rachel Banham",
-    "team":"Chicago Sky",
-    "z_Total_2024":-1.7646527293,
-    "z_Total_2025_Proj":0.4463436134,
-    "z_Change":2.2109963427
+    "personId": 1627671.0,
+    "playerName": "Rachel Banham",
+    "team": "Chicago Sky",
+    "z_Total_2024": -1.7646527293225516,
+    "z_Total_2025_Proj": 0.44634361339206263,
+    "z_Change": 2.210996342714614
   },
   {
-    "personId":1627673.0,
-    "playerName":"Jonquel Jones",
-    "team":"New York Liberty",
-    "z_Total_2024":8.5899919607,
-    "z_Total_2025_Proj":8.2412746675,
-    "z_Change":-0.3487172931
+    "personId": 1627673.0,
+    "playerName": "Jonquel Jones",
+    "team": "New York Liberty",
+    "z_Total_2024": 8.589991960683127,
+    "z_Total_2025_Proj": 8.241274667544063,
+    "z_Change": -0.34871729313906386
   },
   {
-    "personId":1627674.0,
-    "playerName":"Kahleah Copper",
-    "team":"Phoenix Mercury",
-    "z_Total_2024":2.7901307496,
-    "z_Total_2025_Proj":1.5843682306,
-    "z_Change":-1.205762519
+    "personId": 1627674.0,
+    "playerName": "Kahleah Copper",
+    "team": "Phoenix Mercury",
+    "z_Total_2024": 2.7901307495899474,
+    "z_Total_2025_Proj": 1.5843682305821685,
+    "z_Change": -1.205762519007779
   },
   {
-    "personId":1627675.0,
-    "playerName":"Courtney Williams",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":2.8940512622,
-    "z_Total_2025_Proj":0.6194131788,
-    "z_Change":-2.2746380834
+    "personId": 1627675.0,
+    "playerName": "Courtney Williams",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": 2.894051262228357,
+    "z_Total_2025_Proj": 0.6194131788405527,
+    "z_Change": -2.274638083387804
   },
   {
-    "personId":1627676.0,
-    "playerName":"Tiffany Mitchell",
-    "team":"Connecticut Sun",
-    "z_Total_2024":-3.7077724316,
-    "z_Total_2025_Proj":-5.8312347751,
-    "z_Change":-2.1234623435
+    "personId": 1627676.0,
+    "playerName": "Tiffany Mitchell",
+    "team": "Connecticut Sun",
+    "z_Total_2024": -3.707772431616628,
+    "z_Total_2025_Proj": -5.831234775074937,
+    "z_Change": -2.123462343458309
   },
   {
-    "personId":1628242.0,
-    "playerName":"Emma Cannon",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":-5.0424368867,
-    "z_Total_2025_Proj":0.8898909471,
-    "z_Change":5.9323278339
+    "personId": 1628242.0,
+    "playerName": "Emma Cannon",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": -5.042436886725015,
+    "z_Total_2025_Proj": 0.8898909471464967,
+    "z_Change": 5.932327833871511
   },
   {
-    "personId":1628244.0,
-    "playerName":"Sami Whitcomb",
-    "team":"Seattle Storm",
-    "z_Total_2024":-1.5675879134,
-    "z_Total_2025_Proj":-0.6127821395,
-    "z_Change":0.954805774
+    "personId": 1628244.0,
+    "playerName": "Sami Whitcomb",
+    "team": "Seattle Storm",
+    "z_Total_2024": -1.567587913447028,
+    "z_Total_2025_Proj": -0.6127821394725246,
+    "z_Change": 0.9548057739745035
   },
   {
-    "personId":1628263.0,
-    "playerName":"Lindsay Allen",
-    "team":"Chicago Sky",
-    "z_Total_2024":0.0638221224,
-    "z_Total_2025_Proj":-3.9197676593,
-    "z_Change":-3.9835897816
+    "personId": 1628263.0,
+    "playerName": "Lindsay Allen",
+    "team": "Chicago Sky",
+    "z_Total_2024": 0.06382212237739279,
+    "z_Total_2025_Proj": -3.919767659256157,
+    "z_Change": -3.9835897816335497
   },
   {
-    "personId":1628269.0,
-    "playerName":"Nia Coffey",
-    "team":"Atlanta Dream",
-    "z_Total_2024":-2.7611285419,
-    "z_Total_2025_Proj":1.0768700981,
-    "z_Change":3.8379986401
+    "personId": 1628269.0,
+    "playerName": "Nia Coffey",
+    "team": "Atlanta Dream",
+    "z_Total_2024": -2.761128541943396,
+    "z_Total_2025_Proj": 1.0768700981289423,
+    "z_Change": 3.8379986400723385
   },
   {
-    "personId":1628276.0,
-    "playerName":"Kelsey Plum",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":4.4523627868,
-    "z_Total_2025_Proj":2.3418699162,
-    "z_Change":-2.1104928706
+    "personId": 1628276.0,
+    "playerName": "Kelsey Plum",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": 4.452362786785273,
+    "z_Total_2025_Proj": 2.3418699161998533,
+    "z_Change": -2.11049287058542
   },
   {
-    "personId":1628277.0,
-    "playerName":"Allisha Gray",
-    "team":"Atlanta Dream",
-    "z_Total_2024":3.7418237574,
-    "z_Total_2025_Proj":0.7986134679,
-    "z_Change":-2.9432102894
+    "personId": 1628277.0,
+    "playerName": "Allisha Gray",
+    "team": "Atlanta Dream",
+    "z_Total_2024": 3.74182375737531,
+    "z_Total_2025_Proj": 0.7986134679349011,
+    "z_Change": -2.943210289440409
   },
   {
-    "personId":1628278.0,
-    "playerName":"Shatori Walker-Kimbrough",
-    "team":"Washington Mystics",
-    "z_Total_2024":0.3790368177,
-    "z_Total_2025_Proj":-3.4157666774,
-    "z_Change":-3.7948034951
+    "personId": 1628278.0,
+    "playerName": "Shatori Walker-Kimbrough",
+    "team": "Washington Mystics",
+    "z_Total_2024": 0.37903681766918,
+    "z_Total_2025_Proj": -3.41576667741214,
+    "z_Change": -3.79480349508132
   },
   {
-    "personId":1628279.0,
-    "playerName":"Brittney Sykes",
-    "team":"Washington Mystics",
-    "z_Total_2024":0.2986335356,
-    "z_Total_2025_Proj":-0.9145447723,
-    "z_Change":-1.2131783079
+    "personId": 1628279.0,
+    "playerName": "Brittney Sykes",
+    "team": "Washington Mystics",
+    "z_Total_2024": 0.2986335355548307,
+    "z_Total_2025_Proj": -0.9145447722995803,
+    "z_Change": -1.213178307854411
   },
   {
-    "personId":1628280.0,
-    "playerName":"Brionna Jones",
-    "team":"Connecticut Sun",
-    "z_Total_2024":3.2230573039,
-    "z_Total_2025_Proj":3.2567239024,
-    "z_Change":0.0336665985
+    "personId": 1628280.0,
+    "playerName": "Brionna Jones",
+    "team": "Connecticut Sun",
+    "z_Total_2024": 3.223057303930541,
+    "z_Total_2025_Proj": 3.2567239024380843,
+    "z_Change": 0.03366659850754328
   },
   {
-    "personId":1628508.0,
-    "playerName":"Cecilia Zandalasini",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":-3.1515938566,
-    "z_Total_2025_Proj":1.8250700011,
-    "z_Change":4.9766638577
+    "personId": 1628508.0,
+    "playerName": "Cecilia Zandalasini",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": -3.1515938566089763,
+    "z_Total_2025_Proj": 1.8250700010695777,
+    "z_Change": 4.976663857678554
   },
   {
-    "personId":1628878.0,
-    "playerName":"Ariel Atkins",
-    "team":"Washington Mystics",
-    "z_Total_2024":5.2422588045,
-    "z_Total_2025_Proj":2.0612945142,
-    "z_Change":-3.1809642903
+    "personId": 1628878.0,
+    "playerName": "Ariel Atkins",
+    "team": "Washington Mystics",
+    "z_Total_2024": 5.2422588045185705,
+    "z_Total_2025_Proj": 2.061294514189376,
+    "z_Change": -3.1809642903291944
   },
   {
-    "personId":1628881.0,
-    "playerName":"Monique Billings",
-    "team":"Phoenix Mercury",
-    "z_Total_2024":0.2021230834,
-    "z_Total_2025_Proj":-1.4692333223,
-    "z_Change":-1.6713564057
+    "personId": 1628881.0,
+    "playerName": "Monique Billings",
+    "team": "Phoenix Mercury",
+    "z_Total_2024": 0.20212308338268561,
+    "z_Total_2025_Proj": -1.46923332228722,
+    "z_Change": -1.6713564056699057
   },
   {
-    "personId":1628882.0,
-    "playerName":"Lexie Brown",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":-0.3052655534,
-    "z_Total_2025_Proj":-2.5705676224,
-    "z_Change":-2.265302069
+    "personId": 1628882.0,
+    "playerName": "Lexie Brown",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": -0.30526555341101735,
+    "z_Total_2025_Proj": -2.5705676223940817,
+    "z_Change": -2.2653020689830643
   },
   {
-    "personId":1628886.0,
-    "playerName":"Jordin Canada",
-    "team":"Atlanta Dream",
-    "z_Total_2024":2.1576783635,
-    "z_Total_2025_Proj":-1.8099683618,
-    "z_Change":-3.9676467252
+    "personId": 1628886.0,
+    "playerName": "Jordin Canada",
+    "team": "Atlanta Dream",
+    "z_Total_2024": 2.157678363462664,
+    "z_Total_2025_Proj": -1.8099683617538558,
+    "z_Change": -3.96764672521652
   },
   {
-    "personId":1628899.0,
-    "playerName":"Myisha Hines-Allen",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":-0.0256444872,
-    "z_Total_2025_Proj":-0.0592725964,
-    "z_Change":-0.0336281092
+    "personId": 1628899.0,
+    "playerName": "Myisha Hines-Allen",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": -0.025644487209999456,
+    "z_Total_2025_Proj": -0.05927259636766824,
+    "z_Change": -0.033628109157668784
   },
   {
-    "personId":1628909.0,
-    "playerName":"Kelsey Mitchell",
-    "team":"Indiana Fever",
-    "z_Total_2024":5.0099271802,
-    "z_Total_2025_Proj":-0.5113428538,
-    "z_Change":-5.521270034
+    "personId": 1628909.0,
+    "playerName": "Kelsey Mitchell",
+    "team": "Indiana Fever",
+    "z_Total_2024": 5.009927180171151,
+    "z_Total_2025_Proj": -0.5113428538485547,
+    "z_Change": -5.521270034019706
   },
   {
-    "personId":1628915.0,
-    "playerName":"Kia Nurse",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":-1.9210660773,
-    "z_Total_2025_Proj":-5.5518883627,
-    "z_Change":-3.6308222854
+    "personId": 1628915.0,
+    "playerName": "Kia Nurse",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": -1.9210660773155446,
+    "z_Total_2025_Proj": -5.551888362728105,
+    "z_Change": -3.6308222854125605
   },
   {
-    "personId":1628922.0,
-    "playerName":"Azur\u00e1 Stevens",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":3.216468796,
-    "z_Total_2025_Proj":5.3279646737,
-    "z_Change":2.1114958777
+    "personId": 1628922.0,
+    "playerName": "Azur\u00e1 Stevens",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": 3.2164687959877303,
+    "z_Total_2025_Proj": 5.327964673678962,
+    "z_Change": 2.111495877691232
   },
   {
-    "personId":1628929.0,
-    "playerName":"Kristy Wallace",
-    "team":"Indiana Fever",
-    "z_Total_2024":-1.7041310139,
-    "z_Total_2025_Proj":-1.9367267614,
-    "z_Change":-0.2325957475
+    "personId": 1628929.0,
+    "playerName": "Kristy Wallace",
+    "team": "Indiana Fever",
+    "z_Total_2024": -1.7041310138879124,
+    "z_Total_2025_Proj": -1.9367267614351917,
+    "z_Change": -0.2325957475472793
   },
   {
-    "personId":1628931.0,
-    "playerName":"Gabby Williams",
-    "team":"Seattle Storm",
-    "z_Total_2024":4.4064919883,
-    "z_Total_2025_Proj":3.3638121024,
-    "z_Change":-1.0426798859
+    "personId": 1628931.0,
+    "playerName": "Gabby Williams",
+    "team": "Seattle Storm",
+    "z_Total_2024": 4.406491988349644,
+    "z_Total_2025_Proj": 3.3638121024073215,
+    "z_Change": -1.0426798859423223
   },
   {
-    "personId":1628932.0,
-    "playerName":"A'ja Wilson",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":19.0101954926,
-    "z_Total_2025_Proj":11.0146496834,
-    "z_Change":-7.9955458093
+    "personId": 1628932.0,
+    "playerName": "A'ja Wilson",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": 19.01019549263822,
+    "z_Total_2025_Proj": 11.014649683383993,
+    "z_Change": -7.995545809254228
   },
   {
-    "personId":1629477.0,
-    "playerName":"Sabrina Ionescu",
-    "team":"New York Liberty",
-    "z_Total_2024":7.2002178378,
-    "z_Total_2025_Proj":3.7802552753,
-    "z_Change":-3.4199625625
+    "personId": 1629477.0,
+    "playerName": "Sabrina Ionescu",
+    "team": "New York Liberty",
+    "z_Total_2024": 7.200217837820572,
+    "z_Total_2025_Proj": 3.7802552753317524,
+    "z_Change": -3.41996256248882
   },
   {
-    "personId":1629478.0,
-    "playerName":"Katie Lou Samuelson",
-    "team":"Indiana Fever",
-    "z_Total_2024":-1.4400379713,
-    "z_Total_2025_Proj":-0.6715408778,
-    "z_Change":0.7684970935
+    "personId": 1629478.0,
+    "playerName": "Katie Lou Samuelson",
+    "team": "Indiana Fever",
+    "z_Total_2024": -1.4400379712886189,
+    "z_Total_2025_Proj": -0.6715408777763343,
+    "z_Change": 0.7684970935122846
   },
   {
-    "personId":1629480.0,
-    "playerName":"Kalani Brown",
-    "team":"Dallas Wings",
-    "z_Total_2024":-2.0169447436,
-    "z_Total_2025_Proj":2.4066036621,
-    "z_Change":4.4235484057
+    "personId": 1629480.0,
+    "playerName": "Kalani Brown",
+    "team": "Dallas Wings",
+    "z_Total_2024": -2.0169447435598924,
+    "z_Total_2025_Proj": 2.406603662146912,
+    "z_Change": 4.423548405706804
   },
   {
-    "personId":1629481.0,
-    "playerName":"Arike Ogunbowale",
-    "team":"Dallas Wings",
-    "z_Total_2024":10.5548810902,
-    "z_Total_2025_Proj":-2.1883921784,
-    "z_Change":-12.7432732685
+    "personId": 1629481.0,
+    "playerName": "Arike Ogunbowale",
+    "team": "Dallas Wings",
+    "z_Total_2024": 10.55488109017397,
+    "z_Total_2025_Proj": -2.1883921783708447,
+    "z_Change": -12.743273268544815
   },
   {
-    "personId":1629482.0,
-    "playerName":"Sophie Cunningham",
-    "team":"Phoenix Mercury",
-    "z_Total_2024":3.4133750045,
-    "z_Total_2025_Proj":-0.7098505385,
-    "z_Change":-4.123225543
+    "personId": 1629482.0,
+    "playerName": "Sophie Cunningham",
+    "team": "Phoenix Mercury",
+    "z_Total_2024": 3.413375004526171,
+    "z_Total_2025_Proj": -0.7098505385099707,
+    "z_Change": -4.123225543036142
   },
   {
-    "personId":1629483.0,
-    "playerName":"Napheesa Collier",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":13.6454159542,
-    "z_Total_2025_Proj":8.559011562,
-    "z_Change":-5.0864043923
+    "personId": 1629483.0,
+    "playerName": "Napheesa Collier",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": 13.645415954221072,
+    "z_Total_2025_Proj": 8.55901156196723,
+    "z_Change": -5.086404392253842
   },
   {
-    "personId":1629484.0,
-    "playerName":"Megan Gustafson",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":-2.6014214348,
-    "z_Total_2025_Proj":0.6128825492,
-    "z_Change":3.214303984
+    "personId": 1629484.0,
+    "playerName": "Megan Gustafson",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": -2.6014214347704763,
+    "z_Total_2025_Proj": 0.6128825492322304,
+    "z_Change": 3.2143039840027066
   },
   {
-    "personId":1629488.0,
-    "playerName":"Brianna Turner",
-    "team":"Chicago Sky",
-    "z_Total_2024":-2.7770462038,
-    "z_Total_2025_Proj":-3.1230428787,
-    "z_Change":-0.3459966749
+    "personId": 1629488.0,
+    "playerName": "Brianna Turner",
+    "team": "Chicago Sky",
+    "z_Total_2024": -2.777046203827206,
+    "z_Total_2025_Proj": -3.123042878703223,
+    "z_Change": -0.3459966748760168
   },
   {
-    "personId":1629496.0,
-    "playerName":"Ezi Magbegor",
-    "team":"Seattle Storm",
-    "z_Total_2024":9.342648081,
-    "z_Total_2025_Proj":3.7527957295,
-    "z_Change":-5.5898523515
+    "personId": 1629496.0,
+    "playerName": "Ezi Magbegor",
+    "team": "Seattle Storm",
+    "z_Total_2024": 9.342648081031767,
+    "z_Total_2025_Proj": 3.7527957295121337,
+    "z_Change": -5.5898523515196334
   },
   {
-    "personId":1629497.0,
-    "playerName":"Marina Mabrey",
-    "team":"Connecticut Sun",
-    "z_Total_2024":3.788149388,
-    "z_Total_2025_Proj":0.5659517299,
-    "z_Change":-3.2221976581
+    "personId": 1629497.0,
+    "playerName": "Marina Mabrey",
+    "team": "Connecticut Sun",
+    "z_Total_2024": 3.7881493880315262,
+    "z_Total_2025_Proj": 0.5659517299096316,
+    "z_Change": -3.2221976581218947
   },
   {
-    "personId":1629498.0,
-    "playerName":"Jackie Young",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":5.9561729109,
-    "z_Total_2025_Proj":3.6660242743,
-    "z_Change":-2.2901486366
+    "personId": 1629498.0,
+    "playerName": "Jackie Young",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": 5.956172910892717,
+    "z_Total_2025_Proj": 3.6660242743019134,
+    "z_Change": -2.290148636590804
   },
   {
-    "personId":1629501.0,
-    "playerName":"Alanna Smith",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":6.2693276116,
-    "z_Total_2025_Proj":2.4332462527,
-    "z_Change":-3.8360813589
+    "personId": 1629501.0,
+    "playerName": "Alanna Smith",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": 6.269327611582796,
+    "z_Total_2025_Proj": 2.4332462527300245,
+    "z_Change": -3.836081358852771
   },
   {
-    "personId":1629524.0,
-    "playerName":"Bridget Carleton",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":3.6929728068,
-    "z_Total_2025_Proj":0.2205530445,
-    "z_Change":-3.4724197623
+    "personId": 1629524.0,
+    "playerName": "Bridget Carleton",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": 3.692972806814926,
+    "z_Total_2025_Proj": 0.2205530444906174,
+    "z_Change": -3.472419762324309
   },
   {
-    "personId":1629567.0,
-    "playerName":"Natisha Hiedeman",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":-1.540660032,
-    "z_Total_2025_Proj":0.4984175564,
-    "z_Change":2.0390775884
+    "personId": 1629567.0,
+    "playerName": "Natisha Hiedeman",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": -1.5406600320227288,
+    "z_Total_2025_Proj": 0.4984175563727594,
+    "z_Change": 2.039077588395488
   },
   {
-    "personId":1629568.0,
-    "playerName":"Kennedy Burke",
-    "team":"New York Liberty",
-    "z_Total_2024":-3.0383790184,
-    "z_Total_2025_Proj":0.9075827612,
-    "z_Change":3.9459617795
+    "personId": 1629568.0,
+    "playerName": "Kennedy Burke",
+    "team": "New York Liberty",
+    "z_Total_2024": -3.038379018380319,
+    "z_Total_2025_Proj": 0.907582761157202,
+    "z_Change": 3.9459617795375213
   },
   {
-    "personId":1629574.0,
-    "playerName":"Li Yueru",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":-1.3517963474,
-    "z_Total_2025_Proj":-0.8298567413,
-    "z_Change":0.5219396061
+    "personId": 1629574.0,
+    "playerName": "Li Yueru",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": -1.351796347369726,
+    "z_Total_2025_Proj": -0.8298567412997578,
+    "z_Change": 0.5219396060699683
   },
   {
-    "personId":1630096.0,
-    "playerName":"DiJonai Carrington",
-    "team":"Connecticut Sun",
-    "z_Total_2024":2.4044863588,
-    "z_Total_2025_Proj":-1.3786803255,
-    "z_Change":-3.7831666844
+    "personId": 1630096.0,
+    "playerName": "DiJonai Carrington",
+    "team": "Connecticut Sun",
+    "z_Total_2024": 2.4044863588363503,
+    "z_Total_2025_Proj": -1.3786803255272282,
+    "z_Change": -3.7831666843635787
   },
   {
-    "personId":1630112.0,
-    "playerName":"Tyasha Harris",
-    "team":"Connecticut Sun",
-    "z_Total_2024":1.5771222682,
-    "z_Total_2025_Proj":-0.876275353,
-    "z_Change":-2.4533976212
+    "personId": 1630112.0,
+    "playerName": "Tyasha Harris",
+    "team": "Connecticut Sun",
+    "z_Total_2024": 1.5771222682378763,
+    "z_Total_2025_Proj": -0.8762753529675961,
+    "z_Change": -2.4533976212054722
   },
   {
-    "personId":1630134.0,
-    "playerName":"Sug Sutton",
-    "team":"Washington Mystics",
-    "z_Total_2024":-4.0543331376,
-    "z_Total_2025_Proj":-4.5232920635,
-    "z_Change":-0.4689589258
+    "personId": 1630134.0,
+    "playerName": "Sug Sutton",
+    "team": "Washington Mystics",
+    "z_Total_2024": -4.054333137649283,
+    "z_Total_2025_Proj": -4.523292063496707,
+    "z_Change": -0.46895892584742427
   },
   {
-    "personId":1630142.0,
-    "playerName":"Leonie Fiebich",
-    "team":"New York Liberty",
-    "z_Total_2024":2.3681336218,
-    "z_Total_2025_Proj":0.9512702312,
-    "z_Change":-1.4168633905
+    "personId": 1630142.0,
+    "playerName": "Leonie Fiebich",
+    "team": "New York Liberty",
+    "z_Total_2024": 2.368133621788196,
+    "z_Total_2025_Proj": 0.9512702312386971,
+    "z_Change": -1.4168633905494987
   },
   {
-    "personId":1630149.0,
-    "playerName":"Satou Sabally",
-    "team":"Dallas Wings",
-    "z_Total_2024":7.3779452922,
-    "z_Total_2025_Proj":3.615442386,
-    "z_Change":-3.7625029063
+    "personId": 1630149.0,
+    "playerName": "Satou Sabally",
+    "team": "Dallas Wings",
+    "z_Total_2024": 7.377945292234458,
+    "z_Total_2025_Proj": 3.6154423859684885,
+    "z_Change": -3.76250290626597
   },
   {
-    "personId":1630389.0,
-    "playerName":"Dana Evans",
-    "team":"Chicago Sky",
-    "z_Total_2024":-0.5396323735,
-    "z_Total_2025_Proj":-2.1618817442,
-    "z_Change":-1.6222493706
+    "personId": 1630389.0,
+    "playerName": "Dana Evans",
+    "team": "Chicago Sky",
+    "z_Total_2024": -0.5396323735469231,
+    "z_Total_2025_Proj": -2.1618817441854112,
+    "z_Change": -1.6222493706384882
   },
   {
-    "personId":1630442.0,
-    "playerName":"Natasha Mack",
-    "team":"Phoenix Mercury",
-    "z_Total_2024":1.3829930235,
-    "z_Total_2025_Proj":4.238911122,
-    "z_Change":2.8559180985
+    "personId": 1630442.0,
+    "playerName": "Natasha Mack",
+    "team": "Phoenix Mercury",
+    "z_Total_2024": 1.382993023471888,
+    "z_Total_2025_Proj": 4.238911121987133,
+    "z_Change": 2.8559180985152453
   },
   {
-    "personId":1630446.0,
-    "playerName":"Michaela Onyenwere",
-    "team":"Chicago Sky",
-    "z_Total_2024":-2.8240707593,
-    "z_Total_2025_Proj":-3.5501516993,
-    "z_Change":-0.72608094
+    "personId": 1630446.0,
+    "playerName": "Michaela Onyenwere",
+    "team": "Chicago Sky",
+    "z_Total_2024": -2.8240707593058927,
+    "z_Total_2025_Proj": -3.5501516993319746,
+    "z_Change": -0.7260809400260819
   },
   {
-    "personId":1630462.0,
-    "playerName":"Aari McDonald",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":0.8721384338,
-    "z_Total_2025_Proj":-0.2369074496,
-    "z_Change":-1.1090458834
+    "personId": 1630462.0,
+    "playerName": "Aari McDonald",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": 0.8721384337524385,
+    "z_Total_2025_Proj": -0.23690744960823218,
+    "z_Change": -1.1090458833606707
   },
   {
-    "personId":1630471.0,
-    "playerName":"Maya Caldwell",
-    "team":"Atlanta Dream",
-    "z_Total_2024":-1.9245506827,
-    "z_Total_2025_Proj":-2.0495877638,
-    "z_Change":-0.1250370811
+    "personId": 1630471.0,
+    "playerName": "Maya Caldwell",
+    "team": "Atlanta Dream",
+    "z_Total_2024": -1.9245506827066459,
+    "z_Total_2025_Proj": -2.0495877637942232,
+    "z_Change": -0.12503708108757738
   },
   {
-    "personId":1630996.0,
-    "playerName":"Rae Burrell",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":-1.7119757585,
-    "z_Total_2025_Proj":-0.7386168663,
-    "z_Change":0.9733588922
+    "personId": 1630996.0,
+    "playerName": "Rae Burrell",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": -1.7119757584599402,
+    "z_Total_2025_Proj": -0.7386168662608503,
+    "z_Change": 0.9733588921990899
   },
   {
-    "personId":1631006.0,
-    "playerName":"Kierstan Bell",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":-4.3159486409,
-    "z_Total_2025_Proj":1.0919212203,
-    "z_Change":5.4078698612
+    "personId": 1631006.0,
+    "playerName": "Kierstan Bell",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": -4.3159486408969245,
+    "z_Total_2025_Proj": 1.091921220312897,
+    "z_Change": 5.4078698612098215
   },
   {
-    "personId":1631007.0,
-    "playerName":"Veronica Burton",
-    "team":"Connecticut Sun",
-    "z_Total_2024":-1.8137086985,
-    "z_Total_2025_Proj":1.9112310667,
-    "z_Change":3.7249397652
+    "personId": 1631007.0,
+    "playerName": "Veronica Burton",
+    "team": "Connecticut Sun",
+    "z_Total_2024": -1.8137086984737913,
+    "z_Total_2025_Proj": 1.9112310667495909,
+    "z_Change": 3.7249397652233824
   },
   {
-    "personId":1631009.0,
-    "playerName":"Rhyne Howard",
-    "team":"Atlanta Dream",
-    "z_Total_2024":6.1742068937,
-    "z_Total_2025_Proj":3.0353644319,
-    "z_Change":-3.1388424619
+    "personId": 1631009.0,
+    "playerName": "Rhyne Howard",
+    "team": "Atlanta Dream",
+    "z_Total_2024": 6.174206893739846,
+    "z_Total_2025_Proj": 3.0353644318771775,
+    "z_Change": -3.138842461862669
   },
   {
-    "personId":1631019.0,
-    "playerName":"NaLyssa Smith",
-    "team":"Indiana Fever",
-    "z_Total_2024":-0.071387202,
-    "z_Total_2025_Proj":-2.3970989697,
-    "z_Change":-2.3257117677
+    "personId": 1631019.0,
+    "playerName": "NaLyssa Smith",
+    "team": "Indiana Fever",
+    "z_Total_2024": -0.07138720202128068,
+    "z_Total_2025_Proj": -2.397098969716284,
+    "z_Change": -2.325711767695003
   },
   {
-    "personId":1631022.0,
-    "playerName":"Shakira Austin",
-    "team":"Washington Mystics",
-    "z_Total_2024":-0.742591525,
-    "z_Total_2025_Proj":1.8654570661,
-    "z_Change":2.6080485911
+    "personId": 1631022.0,
+    "playerName": "Shakira Austin",
+    "team": "Washington Mystics",
+    "z_Total_2024": -0.7425915250128852,
+    "z_Total_2025_Proj": 1.8654570661025724,
+    "z_Change": 2.6080485911154576
   },
   {
-    "personId":1631032.0,
-    "playerName":"Lorela Cubaj",
-    "team":"Atlanta Dream",
-    "z_Total_2024":-4.1636197409,
-    "z_Total_2025_Proj":-5.6231204043,
-    "z_Change":-1.4595006634
+    "personId": 1631032.0,
+    "playerName": "Lorela Cubaj",
+    "team": "Atlanta Dream",
+    "z_Total_2024": -4.163619740903158,
+    "z_Total_2025_Proj": -5.623120404338546,
+    "z_Change": -1.4595006634353878
   },
   {
-    "personId":1631044.0,
-    "playerName":"Naz Hillmon",
-    "team":"Atlanta Dream",
-    "z_Total_2024":0.0929830919,
-    "z_Total_2025_Proj":0.0854507959,
-    "z_Change":-0.007532296
+    "personId": 1631044.0,
+    "playerName": "Naz Hillmon",
+    "team": "Atlanta Dream",
+    "z_Total_2024": 0.09298309194821203,
+    "z_Total_2025_Proj": 0.08545079594187516,
+    "z_Change": -0.007532296006336869
   },
   {
-    "personId":1631055.0,
-    "playerName":"Nyara Sabally",
-    "team":"New York Liberty",
-    "z_Total_2024":0.234270015,
-    "z_Total_2025_Proj":0.3705948455,
-    "z_Change":0.1363248305
+    "personId": 1631055.0,
+    "playerName": "Nyara Sabally",
+    "team": "New York Liberty",
+    "z_Total_2024": 0.23427001503421097,
+    "z_Total_2025_Proj": 0.3705948455170106,
+    "z_Change": 0.13632483048279964
   },
   {
-    "personId":1631083.0,
-    "playerName":"Emily Engstler",
-    "team":"Washington Mystics",
-    "z_Total_2024":2.0504938656,
-    "z_Total_2025_Proj":1.4940931921,
-    "z_Change":-0.5564006735
+    "personId": 1631083.0,
+    "playerName": "Emily Engstler",
+    "team": "Washington Mystics",
+    "z_Total_2024": 2.0504938656302567,
+    "z_Total_2025_Proj": 1.4940931920911082,
+    "z_Change": -0.5564006735391485
   },
   {
-    "personId":1631086.0,
-    "playerName":"Lexie Hull",
-    "team":"Indiana Fever",
-    "z_Total_2024":-0.1870779942,
-    "z_Total_2025_Proj":-1.7390008362,
-    "z_Change":-1.5519228421
+    "personId": 1631086.0,
+    "playerName": "Lexie Hull",
+    "team": "Indiana Fever",
+    "z_Total_2024": -0.18707799416238916,
+    "z_Total_2025_Proj": -1.7390008362296914,
+    "z_Change": -1.5519228420673021
   },
   {
-    "personId":1631135.0,
-    "playerName":"Olivia Nelson-Ododa",
-    "team":"Connecticut Sun",
-    "z_Total_2024":-2.5804610007,
-    "z_Total_2025_Proj":0.0919560488,
-    "z_Change":2.6724170495
+    "personId": 1631135.0,
+    "playerName": "Olivia Nelson-Ododa",
+    "team": "Connecticut Sun",
+    "z_Total_2024": -2.580461000689427,
+    "z_Total_2025_Proj": 0.09195604883716962,
+    "z_Change": 2.6724170495265964
   },
   {
-    "personId":1631141.0,
-    "playerName":"Jade Melbourne",
-    "team":"Washington Mystics",
-    "z_Total_2024":-3.0191944602,
-    "z_Total_2025_Proj":-3.4273406207,
-    "z_Change":-0.4081461605
+    "personId": 1631141.0,
+    "playerName": "Jade Melbourne",
+    "team": "Washington Mystics",
+    "z_Total_2024": -3.0191944601592167,
+    "z_Total_2025_Proj": -3.427340620665577,
+    "z_Change": -0.40814616050636054
   },
   {
-    "personId":1641602.0,
-    "playerName":"Ivana Dojki\u0107",
-    "team":"New York Liberty",
-    "z_Total_2024":-3.7812434889,
-    "z_Total_2025_Proj":-1.3440134451,
-    "z_Change":2.4372300438
+    "personId": 1641602.0,
+    "playerName": "Ivana Dojki\u0107",
+    "team": "New York Liberty",
+    "z_Total_2024": -3.7812434888894324,
+    "z_Total_2025_Proj": -1.3440134451097605,
+    "z_Change": 2.437230043779672
   },
   {
-    "personId":1641648.0,
-    "playerName":"Aliyah Boston",
-    "team":"Indiana Fever",
-    "z_Total_2024":6.923545207,
-    "z_Total_2025_Proj":2.6176614698,
-    "z_Change":-4.3058837372
+    "personId": 1641648.0,
+    "playerName": "Aliyah Boston",
+    "team": "Indiana Fever",
+    "z_Total_2024": 6.923545207018137,
+    "z_Total_2025_Proj": 2.61766146982674,
+    "z_Change": -4.3058837371913965
   },
   {
-    "personId":1641649.0,
-    "playerName":"Diamond Miller",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":-5.8111663821,
-    "z_Total_2025_Proj":-0.9987423607,
-    "z_Change":4.8124240214
+    "personId": 1641649.0,
+    "playerName": "Diamond Miller",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": -5.811166382093482,
+    "z_Total_2025_Proj": -0.9987423606601005,
+    "z_Change": 4.812424021433381
   },
   {
-    "personId":1641650.0,
-    "playerName":"Haley Jones",
-    "team":"Atlanta Dream",
-    "z_Total_2024":-3.8401818865,
-    "z_Total_2025_Proj":-2.4664597183,
-    "z_Change":1.3737221682
+    "personId": 1641650.0,
+    "playerName": "Haley Jones",
+    "team": "Atlanta Dream",
+    "z_Total_2024": -3.8401818865047055,
+    "z_Total_2025_Proj": -2.4664597182769827,
+    "z_Change": 1.3737221682277228
   },
   {
-    "personId":1641651.0,
-    "playerName":"Jordan Horston",
-    "team":"Seattle Storm",
-    "z_Total_2024":1.6588288515,
-    "z_Total_2025_Proj":-0.318056706,
-    "z_Change":-1.9768855575
+    "personId": 1641651.0,
+    "playerName": "Jordan Horston",
+    "team": "Seattle Storm",
+    "z_Total_2024": 1.658828851509335,
+    "z_Total_2025_Proj": -0.3180567059743421,
+    "z_Change": -1.9768855574836772
   },
   {
-    "personId":1641652.0,
-    "playerName":"Maddy Siegrist",
-    "team":"Dallas Wings",
-    "z_Total_2024":0.6560913439,
-    "z_Total_2025_Proj":-1.1359997168,
-    "z_Change":-1.7920910607
+    "personId": 1641652.0,
+    "playerName": "Maddy Siegrist",
+    "team": "Dallas Wings",
+    "z_Total_2024": 0.656091343882418,
+    "z_Total_2025_Proj": -1.1359997167745466,
+    "z_Change": -1.7920910606569644
   },
   {
-    "personId":1641656.0,
-    "playerName":"Laeticia Amihere",
-    "team":"Atlanta Dream",
-    "z_Total_2024":-7.1805509669,
-    "z_Total_2025_Proj":1.5927767007,
-    "z_Change":8.7733276677
+    "personId": 1641656.0,
+    "playerName": "Laeticia Amihere",
+    "team": "Atlanta Dream",
+    "z_Total_2024": -7.1805509669332945,
+    "z_Total_2025_Proj": 1.5927767007249238,
+    "z_Change": 8.773327667658219
   },
   {
-    "personId":1641657.0,
-    "playerName":"Dorka Juh\u00e1sz",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":-1.5634858005,
-    "z_Total_2025_Proj":1.1299185844,
-    "z_Change":2.6934043849
+    "personId": 1641657.0,
+    "playerName": "Dorka Juh\u00e1sz",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": -1.5634858005100052,
+    "z_Total_2025_Proj": 1.129918584418974,
+    "z_Change": 2.6934043849289795
   },
   {
-    "personId":1641658.0,
-    "playerName":"Grace Berger",
-    "team":"Indiana Fever",
-    "z_Total_2024":-4.9738015939,
-    "z_Total_2025_Proj":-3.2223574997,
-    "z_Change":1.7514440942
+    "personId": 1641658.0,
+    "playerName": "Grace Berger",
+    "team": "Indiana Fever",
+    "z_Total_2024": -4.973801593932189,
+    "z_Total_2025_Proj": -3.2223574996919133,
+    "z_Change": 1.7514440942402754
   },
   {
-    "personId":1641661.0,
-    "playerName":"Lou Lopez S\u00e9n\u00e9chal",
-    "team":"Dallas Wings",
-    "z_Total_2024":-5.4465946952,
-    "z_Total_2025_Proj":-2.4912690802,
-    "z_Change":2.955325615
-  },
-  {
-    "personId":1642210.0,
-    "playerName":"Julie Vanloo",
-    "team":"Washington Mystics",
-    "z_Total_2024":-2.1720056191,
-    "z_Total_2025_Proj":-1.0089115071,
-    "z_Change":1.163094112
-  },
-  {
-    "personId":1642244.0,
-    "playerName":"Sevgi Uzun",
-    "team":"Dallas Wings",
-    "z_Total_2024":-2.0997045262,
-    "z_Total_2025_Proj":-3.0505665462,
-    "z_Change":-0.95086202
-  },
-  {
-    "personId":1642286.0,
-    "playerName":"Caitlin Clark",
-    "team":"Indiana Fever",
-    "z_Total_2024":9.2435440092,
-    "z_Total_2025_Proj":3.7048067759,
-    "z_Change":-5.5387372333
-  },
-  {
-    "personId":1642287.0,
-    "playerName":"Cameron Brink",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":4.5790352688,
-    "z_Total_2025_Proj":0.418736397,
-    "z_Change":-4.1602988718
-  },
-  {
-    "personId":1642288.0,
-    "playerName":"Rickea Jackson",
-    "team":"Los Angeles Sparks",
-    "z_Total_2024":1.6031245121,
-    "z_Total_2025_Proj":-4.0710843373,
-    "z_Change":-5.6742088494
-  },
-  {
-    "personId":1642289.0,
-    "playerName":"Kamilla Cardoso",
-    "team":"Chicago Sky",
-    "z_Total_2024":3.7011565846,
-    "z_Total_2025_Proj":-1.1913143138,
-    "z_Change":-4.8924708984
-  },
-  {
-    "personId":1642290.0,
-    "playerName":"Aaliyah Edwards",
-    "team":"Washington Mystics",
-    "z_Total_2024":-0.1937674571,
-    "z_Total_2025_Proj":-2.4954800265,
-    "z_Change":-2.3017125694
-  },
-  {
-    "personId":1642291.0,
-    "playerName":"Angel Reese",
-    "team":"Chicago Sky",
-    "z_Total_2024":2.3213958338,
-    "z_Total_2025_Proj":1.7850282209,
-    "z_Change":-0.5363676128
-  },
-  {
-    "personId":1642292.0,
-    "playerName":"Jacy Sheldon",
-    "team":"Dallas Wings",
-    "z_Total_2024":-1.2968079676,
-    "z_Total_2025_Proj":-5.02107401,
-    "z_Change":-3.7242660425
-  },
-  {
-    "personId":1642293.0,
-    "playerName":"Alissa Pili",
-    "team":"Minnesota Lynx",
-    "z_Total_2024":-5.01521773,
-    "z_Total_2025_Proj":-0.6006744891,
-    "z_Change":4.414543241
-  },
-  {
-    "personId":1642299.0,
-    "playerName":"Nika M\u00fchl",
-    "team":"Seattle Storm",
-    "z_Total_2024":-5.7234225701,
-    "z_Total_2025_Proj":-4.0663079048,
-    "z_Change":1.6571146653
-  },
-  {
-    "personId":1642324.0,
-    "playerName":"Kate Martin",
-    "team":"Las Vegas Aces",
-    "z_Total_2024":-3.3616264722,
-    "z_Total_2025_Proj":0.3046985099,
-    "z_Change":3.666324982
+    "personId": 1641661.0,
+    "playerName": "Lou Lopez S\u00e9n\u00e9chal",
+    "team": "Dallas Wings",
+    "z_Total_2024": -5.446594695177223,
+    "z_Total_2025_Proj": -2.491269080176405,
+    "z_Change": 2.9553256150008176
+  },
+  {
+    "personId": 1642210.0,
+    "playerName": "Julie Vanloo",
+    "team": "Washington Mystics",
+    "z_Total_2024": -2.1720056191171575,
+    "z_Total_2025_Proj": -1.0089115071086,
+    "z_Change": 1.1630941120085576
+  },
+  {
+    "personId": 1642244.0,
+    "playerName": "Sevgi Uzun",
+    "team": "Dallas Wings",
+    "z_Total_2024": -2.09970452618506,
+    "z_Total_2025_Proj": -3.0505665461811247,
+    "z_Change": -0.9508620199960647
+  },
+  {
+    "personId": 1642286.0,
+    "playerName": "Caitlin Clark",
+    "team": "Indiana Fever",
+    "z_Total_2024": 9.243544009177027,
+    "z_Total_2025_Proj": 3.704806775868482,
+    "z_Change": -5.538737233308545
+  },
+  {
+    "personId": 1642287.0,
+    "playerName": "Cameron Brink",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": 4.5790352687898075,
+    "z_Total_2025_Proj": 0.41873639701755566,
+    "z_Change": -4.160298871772252
+  },
+  {
+    "personId": 1642288.0,
+    "playerName": "Rickea Jackson",
+    "team": "Los Angeles Sparks",
+    "z_Total_2024": 1.6031245120848137,
+    "z_Total_2025_Proj": -4.0710843372821515,
+    "z_Change": -5.674208849366965
+  },
+  {
+    "personId": 1642289.0,
+    "playerName": "Kamilla Cardoso",
+    "team": "Chicago Sky",
+    "z_Total_2024": 3.701156584565309,
+    "z_Total_2025_Proj": -1.1913143137905504,
+    "z_Change": -4.892470898355859
+  },
+  {
+    "personId": 1642290.0,
+    "playerName": "Aaliyah Edwards",
+    "team": "Washington Mystics",
+    "z_Total_2024": -0.19376745714669252,
+    "z_Total_2025_Proj": -2.4954800265431034,
+    "z_Change": -2.301712569396411
+  },
+  {
+    "personId": 1642291.0,
+    "playerName": "Angel Reese",
+    "team": "Chicago Sky",
+    "z_Total_2024": 2.3213958337667626,
+    "z_Total_2025_Proj": 1.7850282209303785,
+    "z_Change": -0.5363676128363841
+  },
+  {
+    "personId": 1642292.0,
+    "playerName": "Jacy Sheldon",
+    "team": "Dallas Wings",
+    "z_Total_2024": -1.2968079675671556,
+    "z_Total_2025_Proj": -5.021074010049486,
+    "z_Change": -3.7242660424823306
+  },
+  {
+    "personId": 1642293.0,
+    "playerName": "Alissa Pili",
+    "team": "Minnesota Lynx",
+    "z_Total_2024": -5.015217730032543,
+    "z_Total_2025_Proj": -0.6006744890510354,
+    "z_Change": 4.414543240981507
+  },
+  {
+    "personId": 1642299.0,
+    "playerName": "Nika M\u00fchl",
+    "team": "Seattle Storm",
+    "z_Total_2024": -5.723422570093736,
+    "z_Total_2025_Proj": -4.066307904803927,
+    "z_Change": 1.657114665289809
+  },
+  {
+    "personId": 1642324.0,
+    "playerName": "Kate Martin",
+    "team": "Las Vegas Aces",
+    "z_Total_2024": -3.3616264721827753,
+    "z_Total_2025_Proj": 0.3046985098638093,
+    "z_Change": 3.666324982046585
   }
 ]
