@@ -159,35 +159,42 @@
                         <input type="text" id="career-search-player" placeholder="e.g., Caitlin Clark">
                     </div>
                 </div>
-                <!-- ### RESTORED CONTROLS FOR CAREER ANALYSIS ### -->
-                <div class="bottom-controls" style="margin-top: 20px; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div>
-                        <p class="weights-title"><strong>Display Options:</strong></p>
-                        <div id="career-chart-toggles" style="display: flex; flex-wrap: wrap; gap: 15px;">
+                
+                <!-- ### START OF FIX FOR STEP 4 ### -->
+                <div class="bottom-controls" style="margin-top: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="filter-group">
+                        <label for="career-draft-filter">FILTER BY DRAFT CLASS</label>
+                        <select id="career-draft-filter">
+                            <option value="All">All Draft Classes</option>
+                            <option value="No. 1 Pick">No. 1 Picks</option>
+                            <option value="Top 5 Pick">Top 5 Picks</option>
+                            <option value="1st Round (6+)">1st Round (6+)</option>
+                            <option value="2nd Round">2nd Round</option>
+                            <option value="3rd+ Round">3rd+ Round</option>
+                            <option value="Undrafted">Undrafted</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="career-minutes-filter">FILTER BY PLAYER MINUTES</label>
+                        <select id="career-minutes-filter">
+                            <option value="0">All Players</option>
+                            <option value="15_career">Career Avg > 15 MPG</option>
+                            <option value="15_game">Games > 15 MPG</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" style="display: flex; align-items: flex-end; justify-content: start;">
+                         <div id="career-chart-toggles">
                             <div class="chart-toggle">
-                                <span class="chart-toggle-label">Aggregate View</span>
+                                <span class="chart-toggle-label">Show Averages</span>
                                 <label class="chart-toggle-switch">
-                                    <input type="checkbox" id="career-aggregate-toggle">
-                                    <span class="chart-toggle-slider"></span>
-                                </label>
-                            </div>
-                            <div class="chart-toggle">
-                                <span class="chart-toggle-label">Avg. by Position</span>
-                                <label class="chart-toggle-switch">
-                                    <input type="checkbox" id="career-pos-toggle">
-                                    <span class="chart-toggle-slider"></span>
-                                </label>
-                            </div>
-                            <div class="chart-toggle">
-                                <span class="chart-toggle-label">Avg. by Draft Year</span>
-                                <label class="chart-toggle-switch">
-                                    <input type="checkbox" id="career-year-toggle">
+                                    <input type="checkbox" id="career-averages-toggle">
                                     <span class="chart-toggle-slider"></span>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- ### END OF FIX FOR STEP 4 ### -->
             </div>
             <div id="career-chart-wrapper" class="card">
                 <canvas id="career-chart"></canvas>
