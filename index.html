@@ -151,15 +151,43 @@
                         <label for="career-xaxis-selector">X-AXIS</label>
                         <select id="career-xaxis-selector">
                             <option value="x_games" selected>Games Played</option>
-                            <!-- REMOVED 'Player Age' option as data is not available -->
+                            <option value="age">Player Age</option>
                         </select>
                     </div>
                     <div class="filter-group search-group">
                         <label for="career-search-player">HIGHLIGHT PLAYER</label>
-                        <input type="text" id="career-search-player" placeholder="e.g., Diana Taurasi">
+                        <input type="text" id="career-search-player" placeholder="e.g., Caitlin Clark">
                     </div>
                 </div>
-                <!-- REMOVED non-functional toggle switches for cohorts (Position, Draft Year) -->
+                <!-- ### FIX: RESTORED the advanced controls for the career chart ### -->
+                <div class="bottom-controls" style="margin-top: 20px; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <p class="weights-title"><strong>Display Options:</strong></p>
+                        <div id="career-chart-toggles" style="display: flex; flex-wrap: wrap; gap: 15px;">
+                            <div class="chart-toggle">
+                                <span class="chart-toggle-label">Aggregate View</span>
+                                <label class="chart-toggle-switch">
+                                    <input type="checkbox" id="career-aggregate-toggle">
+                                    <span class="chart-toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="chart-toggle">
+                                <span class="chart-toggle-label">Avg. by Position</span>
+                                <label class="chart-toggle-switch">
+                                    <input type="checkbox" id="career-pos-toggle">
+                                    <span class="chart-toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="chart-toggle">
+                                <span class="chart-toggle-label">Avg. by Draft Year</span>
+                                <label class="chart-toggle-switch">
+                                    <input type="checkbox" id="career-year-toggle">
+                                    <span class="chart-toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="career-chart-wrapper" class="card">
                 <canvas id="career-chart"></canvas>
