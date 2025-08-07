@@ -2086,8 +2086,8 @@
     "FTA": 91.0,
     "MIN": 871.6,
     "playerName": "Tiffany Mitchell",
-    "position": null,
-    "team": "IND"
+    "position": "SG",
+    "team": "SEA"
   },
   {
     "personId": 1627677.0,
@@ -2143,8 +2143,8 @@
     "FTA": 23.0,
     "MIN": 306.9,
     "playerName": "Temi F\u00e1gb\u00e9nl\u00e9",
-    "position": null,
-    "team": "MIN"
+    "position": "F",
+    "team": "GSV"
   },
   {
     "personId": 1628244.0,
@@ -2181,8 +2181,8 @@
     "FTA": 24.0,
     "MIN": 358.6,
     "playerName": "Lindsay Allen",
-    "position": null,
-    "team": "LVA"
+    "position": "PG",
+    "team": "CON"
   },
   {
     "personId": 1628267.0,
@@ -2238,8 +2238,8 @@
     "FTA": 68.0,
     "MIN": 385.9,
     "playerName": "Nia Coffey",
-    "position": null,
-    "team": "LVA"
+    "position": "SF",
+    "team": "ATL"
   },
   {
     "personId": 1628273.0,
@@ -2276,8 +2276,8 @@
     "FTA": 40.0,
     "MIN": 790.8,
     "playerName": "Kelsey Plum",
-    "position": null,
-    "team": "LVA"
+    "position": "PG",
+    "team": "LAS"
   },
   {
     "personId": 1628277.0,
@@ -2295,8 +2295,8 @@
     "FTA": 98.0,
     "MIN": 943.7,
     "playerName": "Allisha Gray",
-    "position": null,
-    "team": "DAL"
+    "position": "SG",
+    "team": "ATL"
   },
   {
     "personId": 1628278.0,
@@ -2352,8 +2352,8 @@
     "FTA": 33.0,
     "MIN": 242.4,
     "playerName": "Brionna Jones",
-    "position": null,
-    "team": "CON"
+    "position": "PF",
+    "team": "ATL"
   },
   {
     "personId": 1628282.0,
@@ -2523,8 +2523,8 @@
     "FTA": 25.0,
     "MIN": 503.8,
     "playerName": "Cecilia Zandalasini",
-    "position": null,
-    "team": "MIN"
+    "position": "SF",
+    "team": "GSV"
   },
   {
     "personId": 1628866.0,
@@ -2599,8 +2599,8 @@
     "FTA": 51.0,
     "MIN": 418.5,
     "playerName": "Monique Billings",
-    "position": null,
-    "team": "ATL"
+    "position": "PF",
+    "team": "GSV"
   },
   {
     "personId": 1628882.0,
@@ -2618,8 +2618,8 @@
     "FTA": 7.0,
     "MIN": 124.0,
     "playerName": "Lexie Brown",
-    "position": null,
-    "team": "CON"
+    "position": "PG",
+    "team": "SEA"
   },
   {
     "personId": 1628886.0,
@@ -2637,8 +2637,8 @@
     "FTA": 70.0,
     "MIN": 651.8,
     "playerName": "Jordin Canada",
-    "position": null,
-    "team": "SEA"
+    "position": "PG",
+    "team": "ATL"
   },
   {
     "personId": 1628890.0,
@@ -2713,8 +2713,8 @@
     "FTA": 26.0,
     "MIN": 320.5,
     "playerName": "Myisha Hines-Allen",
-    "position": null,
-    "team": "WAS"
+    "position": "SF",
+    "team": "DAL"
   },
   {
     "personId": 1628905.0,
@@ -2770,7 +2770,7 @@
     "FTA": 97.0,
     "MIN": 828.9,
     "playerName": "Kelsey Mitchell",
-    "position": null,
+    "position": "PG/SG",
     "team": "IND"
   },
   {
@@ -2827,8 +2827,8 @@
     "FTA": 77.0,
     "MIN": 773.6999999999999,
     "playerName": "Kia Nurse",
-    "position": null,
-    "team": "NYL"
+    "position": "PG",
+    "team": "CHI"
   },
   {
     "personId": 1628917.0,
@@ -2884,8 +2884,8 @@
     "FTA": 66.0,
     "MIN": 712.7,
     "playerName": "Azur\u00e1 Stevens",
-    "position": null,
-    "team": "DAL"
+    "position": "PF",
+    "team": "LAS"
   },
   {
     "personId": 1628926.0,
@@ -2903,8 +2903,8 @@
     "FTA": 12.0,
     "MIN": 207.3,
     "playerName": "Maria Kliundikova",
-    "position": null,
-    "team": "LAS"
+    "position": "C",
+    "team": "MIN"
   },
   {
     "personId": 1628927.0,

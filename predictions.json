@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-08-07T10:11:50.620484",
+  "lastUpdated": "2025-08-07T10:34:01.512863",
   "seasonLongDataManifest": {
     "projections_2025_full_per_game": {
       "label": "2025 Projections",
@@ -2463,7 +2463,7 @@
       "personId": 1631007,
       "playerName": "Veronica Burton",
       "team": "GSV",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Veronica_Burton_(basketball)",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Veronica_Burton",
       "position": "PG",
       "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
       "weight": "155\u00a0lb (70\u00a0kg)",
@@ -7596,7 +7596,7 @@
       "personId": 203827,
       "playerName": "Natasha Howard",
       "team": "IND",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Natasha_Howard_(basketball)",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Natasha_Howard",
       "position": "PF",
       "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
       "weight": "172\u00a0lb (78\u00a0kg)",
@@ -9020,7 +9020,7 @@
       "personId": 204335,
       "playerName": "Betnijah Laney-Hamilton",
       "team": "NYL",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Betnijah_Laney",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Betnijah_Laney-Hamilton",
       "position": "SG",
       "height": "6\u00a0ft 0\u00a0in (1.83\u00a0m)",
       "weight": "166\u00a0lb (75\u00a0kg)",
@@ -14003,14 +14003,14 @@
       "personId": 1631019,
       "playerName": "NaLyssa Smith",
       "team": "LVA",
-      "wikiUrl": "https://en.wikipedia.org/w/index.php?title=Nalyssa_Smith&action=edit&redlink=1",
-      "position": "N/A",
-      "height": "N/A",
-      "weight": "N/A",
-      "born": "N/A",
-      "birth_year": null,
-      "draftInfo": "N/A",
-      "draft_year": null,
+      "wikiUrl": "https://en.wikipedia.org/wiki/NaLyssa_Smith",
+      "position": "PF",
+      "height": "6\u00a0ft 4\u00a0in (1.93\u00a0m)",
+      "weight": "185\u00a0lb (84\u00a0kg)",
+      "born": "( 2000-08-08 ) August 8, 2000 (age\u00a024) San Antonio, Texas , U.S.",
+      "birth_year": 2000,
+      "draftInfo": "2022 / R1 / P2",
+      "draft_year": 2022,
       "performanceHistory": [
         {
           "date": "2025-07-12",
@@ -16407,7 +16407,7 @@
       "personId": 1627675,
       "playerName": "Courtney Williams",
       "team": "MIN",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Courtney_M._Williams",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Courtney_Williams",
       "position": "SG",
       "height": "5\u00a0ft 8\u00a0in (1.73\u00a0m)",
       "weight": "148\u00a0lb (67\u00a0kg)",
@@ -17441,6 +17441,3387 @@
       "birth_year": 1986,
       "draftInfo": "2008 / R3 / P29",
       "draft_year": 2008
+    },
+    "1630471": {
+      "personId": 1630471,
+      "playerName": "Maya Caldwell",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Maya_Caldwell",
+      "position": "G",
+      "height": "5\u00a0ft 11\u00a0in (1.80\u00a0m)",
+      "weight": "160\u00a0lb (73\u00a0kg)",
+      "born": "( 1998-12-15 ) December 15, 1998 (age\u00a026) Charlotte, North Carolina , U.S.",
+      "birth_year": 1998,
+      "draftInfo": "2021 / R3 / P33",
+      "draft_year": 2021,
+      "performanceHistory": [
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 9.804643949,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 9.804643949,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 9.474277496,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 9.474277496,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 10.14871979,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 10.14871979,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 10.4235061,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 10.4235061,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 10.54435825,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 10.54435825,
+          "actual_pts": 14.0
+        }
+      ]
+    },
+    "1628886": {
+      "personId": 1628886,
+      "playerName": "Jordin Canada",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Jordin_Canada",
+      "position": "PG",
+      "height": "5\u00a0ft 6\u00a0in (1.68\u00a0m)",
+      "weight": "135\u00a0lb (61\u00a0kg)",
+      "born": "( 1995-08-11 ) August 11, 1995 (age\u00a029) Los Angeles, California , U.S.",
+      "birth_year": 1995,
+      "draftInfo": "2018 / R1 / P5",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.373684247,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.373684247,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 7.955462138,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 7.955462138,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 8.049335321,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 8.049335321,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 7.887212753,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 7.887212753,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 8.510577838,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 8.510577838,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 8.1270051,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 8.1270051,
+          "actual_pts": 8.0
+        }
+      ]
+    },
+    "1628269": {
+      "personId": 1628269,
+      "playerName": "Nia Coffey",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Nia_Coffey",
+      "position": "SF",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "182\u00a0lb (83\u00a0kg)",
+      "born": "( 1995-06-11 ) June 11, 1995 (age\u00a030) Saint Paul, Minnesota , U.S.",
+      "birth_year": 1995,
+      "draftInfo": "2017 / R1 / P5",
+      "draft_year": 2017,
+      "performanceHistory": [
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.169611931,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.169611931,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 7.293360074,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 7.293360074,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 7.357897758,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 7.357897758,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 7.354541461,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 7.354541461,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 7.949120998,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 7.949120998,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 8.12634929,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 8.12634929,
+          "actual_pts": 4.0
+        }
+      ]
+    },
+    "1628277": {
+      "personId": 1628277,
+      "playerName": "Allisha Gray",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Allisha_Gray",
+      "position": "SG",
+      "height": "6\u00a0ft 0\u00a0in (1.83\u00a0m)",
+      "weight": "167\u00a0lb (76\u00a0kg)",
+      "born": "( 1995-01-12 ) January 12, 1995 (age\u00a030) Greenwood, South Carolina , U.S.",
+      "birth_year": 1995,
+      "draftInfo": "2017 / R1 / P4",
+      "draft_year": 2017,
+      "performanceHistory": [
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.725951831,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.725951831,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 7.96088028,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 7.96088028,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 8.199341456,
+          "actual_pts": 24.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 8.199341456,
+          "actual_pts": 24.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 8.049843629,
+          "actual_pts": 28.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 8.049843629,
+          "actual_pts": 28.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 8.87772735,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 8.87772735,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 8.759820143,
+          "actual_pts": 26.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 8.759820143,
+          "actual_pts": 26.0
+        }
+      ]
+    },
+    "1628280": {
+      "personId": 1628280,
+      "playerName": "Brionna Jones",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Brionna_Jones",
+      "position": "PF",
+      "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
+      "weight": "215\u00a0lb (98\u00a0kg)",
+      "born": "( 1995-12-18 ) December 18, 1995 (age\u00a029) Baltimore, Maryland , U.S.",
+      "birth_year": 1995,
+      "draftInfo": "2017 / R1 / P8",
+      "draft_year": 2017,
+      "performanceHistory": [
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 6.83889087,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 6.83889087,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 6.435149988,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 6.435149988,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 5.930115382,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 5.930115382,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 6.56434679,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 6.56434679,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 6.629561742,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 6.629561742,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 6.993357182,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 6.993357182,
+          "actual_pts": 16.0
+        }
+      ]
+    },
+    "1630154": {
+      "personId": 1630154,
+      "playerName": "Kamiah Smalls",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kamiah_Smalls",
+      "position": "SG",
+      "height": "5\u00a0ft 10\u00a0in (1.78\u00a0m)",
+      "weight": "N/A",
+      "born": "( 1998-04-17 ) April 17, 1998 (age\u00a027) Philadelphia, Pennsylvania",
+      "birth_year": 1998,
+      "draftInfo": "2020 / R3 / P28",
+      "draft_year": 2020,
+      "performanceHistory": [
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 9.086229483,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 9.086229483,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1642814": {
+      "personId": 1642814,
+      "playerName": "Taylor Thierry",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Taylor_Thierry",
+      "position": "G",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-01-08 ) January 8, 2003 (age\u00a022) Cleveland , Ohio , U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R3 / P36",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 10.08593655,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 10.08593655,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 9.669938723,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 9.669938723,
+          "actual_pts": 2.0
+        }
+      ]
+    },
+    "1642804": {
+      "personId": 1642804,
+      "playerName": "Te-Hina Paopao",
+      "team": "ATL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Te-Hina_Paopao",
+      "position": "G",
+      "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2002-08-21 ) August 21, 2002 (age\u00a022) Oceanside, California , U.S.",
+      "birth_year": 2002,
+      "draftInfo": "2025 / R2 / P18",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 12.06530794,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 12.06530794,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 11.17124589,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-13",
+          "predicted_pts": 11.17124589,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 11.42355982,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 11.42355982,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 11.76622264,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-23",
+          "predicted_pts": 11.76622264,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 12.10657914,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 12.10657914,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 12.30250009,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-08-01",
+          "predicted_pts": 12.30250009,
+          "actual_pts": 7.0
+        }
+      ]
+    },
+    "1628915": {
+      "personId": 1628915,
+      "playerName": "Kia Nurse",
+      "team": "CHI",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kia_Nurse",
+      "position": "PG",
+      "height": "6\u00a0ft 0\u00a0in (1.83\u00a0m)",
+      "weight": "181\u00a0lb (82\u00a0kg)",
+      "born": "( 1996-02-22 ) February 22, 1996 (age\u00a029) Hamilton, Ontario , Canada",
+      "birth_year": 1996,
+      "draftInfo": "2018 / R1 / P10",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-05-22",
+          "predicted_pts": 8.174687227,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-05-22",
+          "predicted_pts": 8.174687227,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-05-27",
+          "predicted_pts": 7.22465086,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-05-27",
+          "predicted_pts": 7.22465086,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-06-10",
+          "predicted_pts": 7.651849111,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-06-10",
+          "predicted_pts": 7.651849111,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 7.570340157,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 7.570340157,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-06-27",
+          "predicted_pts": 7.703296343,
+          "actual_pts": 17.0
+        },
+        {
+          "date": "2025-06-27",
+          "predicted_pts": 7.703296343,
+          "actual_pts": 17.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 7.884023031,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 7.884023031,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.570340157,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.570340157,
+          "actual_pts": 5.0
+        }
+      ]
+    },
+    "1642817": {
+      "personId": 1642817,
+      "playerName": "Hailey Van Lith",
+      "team": "CHI",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Hailey_Van_Lith",
+      "position": "PG",
+      "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
+      "weight": "155\u00a0lb (70\u00a0kg)",
+      "born": "( 2001-09-09 ) September 9, 2001 (age\u00a023) Wenatchee, Washington , U.S.",
+      "birth_year": 2001,
+      "draftInfo": "2025 / R1 / P11",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-22",
+          "predicted_pts": 9.261879285,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-05-22",
+          "predicted_pts": 9.261879285,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-10",
+          "predicted_pts": 8.522587299,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-10",
+          "predicted_pts": 8.522587299,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 9.171331406,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 9.171331406,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-27",
+          "predicted_pts": 9.034692446,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-27",
+          "predicted_pts": 9.034692446,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 9.019418716,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 9.019418716,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 9.171331406,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 9.171331406,
+          "actual_pts": 5.0
+        }
+      ]
+    },
+    "1642818": {
+      "personId": 1642818,
+      "playerName": "Maddy Westbeld",
+      "team": "CHI",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Maddy_Westbeld",
+      "position": "PF",
+      "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2002-02-10 ) February 10, 2002 (age\u00a023) Kettering, Ohio , U.S.",
+      "birth_year": 2002,
+      "draftInfo": "2025 / R2 / P16",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-22",
+          "predicted_pts": 7.785233021,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-22",
+          "predicted_pts": 7.785233021,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-10",
+          "predicted_pts": 7.320688566,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-10",
+          "predicted_pts": 7.320688566,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 7.778186639,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 7.778186639,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.778186639,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.778186639,
+          "actual_pts": 9.0
+        }
+      ]
+    },
+    "1628263": {
+      "personId": 1628263,
+      "playerName": "Lindsay Allen",
+      "team": "CON",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Lindsay_Allen",
+      "position": "PG",
+      "height": "5\u00a0ft 8\u00a0in (1.73\u00a0m)",
+      "weight": "145\u00a0lb (66\u00a0kg)",
+      "born": "( 1995-03-20 ) March 20, 1995 (age\u00a030) Clinton, Maryland , U.S.",
+      "birth_year": 1995,
+      "draftInfo": "2017 / R2 / P14",
+      "draft_year": 2017,
+      "performanceHistory": [
+        {
+          "date": "2025-05-20",
+          "predicted_pts": 8.170268218,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-05-20",
+          "predicted_pts": 8.170268218,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-18",
+          "predicted_pts": 8.449413459,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-18",
+          "predicted_pts": 8.449413459,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 7.895573298,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 7.895573298,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 8.170268218,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 8.170268218,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 8.714767456,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 8.714767456,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 8.400283972,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 8.400283972,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 8.00963529,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 8.00963529,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1642303": {
+      "personId": 1642303,
+      "playerName": "Le\u00efla Lacan",
+      "team": "CON",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Le%C3%AFla_Lacan",
+      "position": "G",
+      "height": "5\u00a0ft 11\u00a0in (1.80\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2004-06-02 ) 2 June 2004 (age\u00a021) Rodez , France",
+      "birth_year": 2004,
+      "draftInfo": "2024 / R1 / P10",
+      "draft_year": 2024,
+      "performanceHistory": [
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 10.70769374,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 10.70769374,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 10.67326037,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 10.67326037,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 10.33334796,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 10.33334796,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 10.00728607,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 10.00728607,
+          "actual_pts": 4.0
+        }
+      ]
+    },
+    "1642796": {
+      "personId": 1642796,
+      "playerName": "Rayah Marshall",
+      "team": "CON",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Rayah_Marshall",
+      "position": "F",
+      "height": "6\u00a0ft 4\u00a0in (1.93\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-11-15 ) November 15, 2003 (age\u00a021) Los Angeles , California , U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R2 / P25",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-20",
+          "predicted_pts": 6.639187336,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-05-20",
+          "predicted_pts": 6.639187336,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 6.166082223,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 6.166082223,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 6.116756439,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 6.116756439,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 6.639187336,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 6.639187336,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.512775103,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.512775103,
+          "actual_pts": 2.0
+        }
+      ]
+    },
+    "1642800": {
+      "personId": 1642800,
+      "playerName": "Aneesah Morrow",
+      "team": "CON",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Aneesah_Morrow",
+      "position": "F",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-02-02 ) February 2, 2003 (age\u00a022) Chicago , Illinois, U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R1 / P7",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 9.199309349,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 9.199309349,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-06-18",
+          "predicted_pts": 10.04975605,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-06-18",
+          "predicted_pts": 10.04975605,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 9.691337268,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 9.691337268,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 9.984919866,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 9.984919866,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 9.634780884,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 9.634780884,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 10.22037601,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 10.22037601,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 9.764071147,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 9.764071147,
+          "actual_pts": 16.0
+        }
+      ]
+    },
+    "1642809": {
+      "personId": 1642809,
+      "playerName": "Saniya Rivers",
+      "team": "CON",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Saniya_Rivers",
+      "position": "G",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-03-04 ) March 4, 2003 (age\u00a022) Wilmington, North Carolina , U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R1 / P8",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-20",
+          "predicted_pts": 6.805905819,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-05-20",
+          "predicted_pts": 6.805905819,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 6.418746471,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 6.418746471,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-18",
+          "predicted_pts": 6.89479955,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-18",
+          "predicted_pts": 6.89479955,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 6.037837982,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 6.037837982,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 6.805905819,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 6.805905819,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 6.755399704,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 6.755399704,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.515558561,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.515558561,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.083292484,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.083292484,
+          "actual_pts": 7.0
+        }
+      ]
+    },
+    "1642841": {
+      "personId": 1642841,
+      "playerName": "Mamignan Tour\u00e9",
+      "team": "CON",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Mamignan_Tour%C3%A9",
+      "position": "SG",
+      "height": "6\u00a0ft 0\u00a0in (1.83\u00a0m)",
+      "weight": "N/A",
+      "born": "( 1994-12-19 ) 19 December 1994 (age\u00a030) Nevers , France",
+      "birth_year": 1994,
+      "draftInfo": "N/A",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 8.256259441,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-24",
+          "predicted_pts": 8.256259441,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 8.062155088,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 8.062155088,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.944906394,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-03",
+          "predicted_pts": 7.944906394,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1631064": {
+      "personId": 1631064,
+      "playerName": "Chloe Bibby",
+      "team": "IND",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Chloe_Bibby",
+      "position": "F",
+      "height": "188\u00a0cm (6\u00a0ft 2\u00a0in)",
+      "weight": "88\u00a0kg (194\u00a0lb)",
+      "born": "( 1998-06-15 ) 15 June 1998 (age\u00a027) Horsham, Victoria , Australia",
+      "birth_year": 1998,
+      "draftInfo": "Undrafted",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-07-30",
+          "predicted_pts": 7.412062168,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-07-30",
+          "predicted_pts": 7.412062168,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 6.960318883,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 6.960318883,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1628909": {
+      "personId": 1628909,
+      "playerName": "Kelsey Mitchell",
+      "team": "IND",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kelsey_Mitchell_(basketball)",
+      "position": "PG/SG",
+      "height": "5\u00a0ft 8\u00a0in (1.73\u00a0m)",
+      "weight": "155\u00a0lb (70\u00a0kg)",
+      "born": "( 1995-11-12 ) November 12, 1995 (age\u00a029) Cincinnati, Ohio , U.S.",
+      "birth_year": 1995,
+      "draftInfo": "2018 / R1 / P2",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-05-24",
+          "predicted_pts": 6.1113259,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-05-24",
+          "predicted_pts": 6.1113259,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 6.1113259,
+          "actual_pts": 22.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 6.1113259,
+          "actual_pts": 22.0
+        },
+        {
+          "date": "2025-06-26",
+          "predicted_pts": 6.153863589,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-06-26",
+          "predicted_pts": 6.153863589,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-07-03",
+          "predicted_pts": 6.299292405,
+          "actual_pts": 25.0
+        },
+        {
+          "date": "2025-07-03",
+          "predicted_pts": 6.299292405,
+          "actual_pts": 25.0
+        },
+        {
+          "date": "2025-07-05",
+          "predicted_pts": 6.153863589,
+          "actual_pts": 19.0
+        },
+        {
+          "date": "2025-07-05",
+          "predicted_pts": 6.153863589,
+          "actual_pts": 19.0
+        },
+        {
+          "date": "2025-07-09",
+          "predicted_pts": 6.161302884,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-09",
+          "predicted_pts": 6.161302884,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 5.547201951,
+          "actual_pts": 29.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 5.547201951,
+          "actual_pts": 29.0
+        },
+        {
+          "date": "2025-07-30",
+          "predicted_pts": 6.355014642,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-30",
+          "predicted_pts": 6.355014642,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 5.688153744,
+          "actual_pts": 34.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 5.688153744,
+          "actual_pts": 34.0
+        }
+      ]
+    },
+    "1642815": {
+      "personId": 1642815,
+      "playerName": "Makayla Timpson",
+      "team": "IND",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Makayla_Timpson",
+      "position": "F",
+      "height": "6\u00a0ft 2\u00a0in (1.88\u00a0m)",
+      "weight": "173\u00a0lb (78\u00a0kg)",
+      "born": "( 2002-09-20 ) September 20, 2002 (age\u00a022) Edison, Georgia , U.S.",
+      "birth_year": 2002,
+      "draftInfo": "2025 / R2 / P19",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 8.579990387,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 8.579990387,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-26",
+          "predicted_pts": 8.951610247,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-26",
+          "predicted_pts": 8.951610247,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-03",
+          "predicted_pts": 8.761723042,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-03",
+          "predicted_pts": 8.761723042,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-05",
+          "predicted_pts": 8.951610247,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-05",
+          "predicted_pts": 8.951610247,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-09",
+          "predicted_pts": 8.827296575,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-07-09",
+          "predicted_pts": 8.827296575,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-07-30",
+          "predicted_pts": 8.784142017,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-30",
+          "predicted_pts": 8.784142017,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 8.393744946,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 8.393744946,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "203822": {
+      "personId": 203822,
+      "playerName": "Rebekah Gardner",
+      "team": "NYL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Rebekah_Gardner",
+      "position": "G",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "135\u00a0lb (61\u00a0kg)",
+      "born": "( 1990-07-09 ) July 9, 1990 (age\u00a035) Palm Springs, California , U.S.",
+      "birth_year": 1990,
+      "draftInfo": "Undrafted",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 9.450162411,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 9.450162411,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 8.962492148,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 8.962492148,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 9.374723752,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 9.374723752,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 8.675944169,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 8.675944169,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 9.374723752,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 9.374723752,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 10.26628939,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 10.26628939,
+          "actual_pts": 2.0
+        }
+      ]
+    },
+    "1629546": {
+      "personId": 1629546,
+      "playerName": "Marine Johann\u00e8s",
+      "team": "NYL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Marine_Johann%C3%A8s",
+      "position": "PG/SG",
+      "height": "5\u00a0ft 10\u00a0in (1.78\u00a0m)",
+      "weight": "134\u00a0lb (61\u00a0kg)",
+      "born": "( 1995-01-21 ) 21 January 1995 (age\u00a030) Lisieux , France",
+      "birth_year": 1995,
+      "draftInfo": "Undrafted",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 8.250489712,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 8.250489712,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 7.836398602,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 7.836398602,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 8.034535249,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 8.034535249,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 7.355404377,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 7.355404377,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 8.034535249,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 8.034535249,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 8.352669239,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 8.352669239,
+          "actual_pts": 9.0
+        }
+      ]
+    },
+    "1642785": {
+      "personId": 1642785,
+      "playerName": "Sonia Citron",
+      "team": "WAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Sonia_Citron",
+      "position": "SG",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-10-22 ) October 22, 2003 (age\u00a021) White Plains, New York , U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R1 / P3",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-21",
+          "predicted_pts": 6.336454391,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-05-21",
+          "predicted_pts": 6.336454391,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-05-25",
+          "predicted_pts": 6.559741974,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-05-25",
+          "predicted_pts": 6.559741974,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-06-05",
+          "predicted_pts": 7.250069618,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-06-05",
+          "predicted_pts": 7.250069618,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-07-15",
+          "predicted_pts": 6.335522652,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-15",
+          "predicted_pts": 6.335522652,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 6.922669252,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 6.922669252,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 7.156788667,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 7.156788667,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-07-31",
+          "predicted_pts": 6.882124265,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-07-31",
+          "predicted_pts": 6.882124265,
+          "actual_pts": 16.0
+        }
+      ]
+    },
+    "1642792": {
+      "personId": 1642792,
+      "playerName": "Kiki Iriafen",
+      "team": "WAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kiki_Iriafen",
+      "position": "PF",
+      "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-08-26 ) August 26, 2003 (age\u00a021) Los Angeles, California , U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R1 / P4",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-21",
+          "predicted_pts": 6.729372501,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-05-21",
+          "predicted_pts": 6.729372501,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-05-25",
+          "predicted_pts": 6.130315781,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-05-25",
+          "predicted_pts": 6.130315781,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-06-05",
+          "predicted_pts": 6.765048822,
+          "actual_pts": 17.0
+        },
+        {
+          "date": "2025-06-05",
+          "predicted_pts": 6.765048822,
+          "actual_pts": 17.0
+        },
+        {
+          "date": "2025-07-15",
+          "predicted_pts": 6.429859797,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-15",
+          "predicted_pts": 6.429859797,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 6.751280785,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 6.751280785,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.302117666,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.302117666,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-07-31",
+          "predicted_pts": 6.984861056,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-07-31",
+          "predicted_pts": 6.984861056,
+          "actual_pts": 10.0
+        }
+      ]
+    },
+    "1642802": {
+      "personId": 1642802,
+      "playerName": "Lucy Olsen",
+      "team": "WAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Lucy_Olsen",
+      "position": "PG",
+      "height": "5\u00a0ft 10\u00a0in (1.78\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-05-26 ) May 26, 2003 (age\u00a022) Collegeville, Pennsylvania , U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R2 / P23",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-21",
+          "predicted_pts": 6.399733861,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-05-21",
+          "predicted_pts": 6.399733861,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-05-25",
+          "predicted_pts": 5.958934784,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-05-25",
+          "predicted_pts": 5.958934784,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-05",
+          "predicted_pts": 7.194755236,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-05",
+          "predicted_pts": 7.194755236,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-15",
+          "predicted_pts": 6.150604248,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-15",
+          "predicted_pts": 6.150604248,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 6.786114693,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-22",
+          "predicted_pts": 6.786114693,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.492464066,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.492464066,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-31",
+          "predicted_pts": 6.965664864,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-31",
+          "predicted_pts": 6.965664864,
+          "actual_pts": 5.0
+        }
+      ]
+    },
+    "1642784": {
+      "personId": 1642784,
+      "playerName": "Paige Bueckers",
+      "team": "DAL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Paige_Bueckers",
+      "position": "PG",
+      "height": "6\u00a0ft 0\u00a0in (1.83\u00a0m)",
+      "weight": "141\u00a0lb (64\u00a0kg)",
+      "born": "( 2001-10-20 ) October 20, 2001 (age\u00a023) Edina, Minnesota , U.S.",
+      "birth_year": 2001,
+      "draftInfo": "2025 / R1 / P1",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 10.56619835,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 10.56619835,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 9.923267682,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 9.923267682,
+          "actual_pts": 21.0
+        }
+      ]
+    },
+    "1630143": {
+      "personId": 1630143,
+      "playerName": "Luisa Geisels\u00f6der",
+      "team": "DAL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Luisa_Geisels%C3%B6der",
+      "position": "C",
+      "height": "6\u00a0ft 4\u00a0in (1.93\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2000-02-10 ) 10 February 2000 (age\u00a025) Ansbach , Germany",
+      "birth_year": 2000,
+      "draftInfo": "2020 / R2 / P21",
+      "draft_year": 2020,
+      "performanceHistory": [
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.625015736,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.625015736,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 6.354851564,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 6.354851564,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 5.976951599,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 5.976951599,
+          "actual_pts": 5.0
+        }
+      ]
+    },
+    "1628899": {
+      "personId": 1628899,
+      "playerName": "Myisha Hines-Allen",
+      "team": "DAL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Myisha_Hines-Allen",
+      "position": "SF",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "200\u00a0lb (91\u00a0kg)",
+      "born": "( 1995-05-30 ) May 30, 1995 (age\u00a030) Montclair, New Jersey , U.S.",
+      "birth_year": 1995,
+      "draftInfo": "2018 / R2 / P19",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 10.439943,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 10.439943,
+          "actual_pts": 4.0
+        }
+      ]
+    },
+    "1642793": {
+      "personId": 1642793,
+      "playerName": "Aziaha James",
+      "team": "DAL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Aziaha_James",
+      "position": "G",
+      "height": "5\u00a0ft 10\u00a0in (1.78\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2002-11-19 ) November 19, 2002 (age\u00a022) Virginia Beach, Virginia , U.S.",
+      "birth_year": 2002,
+      "draftInfo": "2025 / R1 / P12",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.67419529,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 6.67419529,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 6.759582361,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 6.759582361,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 6.343292713,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 6.343292713,
+          "actual_pts": 4.0
+        }
+      ]
+    },
+    "1642808": {
+      "personId": 1642808,
+      "playerName": "JJ Quinerly",
+      "team": "DAL",
+      "wikiUrl": "https://en.wikipedia.org/wiki/JJ_Quinerly",
+      "position": "G",
+      "height": "5\u00a0ft 8\u00a0in (1.73\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2002-10-24 ) October 24, 2002 (age\u00a022) Norfolk, Virginia , U.S.",
+      "birth_year": 2002,
+      "draftInfo": "2025 / R3 / P27",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 8.248331706,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-27",
+          "predicted_pts": 8.248331706,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 8.35308965,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-28",
+          "predicted_pts": 8.35308965,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 7.776620865,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-08-05",
+          "predicted_pts": 7.776620865,
+          "actual_pts": 2.0
+        }
+      ]
+    },
+    "1628881": {
+      "personId": 1628881,
+      "playerName": "Monique Billings",
+      "team": "GSV",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Monique_Billings",
+      "position": "PF",
+      "height": "6\u00a0ft 4\u00a0in (1.93\u00a0m)",
+      "weight": "192\u00a0lb (87\u00a0kg)",
+      "born": "( 1996-05-02 ) May 2, 1996 (age\u00a029) Riverside, California , U.S.",
+      "birth_year": 1996,
+      "draftInfo": "2018 / R2 / P15",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 7.616300742,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 7.616300742,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 7.471717676,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 7.471717676,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 7.70821778,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 7.70821778,
+          "actual_pts": 14.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 7.213891506,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 7.213891506,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 7.911615213,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 7.911615213,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 7.361504078,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 7.361504078,
+          "actual_pts": 5.0
+        }
+      ]
+    },
+    "1630097": {
+      "personId": 1630097,
+      "playerName": "Kaila Charles",
+      "team": "GSV",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kaila_Charles",
+      "position": "SG",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "168\u00a0lb (76\u00a0kg)",
+      "born": "( 1998-03-23 ) March 23, 1998 (age\u00a027) Glenn Dale, Maryland , U.S.",
+      "birth_year": 1998,
+      "draftInfo": "2020 / R2 / P23",
+      "draft_year": 2020,
+      "performanceHistory": [
+        {
+          "date": "2025-08-06",
+          "predicted_pts": 11.94670741,
+          "actual_pts": 11.0
+        }
+      ]
+    },
+    "1642822": {
+      "personId": 1642822,
+      "playerName": "Kaitlyn Chen",
+      "team": "GSV",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kaitlyn_Chen",
+      "position": "PG",
+      "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2002-02-22 ) February 22, 2002 (age\u00a023) San Marino, California , U.S.",
+      "birth_year": 2002,
+      "draftInfo": "2025 / R3 / P30",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 8.91972367,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-25",
+          "predicted_pts": 8.91972367,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 8.82303985,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 8.82303985,
+          "actual_pts": 3.0
+        }
+      ]
+    },
+    "1627701": {
+      "personId": 1627701,
+      "playerName": "Temi F\u00e1gb\u00e9nl\u00e9",
+      "team": "GSV",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Temi_Fagbenle",
+      "position": "F",
+      "height": "6\u00a0ft 4\u00a0in (1.93\u00a0m)",
+      "weight": "180\u00a0lb (82\u00a0kg)",
+      "born": "( 1992-09-08 ) 8 September 1992 (age\u00a032) Baltimore, Maryland",
+      "birth_year": 1992,
+      "draftInfo": "2016 / R3 / P35",
+      "draft_year": 2016
+    },
+    "1642304": {
+      "personId": 1642304,
+      "playerName": "Carla Leite",
+      "team": "GSV",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Carla_Leite",
+      "position": "G",
+      "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2004-04-16 ) April 16, 2004 (age\u00a021) Poissy , Yvelines , France",
+      "birth_year": 2004,
+      "draftInfo": "2024 / R1 / P9",
+      "draft_year": 2024,
+      "performanceHistory": [
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 8.937604904,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 8.937604904,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 8.410736243,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 8.410736243,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 8.799818993,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 8.799818993,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 8.326090654,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 8.326090654,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 8.31509908,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 8.31509908,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-08-06",
+          "predicted_pts": 8.799818993,
+          "actual_pts": 11.0
+        }
+      ]
+    },
+    "1642767": {
+      "personId": 1642767,
+      "playerName": "Janelle Sala\u00fcn",
+      "team": "GSV",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Janelle_Sala%C3%BCn",
+      "position": "SF",
+      "height": "6\u00a0ft 2\u00a0in (1.88\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2001-09-05 ) 5 September 2001 (age\u00a023) Paris , France",
+      "birth_year": 2001,
+      "draftInfo": "N/A",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 4.136041482,
+          "actual_pts": 18.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 4.136041482,
+          "actual_pts": 18.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 4.438111305,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 4.438111305,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 4.358920574,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 4.358920574,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 4.154399077,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 4.154399077,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-08-06",
+          "predicted_pts": 4.438111305,
+          "actual_pts": 13.0
+        }
+      ]
+    },
+    "1628508": {
+      "personId": 1628508,
+      "playerName": "Cecilia Zandalasini",
+      "team": "GSV",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Cecilia_Zandalasini",
+      "position": "SF",
+      "height": "6\u00a0ft 2\u00a0in (1.88\u00a0m)",
+      "weight": "175\u00a0lb (79\u00a0kg)",
+      "born": "( 1996-03-16 ) 16 March 1996 (age\u00a029) Broni , Italy",
+      "birth_year": 1996,
+      "draftInfo": "N/A",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 7.286026001,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-05-29",
+          "predicted_pts": 7.286026001,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 7.808506489,
+          "actual_pts": 18.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 7.808506489,
+          "actual_pts": 18.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 7.353849888,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 7.353849888,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-08-06",
+          "predicted_pts": 7.808506489,
+          "actual_pts": 7.0
+        }
+      ]
+    },
+    "1642801": {
+      "personId": 1642801,
+      "playerName": "Aaliyah Nye",
+      "team": "LVA",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Aaliyah_Nye",
+      "position": "G",
+      "height": "6\u00a0ft 0\u00a0in (1.83\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2002-08-14 ) August 14, 2002 (age\u00a022) Traverse City, Michigan , U.S. [ 1 ]",
+      "birth_year": 2002,
+      "draftInfo": "2025 / R2 / P13",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 9.386596362,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 9.386596362,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 9.620848974,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 9.620848974,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 10.26535034,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 10.26535034,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 11.06312434,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 11.06312434,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 10.21952724,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 10.21952724,
+          "actual_pts": 16.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 10.358277,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-12",
+          "predicted_pts": 10.358277,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 9.406704108,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 9.406704108,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-08-06",
+          "predicted_pts": 9.620848974,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1627700": {
+      "personId": 1627700,
+      "playerName": "Julie Allemand",
+      "team": "LAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Julie_Allemand",
+      "position": "PG",
+      "height": "5\u00a0ft 8\u00a0in (1.73\u00a0m)",
+      "weight": "147\u00a0lb (67\u00a0kg)",
+      "born": "( 1996-07-07 ) 7 July 1996 (age\u00a029) Li\u00e8ge , Belgium",
+      "birth_year": 1996,
+      "draftInfo": "2016 / R3 / P33",
+      "draft_year": 2016,
+      "performanceHistory": [
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 7.98597161,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 7.98597161,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 8.042095184,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 8.042095184,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 8.088750521,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 8.088750521,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 8.144552867,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 8.144552867,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1642782": {
+      "personId": 1642782,
+      "playerName": "Sarah Ashlee Barker",
+      "team": "LAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Sarah_Ashlee_Barker",
+      "position": "G",
+      "height": "6\u00a0ft 0\u00a0in (1.83\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2001-09-10 ) September 10, 2001 (age\u00a023) Birmingham, Alabama , U.S.",
+      "birth_year": 2001,
+      "draftInfo": "2025 / R1 / P9",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 5.567350388,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 5.567350388,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 5.723276297,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 5.723276297,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 5.965411663,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 5.965411663,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 5.690174262,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 5.690174262,
+          "actual_pts": 3.0
+        }
+      ]
+    },
+    "1628242": {
+      "personId": 1628242,
+      "playerName": "Emma Cannon",
+      "team": "LAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Emma_Cannon",
+      "position": "PF",
+      "height": "6\u00a0ft 2\u00a0in (1.88\u00a0m)",
+      "weight": "190\u00a0lb (86\u00a0kg)",
+      "born": "( 1989-06-01 ) June 1, 1989 (age\u00a036) Rochester, New York , U.S.",
+      "birth_year": 1989,
+      "draftInfo": "Undrafted",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 8.023580869,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 8.023580869,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 8.07491525,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 8.07491525,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 7.195801099,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 7.195801099,
+          "actual_pts": 6.0
+        }
+      ]
+    },
+    "1642790": {
+      "personId": 1642790,
+      "playerName": "Sania Feagin",
+      "team": "LAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Sania_Feagin",
+      "position": "F",
+      "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2003-03-15 ) March 15, 2003 (age\u00a022) Decatur, Georgia , U.S.",
+      "birth_year": 2003,
+      "draftInfo": "2025 / R2 / P21",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 13.9979496,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 13.9979496,
+          "actual_pts": 4.0
+        }
+      ]
+    },
+    "1628276": {
+      "personId": 1628276,
+      "playerName": "Kelsey Plum",
+      "team": "LAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kelsey_Plum",
+      "position": "PG",
+      "height": "5\u00a0ft 8\u00a0in (1.73\u00a0m)",
+      "weight": "145\u00a0lb (66\u00a0kg)",
+      "born": "( 1994-08-24 ) August 24, 1994 (age\u00a030) Poway, California , U.S.",
+      "birth_year": 1994,
+      "draftInfo": "2017 / R1 / P1",
+      "draft_year": 2017,
+      "performanceHistory": [
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 9.179412842,
+          "actual_pts": 37.0
+        },
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 9.179412842,
+          "actual_pts": 37.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 9.861714045,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 9.861714045,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 9.803142548,
+          "actual_pts": 24.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 9.803142548,
+          "actual_pts": 24.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 9.607909203,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 9.607909203,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 9.373147011,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 9.373147011,
+          "actual_pts": 20.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 10.26407878,
+          "actual_pts": 22.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 10.26407878,
+          "actual_pts": 22.0
+        }
+      ]
+    },
+    "1628922": {
+      "personId": 1628922,
+      "playerName": "Azur\u00e1 Stevens",
+      "team": "LAS",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Azur%C3%A1_Stevens",
+      "position": "PF",
+      "height": "6\u00a0ft 6\u00a0in (1.98\u00a0m)",
+      "weight": "180\u00a0lb (82\u00a0kg)",
+      "born": "( 1996-02-01 ) February 1, 1996 (age\u00a029) Pawtucket, Rhode Island , U.S.",
+      "birth_year": 1996,
+      "draftInfo": "2018 / R1 / P6",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 5.39628458,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-05-16",
+          "predicted_pts": 5.39628458,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 5.756855488,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 5.756855488,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 5.555657705,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-09",
+          "predicted_pts": 5.555657705,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 5.467484474,
+          "actual_pts": 19.0
+        },
+        {
+          "date": "2025-06-11",
+          "predicted_pts": 5.467484474,
+          "actual_pts": 19.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 5.482126395,
+          "actual_pts": 17.0
+        },
+        {
+          "date": "2025-07-26",
+          "predicted_pts": 5.482126395,
+          "actual_pts": 17.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 5.636047204,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-07-29",
+          "predicted_pts": 5.636047204,
+          "actual_pts": 9.0
+        }
+      ]
+    },
+    "1628304": {
+      "personId": 1628304,
+      "playerName": "Yvonne Anderson",
+      "team": "MIN",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Yvonne_Anderson",
+      "position": "PG",
+      "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
+      "weight": "N/A",
+      "born": "( 1990-03-08 ) March 8, 1990 (age\u00a035) Springdale, Arkansas , US",
+      "birth_year": 1990,
+      "draftInfo": "Undrafted",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-08-02",
+          "predicted_pts": 7.15283076,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-02",
+          "predicted_pts": 7.15283076,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1628926": {
+      "personId": 1628926,
+      "playerName": "Maria Kliundikova",
+      "team": "MIN",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Maria_Kliundikova",
+      "position": "C",
+      "height": "6\u00a0ft 4\u00a0in (1.93\u00a0m)",
+      "weight": "185\u00a0lb (84\u00a0kg)",
+      "born": "( 1998-07-16 ) 16 July 1998 (age\u00a027) Moscow , Russia",
+      "birth_year": 1998,
+      "draftInfo": "2018 / R1 / P11",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 7.782088439,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 7.782088439,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 7.782088439,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 7.782088439,
+          "actual_pts": 12.0
+        },
+        {
+          "date": "2025-07-09",
+          "predicted_pts": 7.378077825,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-09",
+          "predicted_pts": 7.378077825,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-02",
+          "predicted_pts": 7.374726454,
+          "actual_pts": 8.0
+        },
+        {
+          "date": "2025-08-02",
+          "predicted_pts": 7.374726454,
+          "actual_pts": 8.0
+        }
+      ]
+    },
+    "1642797": {
+      "personId": 1642797,
+      "playerName": "Anastasiia Olairi Kosu",
+      "team": "MIN",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Anastasiia_Kosu",
+      "position": "F",
+      "height": "1.85\u00a0m (6\u00a0ft 1\u00a0in)",
+      "weight": "86\u00a0kg (190\u00a0lb)",
+      "born": "( 2005-04-21 ) 21 April 2005 (age\u00a020) Kursk, Russia",
+      "birth_year": 2005,
+      "draftInfo": "2025 / R2 / P15",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-06-03",
+          "predicted_pts": 9.378129005,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-03",
+          "predicted_pts": 9.378129005,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 9.408036232,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 9.408036232,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 9.408036232,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-21",
+          "predicted_pts": 9.408036232,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-08-02",
+          "predicted_pts": 8.820595741,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-08-02",
+          "predicted_pts": 8.820595741,
+          "actual_pts": 4.0
+        }
+      ]
+    },
+    "1642777": {
+      "personId": 1642777,
+      "playerName": "Monique Akoa Makani",
+      "team": "PHO",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Monique_Akoa_Makani",
+      "position": "PG",
+      "height": "5\u00a0ft 10\u00a0in (1.78\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2001-02-04 ) 4 February 2001 (age\u00a024) Bafang , Cameroon",
+      "birth_year": 2001,
+      "draftInfo": "N/A",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 4.418602626,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 4.418602626,
+          "actual_pts": 10.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 4.084082286,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 4.084082286,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 4.267294407,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 4.267294407,
+          "actual_pts": 21.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 4.461728573,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 4.461728573,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 4.267294407,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 4.267294407,
+          "actual_pts": 9.0
+        }
+      ]
+    },
+    "1631118": {
+      "personId": 1631118,
+      "playerName": "Lexi Held",
+      "team": "PHO",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Lexi_Held",
+      "position": "G",
+      "height": "5\u00a0ft 10\u00a0in (1.78\u00a0m)",
+      "weight": "N/A",
+      "born": "( 1999-12-28 ) December 28, 1999 (age\u00a025) Burlington, Kentucky , U.S.",
+      "birth_year": 1999,
+      "draftInfo": "Undrafted",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 8.228583177,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 8.228583177,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 8.636610031,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 8.636610031,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 8.510262012,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 8.510262012,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 8.510262012,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 8.510262012,
+          "actual_pts": 3.0
+        }
+      ]
+    },
+    "1629490": {
+      "personId": 1629490,
+      "playerName": "Kitija Laksa",
+      "team": "PHO",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kitija_Laksa",
+      "position": "SF",
+      "height": "6\u00a0ft 1\u00a0in (1.85\u00a0m)",
+      "weight": "155\u00a0lb (70\u00a0kg)",
+      "born": "( 1996-05-21 ) 21 May 1996 (age\u00a029) Riga , Latvia",
+      "birth_year": 1996,
+      "draftInfo": "2020 / R1 / P11",
+      "draft_year": 2020,
+      "performanceHistory": [
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 11.4056174,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 11.4056174,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 11.24789969,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 11.24789969,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 11.27363682,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 11.27363682,
+          "actual_pts": 13.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 11.74131902,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 11.74131902,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 11.27363682,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 11.27363682,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1630442": {
+      "personId": 1630442,
+      "playerName": "Natasha Mack",
+      "team": "PHO",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Natasha_Mack",
+      "position": "F",
+      "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
+      "weight": "182\u00a0lb (83\u00a0kg)",
+      "born": "( 1997-11-03 ) November 3, 1997 (age\u00a027) Lufkin, Texas",
+      "birth_year": 1997,
+      "draftInfo": "2021 / R2 / P16",
+      "draft_year": 2021,
+      "performanceHistory": [
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 6.721446514,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 6.721446514,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 7.069501718,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 7.069501718,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 7.182612578,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 7.182612578,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 7.069501718,
+          "actual_pts": 9.0
+        },
+        {
+          "date": "2025-07-25",
+          "predicted_pts": 7.069501718,
+          "actual_pts": 9.0
+        }
+      ]
+    },
+    "1628957": {
+      "personId": 1628957,
+      "playerName": "Kathryn Westbeld",
+      "team": "PHO",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kathryn_Westbeld",
+      "position": "F",
+      "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
+      "weight": "N/A",
+      "born": "( 1996-01-29 ) January 29, 1996 (age\u00a029) Kettering, Ohio , U.S.",
+      "birth_year": 1996,
+      "draftInfo": "Undrafted",
+      "draft_year": null,
+      "performanceHistory": [
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 6.594781876,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-01",
+          "predicted_pts": 6.594781876,
+          "actual_pts": 15.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 6.51427873,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-06-15",
+          "predicted_pts": 6.51427873,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 6.321196715,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-19",
+          "predicted_pts": 6.321196715,
+          "actual_pts": 4.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 6.914914608,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 6.914914608,
+          "actual_pts": 6.0
+        }
+      ]
+    },
+    "1628882": {
+      "personId": 1628882,
+      "playerName": "Lexie Brown",
+      "team": "SEA",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Lexie_Brown",
+      "position": "PG",
+      "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
+      "weight": "162\u00a0lb (73\u00a0kg)",
+      "born": "( 1994-10-27 ) October 27, 1994 (age\u00a030) Boston, Massachusetts , U.S.",
+      "birth_year": 1994,
+      "draftInfo": "2018 / R1 / P9",
+      "draft_year": 2018,
+      "performanceHistory": [
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 6.241830667,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 6.241830667,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 6.241830667,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 6.241830667,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 6.179717859,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 6.179717859,
+          "actual_pts": 5.0
+        },
+        {
+          "date": "2025-06-17",
+          "predicted_pts": 6.436321259,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-17",
+          "predicted_pts": 6.436321259,
+          "actual_pts": 3.0
+        },
+        {
+          "date": "2025-06-20",
+          "predicted_pts": 6.670981725,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-20",
+          "predicted_pts": 6.670981725,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 7.081237793,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 7.081237793,
+          "actual_pts": 1.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 6.46949021,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 6.46949021,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1642307": {
+      "personId": 1642307,
+      "playerName": "Mackenzie Holmes",
+      "team": "SEA",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Mackenzie_Holmes",
+      "position": "F",
+      "height": "6\u00a0ft 3\u00a0in (1.91\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2000-11-01 ) November 1, 2000 (age\u00a024)",
+      "birth_year": 2000,
+      "draftInfo": "2024 / R3 / P26",
+      "draft_year": 2024,
+      "performanceHistory": [
+        {
+          "date": "2025-06-17",
+          "predicted_pts": 8.304450353,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-17",
+          "predicted_pts": 8.304450353,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.200891495,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 8.200891495,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 8.21356074,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 8.21356074,
+          "actual_pts": 0.0
+        }
+      ]
+    },
+    "1642798": {
+      "personId": 1642798,
+      "playerName": "Dominique Malonga",
+      "team": "SEA",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Dominique_Malonga_(basketball)",
+      "position": "F",
+      "height": "6\u00a0ft 6\u00a0in (1.98\u00a0m)",
+      "weight": "N/A",
+      "born": "( 2005-11-16 ) 16 November 2005 (age\u00a019) Yaound\u00e9 , Cameroon",
+      "birth_year": 2005,
+      "draftInfo": "2025 / R1 / P2",
+      "draft_year": 2025,
+      "performanceHistory": [
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 7.475322723,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-05-17",
+          "predicted_pts": 7.475322723,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 7.475322723,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-07",
+          "predicted_pts": 7.475322723,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 7.920917988,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-14",
+          "predicted_pts": 7.920917988,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-17",
+          "predicted_pts": 8.096277078,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-17",
+          "predicted_pts": 8.096277078,
+          "actual_pts": 7.0
+        },
+        {
+          "date": "2025-06-20",
+          "predicted_pts": 8.172180494,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-20",
+          "predicted_pts": 8.172180494,
+          "actual_pts": 0.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 8.643761953,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-22",
+          "predicted_pts": 8.643761953,
+          "actual_pts": 6.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 7.920917988,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-06-29",
+          "predicted_pts": 7.920917988,
+          "actual_pts": 2.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 7.808404764,
+          "actual_pts": 11.0
+        },
+        {
+          "date": "2025-07-06",
+          "predicted_pts": 7.808404764,
+          "actual_pts": 11.0
+        }
+      ]
+    },
+    "1627676": {
+      "personId": 1627676,
+      "playerName": "Tiffany Mitchell",
+      "team": "SEA",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Tiffany_Mitchell_(basketball)",
+      "position": "SG",
+      "height": "5\u00a0ft 9\u00a0in (1.75\u00a0m)",
+      "weight": "169\u00a0lb (77\u00a0kg)",
+      "born": "( 1994-09-23 ) September 23, 1994 (age\u00a030) Charlotte, North Carolina , U.S.",
+      "birth_year": 1994,
+      "draftInfo": "2016 / R1 / P9",
+      "draft_year": 2016
     }
   },
   "dailyGamesByDate": {

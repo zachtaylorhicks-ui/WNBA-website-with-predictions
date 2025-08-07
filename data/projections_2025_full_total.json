@@ -212,7 +212,7 @@
     "FTM": 48.397075473,
     "FTA": 64.548276919,
     "playerName": "Rebekah Gardner",
-    "position": null,
+    "position": "G",
     "team": "NYL"
   },
   {
@@ -662,7 +662,7 @@
     "FTM": 43.889656664,
     "FTA": 58.518046458,
     "playerName": "Tiffany Mitchell",
-    "position": null,
+    "position": "SG",
     "team": "SEA"
   },
   {
@@ -680,7 +680,7 @@
     "FTM": 39.737823328,
     "FTA": 58.965171498,
     "playerName": "Julie Allemand",
-    "position": null,
+    "position": "PG",
     "team": "LAS"
   },
   {
@@ -698,7 +698,7 @@
     "FTM": 21.9128364327,
     "FTA": 26.2829914895,
     "playerName": "Emma Cannon",
-    "position": null,
+    "position": "PF",
     "team": "LAS"
   },
   {
@@ -734,7 +734,7 @@
     "FTM": 59.177506886,
     "FTA": 84.338767057,
     "playerName": "Lindsay Allen",
-    "position": null,
+    "position": "PG",
     "team": "CON"
   },
   {
@@ -752,7 +752,7 @@
     "FTM": 45.42292138,
     "FTA": 60.874984543000004,
     "playerName": "Nia Coffey",
-    "position": null,
+    "position": "SF",
     "team": "ATL"
   },
   {
@@ -770,7 +770,7 @@
     "FTM": 51.87827194,
     "FTA": 61.449845633,
     "playerName": "Kelsey Plum",
-    "position": null,
+    "position": "PG",
     "team": "LAS"
   },
   {
@@ -788,7 +788,7 @@
     "FTM": 44.734176575,
     "FTA": 63.576322872,
     "playerName": "Allisha Gray",
-    "position": null,
+    "position": "SG",
     "team": "ATL"
   },
   {
@@ -842,7 +842,7 @@
     "FTM": 53.870908794,
     "FTA": 58.73074007,
     "playerName": "Brionna Jones",
-    "position": null,
+    "position": "PF",
     "team": "ATL"
   },
   {
@@ -860,7 +860,7 @@
     "FTM": 19.370329836899998,
     "FTA": 30.6502686936,
     "playerName": "Yvonne Anderson",
-    "position": null,
+    "position": "PG",
     "team": "MIN"
   },
   {
@@ -878,7 +878,7 @@
     "FTM": 29.0124893794,
     "FTA": 31.095195073,
     "playerName": "Cecilia Zandalasini",
-    "position": null,
+    "position": "SF",
     "team": "GSV"
   },
   {
@@ -914,7 +914,7 @@
     "FTM": 42.106341124,
     "FTA": 56.443558812,
     "playerName": "Monique Billings",
-    "position": null,
+    "position": "PF",
     "team": "GSV"
   },
   {
@@ -932,7 +932,7 @@
     "FTM": 24.2910009832,
     "FTA": 25.9065359046,
     "playerName": "Lexie Brown",
-    "position": null,
+    "position": "PG",
     "team": "SEA"
   },
   {
@@ -950,7 +950,7 @@
     "FTM": 30.4052185401,
     "FTA": 27.1726571119,
     "playerName": "Jordin Canada",
-    "position": null,
+    "position": "PG",
     "team": "ATL"
   },
   {
@@ -968,7 +968,7 @@
     "FTM": 52.030216852,
     "FTA": 58.621795895,
     "playerName": "Myisha Hines-Allen",
-    "position": null,
+    "position": "SF",
     "team": "DAL"
   },
   {
@@ -986,7 +986,7 @@
     "FTM": 37.1323674951,
     "FTA": 42.784573911,
     "playerName": "Kelsey Mitchell",
-    "position": null,
+    "position": "PG/SG",
     "team": "IND"
   },
   {
@@ -1004,7 +1004,7 @@
     "FTM": 26.658364356099998,
     "FTA": 31.682183384800002,
     "playerName": "Kia Nurse",
-    "position": null,
+    "position": "PG",
     "team": "CHI"
   },
   {
@@ -1022,7 +1022,7 @@
     "FTM": 15.5330228507,
     "FTA": 18.0197313426,
     "playerName": "Azur\u00e1 Stevens",
-    "position": null,
+    "position": "PF",
     "team": "LAS"
   },
   {
@@ -1040,7 +1040,7 @@
     "FTM": 44.883103808,
     "FTA": 55.058967867999996,
     "playerName": "Maria Kliundikova",
-    "position": null,
+    "position": "C",
     "team": "MIN"
   },
   {
@@ -1112,7 +1112,7 @@
     "FTM": 26.9521283092,
     "FTA": 30.812566020000002,
     "playerName": "Kathryn Westbeld",
-    "position": null,
+    "position": "F",
     "team": "PHO"
   },
   {
@@ -1274,7 +1274,7 @@
     "FTM": 63.153848094,
     "FTA": 81.210016327,
     "playerName": "Kitija Laksa",
-    "position": null,
+    "position": "SF",
     "team": "PHO"
   },
   {
@@ -1400,7 +1400,7 @@
     "FTM": 46.044037184,
     "FTA": 47.915362538,
     "playerName": "Marine Johann\u00e8s",
-    "position": null,
+    "position": "PG/SG",
     "team": "NYL"
   },
   {
@@ -1508,7 +1508,7 @@
     "FTM": 37.010830203,
     "FTA": 43.76206406,
     "playerName": "Kaila Charles",
-    "position": null,
+    "position": "SG",
     "team": "GSV"
   },
   {
@@ -1580,7 +1580,7 @@
     "FTM": 14.9674225971,
     "FTA": 18.1589557976,
     "playerName": "Luisa Geisels\u00f6der",
-    "position": null,
+    "position": "C",
     "team": "DAL"
   },
   {
@@ -1616,7 +1616,7 @@
     "FTM": 49.375346937,
     "FTA": 49.612872559,
     "playerName": "Kamiah Smalls",
-    "position": null,
+    "position": "SG",
     "team": "ATL"
   },
   {
@@ -1688,7 +1688,7 @@
     "FTM": 11.9555421273,
     "FTA": 17.0359959899,
     "playerName": "Natasha Mack",
-    "position": null,
+    "position": "F",
     "team": "PHO"
   },
   {
@@ -1742,7 +1742,7 @@
     "FTM": 79.420330365,
     "FTA": 95.630694866,
     "playerName": "Maya Caldwell",
-    "position": null,
+    "position": "G",
     "team": "ATL"
   },
   {
@@ -1832,7 +1832,7 @@
     "FTM": 57.608737388,
     "FTA": 56.926011087,
     "playerName": "NaLyssa Smith",
-    "position": "N/A",
+    "position": "PF",
     "team": "LVA"
   },
   {
@@ -1922,7 +1922,7 @@
     "FTM": 39.3028366003,
     "FTA": 54.469878079,
     "playerName": "Chloe Bibby",
-    "position": null,
+    "position": "F",
     "team": "IND"
   },
   {
@@ -1976,7 +1976,7 @@
     "FTM": 30.1285174888,
     "FTA": 39.046346764,
     "playerName": "Lexi Held",
-    "position": null,
+    "position": "G",
     "team": "PHO"
   },
   {
@@ -2408,7 +2408,7 @@
     "FTM": 62.879502597,
     "FTA": 73.397917588,
     "playerName": "Le\u00efla Lacan",
-    "position": null,
+    "position": "G",
     "team": "CON"
   },
   {
@@ -2426,7 +2426,7 @@
     "FTM": 42.177312969,
     "FTA": 55.674835722,
     "playerName": "Carla Leite",
-    "position": null,
+    "position": "G",
     "team": "GSV"
   },
   {
@@ -2444,7 +2444,7 @@
     "FTM": 27.8726765503,
     "FTA": 27.8426163206,
     "playerName": "Mackenzie Holmes",
-    "position": null,
+    "position": "F",
     "team": "SEA"
   },
   {
@@ -2480,7 +2480,7 @@
     "FTM": 10.9303558568,
     "FTA": 7.0742129489,
     "playerName": "Janelle Sala\u00fcn",
-    "position": null,
+    "position": "SF",
     "team": "GSV"
   },
   {
@@ -2498,7 +2498,7 @@
     "FTM": 16.8885178318,
     "FTA": 15.3800355671,
     "playerName": "Monique Akoa Makani",
-    "position": null,
+    "position": "PG",
     "team": "PHO"
   },
   {
@@ -2516,7 +2516,7 @@
     "FTM": 30.525861881,
     "FTA": 35.541264099,
     "playerName": "Sarah Ashlee Barker",
-    "position": null,
+    "position": "G",
     "team": "LAS"
   },
   {
@@ -2534,7 +2534,7 @@
     "FTM": 40.172979633,
     "FTA": 50.000034888,
     "playerName": "Paige Bueckers",
-    "position": null,
+    "position": "PG",
     "team": "DAL"
   },
   {
@@ -2552,7 +2552,7 @@
     "FTM": 37.788295466,
     "FTA": 52.127419949,
     "playerName": "Sonia Citron",
-    "position": null,
+    "position": "SG",
     "team": "WAS"
   },
   {
@@ -2570,7 +2570,7 @@
     "FTM": 83.60136978,
     "FTA": 97.662552675,
     "playerName": "Sania Feagin",
-    "position": null,
+    "position": "F",
     "team": "LAS"
   },
   {
@@ -2588,7 +2588,7 @@
     "FTM": 28.5696113912,
     "FTA": 31.1447218675,
     "playerName": "Kiki Iriafen",
-    "position": null,
+    "position": "PF",
     "team": "WAS"
   },
   {
@@ -2606,7 +2606,7 @@
     "FTM": 17.0546807847,
     "FTA": 25.0212785026,
     "playerName": "Aziaha James",
-    "position": null,
+    "position": "G",
     "team": "DAL"
   },
   {
@@ -2624,7 +2624,7 @@
     "FTM": 44.979134421,
     "FTA": 56.054369966,
     "playerName": "Rayah Marshall",
-    "position": null,
+    "position": "F",
     "team": "CON"
   },
   {
@@ -2642,7 +2642,7 @@
     "FTM": 34.1400517627,
     "FTA": 42.812410374,
     "playerName": "Anastasiia Olairi Kosu",
-    "position": null,
+    "position": "F",
     "team": "MIN"
   },
   {
@@ -2660,7 +2660,7 @@
     "FTM": 35.305682159999996,
     "FTA": 43.889264386,
     "playerName": "Dominique Malonga",
-    "position": null,
+    "position": "F",
     "team": "SEA"
   },
   {
@@ -2678,7 +2678,7 @@
     "FTM": 51.996125458,
     "FTA": 61.369654598000004,
     "playerName": "Aneesah Morrow",
-    "position": null,
+    "position": "F",
     "team": "CON"
   },
   {
@@ -2696,7 +2696,7 @@
     "FTM": 42.038200221000004,
     "FTA": 44.486138505,
     "playerName": "Aaliyah Nye",
-    "position": null,
+    "position": "G",
     "team": "LVA"
   },
   {
@@ -2714,7 +2714,7 @@
     "FTM": 27.332154432,
     "FTA": 37.636484287,
     "playerName": "Lucy Olsen",
-    "position": null,
+    "position": "PG",
     "team": "WAS"
   },
   {
@@ -2732,7 +2732,7 @@
     "FTM": 67.880954821,
     "FTA": 84.651891154,
     "playerName": "Te-Hina Paopao",
-    "position": null,
+    "position": "G",
     "team": "ATL"
   },
   {
@@ -2750,7 +2750,7 @@
     "FTM": 22.6992297169,
     "FTA": 31.585001629,
     "playerName": "JJ Quinerly",
-    "position": null,
+    "position": "G",
     "team": "DAL"
   },
   {
@@ -2768,7 +2768,7 @@
     "FTM": 39.322288931,
     "FTA": 54.420055824,
     "playerName": "Saniya Rivers",
-    "position": null,
+    "position": "G",
     "team": "CON"
   },
   {
@@ -2786,7 +2786,7 @@
     "FTM": 65.469193656,
     "FTA": 82.800594891,
     "playerName": "Taylor Thierry",
-    "position": null,
+    "position": "G",
     "team": "ATL"
   },
   {
@@ -2804,7 +2804,7 @@
     "FTM": 41.508102696,
     "FTA": 50.206568439,
     "playerName": "Makayla Timpson",
-    "position": null,
+    "position": "F",
     "team": "IND"
   },
   {
@@ -2822,7 +2822,7 @@
     "FTM": 39.515226799,
     "FTA": 42.093446749,
     "playerName": "Hailey Van Lith",
-    "position": null,
+    "position": "PG",
     "team": "CHI"
   },
   {
@@ -2840,7 +2840,7 @@
     "FTM": 33.319685617,
     "FTA": 39.773592592,
     "playerName": "Maddy Westbeld",
-    "position": null,
+    "position": "PF",
     "team": "CHI"
   },
   {
@@ -2858,7 +2858,7 @@
     "FTM": 26.9948384959,
     "FTA": 24.4784236544,
     "playerName": "Kaitlyn Chen",
-    "position": null,
+    "position": "PG",
     "team": "GSV"
   },
   {
@@ -2876,7 +2876,7 @@
     "FTM": 56.378629925,
     "FTA": 66.950258852,
     "playerName": "Mamignan Tour\u00e9",
-    "position": null,
+    "position": "SG",
     "team": "CON"
   }
 ]

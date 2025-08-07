@@ -2333,8 +2333,8 @@
     "FTA": 102.0,
     "MIN": 671.3,
     "playerName": "Tiffany Mitchell",
-    "position": null,
-    "team": "IND"
+    "position": "SG",
+    "team": "SEA"
   },
   {
     "personId": 1627677.0,
@@ -2485,8 +2485,8 @@
     "FTA": 9.0,
     "MIN": 92.8,
     "playerName": "Temi F\u00e1gb\u00e9nl\u00e9",
-    "position": null,
-    "team": "MIN"
+    "position": "F",
+    "team": "GSV"
   },
   {
     "personId": 1628242.0,
@@ -2504,8 +2504,8 @@
     "FTA": 63.0,
     "MIN": 480.6,
     "playerName": "Emma Cannon",
-    "position": null,
-    "team": "PHO"
+    "position": "PF",
+    "team": "LAS"
   },
   {
     "personId": 1628244.0,
@@ -2580,8 +2580,8 @@
     "FTA": 10.0,
     "MIN": 381.5,
     "playerName": "Lindsay Allen",
-    "position": null,
-    "team": "NYL"
+    "position": "PG",
+    "team": "CON"
   },
   {
     "personId": 1628265.0,
@@ -2637,8 +2637,8 @@
     "FTA": 22.0,
     "MIN": 210.4,
     "playerName": "Nia Coffey",
-    "position": null,
-    "team": null
+    "position": "SF",
+    "team": "ATL"
   },
   {
     "personId": 1628273.0,
@@ -2675,8 +2675,8 @@
     "FTA": 69.0,
     "MIN": 710.8,
     "playerName": "Kelsey Plum",
-    "position": null,
-    "team": null
+    "position": "PG",
+    "team": "LAS"
   },
   {
     "personId": 1628277.0,
@@ -2694,8 +2694,8 @@
     "FTA": 136.0,
     "MIN": 941.1,
     "playerName": "Allisha Gray",
-    "position": null,
-    "team": "DAL"
+    "position": "SG",
+    "team": "ATL"
   },
   {
     "personId": 1628278.0,
@@ -2751,8 +2751,8 @@
     "FTA": 24.0,
     "MIN": 147.4,
     "playerName": "Brionna Jones",
-    "position": null,
-    "team": "CON"
+    "position": "PF",
+    "team": "ATL"
   },
   {
     "personId": 1628282.0,
@@ -2979,7 +2979,7 @@
     "FTA": 0.0,
     "MIN": 29.5,
     "playerName": "Cecilia Zandalasini",
-    "position": null,
-    "team": "MIN"
+    "position": "SF",
+    "team": "GSV"
   }
 ]
