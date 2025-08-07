@@ -1,4 +1,4 @@
-name: Hourly Injury Update
+name: ✅ Hourly WNBA Injury Update
 on:
   schedule:
     - cron: '0 * * * *'
