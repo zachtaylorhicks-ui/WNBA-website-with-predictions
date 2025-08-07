@@ -18,7 +18,7 @@ const TEAM_ANALYSIS_STATS = ["GP", "MIN", "PTS", "REB", "AST"];
 document.addEventListener("DOMContentLoaded", async () => {
     initializeTheme();
     try {
-        const response = await fetch("predictions.json");
+        const response = await fetch("dist/predictions.json"); // UPDATED PATH
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         fullData = await response.json();
         document.getElementById("last-updated").textContent = new Date(fullData.lastUpdated).toLocaleString();
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } catch (e) {
         console.error("FATAL: Failed to initialize application.", e);
-        document.body.innerHTML = `<div style="text-align:center; padding: 50px; font-size:1.2em;">Error: Could not load core application data. Please check the browser console (F12) for details. The 'predictions.json' file may be missing or corrupt.<br><br><i>${e.message}</i></div>`;
+        document.body.innerHTML = `<div style="text-align:center; padding: 50px; font-size:1.2em;">Error: Could not load core application data. Please check the browser console (F12) for details. The 'dist/predictions.json' file may be missing or corrupt.<br><br><i>${e.message}</i></div>`;
     }
 });
 
@@ -61,7 +61,7 @@ async function fetchSeasonData(key) {
     if (!key) return null;
     if (loadedSeasonDataCache[key]) return loadedSeasonDataCache[key];
     try {
-        const response = await fetch(`data/${key}.json`);
+        const response = await fetch(`dist/data/${key}.json`); // UPDATED PATH
         if (!response.ok) throw new Error(`File not found for key: ${key}`);
         const data = await response.json();
         loadedSeasonDataCache[key] = data;
@@ -236,6 +236,7 @@ async function renderPlayerPerformanceHistoryChart(profile) {
     container.innerHTML = '<canvas id="modal-chart"></canvas>';
     const ctx = document.getElementById('modal-chart').getContext('2d');
     const history = profile.performanceHistory;
+    // This will always be true for our WNBA data for now, which is correct.
     if (!history || history.length === 0) {
         container.innerHTML = '<p style="text-align:center; padding: 20px;">No recent performance history available.</p>';
         return;
@@ -260,15 +261,18 @@ async function renderPlayerCareerCurveChart(personId) {
     container.innerHTML = '<canvas id="modal-chart"></canvas>';
     const ctx = document.getElementById('modal-chart').getContext('2d');
     const careerData = await fetchSeasonData('career_data');
-    const playerData = careerData?.players?.[personId];
+
+    // ** FIX: Check if careerData and careerData.players exist before trying to access them **
+    const playerData = (careerData && careerData.players) ? careerData.players[personId] : null;
+    
     if (!playerData || playerData.length === 0) {
-        container.innerHTML = '<p style="text-align:center; padding: 20px;">No long-term career data available for this player.</p>';
+        container.innerHTML = '<p style="text-align:center; padding: 20px;">Long-term career data is not yet available for this view.</p>';
         return;
     }
     modalChartInstance = new Chart(ctx, {
         type: 'line',
         data: { datasets: [{ label: 'Monthly PTS Average', data: playerData.map(d => ({ x: d.x_games, y: d.PTS })), borderColor: 'var(--primary-color)', backgroundColor: 'var(--primary-color)', tension: 0.1, fill: false }] },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { type: 'linear', title: { display: true, text: 'NBA Games Played' } }, y: { title: { display: true, text: 'Points Per Game' } } } }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { type: 'linear', title: { display: true, text: 'WNBA Games Played' } }, y: { title: { display: true, text: 'Points Per Game' } } } }
     });
 }
 
@@ -295,7 +299,7 @@ function initializeSeasonTab() {
     const sortedSeasons = Object.keys(sourcesBySeason).sort((a, b) => a.includes('proj') ? -1 : b.includes('proj') ? 1 : b.localeCompare(a));
     seasonSelector.innerHTML = sortedSeasons.map(year => {
         const repSource = sourcesBySeason[year].find(s => s.split === 'full' || s.split === 'projections');
-        const label = repSource ? repSource.label.match(/(\d{4}-\d{2})|(\d{4}-\d{2}\s\w+)|(Projections)/)[0] : year;
+        const label = repSource ? repSource.label.match(/(\d{4}-\d{2})|(\d{4}-\d{2}\s\w+)|(\d{4}\sProjections)|(\d{4})/)[0] : year;
         return `<option value="${year}">${label.replace(/ Full Season/g, '')}</option>`;
     }).join('');
 
@@ -331,12 +335,10 @@ async function renderSeasonTable() {
     tbody.innerHTML = `<tr><td colspan="17" style="text-align:center;">Loading player data...</td></tr>`;
     
     let data = await fetchSeasonData(sourceKey);
-    if (!data) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">Could not load data for '${sourceKey}.json'.</td></tr>`; return; }
+    if (!data) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">Could not load data for '${sourceKey}'.</td></tr>`; return; }
     
-    // FIX [Z-Score Philosophy]: Recalculate the displayed Total based on punts.
     let processedData = data.map(player => ({
         ...player,
-        // The final displayed score is the unweighted sum of activated categories.
         custom_z_score_display: Array.from(settings.activeCategories).reduce((acc, catKey) => acc + (player[STAT_CONFIG[catKey].zKey] || 0), 0)
     }));
     
@@ -345,7 +347,6 @@ async function renderSeasonTable() {
     }
 
     currentSort.data = processedData;
-    // Set sorting to the displayed Z-score by default for Tab 1
     currentSort.column = 'custom_z_score_display';
     currentSort.direction = 'desc';
     
@@ -372,7 +373,6 @@ function sortSeasonData() {
     const { column, direction, data } = currentSort;
     if (!data) return;
     const mod = direction === "asc" ? 1 : -1;
-    // Use 'custom_z_score_display' for the total column, otherwise the specific key
     const sortKey = column === 'custom_z_score' ? 'custom_z_score_display' : column;
     
     data.sort((a, b) => {
@@ -385,10 +385,8 @@ function sortSeasonData() {
 
 function renderSeasonTableBody(showCount) {
     const thead = document.getElementById("predictions-thead");
-    // Update the sorting keys in the HTML table header to match the JS keys
     thead.innerHTML = `<tr><th>R#</th><th data-sort-key="playerName">Player</th><th data-sort-key="position">Pos</th><th data-sort-key="team">Team</th><th data-sort-key="GP">GP</th><th data-sort-key="MIN">MPG</th>${ALL_STAT_KEYS.map(k=>`<th data-sort-key="${STAT_CONFIG[k].zKey}">${STAT_CONFIG[k].name}</th>`).join('')}<th data-sort-key="custom_z_score">TOTAL▼</th></tr>`;
 
-    // Highlight the currently sorted column
     document.querySelectorAll('#predictions-thead th').forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
     const currentTh = thead.querySelector(`[data-sort-key="${currentSort.column}"]`);
     if(currentTh) currentTh.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
@@ -402,7 +400,6 @@ function renderSeasonTableBody(showCount) {
     
     tbody.innerHTML = dataToRender.map((p, i) => {
         const gp = p.GP || 1;
-        // Check if MIN is total minutes (avg > 100) and if we should display per-game or total
         const mpg = p.MIN || 0;
         const displayedMpg = (isTotalMode && mpg > 100) ? (mpg / gp) : mpg;
 
@@ -412,7 +409,7 @@ function renderSeasonTableBody(showCount) {
             <td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName || 'N/A'}</a></td>
             <td>${p.position || 'N/A'}</td>
             <td>${p.team || 'N/A'}</td>
-            <td>${gp}</td>
+            <td>${gp.toFixed(0)}</td>
             <td>${displayedMpg.toFixed(1)}</td>
 
             ${ALL_STAT_KEYS.map(key => {
@@ -423,14 +420,10 @@ function renderSeasonTableBody(showCount) {
                 const value = p[rawKey] || 0;
 
                 if (key.includes('_impact')) {
-                    // Use FGM/A or FT/A if they exist, otherwise use the stored percentage
                     const made = key === 'FG_impact' ? p.FGM : p.FTM;
                     const att = key === 'FG_impact' ? p.FGA : p.FTA;
-                    const pctKey = key === 'FG_impact' ? 'FG_pct' : 'FT_pct';
-                    displayValue = p[att] !== undefined && att > 0 ? (made / att).toFixed(3) : (p[pctKey] || 0).toFixed(3);
+                    displayValue = p[att] !== undefined && att > 0 ? (made / att).toFixed(3) : (p[key.replace('_impact', '_pct')] || 0).toFixed(3);
                 } else {
-                    // Display the stat. If total mode, it's already a total. 
-                    // If per-game mode, it's already per-game.
                     displayValue = value.toFixed(isTotalMode ? 0 : 1);
                 }
                 
@@ -447,7 +440,7 @@ function initializeDailyTab() {
     const accuracySelector = document.getElementById("accuracy-metric-selector");
     if (accuracySelector) accuracySelector.addEventListener('change', renderAccuracyChart);
     const dateTabs = document.getElementById("daily-date-tabs");
-    const sortedDates = fullData.dailyGamesByDate ? Object.keys(fullData.dailyGamesByDate).sort((a, b) => new Date(b) - new Date(a)) : [];
+    const sortedDates = fullData.dailyGamesByDate ? Object.keys(fullData.dailyGamesByDate).sort((a, b) => new Date(a) - new Date(b)) : []; // Sort ascending for schedule
     if (!sortedDates.length) {
         document.getElementById("daily-games-container").innerHTML = '<div class="card"><p>No daily predictions available.</p></div>';
         if (document.getElementById("accuracy-chart-container")) document.getElementById("accuracy-chart-container").style.display = 'none';
@@ -566,7 +559,6 @@ async function renderTeamAnalysis() {
     }).map(([teamName, players]) => {
         const teamStrength = players.reduce((sum, p) => sum + (p.custom_z_score || 0), 0);
         const playerRows = players.sort((a, b) => (b.custom_z_score || 0) - (a.custom_z_score || 0)).map(p => {
-            // FIX [Team Analysis]: Correctly display MPG instead of MIN
             const mpg = p.MIN || 0;
             return `<tr><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName}</a></td><td>${(p.GP||0).toFixed(0)}</td><td>${mpg.toFixed(1)}</td><td>${(p.PTS||0).toFixed(1)}</td><td>${(p.REB||0).toFixed(1)}</td><td>${(p.AST||0).toFixed(1)}</td><td>${(p.custom_z_score||0).toFixed(2)}</td></tr>`;
         }).join('');
@@ -593,12 +585,12 @@ async function initializePlayerProgressionTab() {
     if (!futureData && !historicalData) { container.innerHTML = '<div class="card"><p class="error-cell">Could not load progression data.</p></div>'; return; }
     let html = '';
     if (futureData) {
-        html += createProgressionTable('Top Risers (vs. \'26 Proj.)', [...futureData].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'25 Z","'26 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
-        html += createProgressionTable('Top Fallers (vs. \'26 Proj.)', [...futureData].sort((a,b)=>a.z_Change-b.z_Change).slice(0,15), "'25 Z","'26 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
+        html += createProgressionTable('Top Risers (vs. \'25 Proj.)', [...futureData].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
+        html += createProgressionTable('Top Fallers (vs. \'25 Proj.)', [...futureData].sort((a,b)=>a.z_Change-b.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
     }
     if (historicalData) {
-        html += createProgressionTable('Top Risers (\'24 vs \'25)', [...historicalData].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'24 Z","'25 Z", "z_Total_2023", "z_Total_2024");
-        html += createProgressionTable('Top Fallers (\'24 vs \'25)', [...historicalData].sort((a,b)=>a.z_Change-b.z_Change).slice(0,15), "'24 Z","'25 Z", "z_Total_2023", "z_Total_2024");
+        html += createProgressionTable('Top Risers (\'23 vs \'24)', [...historicalData].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'23 Z","'24 Z", "z_Total_2023", "z_Total_2024");
+        html += createProgressionTable('Top Fallers (\'23 vs \'24)', [...historicalData].sort((a,b)=>a.z_Change-b.z_Change).slice(0,15), "'23 Z","'24 Z", "z_Total_2023", "z_Total_2024");
     }
     container.innerHTML = html;
 }
@@ -623,7 +615,7 @@ async function renderCareerChart() {
     if (!ctx) return;
 
     const careerData = await fetchSeasonData('career_data');
-    if (!careerData || !careerData.players) { chartWrapper.innerHTML = `<p class="error-cell">Could not load career analysis data.</p>`; return; }
+    if (!careerData || !careerData.players) { chartWrapper.innerHTML = `<p class="error-cell" style="text-align:center; padding: 20px;">Career analysis data is not yet available for this view.</p>`; return; }
 
     const stat = document.getElementById("career-stat-selector").value;
     const xAxis = document.getElementById("career-xaxis-selector").value;
@@ -670,7 +662,7 @@ async function renderCareerChart() {
                 tooltip: { enabled: false }
             },
             scales: {
-                x: { type: 'linear', title: { display: true, text: xAxis === 'age' ? 'Player Age' : 'NBA Games Played' } },
+                x: { type: 'linear', title: { display: true, text: xAxis === 'age' ? 'Player Age' : 'WNBA Games Played' } },
                 y: { title: { display: true, text: `Monthly Average ${stat}` } }
             }
         }
