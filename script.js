@@ -1,4 +1,4 @@
-// script.js (v28.3 - Final UI Fixes)
+// script.js (v28.4 - Final Path Fixes for GitHub Pages)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = {};
@@ -17,7 +17,8 @@ const ALL_STAT_KEYS = ["PTS", "REB", "AST", "STL", "BLK", "3PM", "TOV", "FG_impa
 document.addEventListener("DOMContentLoaded", async () => {
     initializeTheme();
     try {
-        const response = await fetch("dist/predictions.json"); // Updated path
+        // *** FIX: Corrected path for your GitHub structure ***
+        const response = await fetch("predictions.json");
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         fullData = await response.json();
         document.getElementById("last-updated").textContent = new Date(fullData.lastUpdated).toLocaleString();
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } catch (e) {
         console.error("FATAL: Failed to initialize application.", e);
-        document.body.innerHTML = `<div style="text-align:center; padding: 50px; font-size:1.2em;">Error: Could not load core application data. Please check the browser console (F12) for details. The 'dist/predictions.json' file may be missing or corrupt.<br><br><i>${e.message}</i></div>`;
+        document.body.innerHTML = `<div style="text-align:center; padding: 50px; font-size:1.2em;">Error: Could not load core application data. Please check the browser console (F12) for details. The 'predictions.json' file may be missing or corrupt.<br><br><i>${e.message}</i></div>`;
     }
 });
 
@@ -60,7 +61,8 @@ async function fetchSeasonData(key) {
     if (!key) return null;
     if (loadedSeasonDataCache[key]) return loadedSeasonDataCache[key];
     try {
-        const response = await fetch(`dist/data/${key}.json`); // Updated path
+        // *** FIX: Corrected path for your GitHub structure ***
+        const response = await fetch(`data/${key}.json`);
         if (!response.ok) throw new Error(`File not found for key: ${key}`);
         const data = await response.json();
         loadedSeasonDataCache[key] = data;
@@ -208,17 +210,16 @@ function initializeDailyTab() {
     dateTabs.addEventListener("click", e => { const tab = e.target.closest(".date-tab"); if (tab) { document.querySelectorAll(".date-tab").forEach(t => t.classList.remove("active")); tab.classList.add("active"); renderDailyGamesForDate(tab.dataset.date); } });
     renderAccuracyChart(); if(activeTab) renderDailyGamesForDate(activeTab.dataset.date);
 }
-// *** UI FIX: Render graphical score bars for graded games ***
 function renderDailyGamesForDate(date) {
     const container = document.getElementById("daily-games-container"); const games = fullData.dailyGamesByDate?.[date] || []; if (games.length === 0) { container.innerHTML = '<div class="card"><p>No games for this date.</p></div>'; return; }
     const getBadgeClass = pts => pts > 20 ? 'elite' : pts > 15 ? 'very-good' : pts > 10 ? 'good' : 'average';
     container.innerHTML = games.map(game => {
         const [team1, team2] = game.projections;
-        const homeTeamAbbr = Object.keys(team1.players.length > 0 ? team1.players[0] : {}).length > 0 ? (Object.entries(fullData.playerProfiles).find(([pid,p])=>p.playerName === team1.players[0].Player_Name)?.[1].team) : null;
-        const awayTeamAbbr = Object.keys(team2.players.length > 0 ? team2.players[0] : {}).length > 0 ? (Object.entries(fullData.playerProfiles).find(([pid,p])=>p.playerName === team2.players[0].Player_Name)?.[1].team) : null;
+        const homeTeamAbbr = (Object.entries(fullData.playerProfiles).find(([pid,p])=>p.playerName === team1?.players?.[0]?.Player_Name)?.[1].team);
+        const awayTeamAbbr = (Object.entries(fullData.playerProfiles).find(([pid,p])=>p.playerName === team2?.players?.[0]?.Player_Name)?.[1].team);
         
         let scoreHTML = `<div class="score-prediction-text">Predicted: <strong>${team1.totalPoints} - ${team2.totalPoints}</strong></div>`;
-        if (game.grade?.isGraded && game.grade.gameSummary.actual) {
+        if (game.grade?.isGraded && game.grade.gameSummary?.actual) {
             const actual1 = game.grade.gameSummary.actual[homeTeamAbbr] || 0;
             const actual2 = game.grade.gameSummary.actual[awayTeamAbbr] || 0;
             const pred1 = game.grade.gameSummary.predicted[homeTeamAbbr] || 0;
@@ -271,7 +272,6 @@ function initializeCareerAnalysisTab() {
     controls?.addEventListener('change', renderCareerChart);
     controls?.querySelector('#career-search-player').addEventListener('input', renderCareerChart);
 }
-// *** UI FIX: Add logic for position and draft year toggle overlays ***
 async function renderCareerChart() {
     const chartWrapper = document.getElementById("career-chart-wrapper"); if (careerChartInstance) careerChartInstance.destroy();
     chartWrapper.innerHTML = '<canvas id="career-chart"></canvas>'; const ctx = document.getElementById('career-chart')?.getContext('2d'); if (!ctx) return;
@@ -289,7 +289,7 @@ async function renderCareerChart() {
         datasets.push({ label: playerProfile.playerName, data: careerData.players[String(highlightedPlayerId)].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--warning-color)', borderWidth: 2.5, pointRadius: 0, order: -2 });
     }
     if (showPositionAvg && playerProfile?.position && careerData.by_position) {
-        const playerMainPos = playerProfile.position.split('/')[0]; // e.g. "PG/SG" -> "PG"
+        const playerMainPos = playerProfile.position.split('/')[0];
         if (careerData.by_position[playerMainPos]) {
             datasets.push({ label: `Avg. Position: ${playerMainPos}`, data: careerData.by_position[playerMainPos].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--success-color)', borderWidth: 2, borderDash: [5, 5], pointRadius: 0, order: -1 });
         }
