@@ -1,4 +1,4 @@
-// script.js (v28.0 - Final Definitive WNBA Version)
+// script.js (v28.1 - Final Definitive WNBA Version)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = {};
@@ -228,7 +228,7 @@ async function renderSeasonTable() {
     let data = await fetchSeasonData(sourceKey); if (!data) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">Could not load data.</td></tr>`; return; }
     let processedData = data.map(player => ({...player, custom_z_score_display: Array.from(settings.activeCategories).reduce((acc, catKey) => acc + (player[STAT_CONFIG[catKey].zKey] || 0), 0) }));
     if (settings.searchTerm) { processedData = processedData.filter(p => p.playerName?.toLowerCase().includes(settings.searchTerm)); }
-    currentSort.data = processedData; if(sourceKey.includes('projections')) { currentSort.column = 'custom_z_score_display'; currentSort.direction = 'desc'; }
+    currentSort.data = processedData; currentSort.column = 'custom_z_score_display'; currentSort.direction = 'desc';
     sortSeasonData(); renderSeasonTableBody(settings.showCount);
 }
 
@@ -247,10 +247,9 @@ function initializeDailyTab() {
     const sortedDates = fullData.dailyGamesByDate ? Object.keys(fullData.dailyGamesByDate).sort((a, b) => new Date(a) - new Date(b)) : [];
     if (!sortedDates.length) { document.getElementById("daily-games-container").innerHTML = '<div class="card"><p>No daily predictions available.</p></div>'; if (document.getElementById("accuracy-chart-container")) document.getElementById("accuracy-chart-container").style.display = 'none'; return; }
     dateTabs.innerHTML = sortedDates.map((date) => `<button class="date-tab" data-date="${date}">${new Date(date + "T00:00:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}</button>`).join('');
-    // Find today's or the first future date to activate
-    const todayStr = new Date().toISOString().split('T')[0];
-    let activeTab = dateTabs.querySelector(`[data-date="${todayStr}"]`) || dateTabs.querySelector(`[data-date^="${new Date().getFullYear()}"]`);
-    if (!activeTab) activeTab = dateTabs.children[0];
+    const today = new Date(); today.setHours(0,0,0,0);
+    let activeTab = Array.from(dateTabs.children).find(tab => new Date(tab.dataset.date + "T00:00:00") >= today);
+    if (!activeTab) activeTab = dateTabs.children[dateTabs.children.length - 1]; // Fallback to last day
     activeTab.classList.add("active");
     dateTabs.addEventListener("click", e => { const tab = e.target.closest(".date-tab"); if (tab) { document.querySelectorAll(".date-tab").forEach(t => t.classList.remove("active")); tab.classList.add("active"); renderDailyGamesForDate(tab.dataset.date); } });
     renderAccuracyChart(); renderDailyGamesForDate(activeTab.dataset.date);
@@ -260,14 +259,11 @@ function renderDailyGamesForDate(date) {
     const container = document.getElementById("daily-games-container"); const games = fullData.dailyGamesByDate?.[date] || []; if (games.length === 0) { container.innerHTML = '<div class="card"><p>No games for this date.</p></div>'; return; }
     const getZClass = z => z >= 1.5 ? 'elite' : z >= 1 ? 'very-good' : z >= 0.5 ? 'good' : z <= -1 ? 'not-good' : z <= -0.5 ? 'below-average' : 'average';
     container.innerHTML = games.map(game => {
-        if (!game.projections || game.projections.length < 2) return ''; // Skip games with missing data
-        const [team1, team2] = game.projections;
-        let scoreHTML = `Predicted: <strong>${team1.totalPoints}-${team2.totalPoints}</strong>`;
+        if (!game.projections || game.projections.length < 2) return '';
+        const [team1, team2] = game.projections; let scoreHTML = `Predicted: <strong>${team1.totalPoints}-${team2.totalPoints}</strong>`;
         if (game.grade?.isGraded) {
             const actualScores = Object.values(game.grade.gameSummary.actual);
-            if(actualScores.length >= 2) {
-                 scoreHTML += ` | Actual: <strong class="actual-score ${game.grade.correctWinner ? 'prediction-correct' : 'prediction-incorrect'}">${actualScores[0]}-${actualScores[1]}</strong>`;
-            }
+            if(actualScores.length >= 2) { scoreHTML += ` | Actual: <strong class="actual-score ${game.grade.correctWinner ? 'prediction-correct' : 'prediction-incorrect'}">${actualScores[0]}-${actualScores[1]}</strong>`; }
         }
         const createCompactSummary = (teamData) => (teamData.players || []).sort((a, b) => (b.Predicted_Minutes || 0) - (a.Predicted_Minutes || 0)).slice(0, 5).map(p => `<div class="compact-player-badge ${getZClass((p.points-15)/8)}" title="${p.Player_Name} (Proj. ${p.points} pts)">${p.Player_Name.split(' ').pop()}</div>`).join('');
         return `<div class="matchup-card"><div class="matchup-header"><span class="matchup-teams">${team1.teamName} vs ${team2.teamName}</span><span class="matchup-scores">${scoreHTML}</span></div><div class="matchup-compact-summary"><div class="compact-team">${createCompactSummary(team1)}</div><div class="compact-team">${createCompactSummary(team2)}</div></div><div class="matchup-body">${createTeamTableHTML(team1, game.grade)}${createTeamTableHTML(team2, game.grade)}</div><div class="matchup-footer"><button class="button-outline expand-details-btn">Show Details</button></div></div>`;
@@ -311,8 +307,12 @@ async function renderCareerChart() {
     let highlightedPlayerId = null;
     if (searchTerm) { const entry = Object.entries(fullData.playerProfiles).find(([id, profile]) => profile.playerName?.toLowerCase().includes(searchTerm)); if (entry) highlightedPlayerId = parseInt(entry[0], 10); }
     const datasets = [];
-    const allPlayersData = Object.entries(careerData.players).map(([id, data]) => { const isHighlighted = parseInt(id) === highlightedPlayerId; return { label: `Player ${id}`, data: data.map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: isHighlighted ? 'var(--warning-color)' : 'rgba(128, 128, 128, 0.1)', borderWidth: isHighlighted ? 2.5 : 1, pointRadius: 0, showLine: true, order: isHighlighted ? 0 : 1 }; });
-    datasets.push(...allPlayersData);
+    // ### FIX: Check for careerData.players before trying to map it ###
+    if (careerData.players) {
+        const allPlayersData = Object.entries(careerData.players).map(([id, data]) => { const isHighlighted = parseInt(id) === highlightedPlayerId; return { label: `Player ${id}`, data: data.map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: isHighlighted ? 'var(--warning-color)' : 'rgba(128, 128, 128, 0.1)', borderWidth: isHighlighted ? 2.5 : 1, pointRadius: 0, showLine: true, order: isHighlighted ? 0 : 1 }; });
+        datasets.push(...allPlayersData);
+    }
+    // ### FIX: Check for cohort data before trying to access it ###
     if (highlightedPlayerId && fullData.playerProfiles[highlightedPlayerId]) {
         const playerProfile = fullData.playerProfiles[highlightedPlayerId]; const draftInfoStr = playerProfile.draftInfo || ''; const draftYearMatch = draftInfoStr.match(/(\d{4})/); const draftPickMatch = draftInfoStr.match(/P(\d+)/); const draftYear = draftYearMatch ? parseInt(draftYearMatch[1]) : null; const draftNumber = draftPickMatch ? parseInt(draftPickMatch[1]) : null;
         if (draftYear && careerData.by_year && careerData.by_year[draftYear]) { datasets.push({ label: `Avg. Draft Year ${draftYear}`, data: careerData.by_year[draftYear].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--success-color)', borderWidth: 2, borderDash: [5, 5], pointRadius: 0, showLine: true, order: 2 }); }
