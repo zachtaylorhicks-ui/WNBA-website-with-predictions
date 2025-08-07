@@ -15,7 +15,8 @@
     "FGA": 430.0,
     "FTM": 169.0,
     "FTA": 205.0,
-    "MIN": 1026.8
+    "MIN": 1026.8,
+    "position": null
   },
   {
     "personId": 100007.0,
@@ -33,7 +34,8 @@
     "FGA": 2.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 35.4
+    "MIN": 35.4,
+    "position": null
   },
   {
     "personId": 100008.0,
@@ -51,7 +53,8 @@
     "FGA": 291.0,
     "FTM": 62.0,
     "FTA": 77.0,
-    "MIN": 881.6
+    "MIN": 881.6,
+    "position": null
   },
   {
     "personId": 100009.0,
@@ -69,7 +72,8 @@
     "FGA": 293.0,
     "FTM": 53.0,
     "FTA": 70.0,
-    "MIN": 873.0
+    "MIN": 873.0,
+    "position": null
   },
   {
     "personId": 100011.0,
@@ -87,7 +91,8 @@
     "FGA": 15.0,
     "FTM": 6.0,
     "FTA": 9.0,
-    "MIN": 39.8
+    "MIN": 39.8,
+    "position": null
   },
   {
     "personId": 100012.0,
@@ -105,7 +110,8 @@
     "FGA": 335.0,
     "FTM": 73.0,
     "FTA": 89.0,
-    "MIN": 941.5
+    "MIN": 941.5,
+    "position": null
   },
   {
     "personId": 100016.0,
@@ -123,7 +129,8 @@
     "FGA": 368.0,
     "FTM": 64.0,
     "FTA": 84.0,
-    "MIN": 864.6
+    "MIN": 864.6,
+    "position": null
   },
   {
     "personId": 100022.0,
@@ -141,7 +148,8 @@
     "FGA": 51.0,
     "FTM": 10.0,
     "FTA": 16.0,
-    "MIN": 317.2
+    "MIN": 317.2,
+    "position": null
   },
   {
     "personId": 100027.0,
@@ -159,7 +167,8 @@
     "FGA": 143.0,
     "FTM": 30.0,
     "FTA": 49.0,
-    "MIN": 520.7
+    "MIN": 520.7,
+    "position": null
   },
   {
     "personId": 100029.0,
@@ -177,7 +186,8 @@
     "FGA": 30.0,
     "FTM": 4.0,
     "FTA": 4.0,
-    "MIN": 176.5
+    "MIN": 176.5,
+    "position": null
   },
   {
     "personId": 100030.0,
@@ -195,7 +205,8 @@
     "FGA": 314.0,
     "FTM": 79.0,
     "FTA": 106.0,
-    "MIN": 824.1
+    "MIN": 824.1,
+    "position": null
   },
   {
     "personId": 100031.0,
@@ -213,7 +224,8 @@
     "FGA": 168.0,
     "FTM": 49.0,
     "FTA": 61.0,
-    "MIN": 588.1
+    "MIN": 588.1,
+    "position": null
   },
   {
     "personId": 100035.0,
@@ -231,7 +243,8 @@
     "FGA": 40.0,
     "FTM": 21.0,
     "FTA": 25.0,
-    "MIN": 193.8
+    "MIN": 193.8,
+    "position": null
   },
   {
     "personId": 100037.0,
@@ -249,7 +262,8 @@
     "FGA": 209.0,
     "FTM": 80.0,
     "FTA": 117.0,
-    "MIN": 872.0
+    "MIN": 872.0,
+    "position": null
   },
   {
     "personId": 100038.0,
@@ -267,7 +281,8 @@
     "FGA": 69.0,
     "FTM": 4.0,
     "FTA": 8.0,
-    "MIN": 173.1
+    "MIN": 173.1,
+    "position": null
   },
   {
     "personId": 100044.0,
@@ -285,7 +300,8 @@
     "FGA": 88.0,
     "FTM": 46.0,
     "FTA": 61.0,
-    "MIN": 399.9
+    "MIN": 399.9,
+    "position": null
   },
   {
     "personId": 100045.0,
@@ -303,7 +319,8 @@
     "FGA": 22.0,
     "FTM": 10.0,
     "FTA": 16.0,
-    "MIN": 150.0
+    "MIN": 150.0,
+    "position": null
   },
   {
     "personId": 100046.0,
@@ -321,7 +338,8 @@
     "FGA": 373.0,
     "FTM": 95.0,
     "FTA": 135.0,
-    "MIN": 914.0
+    "MIN": 914.0,
+    "position": null
   },
   {
     "personId": 100048.0,
@@ -339,7 +357,8 @@
     "FGA": 23.0,
     "FTM": 18.0,
     "FTA": 29.0,
-    "MIN": 152.8
+    "MIN": 152.8,
+    "position": null
   },
   {
     "personId": 100058.0,
@@ -357,7 +376,8 @@
     "FGA": 294.0,
     "FTM": 45.0,
     "FTA": 63.0,
-    "MIN": 1093.1
+    "MIN": 1093.1,
+    "position": null
   },
   {
     "personId": 100059.0,
@@ -375,7 +395,8 @@
     "FGA": 463.0,
     "FTM": 99.0,
     "FTA": 134.0,
-    "MIN": 1123.2
+    "MIN": 1123.2,
+    "position": null
   },
   {
     "personId": 100060.0,
@@ -393,7 +414,8 @@
     "FGA": 300.0,
     "FTM": 73.0,
     "FTA": 88.0,
-    "MIN": 856.6
+    "MIN": 856.6,
+    "position": null
   },
   {
     "personId": 100063.0,
@@ -411,7 +433,8 @@
     "FGA": 92.0,
     "FTM": 14.0,
     "FTA": 26.0,
-    "MIN": 402.0
+    "MIN": 402.0,
+    "position": null
   },
   {
     "personId": 100072.0,
@@ -429,7 +452,8 @@
     "FGA": 484.0,
     "FTM": 119.0,
     "FTA": 145.0,
-    "MIN": 1090.7
+    "MIN": 1090.7,
+    "position": null
   },
   {
     "personId": 100073.0,
@@ -447,7 +471,8 @@
     "FGA": 392.0,
     "FTM": 147.0,
     "FTA": 168.0,
-    "MIN": 1086.5
+    "MIN": 1086.5,
+    "position": null
   },
   {
     "personId": 100075.0,
@@ -465,7 +490,8 @@
     "FGA": 233.0,
     "FTM": 41.0,
     "FTA": 49.0,
-    "MIN": 976.7
+    "MIN": 976.7,
+    "position": null
   },
   {
     "personId": 100076.0,
@@ -483,7 +509,8 @@
     "FGA": 407.0,
     "FTM": 103.0,
     "FTA": 123.0,
-    "MIN": 1086.9
+    "MIN": 1086.9,
+    "position": null
   },
   {
     "personId": 100077.0,
@@ -501,7 +528,8 @@
     "FGA": 61.0,
     "FTM": 6.0,
     "FTA": 11.0,
-    "MIN": 339.8
+    "MIN": 339.8,
+    "position": null
   },
   {
     "personId": 100088.0,
@@ -519,7 +547,8 @@
     "FGA": 153.0,
     "FTM": 23.0,
     "FTA": 35.0,
-    "MIN": 472.2
+    "MIN": 472.2,
+    "position": null
   },
   {
     "personId": 100091.0,
@@ -537,7 +566,8 @@
     "FGA": 164.0,
     "FTM": 22.0,
     "FTA": 24.0,
-    "MIN": 443.2
+    "MIN": 443.2,
+    "position": null
   },
   {
     "personId": 100092.0,
@@ -555,7 +585,8 @@
     "FGA": 310.0,
     "FTM": 28.0,
     "FTA": 42.0,
-    "MIN": 914.1
+    "MIN": 914.1,
+    "position": null
   },
   {
     "personId": 100096.0,
@@ -573,7 +604,8 @@
     "FGA": 6.0,
     "FTM": 6.0,
     "FTA": 10.0,
-    "MIN": 67.3
+    "MIN": 67.3,
+    "position": null
   },
   {
     "personId": 100097.0,
@@ -591,7 +623,8 @@
     "FGA": 186.0,
     "FTM": 64.0,
     "FTA": 76.0,
-    "MIN": 666.8
+    "MIN": 666.8,
+    "position": null
   },
   {
     "personId": 100100.0,
@@ -609,7 +642,8 @@
     "FGA": 385.0,
     "FTM": 34.0,
     "FTA": 38.0,
-    "MIN": 1069.3
+    "MIN": 1069.3,
+    "position": null
   },
   {
     "personId": 100101.0,
@@ -627,7 +661,8 @@
     "FGA": 153.0,
     "FTM": 60.0,
     "FTA": 81.0,
-    "MIN": 1079.1
+    "MIN": 1079.1,
+    "position": null
   },
   {
     "personId": 100103.0,
@@ -645,7 +680,8 @@
     "FGA": 324.0,
     "FTM": 67.0,
     "FTA": 76.0,
-    "MIN": 1023.0
+    "MIN": 1023.0,
+    "position": null
   },
   {
     "personId": 100104.0,
@@ -663,7 +699,8 @@
     "FGA": 143.0,
     "FTM": 45.0,
     "FTA": 62.0,
-    "MIN": 680.1
+    "MIN": 680.1,
+    "position": null
   },
   {
     "personId": 100105.0,
@@ -681,7 +718,8 @@
     "FGA": 456.0,
     "FTM": 128.0,
     "FTA": 147.0,
-    "MIN": 1061.5
+    "MIN": 1061.5,
+    "position": null
   },
   {
     "personId": 100107.0,
@@ -699,7 +737,8 @@
     "FGA": 108.0,
     "FTM": 35.0,
     "FTA": 61.0,
-    "MIN": 423.5
+    "MIN": 423.5,
+    "position": null
   },
   {
     "personId": 100111.0,
@@ -717,7 +756,8 @@
     "FGA": 182.0,
     "FTM": 50.0,
     "FTA": 80.0,
-    "MIN": 644.9
+    "MIN": 644.9,
+    "position": null
   },
   {
     "personId": 100170.0,
@@ -735,7 +775,8 @@
     "FGA": 167.0,
     "FTM": 60.0,
     "FTA": 72.0,
-    "MIN": 472.2
+    "MIN": 472.2,
+    "position": null
   },
   {
     "personId": 100179.0,
@@ -753,7 +794,8 @@
     "FGA": 56.0,
     "FTM": 10.0,
     "FTA": 18.0,
-    "MIN": 516.1
+    "MIN": 516.1,
+    "position": null
   },
   {
     "personId": 100180.0,
@@ -771,7 +813,8 @@
     "FGA": 10.0,
     "FTM": 7.0,
     "FTA": 12.0,
-    "MIN": 56.7
+    "MIN": 56.7,
+    "position": null
   },
   {
     "personId": 100182.0,
@@ -789,7 +832,8 @@
     "FGA": 180.0,
     "FTM": 39.0,
     "FTA": 72.0,
-    "MIN": 621.8
+    "MIN": 621.8,
+    "position": null
   },
   {
     "personId": 100183.0,
@@ -807,7 +851,8 @@
     "FGA": 50.0,
     "FTM": 4.0,
     "FTA": 6.0,
-    "MIN": 133.9
+    "MIN": 133.9,
+    "position": null
   },
   {
     "personId": 100186.0,
@@ -825,7 +870,8 @@
     "FGA": 9.0,
     "FTM": 1.0,
     "FTA": 2.0,
-    "MIN": 47.1
+    "MIN": 47.1,
+    "position": null
   },
   {
     "personId": 100187.0,
@@ -843,7 +889,8 @@
     "FGA": 137.0,
     "FTM": 19.0,
     "FTA": 25.0,
-    "MIN": 685.6
+    "MIN": 685.6,
+    "position": null
   },
   {
     "personId": 100198.0,
@@ -861,7 +908,8 @@
     "FGA": 385.0,
     "FTM": 113.0,
     "FTA": 147.0,
-    "MIN": 1045.5
+    "MIN": 1045.5,
+    "position": null
   },
   {
     "personId": 100199.0,
@@ -879,7 +927,8 @@
     "FGA": 222.0,
     "FTM": 52.0,
     "FTA": 92.0,
-    "MIN": 1045.3
+    "MIN": 1045.3,
+    "position": null
   },
   {
     "personId": 100201.0,
@@ -897,7 +946,8 @@
     "FGA": 1.0,
     "FTM": 1.0,
     "FTA": 6.0,
-    "MIN": 11.5
+    "MIN": 11.5,
+    "position": null
   },
   {
     "personId": 100204.0,
@@ -915,7 +965,8 @@
     "FGA": 274.0,
     "FTM": 79.0,
     "FTA": 108.0,
-    "MIN": 1016.2
+    "MIN": 1016.2,
+    "position": null
   },
   {
     "personId": 100207.0,
@@ -933,7 +984,8 @@
     "FGA": 20.0,
     "FTM": 6.0,
     "FTA": 12.0,
-    "MIN": 139.4
+    "MIN": 139.4,
+    "position": null
   },
   {
     "personId": 100211.0,
@@ -951,7 +1003,8 @@
     "FGA": 60.0,
     "FTM": 6.0,
     "FTA": 6.0,
-    "MIN": 172.1
+    "MIN": 172.1,
+    "position": null
   },
   {
     "personId": 100215.0,
@@ -969,7 +1022,8 @@
     "FGA": 209.0,
     "FTM": 41.0,
     "FTA": 54.0,
-    "MIN": 844.4
+    "MIN": 844.4,
+    "position": null
   },
   {
     "personId": 100216.0,
@@ -987,7 +1041,8 @@
     "FGA": 255.0,
     "FTM": 30.0,
     "FTA": 42.0,
-    "MIN": 794.2
+    "MIN": 794.2,
+    "position": null
   },
   {
     "personId": 100217.0,
@@ -1005,7 +1060,8 @@
     "FGA": 33.0,
     "FTM": 16.0,
     "FTA": 20.0,
-    "MIN": 234.4
+    "MIN": 234.4,
+    "position": null
   },
   {
     "personId": 100221.0,
@@ -1023,7 +1079,8 @@
     "FGA": 137.0,
     "FTM": 63.0,
     "FTA": 79.0,
-    "MIN": 727.3
+    "MIN": 727.3,
+    "position": null
   },
   {
     "personId": 100225.0,
@@ -1041,7 +1098,8 @@
     "FGA": 456.0,
     "FTM": 128.0,
     "FTA": 142.0,
-    "MIN": 1090.2
+    "MIN": 1090.2,
+    "position": null
   },
   {
     "personId": 100227.0,
@@ -1059,7 +1117,8 @@
     "FGA": 54.0,
     "FTM": 9.0,
     "FTA": 15.0,
-    "MIN": 171.3
+    "MIN": 171.3,
+    "position": null
   },
   {
     "personId": 100230.0,
@@ -1077,7 +1136,8 @@
     "FGA": 213.0,
     "FTM": 30.0,
     "FTA": 56.0,
-    "MIN": 704.2
+    "MIN": 704.2,
+    "position": null
   },
   {
     "personId": 100231.0,
@@ -1095,7 +1155,8 @@
     "FGA": 5.0,
     "FTM": 2.0,
     "FTA": 4.0,
-    "MIN": 17.9
+    "MIN": 17.9,
+    "position": null
   },
   {
     "personId": 100233.0,
@@ -1113,7 +1174,8 @@
     "FGA": 100.0,
     "FTM": 35.0,
     "FTA": 50.0,
-    "MIN": 688.0
+    "MIN": 688.0,
+    "position": null
   },
   {
     "personId": 100234.0,
@@ -1131,7 +1193,8 @@
     "FGA": 185.0,
     "FTM": 62.0,
     "FTA": 107.0,
-    "MIN": 935.1
+    "MIN": 935.1,
+    "position": null
   },
   {
     "personId": 100236.0,
@@ -1149,7 +1212,8 @@
     "FGA": 371.0,
     "FTM": 36.0,
     "FTA": 46.0,
-    "MIN": 924.5
+    "MIN": 924.5,
+    "position": null
   },
   {
     "personId": 100237.0,
@@ -1167,7 +1231,8 @@
     "FGA": 43.0,
     "FTM": 5.0,
     "FTA": 6.0,
-    "MIN": 182.9
+    "MIN": 182.9,
+    "position": null
   },
   {
     "personId": 100239.0,
@@ -1185,7 +1250,8 @@
     "FGA": 236.0,
     "FTM": 82.0,
     "FTA": 103.0,
-    "MIN": 775.6
+    "MIN": 775.6,
+    "position": null
   },
   {
     "personId": 100242.0,
@@ -1203,7 +1269,8 @@
     "FGA": 129.0,
     "FTM": 28.0,
     "FTA": 43.0,
-    "MIN": 480.1
+    "MIN": 480.1,
+    "position": null
   },
   {
     "personId": 100243.0,
@@ -1221,7 +1288,8 @@
     "FGA": 89.0,
     "FTM": 26.0,
     "FTA": 40.0,
-    "MIN": 368.4
+    "MIN": 368.4,
+    "position": null
   },
   {
     "personId": 100250.0,
@@ -1239,7 +1307,8 @@
     "FGA": 260.0,
     "FTM": 51.0,
     "FTA": 70.0,
-    "MIN": 869.6
+    "MIN": 869.6,
+    "position": null
   },
   {
     "personId": 100284.0,
@@ -1257,7 +1326,8 @@
     "FGA": 112.0,
     "FTM": 56.0,
     "FTA": 72.0,
-    "MIN": 796.0
+    "MIN": 796.0,
+    "position": null
   },
   {
     "personId": 100294.0,
@@ -1275,7 +1345,8 @@
     "FGA": 72.0,
     "FTM": 18.0,
     "FTA": 21.0,
-    "MIN": 397.0
+    "MIN": 397.0,
+    "position": null
   },
   {
     "personId": 100336.0,
@@ -1293,7 +1364,8 @@
     "FGA": 151.0,
     "FTM": 37.0,
     "FTA": 61.0,
-    "MIN": 981.5
+    "MIN": 981.5,
+    "position": null
   },
   {
     "personId": 100338.0,
@@ -1311,7 +1383,8 @@
     "FGA": 55.0,
     "FTM": 6.0,
     "FTA": 9.0,
-    "MIN": 436.2
+    "MIN": 436.2,
+    "position": null
   },
   {
     "personId": 100339.0,
@@ -1329,7 +1402,8 @@
     "FGA": 3.0,
     "FTM": 1.0,
     "FTA": 1.0,
-    "MIN": 11.3
+    "MIN": 11.3,
+    "position": null
   },
   {
     "personId": 100340.0,
@@ -1347,7 +1421,8 @@
     "FGA": 264.0,
     "FTM": 74.0,
     "FTA": 100.0,
-    "MIN": 793.9
+    "MIN": 793.9,
+    "position": null
   },
   {
     "personId": 100342.0,
@@ -1365,7 +1440,8 @@
     "FGA": 252.0,
     "FTM": 61.0,
     "FTA": 69.0,
-    "MIN": 835.7
+    "MIN": 835.7,
+    "position": null
   },
   {
     "personId": 100345.0,
@@ -1383,7 +1459,8 @@
     "FGA": 201.0,
     "FTM": 30.0,
     "FTA": 33.0,
-    "MIN": 723.5
+    "MIN": 723.5,
+    "position": null
   },
   {
     "personId": 100346.0,
@@ -1401,7 +1478,8 @@
     "FGA": 50.0,
     "FTM": 19.0,
     "FTA": 35.0,
-    "MIN": 199.6
+    "MIN": 199.6,
+    "position": null
   },
   {
     "personId": 100347.0,
@@ -1419,7 +1497,8 @@
     "FGA": 253.0,
     "FTM": 59.0,
     "FTA": 84.0,
-    "MIN": 686.9
+    "MIN": 686.9,
+    "position": null
   },
   {
     "personId": 100348.0,
@@ -1437,7 +1516,8 @@
     "FGA": 54.0,
     "FTM": 7.0,
     "FTA": 22.0,
-    "MIN": 269.7
+    "MIN": 269.7,
+    "position": null
   },
   {
     "personId": 100350.0,
@@ -1455,7 +1535,8 @@
     "FGA": 104.0,
     "FTM": 46.0,
     "FTA": 60.0,
-    "MIN": 321.9
+    "MIN": 321.9,
+    "position": null
   },
   {
     "personId": 100351.0,
@@ -1473,7 +1554,8 @@
     "FGA": 70.0,
     "FTM": 21.0,
     "FTA": 30.0,
-    "MIN": 270.6
+    "MIN": 270.6,
+    "position": null
   },
   {
     "personId": 100353.0,
@@ -1491,7 +1573,8 @@
     "FGA": 79.0,
     "FTM": 21.0,
     "FTA": 26.0,
-    "MIN": 692.5
+    "MIN": 692.5,
+    "position": null
   },
   {
     "personId": 100354.0,
@@ -1509,7 +1592,8 @@
     "FGA": 4.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 60.7
+    "MIN": 60.7,
+    "position": null
   },
   {
     "personId": 100356.0,
@@ -1527,7 +1611,8 @@
     "FGA": 499.0,
     "FTM": 87.0,
     "FTA": 128.0,
-    "MIN": 1134.7
+    "MIN": 1134.7,
+    "position": null
   },
   {
     "personId": 100357.0,
@@ -1545,7 +1630,8 @@
     "FGA": 285.0,
     "FTM": 50.0,
     "FTA": 58.0,
-    "MIN": 1027.4
+    "MIN": 1027.4,
+    "position": null
   },
   {
     "personId": 100359.0,
@@ -1563,7 +1649,8 @@
     "FGA": 150.0,
     "FTM": 29.0,
     "FTA": 42.0,
-    "MIN": 819.3
+    "MIN": 819.3,
+    "position": null
   },
   {
     "personId": 100360.0,
@@ -1581,7 +1668,8 @@
     "FGA": 5.0,
     "FTM": 2.0,
     "FTA": 2.0,
-    "MIN": 22.2
+    "MIN": 22.2,
+    "position": null
   },
   {
     "personId": 100363.0,
@@ -1599,7 +1687,8 @@
     "FGA": 415.0,
     "FTM": 92.0,
     "FTA": 134.0,
-    "MIN": 929.9
+    "MIN": 929.9,
+    "position": null
   },
   {
     "personId": 100364.0,
@@ -1617,7 +1706,8 @@
     "FGA": 96.0,
     "FTM": 21.0,
     "FTA": 28.0,
-    "MIN": 488.1
+    "MIN": 488.1,
+    "position": null
   },
   {
     "personId": 100366.0,
@@ -1635,7 +1725,8 @@
     "FGA": 365.0,
     "FTM": 182.0,
     "FTA": 228.0,
-    "MIN": 1040.1
+    "MIN": 1040.1,
+    "position": null
   },
   {
     "personId": 100368.0,
@@ -1653,7 +1744,8 @@
     "FGA": 49.0,
     "FTM": 13.0,
     "FTA": 19.0,
-    "MIN": 202.4
+    "MIN": 202.4,
+    "position": null
   },
   {
     "personId": 100369.0,
@@ -1671,7 +1763,8 @@
     "FGA": 17.0,
     "FTM": 6.0,
     "FTA": 6.0,
-    "MIN": 79.1
+    "MIN": 79.1,
+    "position": null
   },
   {
     "personId": 100370.0,
@@ -1689,7 +1782,8 @@
     "FGA": 166.0,
     "FTM": 71.0,
     "FTA": 86.0,
-    "MIN": 635.5
+    "MIN": 635.5,
+    "position": null
   },
   {
     "personId": 100371.0,
@@ -1707,7 +1801,8 @@
     "FGA": 159.0,
     "FTM": 20.0,
     "FTA": 25.0,
-    "MIN": 656.1
+    "MIN": 656.1,
+    "position": null
   },
   {
     "personId": 100372.0,
@@ -1725,7 +1820,8 @@
     "FGA": 253.0,
     "FTM": 65.0,
     "FTA": 74.0,
-    "MIN": 1099.3
+    "MIN": 1099.3,
+    "position": null
   },
   {
     "personId": 100375.0,
@@ -1743,7 +1839,8 @@
     "FGA": 215.0,
     "FTM": 41.0,
     "FTA": 58.0,
-    "MIN": 509.3
+    "MIN": 509.3,
+    "position": null
   },
   {
     "personId": 100378.0,
@@ -1761,7 +1858,8 @@
     "FGA": 151.0,
     "FTM": 30.0,
     "FTA": 37.0,
-    "MIN": 741.9
+    "MIN": 741.9,
+    "position": null
   },
   {
     "personId": 100380.0,
@@ -1779,7 +1877,8 @@
     "FGA": 1.0,
     "FTM": 2.0,
     "FTA": 4.0,
-    "MIN": 9.4
+    "MIN": 9.4,
+    "position": null
   },
   {
     "personId": 100382.0,
@@ -1797,7 +1896,8 @@
     "FGA": 104.0,
     "FTM": 40.0,
     "FTA": 43.0,
-    "MIN": 559.0
+    "MIN": 559.0,
+    "position": null
   },
   {
     "personId": 100384.0,
@@ -1815,7 +1915,8 @@
     "FGA": 203.0,
     "FTM": 91.0,
     "FTA": 131.0,
-    "MIN": 782.2
+    "MIN": 782.2,
+    "position": null
   },
   {
     "personId": 100386.0,
@@ -1833,7 +1934,8 @@
     "FGA": 166.0,
     "FTM": 25.0,
     "FTA": 30.0,
-    "MIN": 634.8
+    "MIN": 634.8,
+    "position": null
   },
   {
     "personId": 100387.0,
@@ -1851,7 +1953,8 @@
     "FGA": 333.0,
     "FTM": 29.0,
     "FTA": 51.0,
-    "MIN": 868.9
+    "MIN": 868.9,
+    "position": null
   },
   {
     "personId": 100388.0,
@@ -1869,7 +1972,8 @@
     "FGA": 241.0,
     "FTM": 85.0,
     "FTA": 93.0,
-    "MIN": 867.6
+    "MIN": 867.6,
+    "position": null
   },
   {
     "personId": 100390.0,
@@ -1887,7 +1991,8 @@
     "FGA": 73.0,
     "FTM": 10.0,
     "FTA": 11.0,
-    "MIN": 260.6
+    "MIN": 260.6,
+    "position": null
   },
   {
     "personId": 100392.0,
@@ -1905,7 +2010,8 @@
     "FGA": 153.0,
     "FTM": 54.0,
     "FTA": 65.0,
-    "MIN": 801.3
+    "MIN": 801.3,
+    "position": null
   },
   {
     "personId": 100393.0,
@@ -1923,7 +2029,8 @@
     "FGA": 51.0,
     "FTM": 12.0,
     "FTA": 16.0,
-    "MIN": 187.7
+    "MIN": 187.7,
+    "position": null
   },
   {
     "personId": 100394.0,
@@ -1941,7 +2048,8 @@
     "FGA": 239.0,
     "FTM": 31.0,
     "FTA": 40.0,
-    "MIN": 717.8
+    "MIN": 717.8,
+    "position": null
   },
   {
     "personId": 100395.0,
@@ -1959,7 +2067,8 @@
     "FGA": 83.0,
     "FTM": 14.0,
     "FTA": 25.0,
-    "MIN": 422.4
+    "MIN": 422.4,
+    "position": null
   },
   {
     "personId": 100396.0,
@@ -1977,7 +2086,8 @@
     "FGA": 293.0,
     "FTM": 76.0,
     "FTA": 102.0,
-    "MIN": 984.4
+    "MIN": 984.4,
+    "position": null
   },
   {
     "personId": 100398.0,
@@ -1995,7 +2105,8 @@
     "FGA": 298.0,
     "FTM": 79.0,
     "FTA": 101.0,
-    "MIN": 924.6
+    "MIN": 924.6,
+    "position": null
   },
   {
     "personId": 100400.0,
@@ -2013,7 +2124,8 @@
     "FGA": 191.0,
     "FTM": 66.0,
     "FTA": 94.0,
-    "MIN": 845.1
+    "MIN": 845.1,
+    "position": null
   },
   {
     "personId": 100402.0,
@@ -2031,7 +2143,8 @@
     "FGA": 68.0,
     "FTM": 12.0,
     "FTA": 17.0,
-    "MIN": 335.2
+    "MIN": 335.2,
+    "position": null
   },
   {
     "personId": 100403.0,
@@ -2049,7 +2162,8 @@
     "FGA": 2.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 7.2
+    "MIN": 7.2,
+    "position": null
   },
   {
     "personId": 100404.0,
@@ -2067,7 +2181,8 @@
     "FGA": 482.0,
     "FTM": 152.0,
     "FTA": 175.0,
-    "MIN": 1195.6
+    "MIN": 1195.6,
+    "position": null
   },
   {
     "personId": 100406.0,
@@ -2085,7 +2200,8 @@
     "FGA": 22.0,
     "FTM": 1.0,
     "FTA": 2.0,
-    "MIN": 95.6
+    "MIN": 95.6,
+    "position": null
   },
   {
     "personId": 100408.0,
@@ -2103,7 +2219,8 @@
     "FGA": 1.0,
     "FTM": 2.0,
     "FTA": 2.0,
-    "MIN": 4.199999999999999
+    "MIN": 4.199999999999999,
+    "position": null
   },
   {
     "personId": 100410.0,
@@ -2121,7 +2238,8 @@
     "FGA": 298.0,
     "FTM": 103.0,
     "FTA": 140.0,
-    "MIN": 1101.2
+    "MIN": 1101.2,
+    "position": null
   },
   {
     "personId": 100411.0,
@@ -2139,7 +2257,8 @@
     "FGA": 83.0,
     "FTM": 27.0,
     "FTA": 39.0,
-    "MIN": 391.9
+    "MIN": 391.9,
+    "position": null
   },
   {
     "personId": 100412.0,
@@ -2157,7 +2276,8 @@
     "FGA": 319.0,
     "FTM": 78.0,
     "FTA": 112.0,
-    "MIN": 1066.2
+    "MIN": 1066.2,
+    "position": null
   },
   {
     "personId": 100413.0,
@@ -2175,7 +2295,8 @@
     "FGA": 364.0,
     "FTM": 85.0,
     "FTA": 130.0,
-    "MIN": 978.9
+    "MIN": 978.9,
+    "position": null
   },
   {
     "personId": 100414.0,
@@ -2193,7 +2314,8 @@
     "FGA": 63.0,
     "FTM": 14.0,
     "FTA": 18.0,
-    "MIN": 321.90000000000003
+    "MIN": 321.90000000000003,
+    "position": null
   },
   {
     "personId": 100415.0,
@@ -2211,7 +2333,8 @@
     "FGA": 372.0,
     "FTM": 39.0,
     "FTA": 57.0,
-    "MIN": 957.8
+    "MIN": 957.8,
+    "position": null
   },
   {
     "personId": 100416.0,
@@ -2229,7 +2352,8 @@
     "FGA": 380.0,
     "FTM": 67.0,
     "FTA": 100.0,
-    "MIN": 901.7
+    "MIN": 901.7,
+    "position": null
   },
   {
     "personId": 100419.0,
@@ -2247,7 +2371,8 @@
     "FGA": 361.0,
     "FTM": 137.0,
     "FTA": 194.0,
-    "MIN": 1027.6
+    "MIN": 1027.6,
+    "position": null
   },
   {
     "personId": 100421.0,
@@ -2265,7 +2390,8 @@
     "FGA": 253.0,
     "FTM": 46.0,
     "FTA": 66.0,
-    "MIN": 936.7
+    "MIN": 936.7,
+    "position": null
   },
   {
     "personId": 100422.0,
@@ -2283,7 +2409,8 @@
     "FGA": 109.0,
     "FTM": 34.0,
     "FTA": 42.0,
-    "MIN": 337.5
+    "MIN": 337.5,
+    "position": null
   },
   {
     "personId": 100425.0,
@@ -2301,7 +2428,8 @@
     "FGA": 5.0,
     "FTM": 2.0,
     "FTA": 4.0,
-    "MIN": 18.299999999999997
+    "MIN": 18.299999999999997,
+    "position": null
   },
   {
     "personId": 100428.0,
@@ -2319,7 +2447,8 @@
     "FGA": 187.0,
     "FTM": 59.0,
     "FTA": 78.0,
-    "MIN": 763.0
+    "MIN": 763.0,
+    "position": null
   },
   {
     "personId": 100429.0,
@@ -2337,7 +2466,8 @@
     "FGA": 109.0,
     "FTM": 31.0,
     "FTA": 41.0,
-    "MIN": 313.1
+    "MIN": 313.1,
+    "position": null
   },
   {
     "personId": 100433.0,
@@ -2355,7 +2485,8 @@
     "FGA": 280.0,
     "FTM": 99.0,
     "FTA": 136.0,
-    "MIN": 875.4
+    "MIN": 875.4,
+    "position": null
   },
   {
     "personId": 100441.0,
@@ -2373,7 +2504,8 @@
     "FGA": 3.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 12.9
+    "MIN": 12.9,
+    "position": null
   },
   {
     "personId": 100445.0,
@@ -2391,7 +2523,8 @@
     "FGA": 147.0,
     "FTM": 43.0,
     "FTA": 58.0,
-    "MIN": 575.1
+    "MIN": 575.1,
+    "position": null
   },
   {
     "personId": 100446.0,
@@ -2409,7 +2542,8 @@
     "FGA": 73.0,
     "FTM": 28.0,
     "FTA": 43.0,
-    "MIN": 276.3
+    "MIN": 276.3,
+    "position": null
   },
   {
     "personId": 100447.0,
@@ -2427,7 +2561,8 @@
     "FGA": 158.0,
     "FTM": 21.0,
     "FTA": 28.0,
-    "MIN": 576.4
+    "MIN": 576.4,
+    "position": null
   },
   {
     "personId": 100451.0,
@@ -2445,7 +2580,8 @@
     "FGA": 55.0,
     "FTM": 30.0,
     "FTA": 43.0,
-    "MIN": 175.7
+    "MIN": 175.7,
+    "position": null
   },
   {
     "personId": 100452.0,
@@ -2463,7 +2599,8 @@
     "FGA": 56.0,
     "FTM": 2.0,
     "FTA": 5.0,
-    "MIN": 212.0
+    "MIN": 212.0,
+    "position": null
   },
   {
     "personId": 100454.0,
@@ -2481,7 +2618,8 @@
     "FGA": 19.0,
     "FTM": 1.0,
     "FTA": 2.0,
-    "MIN": 55.6
+    "MIN": 55.6,
+    "position": null
   },
   {
     "personId": 100457.0,
@@ -2499,7 +2637,8 @@
     "FGA": 146.0,
     "FTM": 48.0,
     "FTA": 65.0,
-    "MIN": 546.2
+    "MIN": 546.2,
+    "position": null
   },
   {
     "personId": 100458.0,
@@ -2517,7 +2656,8 @@
     "FGA": 156.0,
     "FTM": 22.0,
     "FTA": 34.0,
-    "MIN": 552.0
+    "MIN": 552.0,
+    "position": null
   },
   {
     "personId": 100464.0,
@@ -2535,7 +2675,8 @@
     "FGA": 0.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 3.1
+    "MIN": 3.1,
+    "position": null
   },
   {
     "personId": 100468.0,
@@ -2553,7 +2694,8 @@
     "FGA": 5.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 21.4
+    "MIN": 21.4,
+    "position": null
   },
   {
     "personId": 100470.0,
@@ -2571,7 +2713,8 @@
     "FGA": 103.0,
     "FTM": 25.0,
     "FTA": 31.0,
-    "MIN": 323.9
+    "MIN": 323.9,
+    "position": null
   },
   {
     "personId": 100471.0,
@@ -2589,7 +2732,8 @@
     "FGA": 153.0,
     "FTM": 46.0,
     "FTA": 63.0,
-    "MIN": 457.6
+    "MIN": 457.6,
+    "position": null
   },
   {
     "personId": 100472.0,
@@ -2607,7 +2751,8 @@
     "FGA": 14.0,
     "FTM": 3.0,
     "FTA": 5.0,
-    "MIN": 117.9
+    "MIN": 117.9,
+    "position": null
   },
   {
     "personId": 100476.0,
@@ -2625,7 +2770,8 @@
     "FGA": 62.0,
     "FTM": 14.0,
     "FTA": 23.0,
-    "MIN": 180.2
+    "MIN": 180.2,
+    "position": null
   },
   {
     "personId": 100477.0,
@@ -2643,7 +2789,8 @@
     "FGA": 3.0,
     "FTM": 4.0,
     "FTA": 4.0,
-    "MIN": 19.6
+    "MIN": 19.6,
+    "position": null
   },
   {
     "personId": 100478.0,
@@ -2661,7 +2808,8 @@
     "FGA": 77.0,
     "FTM": 7.0,
     "FTA": 14.0,
-    "MIN": 488.3
+    "MIN": 488.3,
+    "position": null
   },
   {
     "personId": 100479.0,
@@ -2679,7 +2827,8 @@
     "FGA": 14.0,
     "FTM": 4.0,
     "FTA": 5.0,
-    "MIN": 66.1
+    "MIN": 66.1,
+    "position": null
   },
   {
     "personId": 100481.0,
@@ -2697,7 +2846,8 @@
     "FGA": 101.0,
     "FTM": 28.0,
     "FTA": 40.0,
-    "MIN": 612.2
+    "MIN": 612.2,
+    "position": null
   },
   {
     "personId": 100482.0,
@@ -2715,7 +2865,8 @@
     "FGA": 147.0,
     "FTM": 42.0,
     "FTA": 65.0,
-    "MIN": 576.4
+    "MIN": 576.4,
+    "position": null
   },
   {
     "personId": 100483.0,
@@ -2733,7 +2884,8 @@
     "FGA": 142.0,
     "FTM": 34.0,
     "FTA": 45.0,
-    "MIN": 789.9
+    "MIN": 789.9,
+    "position": null
   },
   {
     "personId": 100484.0,
@@ -2751,7 +2903,8 @@
     "FGA": 471.0,
     "FTM": 84.0,
     "FTA": 105.0,
-    "MIN": 983.5
+    "MIN": 983.5,
+    "position": null
   },
   {
     "personId": 100485.0,
@@ -2769,7 +2922,8 @@
     "FGA": 118.0,
     "FTM": 19.0,
     "FTA": 32.0,
-    "MIN": 458.0
+    "MIN": 458.0,
+    "position": null
   },
   {
     "personId": 100487.0,
@@ -2787,7 +2941,8 @@
     "FGA": 58.0,
     "FTM": 6.0,
     "FTA": 9.0,
-    "MIN": 406.1
+    "MIN": 406.1,
+    "position": null
   },
   {
     "personId": 100490.0,
@@ -2805,7 +2960,8 @@
     "FGA": 29.0,
     "FTM": 4.0,
     "FTA": 6.0,
-    "MIN": 116.2
+    "MIN": 116.2,
+    "position": null
   },
   {
     "personId": 100492.0,
@@ -2823,7 +2979,8 @@
     "FGA": 169.0,
     "FTM": 67.0,
     "FTA": 80.0,
-    "MIN": 623.0
+    "MIN": 623.0,
+    "position": null
   },
   {
     "personId": 100493.0,
@@ -2841,7 +2998,8 @@
     "FGA": 126.0,
     "FTM": 25.0,
     "FTA": 32.0,
-    "MIN": 435.6
+    "MIN": 435.6,
+    "position": null
   },
   {
     "personId": 100494.0,
@@ -2859,7 +3017,8 @@
     "FGA": 30.0,
     "FTM": 15.0,
     "FTA": 27.0,
-    "MIN": 129.5
+    "MIN": 129.5,
+    "position": null
   },
   {
     "personId": 100496.0,
@@ -2877,7 +3036,8 @@
     "FGA": 106.0,
     "FTM": 26.0,
     "FTA": 35.0,
-    "MIN": 265.5
+    "MIN": 265.5,
+    "position": null
   },
   {
     "personId": 100497.0,
@@ -2895,7 +3055,8 @@
     "FGA": 2.0,
     "FTM": 4.0,
     "FTA": 4.0,
-    "MIN": 6.5
+    "MIN": 6.5,
+    "position": null
   },
   {
     "personId": 100500.0,
@@ -2913,7 +3074,8 @@
     "FGA": 30.0,
     "FTM": 29.0,
     "FTA": 33.0,
-    "MIN": 151.7
+    "MIN": 151.7,
+    "position": null
   },
   {
     "personId": 100503.0,
@@ -2931,7 +3093,8 @@
     "FGA": 115.0,
     "FTM": 24.0,
     "FTA": 38.0,
-    "MIN": 562.6
+    "MIN": 562.6,
+    "position": null
   },
   {
     "personId": 100504.0,
@@ -2949,7 +3112,8 @@
     "FGA": 19.0,
     "FTM": 7.0,
     "FTA": 8.0,
-    "MIN": 73.9
+    "MIN": 73.9,
+    "position": null
   },
   {
     "personId": 100506.0,
@@ -2967,7 +3131,8 @@
     "FGA": 1.0,
     "FTM": 4.0,
     "FTA": 4.0,
-    "MIN": 5.5
+    "MIN": 5.5,
+    "position": null
   },
   {
     "personId": 100508.0,
@@ -2985,7 +3150,8 @@
     "FGA": 18.0,
     "FTM": 11.0,
     "FTA": 13.0,
-    "MIN": 67.0
+    "MIN": 67.0,
+    "position": null
   },
   {
     "personId": 100509.0,
@@ -3003,7 +3169,8 @@
     "FGA": 53.0,
     "FTM": 1.0,
     "FTA": 2.0,
-    "MIN": 156.3
+    "MIN": 156.3,
+    "position": null
   },
   {
     "personId": 100510.0,
@@ -3021,7 +3188,8 @@
     "FGA": 10.0,
     "FTM": 4.0,
     "FTA": 5.0,
-    "MIN": 18.5
+    "MIN": 18.5,
+    "position": null
   },
   {
     "personId": 100511.0,
@@ -3039,7 +3207,8 @@
     "FGA": 1.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 2.2
+    "MIN": 2.2,
+    "position": null
   },
   {
     "personId": 100512.0,
@@ -3057,7 +3226,8 @@
     "FGA": 38.0,
     "FTM": 4.0,
     "FTA": 8.0,
-    "MIN": 157.7
+    "MIN": 157.7,
+    "position": null
   },
   {
     "personId": 100514.0,
@@ -3075,7 +3245,8 @@
     "FGA": 217.0,
     "FTM": 40.0,
     "FTA": 57.0,
-    "MIN": 793.9
+    "MIN": 793.9,
+    "position": null
   },
   {
     "personId": 100515.0,
@@ -3093,7 +3264,8 @@
     "FGA": 2.0,
     "FTM": 0.0,
     "FTA": 0.0,
-    "MIN": 6.1
+    "MIN": 6.1,
+    "position": null
   },
   {
     "personId": 100517.0,
@@ -3111,7 +3283,8 @@
     "FGA": 11.0,
     "FTM": 3.0,
     "FTA": 6.0,
-    "MIN": 42.4
+    "MIN": 42.4,
+    "position": null
   },
   {
     "personId": 100519.0,
@@ -3129,7 +3302,8 @@
     "FGA": 37.0,
     "FTM": 4.0,
     "FTA": 8.0,
-    "MIN": 174.1
+    "MIN": 174.1,
+    "position": null
   },
   {
     "personId": 100521.0,
@@ -3147,7 +3321,8 @@
     "FGA": 49.0,
     "FTM": 16.0,
     "FTA": 18.0,
-    "MIN": 212.2
+    "MIN": 212.2,
+    "position": null
   },
   {
     "personId": 100525.0,
@@ -3165,7 +3340,8 @@
     "FGA": 44.0,
     "FTM": 17.0,
     "FTA": 27.0,
-    "MIN": 140.29999999999998
+    "MIN": 140.29999999999998,
+    "position": null
   },
   {
     "personId": 100526.0,
@@ -3183,7 +3359,8 @@
     "FGA": 72.0,
     "FTM": 20.0,
     "FTA": 38.0,
-    "MIN": 351.7
+    "MIN": 351.7,
+    "position": null
   },
   {
     "personId": 100529.0,
@@ -3201,7 +3378,8 @@
     "FGA": 298.0,
     "FTM": 71.0,
     "FTA": 102.0,
-    "MIN": 930.9
+    "MIN": 930.9,
+    "position": null
   },
   {
     "personId": 100530.0,
@@ -3219,7 +3397,8 @@
     "FGA": 118.0,
     "FTM": 29.0,
     "FTA": 42.0,
-    "MIN": 463.3
+    "MIN": 463.3,
+    "position": null
   },
   {
     "personId": 100532.0,
@@ -3237,7 +3416,8 @@
     "FGA": 163.0,
     "FTM": 44.0,
     "FTA": 74.0,
-    "MIN": 864.5
+    "MIN": 864.5,
+    "position": null
   },
   {
     "personId": 100533.0,
@@ -3255,7 +3435,8 @@
     "FGA": 88.0,
     "FTM": 22.0,
     "FTA": 47.0,
-    "MIN": 309.0
+    "MIN": 309.0,
+    "position": null
   },
   {
     "personId": 100534.0,
@@ -3273,7 +3454,8 @@
     "FGA": 57.0,
     "FTM": 14.0,
     "FTA": 17.0,
-    "MIN": 288.6
+    "MIN": 288.6,
+    "position": null
   },
   {
     "personId": 100535.0,
@@ -3291,7 +3473,8 @@
     "FGA": 7.0,
     "FTM": 2.0,
     "FTA": 4.0,
-    "MIN": 20.0
+    "MIN": 20.0,
+    "position": null
   },
   {
     "personId": 100536.0,
@@ -3309,7 +3492,8 @@
     "FGA": 95.0,
     "FTM": 2.0,
     "FTA": 7.0,
-    "MIN": 310.3
+    "MIN": 310.3,
+    "position": null
   },
   {
     "personId": 100538.0,
@@ -3327,7 +3511,8 @@
     "FGA": 59.0,
     "FTM": 7.0,
     "FTA": 9.0,
-    "MIN": 238.1
+    "MIN": 238.1,
+    "position": null
   },
   {
     "personId": 100541.0,
@@ -3345,7 +3530,8 @@
     "FGA": 125.0,
     "FTM": 24.0,
     "FTA": 34.0,
-    "MIN": 386.5
+    "MIN": 386.5,
+    "position": null
   },
   {
     "personId": 100542.0,
@@ -3363,7 +3549,8 @@
     "FGA": 47.0,
     "FTM": 25.0,
     "FTA": 28.0,
-    "MIN": 281.8
+    "MIN": 281.8,
+    "position": null
   },
   {
     "personId": 100543.0,
@@ -3381,7 +3568,8 @@
     "FGA": 157.0,
     "FTM": 23.0,
     "FTA": 35.0,
-    "MIN": 378.2
+    "MIN": 378.2,
+    "position": null
   },
   {
     "personId": 100544.0,
@@ -3399,7 +3587,8 @@
     "FGA": 171.0,
     "FTM": 60.0,
     "FTA": 78.0,
-    "MIN": 488.4
+    "MIN": 488.4,
+    "position": null
   },
   {
     "personId": 100547.0,
@@ -3417,7 +3606,8 @@
     "FGA": 30.0,
     "FTM": 33.0,
     "FTA": 36.0,
-    "MIN": 222.3
+    "MIN": 222.3,
+    "position": null
   },
   {
     "personId": 100548.0,
@@ -3435,7 +3625,8 @@
     "FGA": 15.0,
     "FTM": 10.0,
     "FTA": 10.0,
-    "MIN": 77.9
+    "MIN": 77.9,
+    "position": null
   },
   {
     "personId": 100549.0,
@@ -3453,7 +3644,8 @@
     "FGA": 75.0,
     "FTM": 19.0,
     "FTA": 31.0,
-    "MIN": 342.3
+    "MIN": 342.3,
+    "position": null
   },
   {
     "personId": 100551.0,
@@ -3471,7 +3663,8 @@
     "FGA": 69.0,
     "FTM": 15.0,
     "FTA": 20.0,
-    "MIN": 290.8
+    "MIN": 290.8,
+    "position": null
   },
   {
     "personId": 100552.0,
@@ -3489,7 +3682,8 @@
     "FGA": 100.0,
     "FTM": 54.0,
     "FTA": 64.0,
-    "MIN": 461.0
+    "MIN": 461.0,
+    "position": null
   },
   {
     "personId": 100553.0,
@@ -3507,7 +3701,8 @@
     "FGA": 68.0,
     "FTM": 14.0,
     "FTA": 18.0,
-    "MIN": 434.7
+    "MIN": 434.7,
+    "position": null
   },
   {
     "personId": 100554.0,
@@ -3525,7 +3720,8 @@
     "FGA": 68.0,
     "FTM": 16.0,
     "FTA": 19.0,
-    "MIN": 198.8
+    "MIN": 198.8,
+    "position": null
   },
   {
     "personId": 100555.0,
@@ -3543,7 +3739,8 @@
     "FGA": 105.0,
     "FTM": 38.0,
     "FTA": 51.0,
-    "MIN": 298.2
+    "MIN": 298.2,
+    "position": null
   },
   {
     "personId": 100557.0,
@@ -3561,7 +3758,8 @@
     "FGA": 29.0,
     "FTM": 4.0,
     "FTA": 6.0,
-    "MIN": 102.0
+    "MIN": 102.0,
+    "position": null
   },
   {
     "personId": 100558.0,
@@ -3579,7 +3777,8 @@
     "FGA": 95.0,
     "FTM": 13.0,
     "FTA": 18.0,
-    "MIN": 234.1
+    "MIN": 234.1,
+    "position": null
   },
   {
     "personId": 100559.0,
@@ -3597,7 +3796,8 @@
     "FGA": 112.0,
     "FTM": 26.0,
     "FTA": 42.0,
-    "MIN": 475.6
+    "MIN": 475.6,
+    "position": null
   },
   {
     "personId": 100560.0,
@@ -3615,7 +3815,8 @@
     "FGA": 131.0,
     "FTM": 29.0,
     "FTA": 54.0,
-    "MIN": 606.1
+    "MIN": 606.1,
+    "position": null
   },
   {
     "personId": 100570.0,
@@ -3633,7 +3834,8 @@
     "FGA": 154.0,
     "FTM": 43.0,
     "FTA": 75.0,
-    "MIN": 535.7
+    "MIN": 535.7,
+    "position": null
   },
   {
     "personId": 100594.0,
@@ -3651,7 +3853,8 @@
     "FGA": 46.0,
     "FTM": 19.0,
     "FTA": 27.0,
-    "MIN": 506.4
+    "MIN": 506.4,
+    "position": null
   },
   {
     "personId": 101006.0,
@@ -3669,6 +3872,7 @@
     "FGA": 117.0,
     "FTM": 27.0,
     "FTA": 35.0,
-    "MIN": 422.2
+    "MIN": 422.2,
+    "position": null
   }
 ]
