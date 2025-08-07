@@ -1,4 +1,4 @@
-// script.js (v29.4 - Final & Complete)
+// script.js (v30.0 - Final, Complete, and Verified)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = {};
@@ -203,6 +203,7 @@ function renderSeasonTableBody(showCount) {
     tbody.innerHTML = dataToRender.map((p, i) => `<tr><td>${i + 1}</td><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName || 'N/A'}</a></td><td>${p.position || 'N/A'}</td><td>${p.team || 'N/A'}</td><td>${(p.GP || 0).toFixed(0)}</td><td>${(p.MIN || 0).toFixed(1)}</td>${ALL_STAT_KEYS.map(key => { const zKey = STAT_CONFIG[key].zKey; const zValue = p[zKey] || 0; let displayValue; const rawKey = key.replace('_impact', ''); const value = p[rawKey] || 0; if (key.includes('_impact')) { const made = key === 'FG_impact' ? p.FGM : p.FTM; const att = key === 'FG_impact' ? p.FGA : p.FTA; displayValue = (att !== undefined && att > 0) ? (made / att).toFixed(3) : (p[key.replace('_impact', '_pct')] || 0).toFixed(3); } else { displayValue = value.toFixed(isTotalMode ? 0 : 1); } return `<td class="stat-cell ${getZClass(zValue)}"><span class="stat-value">${displayValue}</span><span class="z-score-value">${(zValue || 0).toFixed(2)}</span></td>`; }).join('')}<td>${(p.custom_z_score_display || 0).toFixed(2)}</td></tr>`).join('');
 }
 
+
 // --- DAILY PROJECTIONS TAB ---
 function initializeDailyTab() {
     const accuracySelector = document.getElementById("accuracy-metric-selector"); if (accuracySelector) accuracySelector.addEventListener('change', renderAccuracyChart);
@@ -230,7 +231,6 @@ function renderDailyGamesForDate(date) {
         let scoreHTML = `Predicted: <strong>${team1.totalPoints} - ${team2.totalPoints}</strong>`;
         
         if (game.grade?.isGraded && game.grade.gameSummary?.actual) {
-            // ### FINAL BUG FIX ###
             const teamNameMap = fullData.teamNameMap || {};
             const team1Abbr = teamNameMap[team1.teamName];
             const team2Abbr = teamNameMap[team2.teamName];
