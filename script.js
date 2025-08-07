@@ -1,9 +1,9 @@
-// script.js (v28.1 - Final Definitive WNBA Version)
+// script.js (v28.2 - Definitive WNBA Version)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = {};
 let loadedSeasonDataCache = {};
-let currentSort = { column: "custom_z_score", direction: "desc" };
+let currentSort = { column: "custom_z_score_display", direction: "desc" };
 let accuracyChartInstance = null;
 let careerChartInstance = null;
 let modalChartInstance = null;
@@ -12,7 +12,6 @@ const STAT_CONFIG = {
     PTS: { name: "PTS", zKey: "z_PTS" }, REB: { name: "REB", zKey: "z_REB" }, AST: { name: "AST", zKey: "z_AST" }, STL: { name: "STL", zKey: "z_STL" }, BLK: { name: "BLK", zKey: "z_BLK" }, '3PM': { name: "3PM", zKey: "z_3PM" }, TOV: { name: "TOV", zKey: "z_TOV" }, FG_impact: { name: "FG%", zKey: "z_FG_impact" }, FT_impact: { name: "FT%", zKey: "z_FT_impact" }
 };
 const ALL_STAT_KEYS = ["PTS", "REB", "AST", "STL", "BLK", "3PM", "TOV", "FG_impact", "FT_impact"];
-const TEAM_ANALYSIS_STATS = ["GP", "MIN", "PTS", "REB", "AST"];
 
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", async () => {
@@ -239,7 +238,7 @@ function renderSeasonTableBody(showCount) {
     document.querySelectorAll('#predictions-thead th').forEach(h => h.classList.remove('sort-asc', 'sort-desc')); const currentTh = thead.querySelector(`[data-sort-key="${currentSort.column}"]`); if(currentTh) currentTh.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
     const tbody = document.getElementById("predictions-tbody"); const dataToRender = currentSort.data?.slice(0, showCount) || []; if (!dataToRender.length) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">No players match criteria.</td></tr>`; return; }
     const getZClass = z => z >= 1.5 ? 'elite' : z >= 1.0 ? 'very-good' : z >= 0.5 ? 'good' : z <= -1.0 ? 'not-good' : z <= -0.5 ? 'below-average' : 'average'; const isTotalMode = document.getElementById("calculation-mode").value === 'total';
-    tbody.innerHTML = dataToRender.map((p, i) => { const gp = p.GP || 1; const mpg = p.MIN || 0; const displayedMpg = isTotalMode ? mpg : (p.GP > 0 ? mpg / p.GP : 0); return `<tr><td>${i + 1}</td><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName || 'N/A'}</a></td><td>${p.position || 'N/A'}</td><td>${p.team || 'N/A'}</td><td>${(p.GP || 0).toFixed(0)}</td><td>${mpg.toFixed(1)}</td>${ALL_STAT_KEYS.map(key => { const zKey = STAT_CONFIG[key].zKey; const zValue = p[zKey] || 0; let displayValue; const rawKey = key.replace('_impact', ''); const value = p[rawKey] || 0; if (key.includes('_impact')) { const made = key === 'FG_impact' ? p.FGM : p.FTM; const att = key === 'FG_impact' ? p.FGA : p.FTA; displayValue = (att !== undefined && att > 0) ? (made / att).toFixed(3) : (p[key.replace('_impact', '_pct')] || 0).toFixed(3); } else { displayValue = value.toFixed(isTotalMode ? 0 : 1); } return `<td class="stat-cell ${getZClass(zValue)}"><span class="stat-value">${displayValue}</span><span class="z-score-value">${(zValue || 0).toFixed(2)}</span></td>`; }).join('')}<td>${(p.custom_z_score_display || 0).toFixed(2)}</td></tr>` }).join('');
+    tbody.innerHTML = dataToRender.map((p, i) => { const gp = p.GP || 1; const mpg = p.MIN || 0; return `<tr><td>${i + 1}</td><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName || 'N/A'}</a></td><td>${p.position || 'N/A'}</td><td>${p.team || 'N/A'}</td><td>${(p.GP || 0).toFixed(0)}</td><td>${mpg.toFixed(1)}</td>${ALL_STAT_KEYS.map(key => { const zKey = STAT_CONFIG[key].zKey; const zValue = p[zKey] || 0; let displayValue; const rawKey = key.replace('_impact', ''); const value = p[rawKey] || 0; if (key.includes('_impact')) { const made = key === 'FG_impact' ? p.FGM : p.FTM; const att = key === 'FG_impact' ? p.FGA : p.FTA; displayValue = (att !== undefined && att > 0) ? (made / att).toFixed(3) : (p[key.replace('_impact', '_pct')] || 0).toFixed(3); } else { displayValue = value.toFixed(isTotalMode ? 0 : 1); } return `<td class="stat-cell ${getZClass(zValue)}"><span class="stat-value">${displayValue}</span><span class="z-score-value">${(zValue || 0).toFixed(2)}</span></td>`; }).join('')}<td>${(p.custom_z_score_display || 0).toFixed(2)}</td></tr>` }).join('');
 }
 
 function initializeDailyTab() {
@@ -249,7 +248,7 @@ function initializeDailyTab() {
     dateTabs.innerHTML = sortedDates.map((date) => `<button class="date-tab" data-date="${date}">${new Date(date + "T00:00:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}</button>`).join('');
     const today = new Date(); today.setHours(0,0,0,0);
     let activeTab = Array.from(dateTabs.children).find(tab => new Date(tab.dataset.date + "T00:00:00") >= today);
-    if (!activeTab) activeTab = dateTabs.children[dateTabs.children.length - 1]; // Fallback to last day
+    if (!activeTab) activeTab = dateTabs.children[dateTabs.children.length - 1]; // Fallback to last day if all are in the past
     activeTab.classList.add("active");
     dateTabs.addEventListener("click", e => { const tab = e.target.closest(".date-tab"); if (tab) { document.querySelectorAll(".date-tab").forEach(t => t.classList.remove("active")); tab.classList.add("active"); renderDailyGamesForDate(tab.dataset.date); } });
     renderAccuracyChart(); renderDailyGamesForDate(activeTab.dataset.date);
@@ -259,8 +258,10 @@ function renderDailyGamesForDate(date) {
     const container = document.getElementById("daily-games-container"); const games = fullData.dailyGamesByDate?.[date] || []; if (games.length === 0) { container.innerHTML = '<div class="card"><p>No games for this date.</p></div>'; return; }
     const getZClass = z => z >= 1.5 ? 'elite' : z >= 1 ? 'very-good' : z >= 0.5 ? 'good' : z <= -1 ? 'not-good' : z <= -0.5 ? 'below-average' : 'average';
     container.innerHTML = games.map(game => {
-        if (!game.projections || game.projections.length < 2) return '';
-        const [team1, team2] = game.projections; let scoreHTML = `Predicted: <strong>${team1.totalPoints}-${team2.totalPoints}</strong>`;
+        const hasProjections = game.projections && game.projections.length >= 2;
+        if (!hasProjections) return ''; // Don't render games without predictions
+        const [team1, team2] = game.projections;
+        let scoreHTML = `Predicted: <strong>${team1.totalPoints}-${team2.totalPoints}</strong>`;
         if (game.grade?.isGraded) {
             const actualScores = Object.values(game.grade.gameSummary.actual);
             if(actualScores.length >= 2) { scoreHTML += ` | Actual: <strong class="actual-score ${game.grade.correctWinner ? 'prediction-correct' : 'prediction-incorrect'}">${actualScores[0]}-${actualScores[1]}</strong>`; }
@@ -285,7 +286,7 @@ function createTeamTableHTML(teamData, gameGrade) {
 
 function renderAccuracyChart() { const container = document.getElementById("accuracy-chart-container"); if (!container) return; const chartCanvas = document.getElementById('accuracy-chart'); if (!chartCanvas || !fullData.historicalGrades || fullData.historicalGrades.length < 1) { container.style.display = 'none'; return; } container.style.display = 'block'; const ctx = chartCanvas.getContext('2d'), metric = document.getElementById('accuracy-metric-selector').value; const gradesByDate = fullData.historicalGrades.reduce((acc, g) => { (acc[g.date] = acc[g.date] || []).push(g); return acc; }, {}); const sortedDates = Object.keys(gradesByDate).sort((a, b) => new Date(a) - new Date(b)); let chartConfig; switch (metric) { case 'cumulativeWinLoss': let wins = 0, total = 0; const cumulativeData = sortedDates.map(date => { wins += gradesByDate[date].reduce((s, g) => s + (g.correctWinner ? 1 : 0), 0); total += gradesByDate[date].length; return { x: new Date(date), y: total > 0 ? (wins / total) * 100 : 0 }; }); chartConfig = { type: 'line', data: { datasets: [{ label: 'Cumulative W/L %', data: cumulativeData, borderColor: 'var(--primary-color)' }] }, options: { scales: { y: { min: 0, max: 100, ticks: { callback: v => v + '%' } }, x: { type: 'time', time: { unit: 'day' } } } } }; break; case 'dailyWinLoss': const dailyData = sortedDates.map(date => (gradesByDate[date].reduce((s, g) => s + (g.correctWinner ? 1 : 0), 0) / gradesByDate[date].length) * 100); chartConfig = { type: 'bar', data: { labels: sortedDates.map(d => new Date(d + "T00:00:00").toLocaleDateString('en-US', { month: 'short', day: 'numeric' })), datasets: [{ label: 'Daily W/L Accuracy', data: dailyData, backgroundColor: 'var(--primary-color)' }] }, options: { scales: { y: { min: 0, max: 100, ticks: { callback: v => v + '%' } } } } }; break; default: const barData = sortedDates.map(date => { const values = gradesByDate[date].map(g => metric === 'scoreCloseness' ? g.scoreCloseness : g.statErrors[metric]).filter(v => v !== undefined && v !== null); return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0; }); chartConfig = { type: 'bar', data: { labels: sortedDates.map(d => new Date(d + "T00:00:00").toLocaleDateString('en-US', { month: 'short', day: 'numeric' })), datasets: [{ label: `Avg Daily ${metric}`, data: barData, backgroundColor: 'var(--primary-color)' }] } }; } if (accuracyChartInstance) accuracyChartInstance.destroy(); accuracyChartInstance = new Chart(ctx, { ...chartConfig, options: { ...chartConfig.options, responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } } }); }
 function initializeTeamAnalysisTab() { const selector = document.getElementById("team-analysis-source-selector"); const manifest = fullData.seasonLongDataManifest || {}; const sources = Object.keys(manifest).filter(key => key.endsWith('_per_game')).sort((a,b) => b.localeCompare(a)); selector.innerHTML = sources.map(key => `<option value="${key}">${manifest[key].label}</option>`).join(''); selector.addEventListener('change', renderTeamAnalysis); renderTeamAnalysis(); }
-async function renderTeamAnalysis() { const container = document.getElementById("team-analysis-container"); container.innerHTML = '<div class="card"><p>Loading team data...</p></div>'; const sourceKey = document.getElementById("team-analysis-source-selector").value; const data = await fetchSeasonData(sourceKey); if (!data) { container.innerHTML = '<div class="card"><p class="error-cell">Could not load data.</p></div>'; return; } const teams = data.reduce((acc, p) => { (acc[p.team || 'FA'] = acc[p.team || 'FA'] || []).push(p); return acc; }, {}); container.innerHTML = Object.entries(teams).sort(([teamA], [teamB]) => { if (teamA === 'FA') return 1; if (teamB === 'FA') return -1; const strengthA = teams[teamA].reduce((s, p) => s + (p.custom_z_score || 0), 0); const strengthB = teams[teamB].reduce((s, p) => s + (p.custom_z_score || 0), 0); return strengthB - strengthA; }).map(([teamName, players]) => { const teamStrength = players.reduce((sum, p) => sum + (p.custom_z_score || 0), 0); const playerRows = players.sort((a,b) => (b.custom_z_score || 0) - (a.custom_z_score || 0)).map(p => `<tr><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName}</a></td><td>${(p.GP||0).toFixed(0)}</td><td>${(p.MIN||0).toFixed(1)}</td><td>${(p.PTS||0).toFixed(1)}</td><td>${(p.REB||0).toFixed(1)}</td><td>${(p.AST||0).toFixed(1)}</td><td>${(p.custom_z_score||0).toFixed(2)}</td></tr>`).join(''); return ` <div class="team-card"> <div class="team-card-header"><h3>${teamName === 'FA' ? 'Free Agents' : teamName}</h3><div class="team-strength-score">${teamStrength.toFixed(2)}</div></div> <div class="table-container"> <table> <thead><tr><th>Player</th><th>GP</th><th>MPG</th><th>PTS</th><th>REB</th><th>AST</th><th>Z-Score</th></tr></thead> <tbody>${playerRows}</tbody> </table> </div> </div>`; }).join(''); }
+async function renderTeamAnalysis() { const container = document.getElementById("team-analysis-container"); container.innerHTML = '<div class="card"><p>Loading team data...</p></div>'; const sourceKey = document.getElementById("team-analysis-source-selector").value; const data = await fetchSeasonData(sourceKey); if (!data) { container.innerHTML = '<div class="card"><p class="error-cell">Could not load data.</p></div>'; return; } const teams = data.reduce((acc, p) => { (acc[p.team || 'FA'] = acc[p.team || 'FA'] || []).push(p); return acc; }, {}); container.innerHTML = Object.entries(teams).sort(([teamA], [teamB]) => { if (teamA === 'FA') return 1; if (teamB === 'FA') return -1; const strengthA = teams[teamA].reduce((s, p) => s + (p.custom_z_score || 0), 0); const strengthB = teams[teamB].reduce((s, p) => s + (p.custom_z_score || 0), 0); return strengthB - strengthA; }).map(([teamName, players]) => { const teamStrength = players.reduce((sum, p) => sum + (p.custom_z_score || 0), 0); const playerRows = players.sort((a,b) => (b.custom_z_score || 0) - (a.custom_z_score || 0)).map(p => `<tr><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName || 'undefined'}</a></td><td>${(p.GP||0).toFixed(0)}</td><td>${(p.MIN||0).toFixed(1)}</td><td>${(p.PTS||0).toFixed(1)}</td><td>${(p.REB||0).toFixed(1)}</td><td>${(p.AST||0).toFixed(1)}</td><td>${(p.custom_z_score||0).toFixed(2)}</td></tr>`).join(''); return ` <div class="team-card"> <div class="team-card-header"><h3>${teamName === 'FA' ? 'Free Agents' : teamName}</h3><div class="team-strength-score">${teamStrength.toFixed(2)}</div></div> <div class="table-container"> <table> <thead><tr><th>Player</th><th>GP</th><th>MPG</th><th>PTS</th><th>REB</th><th>AST</th><th>Z-Score</th></tr></thead> <tbody>${playerRows}</tbody> </table> </div> </div>`; }).join(''); }
 async function initializePlayerProgressionTab() {
     const container = document.getElementById("player-progression-container"); container.innerHTML = '<div class="card" style="padding:20px; text-align:center;">Loading...</div>';
     const futureData = await fetchSeasonData('progression'); const historicalData = await fetchSeasonData('progression_historical');
@@ -296,7 +297,17 @@ async function initializePlayerProgressionTab() {
     container.innerHTML = html;
 }
 function createProgressionTable(title, players, th1, th2, key1, key2) { const rows = players.map(p => `<tr><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName}</a></td><td>${p.team}</td><td>${(p[key1]||0).toFixed(2)}</td><td>${(p[key2]||0).toFixed(2)}</td><td class="${p.z_Change>=0?'text-success':'text-danger'}">${p.z_Change>=0?'+':''}${(p.z_Change||0).toFixed(2)}</td></tr>`).join(''); return `<div class="card"><h3>${title}</h3><div class="table-container"><table><thead><tr><th>Player</th><th>Team</th><th>${th1}</th><th>${th2}</th><th>Change</th></tr></thead><tbody>${rows}</tbody></table></div></div>`; }
-function initializeCareerAnalysisTab() { const controls = document.getElementById("career-controls"); controls?.addEventListener('change', renderCareerChart); controls?.querySelector('#career-search-player').addEventListener('input', renderCareerChart); renderCareerChart(); }
+
+function initializeCareerAnalysisTab() {
+    const controls = document.getElementById("career-controls");
+    controls?.addEventListener('change', renderCareerChart);
+    controls?.querySelector('#career-search-player').addEventListener('input', renderCareerChart);
+    // Add event listeners for the new toggles
+    document.getElementById('career-aggregate-toggle')?.addEventListener('change', renderCareerChart);
+    document.getElementById('career-pos-toggle')?.addEventListener('change', renderCareerChart);
+    document.getElementById('career-year-toggle')?.addEventListener('change', renderCareerChart);
+    renderCareerChart();
+}
 
 async function renderCareerChart() {
     const chartWrapper = document.getElementById("career-chart-wrapper"); if (careerChartInstance) careerChartInstance.destroy();
@@ -304,19 +315,18 @@ async function renderCareerChart() {
     const careerData = await fetchSeasonData('career_data');
     if (!careerData || !careerData.players) { chartWrapper.innerHTML = `<p class="error-cell" style="text-align:center; padding: 20px;">Career analysis data not available.</p>`; return; }
     const stat = document.getElementById("career-stat-selector").value; const xAxis = document.getElementById("career-xaxis-selector").value; const searchTerm = document.getElementById("career-search-player").value.toLowerCase().trim();
-    let highlightedPlayerId = null;
-    if (searchTerm) { const entry = Object.entries(fullData.playerProfiles).find(([id, profile]) => profile.playerName?.toLowerCase().includes(searchTerm)); if (entry) highlightedPlayerId = parseInt(entry[0], 10); }
-    const datasets = [];
-    // ### FIX: Check for careerData.players before trying to map it ###
-    if (careerData.players) {
+    const showAggregateOnly = document.getElementById("career-aggregate-toggle").checked;
+    const showPositionAvg = document.getElementById("career-pos-toggle").checked;
+    const showYearAvg = document.getElementById("career-year-toggle").checked;
+    let highlightedPlayerId = null; let playerProfile = null;
+    if (searchTerm) { const entry = Object.entries(fullData.playerProfiles).find(([id, profile]) => profile?.playerName?.toLowerCase().includes(searchTerm)); if (entry) { highlightedPlayerId = parseInt(entry[0], 10); playerProfile = entry[1]; } }
+    const datasets = []; const binSize = careerData.game_bin_size || 20;
+    if (!showAggregateOnly) {
         const allPlayersData = Object.entries(careerData.players).map(([id, data]) => { const isHighlighted = parseInt(id) === highlightedPlayerId; return { label: `Player ${id}`, data: data.map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: isHighlighted ? 'var(--warning-color)' : 'rgba(128, 128, 128, 0.1)', borderWidth: isHighlighted ? 2.5 : 1, pointRadius: 0, showLine: true, order: isHighlighted ? 0 : 1 }; });
         datasets.push(...allPlayersData);
     }
-    // ### FIX: Check for cohort data before trying to access it ###
-    if (highlightedPlayerId && fullData.playerProfiles[highlightedPlayerId]) {
-        const playerProfile = fullData.playerProfiles[highlightedPlayerId]; const draftInfoStr = playerProfile.draftInfo || ''; const draftYearMatch = draftInfoStr.match(/(\d{4})/); const draftPickMatch = draftInfoStr.match(/P(\d+)/); const draftYear = draftYearMatch ? parseInt(draftYearMatch[1]) : null; const draftNumber = draftPickMatch ? parseInt(draftPickMatch[1]) : null;
-        if (draftYear && careerData.by_year && careerData.by_year[draftYear]) { datasets.push({ label: `Avg. Draft Year ${draftYear}`, data: careerData.by_year[draftYear].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--success-color)', borderWidth: 2, borderDash: [5, 5], pointRadius: 0, showLine: true, order: 2 }); }
-        if (draftNumber && careerData.by_pick && careerData.by_pick[draftNumber]) { datasets.push({ label: `Avg. Draft Pick #${draftNumber}`, data: careerData.by_pick[draftNumber].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--danger-color)', borderWidth: 2, borderDash: [5, 5], pointRadius: 0, showLine: true, order: 3 }); }
-    }
-    careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: false, parsing: false, plugins: { legend: { labels: { filter: item => !item.label.startsWith('Player') } }, decimation: { enabled: true, algorithm: 'lttb', samples: 200 }, tooltip: { enabled: false } }, scales: { x: { type: 'linear', title: { display: true, text: 'WNBA Games Played' } }, y: { title: { display: true, text: `Monthly Average ${stat}` } } } } });
+    if (highlightedPlayerId && careerData.players[highlightedPlayerId]) { datasets.push({ label: playerProfile.playerName, data: careerData.players[highlightedPlayerId].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--warning-color)', borderWidth: 2.5, pointRadius: 0, order: -1 }); }
+    if (showPositionAvg && playerProfile?.position && careerData.by_position?.[playerProfile.position]) { datasets.push({ label: `Avg. Position: ${playerProfile.position}`, data: careerData.by_position[playerProfile.position].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--success-color)', borderWidth: 2, borderDash: [5, 5], pointRadius: 0 }); }
+    if (showYearAvg && playerProfile?.draft_year && careerData.by_draft_year?.[playerProfile.draft_year]) { datasets.push({ label: `Avg. Draft Year: ${playerProfile.draft_year}`, data: careerData.by_draft_year[playerProfile.draft_year].map(d => ({ x: d[xAxis], y: d[stat] })), borderColor: 'var(--danger-color)', borderWidth: 2, borderDash: [5, 5], pointRadius: 0 }); }
+    careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { labels: { color: 'var(--text-primary)', filter: item => item.label && !item.label.startsWith('Player ') } }, decimation: { enabled: true, algorithm: 'lttb', samples: 200 }, tooltip: { enabled: true } }, scales: { x: { type: 'linear', title: { display: true, text: xAxis === 'age' ? 'Player Age' : 'WNBA Games Played', color: 'var(--text-secondary)'}, ticks: {color: 'var(--text-secondary)'} }, y: { title: { display: true, text: `Monthly Average ${stat}`, color: 'var(--text-secondary)' }, ticks: {color: 'var(--text-secondary)'} } } } });
 }
