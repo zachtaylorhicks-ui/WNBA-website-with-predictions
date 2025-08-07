@@ -22,11 +22,11 @@ jobs:
           pip install -r requirements.txt
       - name: Run the update script for injuries only
         run: python update_databases.py --injuries-only
+
       - name: Commit and push if data changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated Hourly Injury Update"
           file_pattern: 'database/live_injuries.json'
           branch: dev-automation
-          token: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}

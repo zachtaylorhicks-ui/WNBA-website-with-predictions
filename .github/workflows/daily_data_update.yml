@@ -22,11 +22,11 @@ jobs:
           pip install -r requirements.txt
       - name: Run the update script for stats and players
         run: python update_databases.py
+
       - name: Commit and push if data changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated Daily Data Update"
           file_pattern: 'database/*.csv database/*.json'
           branch: dev-automation
-          token: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
