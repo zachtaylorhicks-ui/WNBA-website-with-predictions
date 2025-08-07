@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-08-07T20:53:52.849578",
+  "lastUpdated": "2025-08-07T21:13:21.609978",
   "seasonLongDataManifest": {
     "projections_2025_full_per_game": {
       "label": "2025 Projections",
@@ -67341,5 +67341,41 @@
       "date": "2025-08-06",
       "correctWinner": false
     }
-  ]
+  ],
+  "teamNameMap": {
+    "Atlanta Dream": "ATL",
+    "Chicago Sky": "CHI",
+    "Connecticut Sun": "CON",
+    "Dallas Wings": "DAL",
+    "Indiana Fever": "IND",
+    "Las Vegas Aces": "LVA",
+    "Los Angeles Sparks": "LAS",
+    "Minnesota Lynx": "MIN",
+    "New York Liberty": "NYL",
+    "Phoenix Mercury": "PHO",
+    "Seattle Storm": "SEA",
+    "Washington Mystics": "WAS",
+    "Golden State Valkyries": "GSV",
+    "Atlanta": "ATL",
+    "Chicago": "CHI",
+    "Connecticut": "CON",
+    "Dallas": "DAL",
+    "Indiana": "IND",
+    "Las Vegas": "LVA",
+    "Los Angeles": "LAS",
+    "Minnesota": "MIN",
+    "New York": "NYL",
+    "Phoenix": "PHO",
+    "Seattle": "SEA",
+    "Washington": "WAS",
+    "Golden State": "GSV",
+    "Golden State Va": "GSV",
+    "CONN": "CON",
+    "LV": "LVA",
+    "LA": "LAS",
+    "NY": "NYL",
+    "PHX": "PHO",
+    "WSH": "WAS",
+    "GS": "GSV"
+  }
 }
