@@ -1,16 +1,12 @@
-# .github/workflows/your-workflow-file.yml
-
 name: Daily WNBA Data Update
 on:
   schedule:
-    - cron: '0 8 * * *' # Runs at 8:00 UTC daily
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    
-    # FIX 1: Grant write permissions to the job for pushing commits
     permissions:
       contents: write
 
@@ -31,7 +27,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run full update script
-        run: python update_databases.py
+        # Use the new script
+        run: python run_data_updates.py
+
+      - name: Pull latest changes to avoid push conflicts
+        run: git pull origin dev-automation
 
       - name: Commit and push if data changed
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -39,5 +39,3 @@ jobs:
           commit_message: "Automated Daily Data Update"
           branch: dev-automation
           file_pattern: 'database/*.csv database/*.json'
-          # FIX 2: The 'token' input is unnecessary and has been removed.
-          # The action will now use the permissions granted to the job.
