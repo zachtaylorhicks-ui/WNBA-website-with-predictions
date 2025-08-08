@@ -27,11 +27,14 @@ INJURY_URL = "https://www.covers.com/sport/basketball/wnba/injuries"
 WNBA_TEAM_NAME_MAP = { "Atlanta Dream": "ATL", "Chicago Sky": "CHI", "Connecticut Sun": "CON", "Dallas Wings": "DAL", "Indiana Fever": "IND", "Las Vegas Aces": "LVA", "Los Angeles Sparks": "LAS", "Minnesota Lynx": "MIN", "New York Liberty": "NYL", "Phoenix Mercury": "PHO", "Seattle Storm": "SEA", "Washington Mystics": "WAS", "Golden State Valkyries": "GSV", 'Atlanta': 'ATL', 'Chicago': 'CHI', 'Connecticut': 'CON', 'Dallas': 'DAL', 'Indiana': 'IND', 'Las Vegas': 'LVA', 'Los Angeles': 'LAS', 'Minnesota': 'MIN', 'New York': 'NYL', 'Phoenix': 'PHO', 'Seattle': 'SEA', 'Washington': 'WAS', 'Golden State': 'GSV' }
 
 # --- CORE FUNCTIONS (Extracted & Refined) ---
+# In WNBA-website-with-predictions/update_databases.py
+
 class WNBAStatsScraper:
     BASE_URL = "https://stats.wnba.com/stats/playergamelogs"
     HEADERS = { 'Accept': 'application/json, text/plain, */*', 'Origin': 'https://www.wnba.com', 'Referer': 'https://www.wnba.com/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' }
 
-    def __init__(self, timeout=45, max_retries=3, backoff_factor=5):
+    # FIX 3: Increase the timeout and max_retries for more resilience
+    def __init__(self, timeout=120, max_retries=4, backoff_factor=5):
         self.session = curl_requests.Session(impersonate="chrome120", headers=self.HEADERS)
         self.timeout, self.max_retries, self.backoff_factor = timeout, max_retries, backoff_factor
 
@@ -39,6 +42,7 @@ class WNBAStatsScraper:
         params = {'LeagueID': '10', 'Season': str(year), 'SeasonType': season_type, 'MeasureType': 'Base', 'PerMode': 'PerGame'}
         for attempt in range(self.max_retries):
             try:
+                logging.info(f"Attempt {attempt + 1}/{self.max_retries} to fetch {year} {season_type} with a {self.timeout}s timeout...")
                 response = self.session.get(self.BASE_URL, params=params, timeout=self.timeout)
                 response.raise_for_status()
                 data = response.json()
@@ -49,7 +53,10 @@ class WNBAStatsScraper:
                 return df
             except Exception as e:
                 logging.error(f"Attempt {attempt + 1}/{self.max_retries} failed for {year} {season_type}: {e}")
-                if attempt < self.max_retries - 1: time.sleep(self.backoff_factor * (attempt + 1))
+                if attempt < self.max_retries - 1:
+                    sleep_time = self.backoff_factor * (attempt + 1)
+                    logging.info(f"Waiting for {sleep_time} seconds before retrying...")
+                    time.sleep(sleep_time)
         return None
 
 def update_stats_database():
