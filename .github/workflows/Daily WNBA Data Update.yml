@@ -1,11 +1,19 @@
+# .github/workflows/your-workflow-file.yml
+
 name: Daily WNBA Data Update
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 8 * * *' # Runs at 8:00 UTC daily
   workflow_dispatch:
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    
+    # FIX 1: Grant write permissions to the job for pushing commits
+    permissions:
+      contents: write
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -31,4 +39,5 @@ jobs:
           commit_message: "Automated Daily Data Update"
           branch: dev-automation
           file_pattern: 'database/*.csv database/*.json'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # FIX 2: The 'token' input is unnecessary and has been removed.
+          # The action will now use the permissions granted to the job.
