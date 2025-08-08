@@ -1,4 +1,4 @@
-name: ✅ Daily WNBA Data Update
+name: Daily WNBA Data Update
 on:
   schedule:
     - cron: '0 8 * * *'
