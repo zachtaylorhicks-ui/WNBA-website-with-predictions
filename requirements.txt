@@ -1,0 +1,9 @@
+
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+curl_cffi
+fuzzywuzzy
+python-Levenshtein
