@@ -1,6 +1,9 @@
-# /run_data_updates.py
-# This script is a direct port of the trusted scraping and data processing
-# functions from the provided Colab notebooks.
+#
+# update_databases.py
+#
+# This is the definitive, consolidated update script.
+# It is built directly from the trusted functions provided in the Colab notebooks.
+#
 
 import pandas as pd
 import numpy as np
@@ -23,15 +26,67 @@ DATABASE_DIR = "database"
 STATS_FILE = os.path.join(DATABASE_DIR, "wnba_all_player_boxscores.csv")
 PLAYER_CACHE_FILE = os.path.join(DATABASE_DIR, "player_info_cache.json")
 INJURY_FILE = os.path.join(DATABASE_DIR, "live_injuries.json")
-BASE_BOXSCORE_FILE = os.path.join(DATABASE_DIR, "wnba_all_player_boxscores_1997-2025.csv") # Base file for name mapping
+# This base file is crucial for mapping player names to IDs consistently.
+BASE_BOXSCORE_FILE_FOR_MAPPING = os.path.join(DATABASE_DIR, "wnba_all_player_boxscores_1997-2025.csv")
 
 WNBA_ROSTER_URL = "https://en.wikipedia.org/wiki/List_of_current_WNBA_team_rosters"
 WNBA_ALL_PLAYERS_URL = "https://en.wikipedia.org/wiki/List_of_Women%27s_National_Basketball_Association_players"
 INJURY_URL = "https://www.covers.com/sport/basketball/wnba/injuries"
 WNBA_TEAM_NAME_MAP = { "Atlanta Dream": "ATL", "Chicago Sky": "CHI", "Connecticut Sun": "CON", "Dallas Wings": "DAL", "Indiana Fever": "IND", "Las Vegas Aces": "LVA", "Los Angeles Sparks": "LAS", "Minnesota Lynx": "MIN", "New York Liberty": "NYL", "Phoenix Mercury": "PHO", "Seattle Storm": "SEA", "Washington Mystics": "WAS", "Golden State Valkyries": "GSV", 'Atlanta': 'ATL', 'Chicago': 'CHI', 'Connecticut': 'CON', 'Dallas': 'DAL', 'Indiana': 'IND', 'Las Vegas': 'LVA', 'Los Angeles': 'LAS', 'Minnesota': 'MIN', 'New York': 'NYL', 'Phoenix': 'PHO', 'Seattle': 'SEA', 'Washington': 'WAS', 'Golden State': 'GSV' }
 
-# --- 1. STATS DATABASE SCRAPER (FROM COLAB) ---
+
+# --- SHARED HELPER FUNCTIONS (FROM COLAB'S HYBRID SCRAPER) ---
+# These are required for the player info cache update.
+PLAYER_ID_NAME_MAP, NORMALIZED_NAME_TO_ID_MAP, NORMALIZED_CANONICAL_NAMES = {}, {}, []
+
+def normalize_name(name):
+    if not isinstance(name, str): return ""
+    return "".join(c for c in unicodedata.normalize('NFKD', name.lower()) if not unicodedata.combining(c))
+
+def get_player_id_from_name(name, threshold=90):
+    normalized_name = normalize_name(name)
+    if normalized_name in NORMALIZED_NAME_TO_ID_MAP: return NORMALIZED_NAME_TO_ID_MAP[normalized_name]
+    try:
+        match, score = process.extractOne(normalized_name, NORMALIZED_CANONICAL_NAMES, scorer=fuzz.token_set_ratio)
+        return NORMALIZED_NAME_TO_ID_MAP.get(match) if match and score >= threshold else None
+    except Exception:
+        return None
+
+def build_player_universe():
+    global PLAYER_ID_NAME_MAP, NORMALIZED_NAME_TO_ID_MAP, NORMALIZED_CANONICAL_NAMES
+    if not os.path.exists(BASE_BOXSCORE_FILE_FOR_MAPPING):
+        logging.error(f"CRITICAL: Cannot build player universe, base file not found: {BASE_BOXSCORE_FILE_FOR_MAPPING}")
+        return
+    # Only load necessary columns to be memory efficient
+    hist_df = pd.read_csv(BASE_BOXSCORE_FILE_FOR_MAPPING, usecols=['PLAYER_ID', 'PLAYER_NAME'], low_memory=False)
+    hist_players = hist_df.dropna().drop_duplicates(subset='PLAYER_ID')
+    hist_players['PLAYER_ID'] = pd.to_numeric(hist_players['PLAYER_ID'], errors='coerce').dropna().astype(int)
+    for _, row in hist_players.iterrows():
+        pid, name = row['PLAYER_ID'], row['PLAYER_NAME']
+        if pd.notna(pid) and pd.notna(name):
+            pid_int = int(pid); PLAYER_ID_NAME_MAP[pid_int] = name
+            norm_name = normalize_name(str(name))
+            if norm_name not in NORMALIZED_NAME_TO_ID_MAP: NORMALIZED_NAME_TO_ID_MAP[norm_name] = pid_int
+    NORMALIZED_CANONICAL_NAMES = list(NORMALIZED_NAME_TO_ID_MAP.keys())
+    logging.info(f"Player universe built with {len(PLAYER_ID_NAME_MAP)} players.")
+
+def get_team_abbr(team_name_str):
+    if not isinstance(team_name_str, str): return None
+    team_name_str = team_name_str.strip()
+    for keyword, abbr in WNBA_TEAM_NAME_MAP.items():
+        if keyword in team_name_str: return abbr
+    return None
+
+def standardize_position(pos_string):
+    if not isinstance(pos_string, str): return 'N/A'
+    pos_map = {'Guard': 'G', 'Forward': 'F', 'Center': 'C', 'Point guard': 'PG', 'Shooting guard': 'SG', 'Small forward': 'SF', 'Power forward': 'PF'}
+    for long, short in pos_map.items(): pos_string = pos_string.replace(long, short)
+    return '/'.join(sorted(list(set(re.findall(r'PG|SG|SF|PF|G|F|C', pos_string))))) or 'N/A'
+
+
+# --- TASK 1: STATS DATABASE UPDATE ---
 class WNBA_Production_Scraper:
+    """ This is the exact, trusted stats scraper from your Colab notebook. """
     BASE_URL = "https://stats.wnba.com/stats/playergamelogs"
     HEADERS = { 'Accept': 'application/json, text/plain, */*', 'Origin': 'https://www.wnba.com', 'Referer': 'https://www.wnba.com/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' }
     def __init__(self, timeout: int = 45, max_retries: int = 3, backoff_factor: int = 5):
@@ -55,7 +110,9 @@ class WNBA_Production_Scraper:
             except Exception as e:
                 logging.error(f"Attempt {attempt + 1}/{self.max_retries} failed for {year} {season_type}: {e}")
                 if attempt < self.max_retries - 1:
-                    time.sleep(self.backoff_factor * (attempt + 1))
+                    sleep_duration = self.backoff_factor * (attempt + 1)
+                    logging.info(f"Retrying after {sleep_duration} seconds...")
+                    time.sleep(sleep_duration)
         return None
 
 def update_stats_database():
@@ -96,12 +153,12 @@ def update_stats_database():
     logging.info(f"✅ Successfully updated stats database at '{STATS_FILE}'.")
 
 
-# --- 2. INJURY SCRAPER (FROM COLAB) ---
+# --- TASK 2: INJURY UPDATE ---
 def update_injuries():
-    logging.info("--- Starting Hourly Injury Update using Colab Logic ---")
+    logging.info("--- Starting Hourly Injury Update ---")
     all_injuries = []
     try:
-        response = requests.get(INJURY_URL, headers={'User-Agent': 'Mozilla/5.0'}, timeout=20)
+        response = requests.get(INJURY_URL, headers={'User-Agent': 'Mozilla/5.0'}, timeout=30)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         
@@ -116,16 +173,13 @@ def update_injuries():
                 player_link_tag = cells[0].find('a')
                 player_name = cells[0].get_text(strip=True)
                 if player_link_tag and player_link_tag.has_attr('href'):
-                    # Prefer the name from the URL slug as it's cleaner
                     player_name = player_link_tag['href'].split('/')[-1].replace('-', ' ').title()
                 
                 status = re.sub(r'\s+', ' ', cells[2].get_text(strip=True))
                 updated_date = cells[1].get_text(strip=True)
                 details = cells[3].get_text(strip=True)
                 
-                all_injuries.append({
-                    'player_name': player_name, 'status': status, 'date': updated_date, 'details': details
-                })
+                all_injuries.append({'player_name': player_name, 'status': status, 'date': updated_date, 'details': details})
 
         logging.info(f"Scraped {len(all_injuries)} injury reports.")
         with open(INJURY_FILE, 'w') as f:
@@ -136,44 +190,9 @@ def update_injuries():
         logging.warning(f"Could not update injury file. Error: {e}")
 
 
-# --- 3. PLAYER INFO/ENRICHMENT SCRAPER (HYBRID SCRAPER FROM COLAB) ---
-# Global variables for the hybrid scraper functions
-PLAYER_ID_NAME_MAP, NORMALIZED_NAME_TO_ID_MAP, NORMALIZED_CANONICAL_NAMES = {}, {}, []
-
-def normalize_name(name):
-    if not isinstance(name, str): return ""
-    return "".join(c for c in unicodedata.normalize('NFKD', name.lower()) if not unicodedata.combining(c))
-
-def get_player_id_from_name(name, threshold=90):
-    normalized_name = normalize_name(name)
-    if normalized_name in NORMALIZED_NAME_TO_ID_MAP: return NORMALIZED_NAME_TO_ID_MAP[normalized_name]
-    match, score = process.extractOne(normalized_name, NORMALIZED_CANONICAL_NAMES, scorer=fuzz.token_set_ratio)
-    return NORMALIZED_NAME_TO_ID_MAP.get(match) if match and score >= threshold else None
-
-def build_player_universe():
-    global PLAYER_ID_NAME_MAP, NORMALIZED_NAME_TO_ID_MAP, NORMALIZED_CANONICAL_NAMES
-    if not os.path.exists(BASE_BOXSCORE_FILE):
-        logging.error(f"Cannot build player universe, base file not found: {BASE_BOXSCORE_FILE}")
-        return
-    hist_df = pd.read_csv(BASE_BOXSCORE_FILE, usecols=['PLAYER_ID', 'PLAYER_NAME'], low_memory=False)
-    hist_players = hist_df.dropna().drop_duplicates(subset='PLAYER_ID')
-    hist_players['PLAYER_ID'] = pd.to_numeric(hist_players['PLAYER_ID'], errors='coerce').dropna().astype(int)
-    for _, row in hist_players.iterrows():
-        pid, name = row['PLAYER_ID'], row['PLAYER_NAME']
-        if pd.notna(pid) and pd.notna(name):
-            pid_int = int(pid); PLAYER_ID_NAME_MAP[pid_int] = name
-            norm_name = normalize_name(str(name))
-            if norm_name not in NORMALIZED_NAME_TO_ID_MAP: NORMALIZED_NAME_TO_ID_MAP[norm_name] = pid_int
-    NORMALIZED_CANONICAL_NAMES = list(NORMALIZED_NAME_TO_ID_MAP.keys())
-    logging.info(f"Player universe built with {len(PLAYER_ID_NAME_MAP)} players.")
-
-def standardize_position(pos_string):
-    if not isinstance(pos_string, str): return 'N/A'
-    pos_map = {'Guard': 'G', 'Forward': 'F', 'Center': 'C', 'Point guard': 'PG', 'Shooting guard': 'SG', 'Small forward': 'SF', 'Power forward': 'PF'}
-    for long, short in pos_map.items(): pos_string = pos_string.replace(long, short)
-    return '/'.join(sorted(list(set(re.findall(r'PG|SG|SF|PF|G|F|C', pos_string))))) or 'N/A'
-
+# --- TASK 3: PLAYER INFO CACHE UPDATE ---
 def enrich_player_profiles(player_profiles):
+    """ This is the enrichment helper function from your Colab notebook. """
     logging.info(f"--- Enriching {len(player_profiles)} player profiles with infobox details ---")
     for pid, profile in player_profiles.items():
         if 'wikiUrl' not in profile or not profile['wikiUrl']: continue
@@ -183,22 +202,32 @@ def enrich_player_profiles(player_profiles):
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             infobox = soup.find('table', class_='infobox')
-            if not infobox: continue
+            if not infobox:
+                profile.setdefault('position', 'N/A')
+                continue
 
             def get_info(label_regex):
                 header = infobox.find('th', string=re.compile(label_regex, re.I))
                 return header.find_next_sibling('td').get_text(strip=True, separator=' ') if header and header.find_next_sibling('td') else 'N/A'
             
-            profile['position'] = standardize_position(get_info(r'(Listed )?Position'))
+            infobox_pos_text = get_info(r'Position\(s\)?|Listed Position')
+            standardized_infobox_pos = standardize_position(infobox_pos_text)
+            if standardized_infobox_pos != 'N/A':
+                profile['position'] = standardized_infobox_pos
+            else:
+                profile.setdefault('position', 'N/A')
         except Exception as e:
             logging.warning(f"  - Could not enrich profile for {profile.get('playerName', pid)}: {e}")
             profile.setdefault('position', 'N/A')
     return player_profiles
 
 def update_player_info_cache():
+    """ This is the full hybrid_scraper logic from your Colab notebook. """
     logging.info("--- Starting Player Info Cache Update using Colab Hybrid Scraper ---")
     build_player_universe()
-    if not PLAYER_ID_NAME_MAP: return
+    if not PLAYER_ID_NAME_MAP:
+        logging.error("Aborting player cache update because player universe could not be built.")
+        return
 
     # Stage 1: Scrape Current Rosters
     active_player_profiles = {}
@@ -212,13 +241,15 @@ def update_player_info_cache():
             for player_row in player_table.select('tr:has(td)'):
                 cells = player_row.find_all('td');
                 if len(cells) < 4: continue
+                
+                position_text = cells[0].get_text(strip=True)
+                standardized_pos = standardize_position(position_text)
                 player_name_text = cells[3].get_text(strip=True); link_tag = cells[3].find('a')
                 if not player_name_text or not link_tag or not link_tag.has_attr('href'): continue
                 pid = get_player_id_from_name(player_name_text, threshold=88)
                 if pid:
-                    active_player_profiles[pid] = { 'personId': pid, 'playerName': PLAYER_ID_NAME_MAP.get(pid, player_name_text), 'team': team_abbreviation, 'wikiUrl': f"https://en.wikipedia.org{link_tag['href']}" }
+                    active_player_profiles[pid] = { 'personId': pid, 'playerName': PLAYER_ID_NAME_MAP.get(pid, player_name_text), 'team': team_abbreviation, 'wikiUrl': f"https://en.wikipedia.org{link_tag['href']}", 'position': standardized_pos }
     except Exception as e: logging.error(f"Roster scrape failed: {e}")
-    
     logging.info(f"Found {len(active_player_profiles)} active players with team assignments.")
 
     # Stage 2: Scrape All Players List
@@ -245,20 +276,22 @@ def update_player_info_cache():
     logging.info(f"✅ Successfully updated player info cache for {len(enriched_profiles)} players at '{PLAYER_CACHE_FILE}'.")
 
 
+# --- MAIN EXECUTION BLOCK ---
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="WNBA Data Updater Script using Trusted Colab Logic")
-    parser.add_argument("--stats", action="store_true", help="Only update the stats database.")
-    parser.add_argument("--injuries", action="store_true", help="Only update the injury data.")
-    parser.add_argument("--players", action="store_true", help="Only update the player info cache.")
+    parser.add_argument("--stats", action="store_true", help="Run the stats database update.")
+    parser.add_argument("--injuries", action="store_true", help="Run the injury data update.")
+    parser.add_argument("--players", action="store_true", help="Run the player info cache update.")
     args = parser.parse_args()
 
+    # If no flags are specified, run all updates (for the full daily job)
     if not any([args.stats, args.injuries, args.players]):
-        # If no flags are specified, run all updates.
+        logging.info("Running full daily update (stats, players, and injuries)...")
         update_stats_database()
         update_player_info_cache()
         update_injuries()
     else:
-        # Run only the specified updates.
+        # Otherwise, run only the specified updates
         if args.stats:
             update_stats_database()
         if args.players:
