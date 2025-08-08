@@ -1,4 +1,4 @@
-name: ✅ Hourly WNBA Injury Update
+name: Hourly WNBA Injury Update
 on:
   schedule:
     - cron: '0 * * * *'
@@ -24,7 +24,7 @@ jobs:
 
       - name: Run injury-only update
         run: python update_databases.py --injuries-only
-        
+
       - name: Commit and push if data changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
