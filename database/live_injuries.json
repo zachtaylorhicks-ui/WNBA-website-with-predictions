@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "player_name": "Angel Reese",
+    "status": "Out - Back( Mon, Aug 4)",
+    "date": "F",
+    "details": ""
+  },
+  {
+    "player_name": "Courtney Vandersloot",
+    "status": "Out For Season - ACL( Mon, Jun 23)",
+    "date": "G",
+    "details": ""
+  },
+  {
+    "player_name": "Tyasha Harris",
+    "status": "Out For Season - Knee( Mon, Jun 9)",
+    "date": "G",
+    "details": ""
+  },
+  {
+    "player_name": "Monique Billings",
+    "status": "Out - Ankle( Thu, Jul 31)",
+    "date": "F",
+    "details": ""
+  },
+  {
+    "player_name": "Kayla Thornton",
+    "status": "Out For Season - Knee( Thu, Jul 24)",
+    "date": "F",
+    "details": ""
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "status": "Out - Groin( Wed, Jul 23)",
+    "date": "G",
+    "details": ""
+  },
+  {
+    "player_name": "Cheyenne Parker Tyus",
+    "status": "Out - Personal( Wed, Jul 23)",
+    "date": "F",
+    "details": ""
+  },
+  {
+    "player_name": "Napheesa Collier",
+    "status": "Out - Ankle( Sun, Aug 3)",
+    "date": "F",
+    "details": ""
+  },
+  {
+    "player_name": "Breanna Stewart",
+    "status": "Out - Leg( Tue, Jul 29)",
+    "date": "F",
+    "details": ""
+  },
+  {
+    "player_name": "Kennedy Burke",
+    "status": "Out - Calf( Mon, Jul 28)",
+    "date": "G-F",
+    "details": ""
+  },
+  {
+    "player_name": "Nyara Sabally",
+    "status": "Out - Knee( Sat, Jul 26)",
+    "date": "C",
+    "details": ""
+  },
+  {
+    "player_name": "Katie Lou Samuelson",
+    "status": "Out For Season - Knee( Fri, May 2)",
+    "date": "F",
+    "details": ""
+  },
+  {
+    "player_name": "Georgia Amoore",
+    "status": "Out For Season - ACL( Thu, May 15)",
+    "date": "G",
+    "details": ""
+  }
+]
