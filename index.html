@@ -91,11 +91,22 @@
         </div>
 
         <div id="Daily" class="tab-content">
-            <div class="card" id="accuracy-chart-container" style="margin-bottom:25px; display:none;">
-                <div class="chart-header">
-                    <h2>Daily Prediction Accuracy Analysis</h2>
+            <!-- ### START OF NEW HTML FOR STEP 2 ### -->
+            <div class="controls-card" id="daily-projection-controls">
+                 <div class="top-filters">
                     <div class="filter-group">
-                        <label for="accuracy-metric-selector">CHART METRIC</label>
+                        <label>PROJECTION MODE</label>
+                        <div class="mode-toggle-group">
+                            <button id="mode-single-btn" class="mode-toggle-btn active">Single Model</button>
+                            <button id="mode-blend-btn" class="mode-toggle-btn">Blend Models</button>
+                        </div>
+                    </div>
+                    <div id="single-model-controls" class="filter-group">
+                        <label for="daily-model-selector">SELECT MODEL</label>
+                        <select id="daily-model-selector"></select>
+                    </div>
+                    <div class="filter-group" style="flex-grow: 2;">
+                        <label>ACCURACY ANALYSIS</label>
                         <select id="accuracy-metric-selector">
                             <option value="cumulativeWinLoss" selected>Cumulative W/L Record</option>
                             <option value="dailyWinLoss">Daily W/L Accuracy (%)</option>
@@ -105,6 +116,23 @@
                             <option value="AST">Assists MAE</option>
                         </select>
                     </div>
+                </div>
+                <div id="blend-model-controls" class="hidden">
+                    <div class="blend-header">
+                        <p class="weights-title"><strong>Model Blending Weights:</strong> Enter a percentage for each model. The projections will be a weighted average.</p>
+                        <button id="normalize-weights-btn" class="button-outline">Normalize to 100%</button>
+                    </div>
+                    <div class="category-weights-grid" id="daily-blend-weights-grid">
+                        <!-- JS will populate this with model weight inputs -->
+                    </div>
+                </div>
+            </div>
+            <!-- ### END OF NEW HTML FOR STEP 2 ### -->
+            
+            <div class="card" id="accuracy-chart-container" style="margin-bottom:25px; display:none;">
+                <div class="chart-header">
+                    <h2>Daily Prediction Accuracy Analysis</h2>
+                    <p class="chart-subtitle">Note: Accuracy metrics are always calculated based on the 'Ensemble' model vs. actual results.</p>
                 </div>
                 <div class="chart-wrapper">
                     <canvas id="accuracy-chart"></canvas>
@@ -145,7 +173,6 @@
                             <option value="AST">Assists</option>
                             <option value="STL">Steals</option>
                             <option value="BLK">Blocks</option>
-                            <!-- ### FINAL HTML FIX: Added 3PM ### -->
                             <option value="3PM">3-Pointers</option>
                         </select>
                     </div>
