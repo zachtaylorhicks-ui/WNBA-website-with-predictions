@@ -250,3 +250,31 @@ footer { text-align: center; margin: 40px 0 20px; color: var(--text-secondary); 
 }
 
 /* ### END OF CSS FOR MULTI-MODEL DAILY CONTROLS ### */
+
+/* ### START OF CSS FOR PLAYER MODAL CHART CONTROLS ### */
+.profile-main .controls-card {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+}
+.modal-chart-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.modal-chart-controls .filter-group {
+    flex: 1 1 auto;
+}
+.modal-model-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    flex: 2 1 300px;
+}
+.modal-model-toggles .chart-toggle {
+    margin-bottom: 0;
+}
+/* ### END OF CSS FOR PLAYER MODAL CHART CONTROLS ### */
