@@ -1,24 +1,21 @@
-// script.js (v32.0 - Full Functionality Fix)
+// script.js (v33.0 - Enhanced Player Modal & Bug Fixes)
 
 // --- GLOBAL STATE & CONFIGURATION ---
-let fullData = {
-    modelNames: []
-};
+let fullData = { modelNames: [] };
 let loadedSeasonDataCache = {};
 let currentSort = { column: "custom_z_score_display", direction: "desc" };
 let accuracyChartInstance = null;
 let careerChartInstance = null;
 let modalChartInstance = null;
-
-let dailyProjectionState = {
-    mode: 'single', 
-    selectedModel: 'Ensemble',
-    blendWeights: {}
-};
+let dailyProjectionState = { mode: 'single', selectedModel: 'Ensemble', blendWeights: {} };
 
 const STAT_CONFIG = { PTS: { name: "PTS", zKey: "z_PTS" }, REB: { name: "REB", zKey: "z_REB" }, AST: { name: "AST", zKey: "z_AST" }, STL: { name: "STL", zKey: "z_STL" }, BLK: { name: "BLK", zKey: "z_BLK" }, '3PM': { name: "3PM", zKey: "z_3PM" }, TOV: { name: "TOV", zKey: "z_TOV" }, FG_impact: { name: "FG%", zKey: "z_FG_impact" }, FT_impact: { name: "FT%", zKey: "z_FT_impact" } };
 const ALL_STAT_KEYS = ["PTS", "REB", "AST", "STL", "BLK", "3PM", "TOV", "FG_impact", "FT_impact"];
 const BLENDABLE_STATS = ['points', 'reb', 'ast'];
+// NEW: Stats available in the player modal chart
+const MODAL_CHART_STATS = { PTS: "Points", REB: "Rebounds", AST: "Assists", STL: "Steals", BLK: "Blocks", '3PM': "3-Pointers" };
+const MODEL_COLORS = ['#0d6efd', '#6f42c1', '#198754', '#ffc107', '#dc3545', '#0dcaf0'];
+
 
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", async () => {
@@ -39,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         dailyProjectionState.selectedModel = fullData.modelNames.includes('Ensemble') ? 'Ensemble' : fullData.modelNames[0];
 
         fullData = { ...fullData, ...rawData };
-
         document.getElementById("last-updated").textContent = new Date(fullData.lastUpdated).toLocaleString();
         
         initializeSeasonTab();
@@ -56,7 +52,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.body.innerHTML = `<div style="text-align:center; padding: 50px; font-size:1.2em;">Error: Could not load core application data. Please check the browser console (F12) for details. The 'predictions.json' file may be missing or corrupt.<br><br><i>${e.message}</i></div>`;
     }
 });
-
 function initializeTheme() {
     const themeSwitcher = document.querySelector('.theme-switcher');
     const doc = document.documentElement;
@@ -94,7 +89,7 @@ function handleGlobalClicks(e) {
         e.preventDefault();
         const personId = parseInt(playerLink.dataset.personId, 10);
         if (fullData.playerProfiles && fullData.playerProfiles[personId]) {
-            showPlayerProfileOverlay(fullData.playerProfiles[personId], personId);
+            showPlayerProfileOverlay(fullData.playerProfiles[personId]);
         } else { console.warn(`No profile found for personId: ${personId}.`); }
         return;
     }
@@ -106,41 +101,119 @@ function handleGlobalClicks(e) {
     }
 }
 
-// Player Profile Overlay functions (unchanged)
-async function showPlayerProfileOverlay(profile, personId) {
+// --- PLAYER PROFILE OVERLAY (MODIFIED) ---
+async function showPlayerProfileOverlay(profile) {
+    const personId = profile.personId;
     const overlay = document.getElementById("player-profile-overlay");
+    // Pass the profile data to the builder function
     overlay.innerHTML = buildPlayerProfileModalHTML(profile);
     overlay.classList.add("visible");
-    const chartToggle = overlay.querySelector('#chart-toggle-checkbox');
-    const statlineToggle = overlay.querySelector('#statline-toggle-checkbox');
-    const chartToggleContainer = overlay.querySelector('.chart-toggle-container');
+    
     const renderContent = async () => {
-        if (statlineToggle.checked) {
-            if(chartToggleContainer) chartToggleContainer.style.display = 'none';
+        const statlineToggle = overlay.querySelector('#statline-toggle-checkbox').checked;
+        const careerCurveToggle = overlay.querySelector('#career-curve-toggle-checkbox').checked;
+
+        // Hide/show relevant controls
+        overlay.querySelector('.modal-chart-view-controls').style.display = statlineToggle ? 'none' : 'block';
+
+        if (statlineToggle) {
             await renderPlayerStatlineView(personId);
+        } else if (careerCurveToggle) {
+            await renderPlayerCareerCurveChart(personId);
         } else {
-            if(chartToggleContainer) chartToggleContainer.style.display = 'flex';
-            if (chartToggle.checked) {
-                 await renderPlayerCareerCurveChart(personId);
-            } else {
-                 renderPlayerPerformanceHistoryChart(profile);
-            }
+            await renderPlayerPerformanceHistoryChart(profile);
         }
     };
-    await renderContent();
-    chartToggle.addEventListener('change', renderContent);
-    statlineToggle.addEventListener('change', renderContent);
+
+    // Attach event listeners after HTML is created
+    overlay.querySelector('#statline-toggle-checkbox').addEventListener('change', renderContent);
+    overlay.querySelector('#career-curve-toggle-checkbox').addEventListener('change', renderContent);
+    
+    // Add listeners for the new chart controls if they exist
+    const chartControls = overlay.querySelector('#modal-chart-controls');
+    if (chartControls) {
+        chartControls.addEventListener('change', () => renderPlayerPerformanceHistoryChart(profile));
+    }
+
     const closeModal = () => {
         overlay.classList.remove("visible");
         overlay.innerHTML = '';
         if (modalChartInstance) { modalChartInstance.destroy(); modalChartInstance = null; }
     };
+
     overlay.querySelector(".modal-close")?.addEventListener("click", closeModal);
     overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
+
+    // Initial render
+    await renderContent();
 }
+
+// REWRITTEN: Generates new modal HTML with projection chart controls
 function buildPlayerProfileModalHTML(profile) {
     const wikiLink = profile.wikiUrl ? `<a href="${profile.wikiUrl}" target="_blank" rel="noopener noreferrer">View on Wikipedia</a>` : 'N/A';
-    return `<div class="grade-modal player-modal"><div class="modal-header"><h2>${profile.playerName || 'Unknown Player'}</h2><div class="modal-toggles"><div class="chart-toggle"><span class="chart-toggle-label">Full Stat Line</span><label class="chart-toggle-switch"><input type="checkbox" id="statline-toggle-checkbox"><span class="chart-toggle-slider"></span></label></div></div><button class="modal-close">×</button></div><div class="player-profile-grid"><div class="profile-sidebar"><div class="profile-info-grid"><div class="profile-info-item"><div class="profile-info-label">Position</div><div class="profile-info-value">${profile.position || 'N/A'}</div></div><div class="profile-info-item"><div class="profile-info-label">Height</div><div class="profile-info-value">${profile.height || 'N/A'}</div></div><div class="profile-info-item"><div class="profile-info-label">Weight</div><div class="profile-info-value">${profile.weight || 'N/A'}</div></div><div class="profile-info-item"><div class="profile-info-label">Team</div><div class="profile-info-value">${profile.team || 'N/A'}</div></div><div class="profile-info-item"><div class="profile-info-label">Draft Info</div><div class="profile-info-value">${profile.draftInfo || 'N/A'}</div></div><div class="profile-info-item"><div class="profile-info-label">External Link</div><div class="profile-info-value">${wikiLink}</div></div></div></div><div class="profile-main"><div class="profile-main-header"><h3 id="modal-chart-title">Performance History</h3><div class="chart-toggle chart-toggle-container"><span class="chart-toggle-label">Career Curve</span><label class="chart-toggle-switch"><input type="checkbox" id="chart-toggle-checkbox"><span class="chart-toggle-slider"></span></label></div></div><div class="chart-wrapper" id="modal-chart-container"><canvas id="modal-chart"></canvas></div></div></div></div>`;
+    
+    // Create options for the stat selector dropdown
+    const statSelectorOptions = Object.entries(MODAL_CHART_STATS).map(([key, name]) => `<option value="${key}">${name}</option>`).join('');
+
+    // Create a toggle switch for each model
+    const modelToggles = fullData.modelNames.map(name => `
+        <div class="chart-toggle">
+            <span class="chart-toggle-label">${name}</span>
+            <label class="chart-toggle-switch">
+                <input type="checkbox" class="modal-model-toggle" data-model="${name}" checked>
+                <span class="chart-toggle-slider"></span>
+            </label>
+        </div>
+    `).join('');
+    
+    return `
+    <div class="grade-modal player-modal">
+        <div class="modal-header">
+            <h2>${profile.playerName || 'Unknown Player'}</h2>
+            <div class="modal-toggles">
+                <div class="chart-toggle">
+                    <span class="chart-toggle-label">Full Stat Line</span>
+                    <label class="chart-toggle-switch"><input type="checkbox" id="statline-toggle-checkbox"><span class="chart-toggle-slider"></span></label>
+                </div>
+            </div>
+            <button class="modal-close">×</button>
+        </div>
+        <div class="player-profile-grid">
+            <div class="profile-sidebar">
+                <div class="profile-info-grid">
+                    <div class="profile-info-item"><div class="profile-info-label">Position</div><div class="profile-info-value">${profile.position || 'N/A'}</div></div>
+                    <div class="profile-info-item"><div class="profile-info-label">Height</div><div class="profile-info-value">${profile.height || 'N/A'}</div></div>
+                    <div class="profile-info-item"><div class="profile-info-label">Weight</div><div class="profile-info-value">${profile.weight || 'N/A'}</div></div>
+                    <div class="profile-info-item"><div class="profile-info-label">Team</div><div class="profile-info-value">${profile.team || 'N/A'}</div></div>
+                    <div class="profile-info-item"><div class="profile-info-label">Draft Info</div><div class="profile-info-value">${profile.draftInfo || 'N/A'}</div></div>
+                    <div class="profile-info-item"><div class="profile-info-label">External Link</div><div class="profile-info-value">${wikiLink}</div></div>
+                </div>
+            </div>
+            <div class="profile-main">
+                <div class="modal-chart-view-controls">
+                    <div class="profile-main-header">
+                        <h3>Performance Chart</h3>
+                        <div class="chart-toggle chart-toggle-container">
+                            <span class="chart-toggle-label">Career Curve</span>
+                            <label class="chart-toggle-switch"><input type="checkbox" id="career-curve-toggle-checkbox"><span class="chart-toggle-slider"></span></label>
+                        </div>
+                    </div>
+                    <div class="controls-card">
+                        <div id="modal-chart-controls" class="modal-chart-controls">
+                            <div class="filter-group">
+                                <label for="modal-stat-selector">STATISTIC</label>
+                                <select id="modal-stat-selector">${statSelectorOptions}</select>
+                            </div>
+                            <div class="modal-model-toggles">${modelToggles}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper" id="modal-chart-container">
+                    <canvas id="modal-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>`;
 }
 async function renderPlayerStatlineView(personId) {
     document.getElementById('modal-chart-title').textContent = 'Historical Performance';
@@ -168,136 +241,159 @@ async function renderPlayerPerformanceHistoryChart(profile) {
     if (!history || history.length === 0) { container.innerHTML = '<p style="text-align:center; padding: 20px;">No recent performance history available.</p>'; return; }
     modalChartInstance = new Chart(ctx, { type: 'line', data: { labels: history.map(d => new Date(d.date + "T00:00:00").toLocaleDateString('en-US', {month: 'short', day: 'numeric'})), datasets: [ { label: 'Actual PTS', data: history.map(d => d.actual_pts), borderColor: 'var(--primary-color)', backgroundColor: 'var(--primary-color)', fill: false, tension: 0.1 }, { label: 'Predicted PTS', data: history.map(d => d.predicted_pts), borderColor: 'var(--text-secondary)', backgroundColor: 'var(--text-secondary)', borderDash: [5, 5], fill: false, tension: 0.1 } ] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } } });
 }
-async function renderPlayerCareerCurveChart(personId) {
-    document.getElementById('modal-chart-title').textContent = 'Career Curve (3-Month Rolling Avg)';
+async function renderPlayerPerformanceHistoryChart(profile) {
     const container = document.getElementById('modal-chart-container');
+    if (!container) return; // Exit if modal is closed
+    
+    const statKey = document.getElementById('modal-stat-selector')?.value || 'PTS';
+    const statName = MODAL_CHART_STATS[statKey];
+
+    document.querySelector('.profile-main-header h3').textContent = `Performance & Projections: ${statName}`;
+
     if (modalChartInstance) modalChartInstance.destroy();
     container.innerHTML = '<canvas id="modal-chart"></canvas>';
-    const ctx = document.getElementById('modal-chart').getContext('2d');
-    const careerData = await fetchSeasonData('career_data');
-    const playerData = careerData?.players?.[String(personId)];
-    if (!playerData || playerData.length === 0) { container.innerHTML = '<p style="text-align:center; padding: 20px;">No long-term career data available for this player.</p>'; return; }
-    modalChartInstance = new Chart(ctx, { type: 'line', data: { datasets: [{ label: 'Monthly PTS Average', data: playerData.map(d => ({ x: d.x_games, y: d.PTS })), borderColor: 'var(--primary-color)', backgroundColor: 'var(--primary-color)', tension: 0.1, fill: false }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { type: 'linear', title: { display: true, text: 'WNBA Games Played' } }, y: { title: { display: true, text: 'Points Per Game' } } } } });
-}
+    const ctx = document.getElementById('modal-chart')?.getContext('2d');
+    if (!ctx) return;
 
-// --- SEASON-LONG TAB (Unchanged) ---
-function initializeSeasonTab() {
-    const manifest = fullData.seasonLongDataManifest || {}; const seasonSelector = document.getElementById("season-selector");
-    const sourcesBySeason = {};
-    for (const key in manifest) {
-        const match = key.match(/(projections_(\d{4})|actuals_(\d{4}))/);
-        if (!match) continue;
-        const year = match[2] || match[3];
-        if (!sourcesBySeason[year]) { sourcesBySeason[year] = { key: key.replace(/_per_game|_total$/, ''), label: manifest[key].label, split: manifest[key].split }; }
+    const datasets = [];
+    const history = profile.performanceHistory || [];
+
+    // 1. Add Actual Performance dataset (if history exists)
+    if (history.length > 0) {
+        const actualStatKey = statKey === '3PM' ? 'predicted_pts' : statKey; // TEMP HACK: use pts if 3pm not in history
+        datasets.push({
+            label: 'Actual',
+            data: history.map(d => ({
+                x: new Date(d.date + "T00:00:00").valueOf(),
+                y: d.actual_pts // This needs to be more robust if history contains more stats
+            })),
+            borderColor: 'var(--text-primary)',
+            backgroundColor: 'var(--text-primary)',
+            type: 'scatter',
+            pointRadius: 5,
+            order: -10 // Render on top
+        });
     }
-    const sortedSeasons = Object.keys(sourcesBySeason).sort((a, b) => b.localeCompare(a)); seasonSelector.innerHTML = sortedSeasons.map(year => `<option value="${year}">${sourcesBySeason[year].label}</option>`).join('');
-    document.getElementById("split-selector").parentElement.style.display = 'none';
-    document.getElementById("category-weights-grid").innerHTML = ALL_STAT_KEYS.map(key => `<div class="category-item"><label><input type="checkbox" data-key="${key}" checked> ${STAT_CONFIG[key].name}</label></div>`).join('');
-    document.getElementById("season-controls")?.addEventListener("change", renderSeasonTable); document.getElementById("search-player")?.addEventListener("input", renderSeasonTable); document.getElementById("predictions-thead")?.addEventListener("click", handleSortSeason);
-    renderSeasonTable();
+
+    // 2. Add datasets for each model's future projections
+    const futureProjections = profile.futureProjections || [];
+    const activeModels = new Set(
+        Array.from(document.querySelectorAll('.modal-model-toggle:checked'))
+             .map(el => el.dataset.model)
+    );
+
+    fullData.modelNames.forEach((modelName, i) => {
+        if (!activeModels.has(modelName)) return; // Skip if toggled off
+
+        const modelData = futureProjections
+            .filter(p => p.model_source === modelName && p[statKey] != null)
+            .map(p => ({
+                x: new Date(p.game_date + "T00:00:00").valueOf(),
+                y: p[statKey]
+            }));
+
+        if (modelData.length > 0) {
+            datasets.push({
+                label: modelName,
+                data: modelData,
+                borderColor: MODEL_COLORS[i % MODEL_COLORS.length],
+                backgroundColor: MODEL_COLORS[i % MODEL_COLORS.length],
+                fill: false,
+                tension: 0.1,
+                type: 'line'
+            });
+        }
+    });
+    
+    if (datasets.length === 0) {
+        container.innerHTML = '<div class="statline-placeholder"><p>No data available for the selected statistic and models.</p></div>';
+        return;
+    }
+
+    modalChartInstance = new Chart(ctx, {
+        type: 'line', // Base type
+        data: { datasets },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    type: 'time',
+                    time: { unit: 'day', tooltipFormat: 'MMM d, yyyy' },
+                    title: { display: true, text: 'Date' }
+                },
+                y: {
+                    title: { display: true, text: statName },
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: { position: 'bottom' },
+                tooltip: { mode: 'index', intersect: false }
+            },
+            interaction: {
+                mode: 'nearest',
+                axis: 'x',
+                intersect: false
+            }
+        }
+    });
 }
-async function renderSeasonTable() {
-    const selectedYear = document.getElementById("season-selector").value; const manifest = fullData.seasonLongDataManifest || {};
-    const sourceKeyPrefix = Object.keys(manifest).find(k => k.includes(selectedYear)); if (!sourceKeyPrefix) { console.error(`No manifest entry found for year: ${selectedYear}`); return; }
-    const calcMode = document.getElementById("calculation-mode").value; const sourceKey = sourceKeyPrefix.replace(/per_game|total$/, calcMode);
-    const settings = { showCount: parseInt(document.getElementById("show-count").value, 10), searchTerm: document.getElementById("search-player").value.toLowerCase().trim(), activeCategories: new Set(Array.from(document.querySelectorAll("#category-weights-grid input:checked")).map(cb => cb.dataset.key)) };
-    const tbody = document.getElementById("predictions-tbody"); tbody.innerHTML = `<tr><td colspan="17" style="text-align:center;">Loading player data...</td></tr>`;
-    let data = await fetchSeasonData(sourceKey); if (!data) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">Could not load data. Check console for details.</td></tr>`; return; }
-    let processedData = data.map(player => ({ ...player, custom_z_score_display: Array.from(settings.activeCategories).reduce((acc, catKey) => acc + (player[STAT_CONFIG[catKey].zKey] || 0), 0) }));
-    if (settings.searchTerm) { processedData = processedData.filter(p => p.playerName?.toLowerCase().includes(settings.searchTerm)); }
-    currentSort.data = processedData; currentSort.column = 'custom_z_score_display'; currentSort.direction = 'desc';
-    sortSeasonData(); renderSeasonTableBody(settings.showCount);
-}
-function handleSortSeason(e) { const th = e.target.closest("th"); const sortKey = th?.dataset.sortKey; if (!sortKey) return; if (currentSort.column === sortKey) { currentSort.direction = currentSort.direction === "desc" ? "asc" : "desc"; } else { currentSort.column = sortKey; currentSort.direction = ["playerName", "position", "team"].includes(sortKey) ? "asc" : "desc"; } sortSeasonData(); renderSeasonTableBody(parseInt(document.getElementById("show-count").value, 10)); }
-function sortSeasonData() { const { column, direction, data } = currentSort; if (!data) return; const mod = direction === "asc" ? 1 : -1; data.sort((a, b) => { let valA = a[column] ?? (typeof a[column] === 'string' ? '' : -Infinity); let valB = b[column] ?? (typeof b[column] === 'string' ? '' : -Infinity); if (typeof valA === 'string') return valA.localeCompare(valB) * mod; return (valA - valB) * mod; }); }
-function renderSeasonTableBody(showCount) {
-    const thead = document.getElementById("predictions-thead"); thead.innerHTML = `<tr><th>R#</th><th data-sort-key="playerName">Player</th><th data-sort-key="position">Pos</th><th data-sort-key="team">Team</th><th data-sort-key="GP">GP</th><th data-sort-key="MIN">MPG</th>${ALL_STAT_KEYS.map(k=>`<th data-sort-key="${STAT_CONFIG[k].zKey}">${STAT_CONFIG[k].name}</th>`).join('')}<th data-sort-key="custom_z_score_display">TOTAL▼</th></tr>`;
-    document.querySelectorAll('#predictions-thead th').forEach(h => h.classList.remove('sort-asc', 'sort-desc')); const currentTh = thead.querySelector(`[data-sort-key="${currentSort.column}"]`); if(currentTh) currentTh.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
-    const tbody = document.getElementById("predictions-tbody"); const dataToRender = currentSort.data?.slice(0, showCount) || []; if (!dataToRender.length) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">No players match criteria.</td></tr>`; return; }
-    const getZClass = z => z >= 1.5 ? 'elite' : z >= 1.0 ? 'very-good' : z >= 0.5 ? 'good' : z <= -1.0 ? 'not-good' : z <= -0.5 ? 'below-average' : 'average'; const isTotalMode = document.getElementById("calculation-mode").value === 'total';
-    tbody.innerHTML = dataToRender.map((p, i) => `<tr><td>${i + 1}</td><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName || 'N/A'}</a></td><td>${p.position || 'N/A'}</td><td>${p.team || 'N/A'}</td><td>${(p.GP || 0).toFixed(0)}</td><td>${(p.MIN || 0).toFixed(1)}</td>${ALL_STAT_KEYS.map(key => { const zKey = STAT_CONFIG[key].zKey; const zValue = p[zKey] || 0; let displayValue; const rawKey = key.replace('_impact', ''); const value = p[rawKey] || 0; if (key.includes('_impact')) { const made = key === 'FG_impact' ? p.FGM : p.FTM; const att = key === 'FG_impact' ? p.FGA : p.FTA; displayValue = (att !== undefined && att > 0) ? (made / att).toFixed(3) : (p[key.replace('_impact', '_pct')] || 0).toFixed(3); } else { displayValue = value.toFixed(isTotalMode ? 0 : 1); } return `<td class="stat-cell ${getZClass(zValue)}"><span class="stat-value">${displayValue}</span><span class="z-score-value">${(zValue || 0).toFixed(2)}</span></td>`; }).join('')}<td>${(p.custom_z_score_display || 0).toFixed(2)}</td></tr>`).join('');
-}
 
 
-// --- DAILY PROJECTIONS TAB (HEAVILY MODIFIED) ---
-
-// --- DAILY PROJECTIONS TAB (HEAVILY MODIFIED) ---
-
+// --- DAILY PROJECTIONS TAB (UNCHANGED FROM v32.0, INCLUDES FIXES) ---
 function initializeDailyTab() {
-    // Populate controls
     const modelSelector = document.getElementById("daily-model-selector");
     const blendWeightsGrid = document.getElementById("daily-blend-weights-grid");
-    
     modelSelector.innerHTML = fullData.modelNames.map(name => `<option value="${name}">${name}</option>`).join('');
     modelSelector.value = dailyProjectionState.selectedModel;
-
     blendWeightsGrid.innerHTML = fullData.modelNames.map(name => {
         const isDefault = name === dailyProjectionState.selectedModel;
         dailyProjectionState.blendWeights[name] = isDefault ? 100 : 0;
-        return `<div class="category-item">
-            <label>
-                <span>${name}</span>
-                <input type="number" class="blend-weight-input" data-model="${name}" value="${isDefault ? 100 : 0}" min="0" step="1"> %
-            </label>
-        </div>`;
+        return `<div class="category-item"><label><span>${name}</span><input type="number" class="blend-weight-input" data-model="${name}" value="${isDefault ? 100 : 0}" min="0" step="1"> %</label></div>`;
     }).join('');
-
     document.getElementById('mode-single-btn').addEventListener('click', () => setDailyProjectionMode('single'));
     document.getElementById('mode-blend-btn').addEventListener('click', () => setDailyProjectionMode('blend'));
-    document.getElementById('daily-model-selector').addEventListener('change', (e) => {
-        dailyProjectionState.selectedModel = e.target.value;
-        updateDailyGamesView();
-    });
+    document.getElementById('daily-model-selector').addEventListener('change', (e) => { dailyProjectionState.selectedModel = e.target.value; updateDailyGamesView(); });
     document.querySelectorAll('.blend-weight-input').forEach(input => {
-        input.addEventListener('change', (e) => {
-            dailyProjectionState.blendWeights[e.target.dataset.model] = parseFloat(e.target.value) || 0;
-            updateDailyGamesView();
-        });
+        input.addEventListener('change', (e) => { dailyProjectionState.blendWeights[e.target.dataset.model] = parseFloat(e.target.value) || 0; updateDailyGamesView(); });
     });
     document.getElementById('normalize-weights-btn').addEventListener('click', () => {
         const totalWeight = Object.values(dailyProjectionState.blendWeights).reduce((a, b) => a + b, 0);
         if (totalWeight > 0) {
             document.querySelectorAll('.blend-weight-input').forEach(input => {
                 const model = input.dataset.model;
-                const currentWeight = dailyProjectionState.blendWeights[model];
-                const newWeight = Math.round((currentWeight / totalWeight) * 100);
+                const newWeight = Math.round((dailyProjectionState.blendWeights[model] / totalWeight) * 100);
                 dailyProjectionState.blendWeights[model] = newWeight;
                 input.value = newWeight;
             });
             updateDailyGamesView();
         }
     });
-
     document.getElementById("accuracy-metric-selector").addEventListener('change', renderAccuracyChart);
-    const dateTabs = document.getElementById("daily-date-tabs"); 
+    const dateTabs = document.getElementById("daily-date-tabs");
     const sortedDates = fullData.dailyGamesByDate ? Object.keys(fullData.dailyGamesByDate).sort((a, b) => new Date(a) - new Date(b)) : [];
-    
-    if (!sortedDates.length) { 
-        document.getElementById("daily-games-container").innerHTML = '<div class="card"><p>No daily predictions available.</p></div>'; 
+    if (!sortedDates.length) {
+        document.getElementById("daily-games-container").innerHTML = '<div class="card"><p>No daily predictions available.</p></div>';
         document.getElementById("accuracy-chart-container").style.display = 'none';
         document.getElementById("daily-projection-controls").style.display = 'none';
-        return; 
+        return;
     }
-
     dateTabs.innerHTML = sortedDates.map((date) => `<button class="date-tab" data-date="${date}">${new Date(date + "T00:00:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}</button>`).join('');
-    
-    // FIX: Simplified event listener for date tabs
-    dateTabs.addEventListener("click", e => { 
-        const tab = e.target.closest(".date-tab"); 
-        if (tab && !tab.classList.contains('active')) { // Prevent re-rendering same tab
-            document.querySelectorAll(".date-tab").forEach(t => t.classList.remove("active")); 
-            tab.classList.add("active"); 
-            renderDailyGamesForDate(tab.dataset.date); 
-        } 
+    dateTabs.addEventListener("click", e => {
+        const tab = e.target.closest(".date-tab");
+        if (tab && !tab.classList.contains('active')) {
+            document.querySelectorAll(".date-tab").forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            renderDailyGamesForDate(tab.dataset.date);
+        }
     });
-
-    const today = new Date(); today.setHours(0, 0, 0, 0); 
+    const today = new Date(); today.setHours(0, 0, 0, 0);
     let activeTab = Array.from(dateTabs.children).find(tab => new Date(tab.dataset.date + "T00:00:00") >= today) || dateTabs.children[dateTabs.children.length - 1];
-    if (activeTab) { 
-        activeTab.classList.add("active"); 
-        renderDailyGamesForDate(activeTab.dataset.date); 
+    if (activeTab) {
+        activeTab.classList.add("active");
+        renderDailyGamesForDate(activeTab.dataset.date);
     }
-    
     renderAccuracyChart();
 }
 
@@ -314,7 +410,7 @@ function updateDailyGamesView() {
     const activeDateTab = document.querySelector('.date-tab.active');
     if (activeDateTab) {
         renderDailyGamesForDate(activeDateTab.dataset.date);
-        renderAccuracyChart(); // Also re-render chart to update blend line
+        renderAccuracyChart();
     }
 }
 
