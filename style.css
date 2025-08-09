@@ -164,3 +164,89 @@ input:checked + .chart-toggle-slider:before { transform: translateX(24px); }
 /* ### END OF FIX FOR STEP 6 ### */
 
 footer { text-align: center; margin: 40px 0 20px; color: var(--text-secondary); font-size: .9em; }
+
+
+/* ### START OF CSS FOR MULTI-MODEL DAILY CONTROLS ### */
+#daily-projection-controls {
+    margin-bottom: 25px;
+}
+.mode-toggle-group {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.mode-toggle-btn {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: none;
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.mode-toggle-btn:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+}
+.mode-toggle-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.mode-toggle-btn:not(.active):hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+#blend-model-controls {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+.blend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.blend-header .weights-title {
+    margin: 0;
+}
+#daily-blend-weights-grid .category-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#daily-blend-weights-grid .category-item span {
+    flex-shrink: 0;
+    width: 150px; /* Give model names consistent space */
+    font-weight: 500;
+}
+#daily-blend-weights-grid .category-item input {
+    width: 80px;
+    text-align: right;
+}
+
+/* Utility class to hide/show control sections */
+.hidden {
+    display: none !important;
+}
+
+.chart-subtitle {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    margin: -15px 0 10px 0;
+    width: 100%;
+    text-align: left;
+}
+
+#accuracy-chart-container .chart-header {
+    align-items: flex-start; /* Better alignment with subtitle */
+    flex-direction: column;
+}
+
+/* ### END OF CSS FOR MULTI-MODEL DAILY CONTROLS ### */
