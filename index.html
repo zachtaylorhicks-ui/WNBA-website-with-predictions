@@ -36,12 +36,8 @@
             <div id="season-controls" class="controls-card">
                 <div class="top-filters">
                     <div class="filter-group">
-                        <label for="season-selector">SEASON</label>
-                        <select id="season-selector"></select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="split-selector">DATA SPLIT</label>
-                        <select id="split-selector"></select>
+                        <label for="season-source-selector">DATA SOURCE</label>
+                        <select id="season-source-selector"></select>
                     </div>
                     <div class="filter-group">
                         <label for="calculation-mode">CALCULATION MODE</label>
@@ -91,7 +87,6 @@
         </div>
 
         <div id="Daily" class="tab-content">
-            <!-- ### START OF NEW HTML FOR STEP 2 ### -->
             <div class="controls-card" id="daily-projection-controls">
                  <div class="top-filters">
                     <div class="filter-group">
@@ -122,17 +117,14 @@
                         <p class="weights-title"><strong>Model Blending Weights:</strong> Enter a percentage for each model. The projections will be a weighted average.</p>
                         <button id="normalize-weights-btn" class="button-outline">Normalize to 100%</button>
                     </div>
-                    <div class="category-weights-grid" id="daily-blend-weights-grid">
-                        <!-- JS will populate this with model weight inputs -->
-                    </div>
+                    <div class="category-weights-grid" id="daily-blend-weights-grid"></div>
                 </div>
             </div>
-            <!-- ### END OF NEW HTML FOR STEP 2 ### -->
             
             <div class="card" id="accuracy-chart-container" style="margin-bottom:25px; display:none;">
                 <div class="chart-header">
                     <h2>Daily Prediction Accuracy Analysis</h2>
-                    <p class="chart-subtitle">Note: Accuracy metrics are always calculated based on the 'Ensemble' model vs. actual results.</p>
+                    <p class="chart-subtitle">Note: Accuracy metrics are calculated based on each model's performance vs. actual results.</p>
                 </div>
                 <div class="chart-wrapper">
                     <canvas id="accuracy-chart"></canvas>
@@ -146,20 +138,16 @@
         
         <div id="TeamAnalysis" class="tab-content">
             <div class="controls-card">
-                <div class="top-filters">
-                    <div class="filter-group">
-                        <label for="team-analysis-source-selector">DATA SOURCE</label>
-                        <select id="team-analysis-source-selector"></select>
-                    </div>
-                </div>
+                <p>Team analysis data is sourced from the dataset selected on the 'Season-Long Rankings' tab.</p>
             </div>
             <div id="team-analysis-container"></div>
         </div>
 
         <div id="PlayerProgression" class="tab-content">
-            <div id="player-progression-container" class="progression-grid">
-                 <!-- JS will inject the four "Risers" and "Fallers" cards here -->
+            <div class="controls-card">
+                 <p>Player progression data compares the selected 2025 projection model to the 2024 actuals.</p>
             </div>
+            <div id="player-progression-container" class="progression-grid"></div>
         </div>
         
         <div id="CareerAnalysis" class="tab-content">
@@ -184,8 +172,12 @@
                         </select>
                     </div>
                     <div class="filter-group search-group">
-                        <label for="career-search-player">HIGHLIGHT PLAYER</label>
-                        <input type="text" id="career-search-player" placeholder="e.g., Caitlin Clark">
+                        <label for="career-search-player">HIGHLIGHT PLAYER(S)</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="career-search-player" list="player-datalist" placeholder="e.g., Caitlin Clark" style="flex-grow: 1;">
+                            <button id="career-add-player-btn" class="button-outline">Add</button>
+                            <datalist id="player-datalist"></datalist>
+                        </div>
                     </div>
                 </div>
                 <div class="bottom-controls" style="margin-top: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
@@ -210,17 +202,19 @@
                         </select>
                     </div>
                     <div class="filter-group" style="display: flex; align-items: flex-end; justify-content: start;">
-                         <div id="career-chart-toggles">
+                         <div id="career-chart-toggles" style="display: flex; gap: 20px;">
                             <div class="chart-toggle">
                                 <span class="chart-toggle-label">Show Averages</span>
                                 <label class="chart-toggle-switch">
-                                    <input type="checkbox" id="career-averages-toggle">
+                                    <input type="checkbox" id="career-averages-toggle" checked>
                                     <span class="chart-toggle-slider"></span>
                                 </label>
                             </div>
+                            <button id="career-clear-players-btn" class="button-outline">Clear Players</button>
                         </div>
                     </div>
                 </div>
+                 <div id="career-highlighted-players" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;"></div>
             </div>
             <div id="career-chart-wrapper" class="card">
                 <canvas id="career-chart"></canvas>
@@ -229,9 +223,7 @@
 
     </main>
 
-    <div id="player-profile-overlay" class="grade-overlay">
-        <!-- Player profile modal content will be injected here by JS -->
-    </div>
+    <div id="player-profile-overlay" class="grade-overlay"></div>
     
     <footer>
         <p>© 2024 Advanced WNBA Fantasy Projections. All Rights Reserved.</p>
