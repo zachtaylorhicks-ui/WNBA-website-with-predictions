@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const rawData = await response.json();
         
         const firstDateKey = Object.keys(rawData.dailyGamesByDate || {})[0];
-        if(firstDateKey) {
+        if(firstDateKey && rawData.dailyGamesByDate[firstDateKey][0]) {
             fullData.modelNames = Object.keys(rawData.dailyGamesByDate[firstDateKey][0]?.projections || {});
         }
         if(fullData.modelNames.length === 0) { fullData.modelNames = ['Ensemble', 'Base Transformer', 'Bestest Transformer', 'Lowest MAE', 'Smart Blend']; }
@@ -583,14 +583,14 @@ async function renderCareerChart() {
         let playerData = careerData.players[id];
         if (!playerData) return;
         if (minutesFilter === '15_game') playerData = playerData.filter(d => d.MIN >= 15);
-        if (playerData.length > 0) datasets.push({ label: `Player ${id}`, data: playerData.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x && d.y), borderColor: 'rgba(128, 128, 128, 0.2)', borderWidth: 1.5, pointRadius: 0, tension: 0.1 });
+        if (playerData.length > 0) datasets.push({ label: `Player ${id}`, data: playerData.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x != null && d.y != null), borderColor: 'rgba(128, 128, 128, 0.2)', borderWidth: 1.5, pointRadius: 0, tension: 0.1 });
     });
 
     for (const [id, playerInfo] of careerChartState.highlightedPlayers.entries()) {
         let highlightedData = careerData.players[id];
         if (highlightedData) {
             if (minutesFilter === '15_game') highlightedData = highlightedData.filter(d => d.MIN >= 15);
-            if (highlightedData.length > 0) datasets.push({ label: playerInfo.name, data: highlightedData.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x && d.y), borderColor: playerInfo.color, borderWidth: 3, pointRadius: 0, tension: 0.1, order: -10 });
+            if (highlightedData.length > 0) datasets.push({ label: playerInfo.name, data: highlightedData.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x != null && d.y != null), borderColor: playerInfo.color, borderWidth: 3, pointRadius: 0, tension: 0.1, order: -10 });
         }
     }
 
@@ -599,9 +599,9 @@ async function renderCareerChart() {
         const positionData = careerData[`by_position_${xAxis}`];
         const draftData = careerData[`by_draft_category_${xAxis}`];
         if (positionData) Object.entries(positionData).forEach(([pos, data]) => {
-            if (['G', 'F', 'C'].includes(pos)) datasets.push({ label: `Avg. ${pos}`, data: data.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x && d.y), borderColor: averageColors[pos] || '#7f8c8d', borderWidth: 2, borderDash: [5, 5], pointRadius: 0, order: -5 });
+            if (['G', 'F', 'C'].includes(pos)) datasets.push({ label: `Avg. ${pos}`, data: data.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x != null && d.y != null), borderColor: averageColors[pos] || '#7f8c8d', borderWidth: 2, borderDash: [5, 5], pointRadius: 0, order: -5 });
         });
-        if (draftFilter !== 'All' && draftData?.[draftFilter]) datasets.push({ label: `Avg. ${draftFilter}`, data: draftData[draftFilter].map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x && d.y), borderColor: averageColors.Draft, borderWidth: 2.5, pointRadius: 0, order: -6 });
+        if (draftFilter !== 'All' && draftData?.[draftFilter]) datasets.push({ label: `Avg. ${draftFilter}`, data: draftData[draftFilter].map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x != null && d.y != null), borderColor: averageColors.Draft, borderWidth: 2.5, pointRadius: 0, order: -6 });
     }
     
     careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { labels: { color: 'var(--text-primary)', filter: item => !item.label.startsWith('Player ') } }, decimation: { enabled: true, algorithm: 'lttb', samples: 200 } }, scales: { x: { type: 'linear', title: { display: true, text: xAxis === 'age' ? 'Player Age' : 'WNBA Games Played' } }, y: { title: { display: true, text: `Rolling 3-Month Average ${stat}` } } } } });
