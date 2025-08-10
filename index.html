@@ -202,7 +202,7 @@
                         </select>
                     </div>
                     <div class="filter-group" style="display: flex; align-items: flex-end; justify-content: start;">
-                         <div id="career-chart-toggles" style="display: flex; gap: 20px;">
+                         <div id="career-chart-toggles" style="display: flex; flex-wrap: wrap; gap: 20px;">
                             <div class="chart-toggle">
                                 <span class="chart-toggle-label">Show Averages</span>
                                 <label class="chart-toggle-switch">
@@ -210,6 +210,15 @@
                                     <span class="chart-toggle-slider"></span>
                                 </label>
                             </div>
+                            <!-- ### NEW HTML FOR STEP 5 ### -->
+                            <div class="chart-toggle">
+                                <span class="chart-toggle-label">Color by Team</span>
+                                <label class="chart-toggle-switch">
+                                    <input type="checkbox" id="career-color-by-team-toggle">
+                                    <span class="chart-toggle-slider"></span>
+                                </label>
+                            </div>
+                            <!-- ### END OF NEW HTML ### -->
                             <button id="career-clear-players-btn" class="button-outline">Clear Players</button>
                         </div>
                     </div>
@@ -223,7 +232,9 @@
 
     </main>
 
-    <div id="player-profile-overlay" class="grade-overlay"></div>
+    <div id="player-profile-overlay" class="grade-overlay">
+        <!-- Player profile modal content is dynamically injected here by script.js -->
+    </div>
     
     <footer>
         <p>© 2024 Advanced WNBA Fantasy Projections. All Rights Reserved.</p>
