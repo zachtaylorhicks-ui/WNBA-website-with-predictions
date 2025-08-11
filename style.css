@@ -1,4 +1,4 @@
-/* style.css (v29.2 - Final Polish) */
+/* style.css (v30.0 - WNBA Team Colors Update & Full Restoration) */
 :root {
     --ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1);
     --font-sans: 'Inter', sans-serif;
@@ -6,6 +6,22 @@
     --bg-primary-dark: #121212; --bg-secondary-dark: #1e1e1e; --text-primary-dark: #e8e6e3; --text-secondary-dark: #a8a29e; --border-dark: #3a3a3a; --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.2);
     --primary-color: #0d6efd; --primary-hover: #0b5ed7; --success-color: #198754; --danger-color: #dc3545; --warning-color: #ffc107;
     --elite-color: #8e44ad; --very-good-color: #2980b9; --good-color: #27ae60; --average-color: #7f8c8d; --below-average-color: #f39c12; --not-good-color: #c0392b; --text-on-dark-bg: #ffffff;
+
+    /* ### WNBA TEAM COLORS ### */
+    --team-atl: #E03A3E;
+    --team-chi: #418FDE;
+    --team-con: #002663;
+    --team-dal: #002855;
+    --team-ind: #FFC633;
+    --team-lva: #000000;
+    --team-las: #702F8A;
+    --team-min: #005083;
+    --team-nyl: #00A189;
+    --team-pho: #201747;
+    --team-sea: #2C5234;
+    --team-was: #C8102E;
+    --team-gsv: #000000; /* Placeholder, can be updated */
+    --team-fa: rgba(128, 128, 128, 0.5);
 }
 [data-theme="light"] { --bg-primary: var(--bg-primary-light); --bg-secondary: var(--bg-secondary-light); --text-primary: var(--text-primary-light); --text-secondary: var(--text-secondary-light); --border-color: var(--border-light); --shadow: var(--shadow-light); --row-alt-bg: #f8f9fa; --table-header-bg: #f2f2f2; --pred-row-bg: var(--bg-secondary); --actual-row-bg: #f0f2f5; }
 [data-theme="dark"] { --bg-primary: var(--bg-primary-dark); --bg-secondary: var(--bg-secondary-dark); --text-primary: var(--text-primary-dark); --text-secondary: var(--text-secondary-dark); --border-color: var(--border-dark); --shadow: var(--shadow-dark); --row-alt-bg: #2c2c2c; --table-header-bg: #282828; --pred-row-bg: var(--bg-secondary); --actual-row-bg: #2a2a2a; }
@@ -108,13 +124,15 @@ td.stat-cell { text-align: center; }
 .profile-info-label { font-size: 0.8em; color: var(--text-secondary); margin-bottom: 4px; text-transform: uppercase; }
 .profile-info-value { font-weight: 600; }
 .profile-info-value a { color: var(--primary-color); text-decoration: none; } .profile-info-value a:hover { text-decoration: underline; }
-.profile-main-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+.profile-main-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .profile-main-header h3 { margin: 0; }
 .profile-main .chart-wrapper { height: 300px; }
 .statline-placeholder { text-align: center; padding: 40px; color: var(--text-secondary); }
-.modal-table { max-height: 300px; overflow-y: auto; }
-.modal-table th { font-size: 0.85em; }
-.modal-table td { font-size: 0.9em; white-space: normal; }
+.profile-main .controls-card { padding: 15px; margin-bottom: 20px; border: 1px solid var(--border-color); background-color: var(--bg-primary); }
+.modal-chart-controls { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.modal-chart-controls .filter-group { flex: 1 1 auto; }
+.modal-model-toggles { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; flex: 2 1 300px; }
+
 
 /* --- Chart Toggle Switch --- */
 .chart-toggle { display: flex; align-items: center; gap: 8px; }
@@ -148,133 +166,24 @@ input:checked + .chart-toggle-slider:before { transform: translateX(24px); }
 
 /* --- Career Analysis Tab --- */
 #career-chart-wrapper { position: relative; height: 70vh; margin-top: 25px; }
-.search-group input::placeholder { color: var(--text-secondary); opacity: 0.7; }
+#CareerAnalysis .bottom-controls { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+#CareerAnalysis .filter-group { flex-basis: 220px; }
 
-/* ### START OF FIX FOR STEP 6 ### */
-#CareerAnalysis .bottom-controls {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-#CareerAnalysis .filter-group {
-    flex-basis: 220px;
-}
-#career-chart-toggles {
-    padding-bottom: 8px; /* Aligns toggle better with dropdowns */
-}
-/* ### END OF FIX FOR STEP 6 ### */
+/* ### Daily Projections Controls ### */
+#daily-projection-controls { margin-bottom: 25px; }
+.mode-toggle-group { display: flex; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; }
+.mode-toggle-btn { flex-grow: 1; padding: 8px 12px; border: none; background-color: var(--bg-primary); color: var(--text-secondary); font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease; }
+.mode-toggle-btn:not(:last-child) { border-right: 1px solid var(--border-color); }
+.mode-toggle-btn.active { background-color: var(--primary-color); color: #fff; }
+.mode-toggle-btn:not(.active):hover { background-color: var(--border-color); color: var(--text-primary); }
+#blend-model-controls { margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-color); }
+.blend-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
+.blend-header .weights-title { margin: 0; }
+#daily-blend-weights-grid .category-item label { display: flex; align-items: center; gap: 10px; }
+#daily-blend-weights-grid .category-item span { flex-shrink: 0; width: 150px; font-weight: 500; }
+#daily-blend-weights-grid .category-item input { width: 80px; text-align: right; }
+.hidden { display: none !important; }
+.chart-subtitle { font-size: 0.9em; color: var(--text-secondary); margin: -15px 0 10px 0; width: 100%; text-align: left; }
+#accuracy-chart-container .chart-header { align-items: flex-start; flex-direction: column; }
 
 footer { text-align: center; margin: 40px 0 20px; color: var(--text-secondary); font-size: .9em; }
-
-
-/* ### START OF CSS FOR MULTI-MODEL DAILY CONTROLS ### */
-#daily-projection-controls {
-    margin-bottom: 25px;
-}
-.mode-toggle-group {
-    display: flex;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    overflow: hidden;
-}
-.mode-toggle-btn {
-    flex-grow: 1;
-    padding: 8px 12px;
-    border: none;
-    background-color: var(--bg-primary);
-    color: var(--text-secondary);
-    font-family: inherit;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-.mode-toggle-btn:not(:last-child) {
-    border-right: 1px solid var(--border-color);
-}
-.mode-toggle-btn.active {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-.mode-toggle-btn:not(.active):hover {
-    background-color: var(--border-color);
-    color: var(--text-primary);
-}
-
-#blend-model-controls {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-.blend-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-.blend-header .weights-title {
-    margin: 0;
-}
-#daily-blend-weights-grid .category-item label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-#daily-blend-weights-grid .category-item span {
-    flex-shrink: 0;
-    width: 150px; /* Give model names consistent space */
-    font-weight: 500;
-}
-#daily-blend-weights-grid .category-item input {
-    width: 80px;
-    text-align: right;
-}
-
-/* Utility class to hide/show control sections */
-.hidden {
-    display: none !important;
-}
-
-.chart-subtitle {
-    font-size: 0.9em;
-    color: var(--text-secondary);
-    margin: -15px 0 10px 0;
-    width: 100%;
-    text-align: left;
-}
-
-#accuracy-chart-container .chart-header {
-    align-items: flex-start; /* Better alignment with subtitle */
-    flex-direction: column;
-}
-
-/* ### END OF CSS FOR MULTI-MODEL DAILY CONTROLS ### */
-
-/* ### START OF CSS FOR PLAYER MODAL CHART CONTROLS ### */
-.profile-main .controls-card {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-primary);
-}
-.modal-chart-controls {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.modal-chart-controls .filter-group {
-    flex: 1 1 auto;
-}
-.modal-model-toggles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-items: center;
-    flex: 2 1 300px;
-}
-.modal-model-toggles .chart-toggle {
-    margin-bottom: 0;
-}
-/* ### END OF CSS FOR PLAYER MODAL CHART CONTROLS ### */
