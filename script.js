@@ -1,4 +1,4 @@
-// script.js (v39.0 - FINAL: All Features and Fixes Implemented)
+// script.js (v40.0 - FINAL: All Features and Fixes Implemented)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = { modelNames: [] };
@@ -109,15 +109,16 @@ async function showPlayerProfileOverlay(profile) {
     const renderContent = async () => {
         const chartContainer = document.getElementById('modal-chart-container');
         const careerCurveToggle = overlay.querySelector('#career-curve-toggle-checkbox').checked;
-
         if (careerCurveToggle) {
-            await renderPlayerCareerCurveChart(profile.personId, chartContainer);
+            await renderPlayerCareerCurveChart(profile, chartContainer);
         } else {
             await renderPlayerPerformanceHistoryChart(profile, chartContainer);
         }
     };
 
     overlay.querySelector('.modal-controls').addEventListener('change', renderContent);
+    overlay.querySelector('.reset-zoom-btn')?.addEventListener('click', () => modalChartInstance?.resetZoom());
+    
     const closeModal = () => {
         overlay.classList.remove("visible");
         overlay.innerHTML = '';
@@ -158,6 +159,7 @@ function buildPlayerProfileModalHTML(profile) {
                     <div class="modal-chart-controls">
                         <div class="filter-group"><label for="modal-stat-selector">STATISTIC</label><select id="modal-stat-selector">${statSelectorOptions}</select></div>
                         <div class="modal-model-toggles">${modelToggles}</div>
+                        <button class="button-outline reset-zoom-btn">Reset Zoom</button>
                     </div>
                 </div>
                 <div class="chart-wrapper" id="modal-chart-container"></div>
@@ -174,42 +176,32 @@ async function renderPlayerPerformanceHistoryChart(profile, container) {
     if (!ctx) return;
 
     document.querySelector('.modal-model-toggles').style.display = 'flex';
+    document.querySelector('.reset-zoom-btn').style.display = 'block';
     document.querySelector('.profile-main-header h3').textContent = `Performance & Projections: ${MODAL_CHART_STATS[statKey]}`;
 
     const datasets = [];
     const history = profile.performanceHistory || [];
     if (history.length > 0) {
-        const actualData = history.map(d => ({ x: new Date(d.date).valueOf(), y: d[statKey] })).filter(d => d.y != null);
-        if (actualData.length > 0) datasets.push({ label: 'Actual', data: actualData, borderColor: 'var(--text-primary)', type: 'line', tension: 0.1, borderWidth: 3, pointRadius: 2, order: -10 });
+        const actualData = history.map(d => ({ x: d.game_number, y: d[statKey] })).filter(d => d.y != null);
+        if (actualData.length > 0) datasets.push({ label: 'Actual', data: actualData, borderColor: 'var(--text-primary)', type: 'line', tension: 0.1, borderWidth: 2, pointRadius: 2, order: -10 });
     }
-
-    const futureProjections = profile.futureProjections || [];
-    const activeModels = new Set(Array.from(document.querySelectorAll('.modal-model-toggle:checked')).map(el => el.dataset.model));
-    fullData.modelNames.forEach((modelName, i) => {
-        if (!activeModels.has(modelName)) return;
-        const modelData = futureProjections.filter(p => p.model_source === modelName && p[statKey] != null).map(p => ({ x: new Date(p.game_date).valueOf(), y: p[statKey] }));
-        if (modelData.length > 0) datasets.push({ label: modelName, data: modelData, borderColor: MODEL_COLORS[i % MODEL_COLORS.length], type: 'line', tension: 0.1, borderWidth: 2, pointRadius: 1 });
-    });
     
     modalChartInstance = new Chart(ctx, {
         type: 'line', data: { datasets },
         options: { 
             responsive: true, maintainAspectRatio: false, 
-            scales: { x: { type: 'time', time: { unit: 'month', tooltipFormat: 'MMM d, yyyy' } }, y: { beginAtZero: true } }, 
+            scales: { x: { type: 'linear', title: {display: true, text: 'WNBA Games Played'} }, y: { beginAtZero: true, title: {display: true, text: MODAL_CHART_STATS[statKey]}} }, 
             plugins: { 
                 legend: { position: 'bottom' }, 
                 tooltip: { mode: 'index', intersect: false },
-                zoom: {
-                    pan: { enabled: true, mode: 'x' },
-                    zoom: { wheel: { enabled: true }, mode: 'x' }
-                }
+                zoom: { pan: { enabled: true, mode: 'x' }, zoom: { wheel: { enabled: true }, mode: 'x' } }
             }, 
             interaction: { mode: 'nearest', axis: 'x', intersect: false } 
         }
     });
 }
 
-async function renderPlayerCareerCurveChart(personId, container) {
+async function renderPlayerCareerCurveChart(profile, container) {
     const statKey = document.getElementById('modal-stat-selector')?.value || 'PTS';
     if (modalChartInstance) modalChartInstance.destroy();
     container.innerHTML = '<canvas id="modal-chart"></canvas>';
@@ -217,23 +209,47 @@ async function renderPlayerCareerCurveChart(personId, container) {
     if (!ctx) return;
 
     document.querySelector('.modal-model-toggles').style.display = 'none';
+    document.querySelector('.reset-zoom-btn').style.display = 'none';
     document.querySelector('.profile-main-header h3').textContent = `Career Curve (3-Month Rolling Avg): ${MODAL_CHART_STATS[statKey]}`;
 
     const careerData = await fetchSeasonData('career_data');
-    const playerData = careerData?.players?.[String(personId)];
+    const playerData = careerData?.players?.[String(profile.personId)];
     if (!playerData || playerData.length === 0) {
         container.innerHTML = '<div class="statline-placeholder"><p>No long-term career data available for this player.</p></div>';
         return;
     }
+
+    const datasets = [{
+        label: `Rolling Avg. ${statKey}`,
+        data: [],
+        borderColor: 'var(--primary-color)',
+        tension: 0.1,
+        spanGaps: false // This will create breaks in the line for null data points
+    }];
+
+    const sortedData = playerData.map(d => ({...d, date: new Date(d.date)})).sort((a,b) => a.date - b.date);
+
+    for (let i = 0; i < sortedData.length; i++) {
+        const point = sortedData[i];
+        if(i > 0) {
+            const prevPoint = sortedData[i-1];
+            const daysDiff = (point.date - prevPoint.date) / (1000 * 60 * 60 * 24);
+            if(daysDiff > 100) { // Off-season break
+                datasets[0].data.push({x: prevPoint.date.valueOf() + 1, y: null});
+            }
+        }
+        datasets[0].data.push({ x: point.date.valueOf(), y: point[statKey] });
+    }
     
     modalChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: { datasets: [{ label: `Rolling Avg. ${statKey}`, data: playerData.map(d => ({ x: d.x_games, y: d[statKey] })).filter(d => d.y != null), borderColor: 'var(--primary-color)', tension: 0.1 }] },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { type: 'linear', title: { display: true, text: 'WNBA Games Played' } }, y: { title: { display: true, text: `Rolling Avg. ${MODAL_CHART_STATS[statKey]}` } } } }
+        type: 'line', data: { datasets },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { type: 'time', time: { unit: 'year' }, title: { display: true, text: 'Date' } }, y: { title: { display: true, text: `Rolling Avg. ${MODAL_CHART_STATS[statKey]}` } } } }
     });
 }
 
+
 // --- SEASON-LONG & DEPENDENT TABS ---
+// ... (All functions from here are unchanged from the previous working version) ...
 function initializeSeasonTab() {
     const manifest = fullData.seasonLongDataManifest || {};
     const selector = document.getElementById("season-source-selector");
@@ -473,12 +489,12 @@ function createTeamTableHTML(teamData, gameGrade) {
         const nameHtml = `<a href="#" class="player-link" data-person-id="${p.personId}">${p.Player_Name}</a>`;
         let predRow, actualRow = '';
         if (isGraded) {
-            const actuals = game.grade.playerActuals?.[p.personId];
+            const actuals = gameGrade.playerActuals?.[p.personId];
             predRow = `<tr class="player-row-pred"><td ${actuals ? 'rowspan="2"' : ''} class="player-name-cell">${nameHtml}</td><td class="stat-type-cell">P</td><td>${(p.Predicted_Minutes || 0).toFixed(1)}</td><td>${(p.points || 0).toFixed(1)}</td><td>${(p.reb || 0).toFixed(1)}</td><td>${(p.ast || 0).toFixed(1)}</td></tr>`;
             if (actuals) {
                 actualRow = `<tr class="player-row-actual"><td class="stat-type-cell">A</td><td>-</td><td>${(actuals.PTS || 0).toFixed(0)}<span class="performance-indicator ${getPerfIndicator(p.points, actuals.PTS)}"></span></td><td>${(actuals.REB || 0).toFixed(0)}<span class="performance-indicator ${getPerfIndicator(p.reb, actuals.REB)}"></span></td><td>${(actuals.AST || 0).toFixed(0)}<span class="performance-indicator ${getPerfIndicator(p.ast, actuals.AST)}"></span></td></tr>`;
             } else {
-                actualRow = '';
+                 actualRow = `<tr class="player-row-actual"><td colspan="5" style="text-align:center; color: var(--text-secondary);">DNP</td></tr>`;
             }
         } else {
             predRow = `<tr class="player-row-pred"><td class="player-name-cell">${nameHtml}</td><td class="stat-type-cell">P</td><td>${(p.Predicted_Minutes || 0).toFixed(1)}</td><td>${(p.points || 0).toFixed(1)}</td><td>${(p.reb || 0).toFixed(1)}</td><td>${(p.ast || 0).toFixed(1)}</td></tr>`;
@@ -630,7 +646,7 @@ async function renderCareerChart() {
     const datasets = [];
     playerIdsToDisplay.forEach(id => {
         if (careerChartState.highlightedPlayers.has(id)) return;
-        let playerData = careerData.players[id];
+        let playerData = careerData.players[String(id)];
         if (!playerData) return;
         if (minutesFilter === '15_game') playerData = playerData.filter(d => d.MIN >= 15);
         
@@ -641,7 +657,7 @@ async function renderCareerChart() {
     });
 
     for (const [id, playerInfo] of careerChartState.highlightedPlayers.entries()) {
-        let highlightedData = careerData.players[id];
+        let highlightedData = careerData.players[String(id)];
         if (highlightedData) {
             if (minutesFilter === '15_game') highlightedData = highlightedData.filter(d => d.MIN >= 15);
             if (highlightedData.length > 0) datasets.push({ label: playerInfo.name, data: highlightedData.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x != null && d.y != null), borderColor: playerInfo.color, borderWidth: 3, pointRadius: 0, tension: 0.1, order: -10 });
