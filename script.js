@@ -1,4 +1,4 @@
-// script.js (v38.0 - FINAL: Career Curve & Team Color Features)
+// script.js (v39.0 - FINAL: All Features and Fixes Implemented)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = { modelNames: [] };
@@ -191,10 +191,6 @@ async function renderPlayerPerformanceHistoryChart(profile, container) {
         if (modelData.length > 0) datasets.push({ label: modelName, data: modelData, borderColor: MODEL_COLORS[i % MODEL_COLORS.length], type: 'line', tension: 0.1, borderWidth: 2, pointRadius: 1 });
     });
     
-    // Import and register the zoom plugin
-    const zoomPlugin = await import('https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/+esm');
-    Chart.register(zoomPlugin.default);
-
     modalChartInstance = new Chart(ctx, {
         type: 'line', data: { datasets },
         options: { 
@@ -615,7 +611,10 @@ async function renderCareerChart() {
     if (!ctx) return;
     
     const careerData = await fetchSeasonData('career_data');
-    if (!careerData || !careerData.players) { document.getElementById("career-chart-wrapper").innerHTML = `<p class="error-cell" style="text-align:center;">Career data not available.</p>`; return; }
+    if (!careerData || Object.keys(careerData.players).length === 0) {
+        document.getElementById("career-chart-wrapper").innerHTML = `<p class="statline-placeholder">Career analysis data not available or is empty.</p>`;
+        return;
+    }
     
     const stat = document.getElementById("career-stat-selector").value;
     const xAxis = document.getElementById("career-xaxis-selector").value;
