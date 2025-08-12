@@ -258,6 +258,8 @@ async function renderPlayerPerformanceHistoryChart(profile, container) {
     modalChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { type: 'linear', title: { display: true, text: 'WNBA Games Played' } }, y: { beginAtZero: true, title: { display: true, text: MODAL_CHART_STATS[statKey] } } }, plugins: { legend: { position: 'bottom' }, tooltip: { mode: 'index', intersect: false }, zoom: { pan: { enabled: true, mode: 'x' }, zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' } } }, interaction: { mode: 'nearest', axis: 'x', intersect: false } } });
 }
 
+// ### REPLACEMENT FOR THE renderPlayerCareerCurveChart FUNCTION in script.js ###
+
 async function renderPlayerCareerCurveChart(profile, container) {
     const statKey = document.getElementById('modal-stat-selector')?.value || 'PTS';
     if (modalChartInstance) modalChartInstance.destroy();
@@ -276,6 +278,11 @@ async function renderPlayerCareerCurveChart(profile, container) {
     }
 
     const dataPoints = history.map(d => ({ time: new Date(d.date).getTime(), value: d[statKey] })).filter(d => d.value != null);
+    if (dataPoints.length === 0) {
+        container.innerHTML = '<div class="statline-placeholder"><p>No data available for this statistic.</p></div>';
+        return;
+    }
+    
     const rollingAvgData = [];
     const windowMillis = 90 * 24 * 60 * 60 * 1000;
 
@@ -292,10 +299,72 @@ async function renderPlayerCareerCurveChart(profile, container) {
         if (count > 0) rollingAvgData.push({ x: currentPoint.time, y: sum / count });
     }
 
-    const datasets = [{ label: `Rolling Avg. ${statKey}`, data: rollingAvgData, borderColor: 'var(--primary-color)', tension: 0.2, pointRadius: 3, pointBackgroundColor: 'var(--primary-color)', pointBorderColor: 'var(--bg-secondary)', pointHoverRadius: 5 }];
-    modalChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { type: 'time', time: { unit: 'year' }, title: { display: true, text: 'Date' } }, y: { title: { display: true, text: `Rolling Avg. ${MODAL_CHART_STATS[statKey]}` } } } } });
-}
+    // --- NEW LOGIC: Calculate season breaks and shading ---
+    const seasons = {};
+    for (const point of dataPoints) {
+        const year = new Date(point.time).getFullYear();
+        if (!seasons[year]) {
+            seasons[year] = { min: point.time, max: point.time };
+        } else {
+            seasons[year].min = Math.min(seasons[year].min, point.time);
+            seasons[year].max = Math.max(seasons[year].max, point.time);
+        }
+    }
 
+    const annotations = {};
+    let isAlternate = true;
+    Object.keys(seasons).sort().forEach(year => {
+        annotations[`box${year}`] = {
+            type: 'box',
+            xMin: seasons[year].min,
+            xMax: seasons[year].max,
+            backgroundColor: isAlternate ? 'rgba(128, 128, 128, 0.05)' : 'rgba(128, 128, 128, 0.15)',
+            borderColor: 'transparent',
+            drawTime: 'beforeDatasets'
+        };
+        isAlternate = !isAlternate;
+    });
+    
+    const datasets = [{ 
+        label: `Rolling Avg. ${statKey}`, 
+        data: rollingAvgData, 
+        borderColor: 'var(--text-primary)',
+        backgroundColor: 'var(--text-primary)',
+        borderWidth: 2.5, 
+        tension: 0.2, 
+        pointRadius: 2, 
+        pointBackgroundColor: 'var(--text-primary)',
+    }];
+
+    modalChartInstance = new Chart(ctx, { 
+        type: 'line', 
+        data: { datasets }, 
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false, 
+            plugins: { 
+                legend: { display: false },
+                annotation: {
+                    annotations: annotations
+                }
+            },
+            scales: { 
+                x: { 
+                    type: 'time', 
+                    time: { unit: 'year' },
+                    title: { display: true, text: 'Date' },
+                    // This tells the chart to only render data where it exists, skipping off-seasons
+                    ticks: {
+                        source: 'data' 
+                    }
+                }, 
+                y: { 
+                    title: { display: true, text: `Rolling Avg. ${MODAL_CHART_STATS[statKey]}` } 
+                } 
+            } 
+        } 
+    });
+}
 // --- SEASON, TEAM, PROGRESSION TABS ---
 // (These functions are largely the same but now rely on enrichPlayerData)
 function initializeSeasonTab() {
