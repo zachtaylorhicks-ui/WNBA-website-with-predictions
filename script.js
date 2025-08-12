@@ -571,13 +571,14 @@ function createProgressionTable(title, players, th1, th2, key1, key2) {
     return `<div class="card"><h3>${title}</h3><div class="table-container"><table><thead><tr><th>Player</th><th>Team</th><th>${th1}</th><th>${th2}</th><th>Change</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
 }
 
-// ### BLOCK 2: The Tab Initializer and Event Handlers ###
-// These functions correctly set up the tab and handle user actions 
-// like adding/clearing players, triggering the new render function each time.
+// ### BLOCK 2: Career Analysis Tab Initializer and Event Handlers ###
 
 async function renderCareerAnalysisTab() {
     const container = document.getElementById('CareerAnalysis');
-    if (container.dataset.initialized) return; // Only initialize once
+    if (container.dataset.initialized) return; 
+
+    // Pre-fetch the main data file when the tab is first opened
+    fetchCareerAverages();
     
     document.getElementById("career-controls").addEventListener('change', renderCareerChart);
     document.getElementById('career-add-player-btn').addEventListener('click', handleAddCareerPlayer);
@@ -621,15 +622,31 @@ function renderHighlightedPlayerList() {
 // This function loads highlighted players instantly, then incrementally loads 
 // all other players into a single, efficient dataset to prevent browser crashes.
 
+// ### BLOCK 1: New High-Performance renderCareerChart Function ###
+
+let careerAveragesCache = null; // Add this line right before the function
+
+async function fetchCareerAverages() {
+    if (careerAveragesCache) return careerAveragesCache;
+    try {
+        const response = await fetch('data/career_data.json.gz');
+        if (!response.ok) throw new Error('Could not load career_data.json.gz');
+        careerAveragesCache = await response.json();
+        return careerAveragesCache;
+    } catch (e) {
+        console.error("FATAL: Failed to load career averages data.", e);
+        return null;
+    }
+}
+
 async function renderCareerChart() {
     if (careerChartInstance) {
         careerChartInstance.destroy();
     }
     const chartWrapper = document.getElementById("career-chart-wrapper");
-    chartWrapper.innerHTML = `<div class="statline-placeholder">Loading highlighted players...</div><canvas id="career-chart"></canvas>`;
+    chartWrapper.innerHTML = `<div class="statline-placeholder">Loading chart data...</div><canvas id="career-chart"></canvas>`;
     const ctx = document.getElementById('career-chart').getContext('2d');
     
-    // --- Get settings from UI ---
     const stat = document.getElementById("career-stat-selector").value;
     const xAxisKey = document.getElementById("career-xaxis-selector").value === 'age' ? 'age' : 'game_number';
     const draftFilter = document.getElementById("career-draft-filter").value;
@@ -637,15 +654,48 @@ async function renderCareerChart() {
     const colorByTeam = document.getElementById("career-color-by-team-toggle").checked;
 
     const datasets = [];
+    const careerAverages = await fetchCareerAverages();
+    if (!careerAverages) {
+        chartWrapper.innerHTML = `<div class="statline-placeholder error-cell">Error: Could not load career data.</div>`;
+        return;
+    }
 
-    // --- 1. Fetch and process HIGHLIGHTED players FIRST ---
+    // --- 1. INSTANTLY plot the background lines from the pre-aggregated file ---
+    const dataKey = `${draftFilter}_${minutesFilter}`;
+    const backgroundData = careerAverages[dataKey]?.[stat]?.[xAxisKey];
+
+    if (backgroundData) {
+        datasets.push({
+            label: 'All Players',
+            data: backgroundData,
+            segment: { // Use segment to color lines individually based on point data
+                borderColor: ctx => colorByTeam ? (TEAM_COLORS[ctx.p1.raw.team] || TEAM_COLORS.FA) : 'rgba(128, 128, 128, 0.2)',
+            },
+            borderWidth: 1.5,
+            pointRadius: 0,
+            tension: 0.1,
+            order: 1 // Draw in the background
+        });
+    }
+
+    // --- 2. Fetch and plot HIGHLIGHTED players on top ---
     const highlightedPlayerPromises = Array.from(careerChartState.highlightedPlayers.keys()).map(id => getPlayerHistory(id));
     const highlightedHistories = await Promise.all(highlightedPlayerPromises);
     
     highlightedHistories.forEach(history => {
         if (!history || !history.performanceHistory) return;
         
-        const personId = history.performanceHistory[0]?.personId;
+        let personId;
+        // Find personId from the first game that has it
+        const firstValidGame = history.performanceHistory.find(g => g && typeof g.personId !== 'undefined');
+        if (firstValidGame) {
+            personId = firstValidGame.personId;
+        } else {
+            // Fallback for older data structures
+            const playerInfo = Array.from(careerChartState.highlightedPlayers.values()).find(p => p.name === history.playerName);
+            if (playerInfo) personId = playerInfo.id;
+        }
+
         if (!personId || !careerChartState.highlightedPlayers.has(personId)) return;
 
         let performanceData = history.performanceHistory;
@@ -663,26 +713,13 @@ async function renderCareerChart() {
             borderWidth: 3,
             pointRadius: 0,
             tension: 0.1,
-            order: -1 // Draw highlighted players on top
+            order: -1 // Draw on top
         });
     });
 
-    // --- 2. Prepare the SINGLE dataset for all background players ---
-    const backgroundLinesDataset = {
-        label: 'All Players',
-        data: [], // This will be populated incrementally
-        // Use segments for multi-coloring, which is more performant for Chart.js
-        segment: {
-            borderColor: ctx => colorByTeam ? (TEAM_COLORS[ctx.p1.raw.team] || TEAM_COLORS.FA) : 'rgba(128, 128, 128, 0.2)',
-        },
-        borderWidth: 1.5,
-        pointRadius: 0,
-        tension: 0.1,
-        order: 1, // Draw background players behind highlights
-    };
-    datasets.push(backgroundLinesDataset);
+    // --- 3. Render the final chart ---
+    chartWrapper.querySelector('.statline-placeholder').style.display = 'none';
 
-    // --- 3. Create the chart INSTANTLY with highlighted players ---
     careerChartInstance = new Chart(ctx, {
         type: 'line',
         data: { datasets },
@@ -697,7 +734,7 @@ async function renderCareerChart() {
                         filter: item => item.dataset.order === -1 
                     }
                 },
-                decimation: { enabled: true, algorithm: 'lttb', samples: 100 }
+                decimation: { enabled: true, algorithm: 'lttb', samples: 250 }
             },
             scales: {
                 x: { type: 'linear', title: { display: true, text: xAxisKey === 'age' ? 'Player Age' : 'WNBA Games Played' } },
@@ -705,46 +742,4 @@ async function renderCareerChart() {
             }
         }
     });
-    
-    // --- 4. Asynchronously load and draw background players ---
-    chartWrapper.querySelector('.statline-placeholder').textContent = 'Loading background player data...';
-    
-    let backgroundPlayerIds = Object.keys(fullData.playerProfiles).map(id => parseInt(id, 10))
-        .filter(id => !careerChartState.highlightedPlayers.has(id)); 
-    if (draftFilter !== 'All') backgroundPlayerIds = backgroundPlayerIds.filter(id => fullData.playerProfiles[id]?.draftCategory === draftFilter);
-    if (minutesFilter === '15_career') backgroundPlayerIds = backgroundPlayerIds.filter(id => (fullData.playerProfiles[id]?.careerAvgMpg || 0) > 15);
-
-    const chunkSize = 25; 
-    for (let i = 0; i < backgroundPlayerIds.length; i += chunkSize) {
-        const chunk = backgroundPlayerIds.slice(i, i + chunkSize);
-        const chunkPromises = chunk.map(id => getPlayerHistory(id));
-        const chunkHistories = await Promise.all(chunkPromises);
-
-        chunkHistories.forEach(history => {
-            if (!history || !history.performanceHistory || history.performanceHistory.length === 0) return;
-            
-            const personId = history.performanceHistory[0].personId;
-            let performanceData = history.performanceHistory;
-            if (minutesFilter === '15_game') {
-                performanceData = performanceData.filter(d => d.MIN >= 15);
-            }
-            if (performanceData.length === 0) return;
-
-            const playerTeam = fullData.playerProfiles[personId]?.team;
-            const points = performanceData
-                .map(d => ({ x: d[xAxisKey], y: d[stat], team: playerTeam }))
-                .filter(d => d.x != null && d.y != null);
-            
-            backgroundLinesDataset.data.push(...points);
-            backgroundLinesDataset.data.push(null); 
-        });
-
-        // Use requestAnimationFrame to prevent UI blocking during updates
-        await new Promise(resolve => requestAnimationFrame(() => {
-            if (careerChartInstance) careerChartInstance.update('none'); 
-            resolve();
-        }));
-    }
-    
-    chartWrapper.querySelector('.statline-placeholder').style.display = 'none';
 }
