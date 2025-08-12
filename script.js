@@ -1,8 +1,9 @@
-// script.js (v42.0 - DEFINITIVE: Pathing Corrected, Unabridged, and Fully Functional)
+// script.js (v43.0 - DEFINITIVE: On-Demand History Loading & Complete Logic)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = { modelNames: [] };
 let loadedSeasonDataCache = {};
+let playerHistoryCache = null; // Cache for the large on-demand history file
 let currentSort = { column: "custom_z_score_display", direction: "desc" };
 let accuracyChartInstance = null;
 let careerChartInstance = null;
@@ -101,13 +102,32 @@ async function showPlayerProfileOverlay(profile) {
     const overlay = document.getElementById("player-profile-overlay");
     overlay.innerHTML = buildPlayerProfileModalHTML(profile);
 
+    // ARCHITECTURE FIX: Fetch large history file on-demand
+    if (!playerHistoryCache) {
+        try {
+            const response = await fetch('player_performance_history.json');
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            playerHistoryCache = await response.json();
+        } catch (e) {
+            console.error("Failed to load player history file:", e);
+            document.getElementById('modal-chart-container').innerHTML = `<div class="statline-placeholder"><p>Error: Could not load performance history data.</p></div>`;
+            return;
+        }
+    }
+    
+    // Inject the fetched data into the profile object for the chart functions
+    const fullProfileData = {
+        ...profile,
+        ...(playerHistoryCache[profile.personId] || {})
+    };
+
     const renderContent = async () => {
         const chartContainer = document.getElementById('modal-chart-container');
         const careerCurveToggle = overlay.querySelector('#career-curve-toggle-checkbox').checked;
         if (careerCurveToggle) {
-            await renderPlayerCareerCurveChart(profile, chartContainer);
+            await renderPlayerCareerCurveChart(profile, chartContainer); // Career curve uses its own data file
         } else {
-            await renderPlayerPerformanceHistoryChart(profile, chartContainer);
+            await renderPlayerPerformanceHistoryChart(fullProfileData, chartContainer); // Performance chart uses the just-in-time data
         }
     };
     
@@ -208,7 +228,7 @@ async function renderPlayerCareerCurveChart(profile, container) {
     document.querySelector('.reset-zoom-btn').style.display = 'none';
     document.querySelector('.profile-main-header h3').textContent = `Career Curve (3-Month Rolling Avg): ${MODAL_CHART_STATS[statKey]}`;
 
-    const careerData = await fetchSeasonData('career_data');
+    const careerData = await fetchSeasonData('career_data'); // This data is small and can be fetched normally
     const playerData = careerData?.players?.[String(profile.personId)];
     if (!playerData || playerData.length === 0) { container.innerHTML = '<div class="statline-placeholder"><p>No long-term career data available for this player.</p></div>'; return; }
 
@@ -400,9 +420,9 @@ function createTeamTableHTML(teamData, gameGrade) {
             if (actuals) {
                 actualRow = `<tr class="player-row-actual"><td class="stat-type-cell">A</td><td>-</td><td>${(actuals.PTS || 0).toFixed(0)}<span class="performance-indicator ${getPerfIndicator(p.points, actuals.PTS)}"></span></td><td>${(actuals.REB || 0).toFixed(0)}<span class="performance-indicator ${getPerfIndicator(p.reb, actuals.REB)}"></span></td><td>${(actuals.AST || 0).toFixed(0)}<span class="performance-indicator ${getPerfIndicator(p.ast, actuals.AST)}"></span></td></tr>`;
             } else {
-                 predRow = predRow.replace('rowspan="2"',''); // remove rowspan if no actuals
+                 predRow = predRow.replace('rowspan="2"',''); 
                  actualRow = `<tr class="player-row-pred"><td class="player-name-cell">${nameHtml}</td><td colspan="5" style="text-align:center; color: var(--text-secondary);font-style:italic;">DNP</td></tr>`;
-                 return actualRow; // return only DNP row
+                 return actualRow;
             }
         }
         return predRow + actualRow;
@@ -547,4 +567,3 @@ async function renderCareerChart() {
     }
     careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { labels: { color: 'var(--text-primary)', filter: item => !item.label.startsWith('Player ') } }, decimation: { enabled: true, algorithm: 'lttb', samples: colorByTeam ? 500 : 200 } }, scales: { x: { type: 'linear', title: { display: true, text: xAxis === 'age' ? 'Player Age' : 'WNBA Games Played' } }, y: { title: { display: true, text: `Rolling 3-Month Average ${stat}` } } } } });
 }
-// END OF SCRIPT.JS
