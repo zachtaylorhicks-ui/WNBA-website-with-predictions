@@ -1,4 +1,4 @@
-// script.js (v46.0 - DEFINITIVE: On-the-Fly Career Curve Calculation, All Logic Complete)
+// script.js (v47.0 - CORRECTED: Robust client-side data enrichment)
 
 // --- GLOBAL STATE & CONFIGURATION ---
 let fullData = { modelNames: [] };
@@ -21,6 +21,35 @@ const TEAM_COLORS = { ATL: '#E03A3E', CHI: '#418FDE', CON: '#002663', DAL: '#002
 const TEAM_ABBR_MAP = {'Atlanta Dream': 'ATL', 'Chicago Sky': 'CHI', 'Connecticut Sun': 'CON', 'Dallas Wings': 'DAL', 'Indiana Fever': 'IND', 'Las Vegas Aces': 'LVA', 'Los Angeles Sparks': 'LAS', 'Minnesota Lynx': 'MIN', 'New York Liberty': 'NYL', 'Phoenix Mercury': 'PHO', 'Seattle Storm': 'SEA', 'Washington Mystics': 'WAS', 'Golden State Valkyries': 'GSV' };
 const REVERSE_TEAM_MAP = { 'ATL': 'Atlanta Dream', 'CHI': 'Chicago Sky', 'CON': 'Connecticut Sun', 'DAL': 'Dallas Wings', 'IND': 'Indiana Fever', 'LVA': 'Las Vegas Aces', 'LAS': 'Los Angeles Sparks', 'MIN': 'Minnesota Lynx', 'NYL': 'New York Liberty', 'PHO': 'Phoenix Mercury', 'SEA': 'Seattle Storm', 'WAS': 'Washington Mystics', 'GSV': 'Golden State Valkyries' };
 
+// --- NEW HELPER FUNCTION TO FIX DATA-BINDING ISSUES ---
+/**
+ * Merges player data from a season file with the master player profiles.
+ * This makes the UI robust against missing metadata in individual data files.
+ * @param {Array} playerArray - An array of player objects from a season/projection file.
+ * @returns {Array} The enriched array of player objects.
+ */
+function enrichPlayerData(playerArray) {
+    if (!playerArray || !Array.isArray(playerArray) || !fullData.playerProfiles) {
+        return playerArray || [];
+    }
+    return playerArray.map(player => {
+        if (!player || typeof player.personId === 'undefined') {
+            return player;
+        }
+        const profile = fullData.playerProfiles[player.personId];
+        if (profile) {
+            // Player stats from the specific data file should overwrite generic profile data
+            return { ...profile, ...player };
+        }
+        // If no profile found, add placeholders to prevent 'undefined' in the UI
+        return {
+            playerName: 'N/A',
+            position: 'N/A',
+            team: 'N/A',
+            ...player
+        };
+    });
+}
 
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", async () => {
@@ -330,9 +359,12 @@ async function renderSeasonTable() {
     
     const settings = { showCount: parseInt(document.getElementById("show-count").value, 10), searchTerm: document.getElementById("search-player").value.toLowerCase().trim(), activeCategories: new Set(Array.from(document.querySelectorAll("#category-weights-grid input:checked")).map(cb => cb.dataset.key)) };
     const tbody = document.getElementById("predictions-tbody");
-    tbody.innerHTML = `<tr><td colspan="17" style="text-align:center;">Loading team data...</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="17" style="text-align:center;">Loading player data...</td></tr>`;
+    
     let data = await fetchSeasonData(sourceKey);
     if (!data) { tbody.innerHTML = `<tr><td colspan="17" class="error-cell">Could not load data for ${sourceKey}.</td></tr>`; return; }
+
+    data = enrichPlayerData(data); // <<<--- FIX APPLIED HERE
 
     let processedData = data.map(player => ({ ...player, custom_z_score_display: Array.from(settings.activeCategories).reduce((acc, catKey) => acc + (player[STAT_CONFIG[catKey].zKey] || 0), 0) }));
     if (settings.searchTerm) processedData = processedData.filter(p => p.playerName?.toLowerCase().includes(settings.searchTerm));
@@ -530,9 +562,13 @@ async function renderTeamAnalysis() {
     const container = document.getElementById("team-analysis-container");
     container.innerHTML = '<div class="card"><p>Loading team data...</p></div>';
     let sourceKey = document.getElementById("season-source-selector").value.replace('total', 'per_game');
+    
     const data = await fetchSeasonData(sourceKey);
     if (!data) { container.innerHTML = '<div class="card"><p class="error-cell">Could not load team data.</p></div>'; return; }
-    const teams = data.reduce((acc, p) => { (acc[p.team || 'FA'] = acc[p.team || 'FA'] || []).push(p); return acc; }, {});
+
+    const enrichedData = enrichPlayerData(data); // <<<--- FIX APPLIED HERE
+    
+    const teams = enrichedData.reduce((acc, p) => { (acc[p.team || 'FA'] = acc[p.team || 'FA'] || []).push(p); return acc; }, {});
     container.innerHTML = Object.entries(teams).sort((a,b) => (b[1].reduce((s,p)=>s+(p.custom_z_score||0),0)) - (a[1].reduce((s,p)=>s+(p.custom_z_score||0),0))).map(([teamName, players]) => {
         const teamStrength = players.reduce((sum, p) => sum + (p.custom_z_score || 0), 0);
         const playerRows = players.sort((a,b) => (b.custom_z_score || 0) - (a.custom_z_score || 0)).map(p => `<tr><td><a href="#" class="player-link" data-person-id="${p.personId}">${p.playerName}</a></td><td>${(p.GP||0).toFixed(0)}</td><td>${(p.MIN||0).toFixed(1)}</td><td>${(p.PTS||0).toFixed(1)}</td><td>${(p.REB||0).toFixed(1)}</td><td>${(p.AST||0).toFixed(1)}</td><td>${(p.custom_z_score||0).toFixed(2)}</td></tr>`).join('');
@@ -546,9 +582,14 @@ async function renderPlayerProgression() {
     let projSourceKey = document.getElementById("season-source-selector").value;
     if(!projSourceKey.includes('projections')) projSourceKey = Object.keys(fullData.seasonLongDataManifest).find(k => k.includes('Ensemble') && k.includes('per_game')) || projSourceKey;
     projSourceKey = projSourceKey.replace('total', 'per_game');
-    const futureData = await fetchSeasonData(projSourceKey);
-    const historicalData = await fetchSeasonData('actuals_2024_full_per_game');
-    if (!futureData || !historicalData) { container.innerHTML = '<div class="card"><p class="error-cell">Could not load progression data.</p></div>'; return; }
+    
+    const futureDataRaw = await fetchSeasonData(projSourceKey);
+    const historicalDataRaw = await fetchSeasonData('actuals_2024_full_per_game');
+    if (!futureDataRaw || !historicalDataRaw) { container.innerHTML = '<div class="card"><p class="error-cell">Could not load progression data.</p></div>'; return; }
+    
+    const futureData = enrichPlayerData(futureDataRaw); // <<<--- FIX APPLIED HERE
+    const historicalData = enrichPlayerData(historicalDataRaw); // <<<--- FIX APPLIED HERE
+
     const merged = futureData.map(p_future => { const p_hist = historicalData.find(p => p.personId === p_future.personId); return p_hist ? { ...p_future, z_Total_2024: p_hist.custom_z_score, z_Total_2025_Proj: p_future.custom_z_score, z_Change: (p_future.custom_z_score || 0) - (p_hist.custom_z_score || 0) } : null; }).filter(Boolean);
     let html = createProgressionTable('Top Risers (2025 Proj. vs 2024)', [...merged].sort((a,b)=>b.z_Change-a.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
     html += createProgressionTable('Top Fallers (2025 Proj. vs 2024)', [...merged].sort((a,b)=>a.z_Change-b.z_Change).slice(0,15), "'24 Z","'25 Proj. Z", "z_Total_2024", "z_Total_2025_Proj");
@@ -599,7 +640,7 @@ async function renderCareerChart() {
     if (!ctx) return;
     
     const stat = document.getElementById("career-stat-selector").value;
-    const xAxis = document.getElementById("career-xaxis-selector").value;
+    const xAxisKey = document.getElementById("career-xaxis-selector").value; // 'age' or 'x_games'
     const draftFilter = document.getElementById("career-draft-filter").value;
     const minutesFilter = document.getElementById("career-minutes-filter").value;
     const colorByTeam = document.getElementById("career-color-by-team-toggle").checked;
@@ -607,6 +648,10 @@ async function renderCareerChart() {
     if (!playerHistoryCache) {
         document.getElementById("career-chart-wrapper").innerHTML = `<p class="statline-placeholder">Loading player history...</p>`;
         await fetchPlayerHistory();
+        if (!playerHistoryCache) { // Check again after await
+             document.getElementById("career-chart-wrapper").innerHTML = `<p class="statline-placeholder error-cell">Could not load player history data.</p>`;
+             return;
+        }
     }
     
     const datasets = [];
@@ -625,16 +670,22 @@ async function renderCareerChart() {
         const playerProfile = fullData.playerProfiles[id];
         const borderColor = colorByTeam ? (TEAM_COLORS[playerProfile?.team] || TEAM_COLORS.FA) : 'rgba(128, 128, 128, 0.2)';
         
-        if (playerData.length > 0) datasets.push({ label: `Player ${id}`, data: playerData.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x != null && d.y != null), borderColor, borderWidth: 1.5, pointRadius: 0, tension: 0.1 });
+        const chartData = playerData.map(d => ({ x: d[xAxisKey === 'age' ? 'age' : 'game_number'], y: d[stat] })).filter(d=>d.x != null && d.y != null);
+        if (chartData.length > 0) {
+            datasets.push({ label: `Player ${id}`, data: chartData, borderColor, borderWidth: 1.5, pointRadius: 0, tension: 0.1 });
+        }
     });
 
     for (const [id, playerInfo] of careerChartState.highlightedPlayers.entries()) {
         let highlightedData = playerHistoryCache[id]?.performanceHistory;
         if (highlightedData) {
             if (minutesFilter === '15_game') highlightedData = highlightedData.filter(d => d.MIN >= 15);
-            if (highlightedData.length > 0) datasets.push({ label: playerInfo.name, data: highlightedData.map(d => ({ x: d[xAxis], y: d[stat] })).filter(d=>d.x != null && d.y != null), borderColor: playerInfo.color, borderWidth: 3, pointRadius: 0, tension: 0.1, order: -10 });
+            const chartData = highlightedData.map(d => ({ x: d[xAxisKey === 'age' ? 'age' : 'game_number'], y: d[stat] })).filter(d=>d.x != null && d.y != null);
+            if (chartData.length > 0) {
+                datasets.push({ label: playerInfo.name, data: chartData, borderColor: playerInfo.color, borderWidth: 3, pointRadius: 0, tension: 0.1, order: -10 });
+            }
         }
     }
     
-    careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { labels: { color: 'var(--text-primary)', filter: item => !item.label.startsWith('Player ') } }, decimation: { enabled: true, algorithm: 'lttb', samples: colorByTeam ? 500 : 200 } }, scales: { x: { type: 'linear', title: { display: true, text: xAxis === 'age' ? 'Player Age' : 'WNBA Games Played' } }, y: { title: { display: true, text: stat } } } } });
+    careerChartInstance = new Chart(ctx, { type: 'line', data: { datasets }, options: { responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { labels: { color: 'var(--text-primary)', filter: item => !item.label.startsWith('Player ') } }, decimation: { enabled: true, algorithm: 'lttb', samples: colorByTeam ? 500 : 200 } }, scales: { x: { type: 'linear', title: { display: true, text: xAxisKey === 'age' ? 'Player Age' : 'WNBA Games Played' } }, y: { title: { display: true, text: stat } } } } });
 }
